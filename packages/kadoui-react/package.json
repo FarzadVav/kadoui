@@ -1,0 +1,47 @@
+{
+  "name": "@kadoui/react",
+  "version": "1.12.0",
+  "description": "Kadoui primitive components for React",
+  "author": "FarzadVav",
+  "license": "MIT",
+  "type": "module",
+  "repository": "https://github.com/FarzadVav/kadoui/packages/kadoui-react",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./utils": "./dist/utils.js"
+  },
+  "keywords": [
+    "@kadoui/react",
+    "kado",
+    "ui",
+    "react",
+    "next",
+    "primitive",
+    "component"
+  ],
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "@mantine/hooks": "8.3.14",
+    "framer-motion": "12.31.0",
+    "qrcode": "1.5.4",
+    "zustand": "5.0.11",
+    "nanoid": "5.1.6",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.4.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/qrcode": "1.5.6"
+  }
+}

@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@kadoui/tailwindcss": "workspace:*",
+    "@kadoui/react": "workspace:*",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "lucide-react": "0.563.0"
   },
   "devDependencies": {
     "typescript": "5.9.3",
