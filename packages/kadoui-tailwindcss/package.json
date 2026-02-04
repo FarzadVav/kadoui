@@ -1,0 +1,25 @@
+{
+  "name": "@kadoui/tailwindcss",
+  "version": "1.0.0",
+  "description": "Kadoui TailwindCSS styles",
+  "author": "FarzadVav",
+  "license": "MIT",
+  "type": "module",
+  "repository": "https://github.com/FarzadVav/kadoui/packages/kadoui-tailwindcss",
+  "exports": {
+    ".": "./src/index.css",
+    "./postcss": "./postcss.config.js"
+  },
+  "keywords": [
+    "@kadoui/tailwindcss",
+    "kado",
+    "ui",
+    "css",
+    "tailwind"
+  ],
+  "devDependencies": {
+    "postcss": "8.5.6",
+    "tailwindcss": "4.1.18",
+    "@tailwindcss/postcss": "4.1.18"
+  }
+}

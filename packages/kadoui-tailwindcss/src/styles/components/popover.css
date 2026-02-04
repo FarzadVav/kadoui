@@ -1,0 +1,39 @@
+@utility popover {
+  @apply relative w-max max-w-full;
+}
+
+@utility popover-body {
+  @apply absolute w-max rounded-lg z-10;
+}
+
+@utility popover-body-t {
+  @apply top-out left-center;
+}
+
+@utility popover-body-tr {
+  @apply top-out right-out;
+}
+
+@utility popover-body-r {
+  @apply top-center right-out;
+}
+
+@utility popover-body-br {
+  @apply bottom-out right-out;
+}
+
+@utility popover-body-b {
+  @apply bottom-out left-center;
+}
+
+@utility popover-body-bl {
+  @apply bottom-out left-out;
+}
+
+@utility popover-body-l {
+  @apply top-center left-out;
+}
+
+@utility popover-body-tl {
+  @apply left-out;
+}

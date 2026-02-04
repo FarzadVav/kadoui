@@ -1,0 +1,7 @@
+@utility tabs-list {
+  @apply join;
+}
+
+@utility tabs-panel {
+  @apply card mt-1.5;
+}

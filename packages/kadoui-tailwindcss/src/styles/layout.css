@@ -1,0 +1,31 @@
+@utility container {
+  @apply px-3 mx-auto;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+}
+
+@utility f-align {
+  @apply flex items-center;
+}
+
+@utility f-align-scroll {
+  @apply flex overflow-x-auto pb-1.5;
+
+  &.no-scrollbar {
+    @apply pb-0;
+  }
+}
+
+@utility f-center {
+  @apply f-align justify-center;
+}
+
+@utility slidable {
+  @apply w-[90%] min-w-[90%] sm:w-2/5 sm:min-w-2/5;
+}
+
+@utility w-fix {
+  @apply w-max max-w-full;
+}

@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Utilities */
+@import "./styles/base.css";
+@import "./styles/layout.css";
+@import "./styles/button.css";
+@import "./styles/input.css";
+@import "./styles/badge.css";
+@import "./styles/card.css";
+@import "./styles/kbd.css";
+@import "./styles/alert.css";
+@import "./styles/join.css";
+@import "./styles/position.css";
+@import "./styles/separator.css";
+@import "./styles/other.css";
+
+/* Components */
+@import "./styles/components/affix.css";
+@import "./styles/components/carousel.css";
+@import "./styles/components/choice.css";
+@import "./styles/components/show-more.css";
+@import "./styles/components/accordion.css";
+@import "./styles/components/context-menu.css";
+@import "./styles/components/popover.css";
+@import "./styles/components/drawer.css";
+@import "./styles/components/modal.css";
+@import "./styles/components/otp.css";
+@import "./styles/components/pagination.css";
+@import "./styles/components/progress.css";
+@import "./styles/components/rating.css";
+@import "./styles/components/select-box.css";
+@import "./styles/components/sheet.css";
+@import "./styles/components/breadcrumbs.css";
+@import "./styles/components/spoiler.css";
+@import "./styles/components/tabs.css";

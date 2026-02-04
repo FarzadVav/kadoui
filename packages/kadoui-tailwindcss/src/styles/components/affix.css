@@ -1,0 +1,3 @@
+@utility affix {
+  @apply fixed transition-all z-40 data-[state=false]:ignore;
+}

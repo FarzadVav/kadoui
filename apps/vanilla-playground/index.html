@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg" />
+    <link
+      rel="stylesheet"
+      href="src/style.css" />
+
+    <title>Kadoui TailwindCSS Playground</title>
+  </head>
+  <body>
+    <p class="container heading mt-12">Layout</p>
+    <div class="container mt-6">
+      <p>.f-align</p>
+      <div
+        data-kadoui="element"
+        class="card f-align mt-3 gap-3">
+        <div class="p-3 bg-background">Item 1</div>
+        <div class="p-3 bg-background">Item 2</div>
+        <div class="p-3 bg-background">Item 3</div>
+      </div>
+
+      <p class="mt-6">.f-center</p>
+      <div
+        data-kadoui="element"
+        class="card f-center mt-3 gap-3">
+        <div class="p-3 bg-background">Item 1</div>
+        <div class="p-3 bg-background">Item 2</div>
+        <div class="p-3 bg-background">Item 3</div>
+      </div>
+
+      <p class="mt-6">.f-align-scroll + .slidable</p>
+      <div
+        data-kadoui="element"
+        class="f-align-scroll mt-3 gap-3">
+        <div
+          data-kadoui="element"
+          class="card slidable">
+          Item 1
+        </div>
+        <div
+          data-kadoui="element"
+          class="card slidable">
+          Item 2
+        </div>
+        <div
+          data-kadoui="element"
+          class="card slidable">
+          Item 3
+        </div>
+      </div>
+
+      <p class="mt-6">.no-scrollbar</p>
+      <div
+        data-kadoui="element"
+        class="f-align-scroll no-scrollbar mt-3 gap-3">
+        <div class="card slidable">Item 1</div>
+        <div class="card slidable">Item 2</div>
+        <div class="card slidable">Item 3</div>
+      </div>
+
+      <p class="mt-6">.w-fix</p>
+      <div class="card w-full max-w-96 mt-3">
+        <div
+          data-kadoui="element"
+          class="w-fix p-3 bg-background">
+          Item 1
+        </div>
+        <div
+          data-kadoui="element"
+          class="w-fix p-3 bg-background mt-3">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ullam veniam libero,
+          doloremque nobis perferendis eos temporibus autem, laboriosam aliquam mollitia
+          quam assumenda culpa consequatur saepe quod enim esse neque!
+        </div>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Button</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="f-align gap-3 mt-3">
+        <button
+          data-kadoui="element"
+          class="btn btn-fill">
+          Fill
+        </button>
+        <button
+          data-kadoui="element"
+          class="btn btn-outline">
+          Outline
+        </button>
+        <button
+          data-kadoui="element"
+          class="btn btn-soft">
+          Soft
+        </button>
+        <button
+          data-kadoui="element"
+          class="btn btn-ghost">
+          Ghost
+        </button>
+      </div>
+
+      <p class="mt-6">Sizes</p>
+      <div class="f-align gap-3 mt-3">
+        <button
+          class="btn btn-fill btn-sm"
+          data-kadoui="element">
+          Small
+        </button>
+        <button
+          class="btn btn-fill"
+          data-kadoui="element">
+          Medium
+        </button>
+        <button
+          class="btn btn-fill btn-lg"
+          data-kadoui="element">
+          Large
+        </button>
+        <button
+          class="btn btn-fill btn-square"
+          data-kadoui="element">
+          SQ
+        </button>
+        <button
+          class="btn btn-fill"
+          data-kadoui="element">
+          <span>With icon</span>
+          <i
+            class="btn-icon-size"
+            data-lucide="sparkles"></i>
+        </button>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Input</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="mt-3">
+        <label class="input">
+          <input
+            placeholder="Ghost input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-outline mt-3">
+          <input
+            placeholder="Outline input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-soft mt-3">
+          <input
+            placeholder="Soft input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-outline mt-3">
+          <i
+            class="input-icon-size"
+            data-lucide="search"></i>
+          <input
+            placeholder="Outline input..."
+            class="input-field"
+            type="text" />
+          <button class="btn btn-ghost btn-sm">Enter</button>
+        </label>
+      </div>
+
+      <p class="mt-6">Sizes</p>
+      <div class="mt-3">
+        <label class="input input-outline input-sm mt-3">
+          <input
+            placeholder="Small input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-outline mt-3">
+          <input
+            placeholder="Medium input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-outline input-lg mt-3">
+          <input
+            placeholder="Large input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <div class="otp mt-3">
+          <input
+            class="input input-outline input-square"
+            placeholder="SQ"
+            type="text" />
+          <input
+            class="input input-outline input-square"
+            placeholder="SQ"
+            type="text" />
+          <input
+            class="input input-outline input-square"
+            placeholder="SQ"
+            type="text" />
+          <input
+            class="input input-outline input-square"
+            placeholder="SQ"
+            type="text" />
+        </div>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Badge</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="f-align gap-3 mt-3">
+        <span class="badge">Ghost badge</span>
+        <span class="badge badge-fill">Fill badge</span>
+        <span class="badge badge-outline">Outline badge</span>
+        <span class="badge badge-soft">Soft badge</span>
+        <span class="badge badge-soft">
+          <i
+            class="badge-icon-size"
+            data-lucide="sparkles"></i>
+          <span>With icon</span>
+        </span>
+      </div>
+
+      <p class="mt-6">Sizes</p>
+      <div class="f-align gap-3 mt-3">
+        <span class="badge badge-soft badge-sm">Small badge</span>
+        <span class="badge badge-soft">Medium badge</span>
+        <span class="badge badge-soft badge-lg">Large badge</span>
+        <span class="badge badge-soft badge-square">SQ</span>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Card</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="mt-3">
+        <div class="card">
+          Basic card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+
+        <ul class="card card-menu card-y mt-3">
+          <li>
+            <button class="btn btn-ghost">Vertical card menu</button>
+          </li>
+          <li>
+            <button class="btn btn-ghost">Item 2</button>
+          </li>
+          <li>
+            <button class="btn btn-ghost">Item 3</button>
+          </li>
+        </ul>
+
+        <ul class="card card-menu card-x mt-3">
+          <li>
+            <button class="btn btn-ghost">Horizontal card menu</button>
+          </li>
+          <li>
+            <button class="btn btn-ghost">Item 2</button>
+          </li>
+          <li>
+            <button class="btn btn-ghost">Item 3</button>
+          </li>
+        </ul>
+      </div>
+
+      <p class="mt-6">Sizes</p>
+      <div class="mt-3">
+        <div class="card card-sm">
+          Small card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+
+        <div class="card mt-3">
+          Medium card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+
+        <div class="card mt-3 card-lg">
+          Large card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Kbd</p>
+    <div class="container mt-6">
+      <p>Sizes</p>
+      <div class="f-align gap-1.5 mt-3">
+        <span class="kbd kbd-sm">Ctrl</span>
+        <span>+</span>
+        <span class="kbd kbd-sm">C</span>
+      </div>
+
+      <div class="f-align gap-1.5 mt-3">
+        <span class="kbd">Ctrl</span>
+        <span>+</span>
+        <span class="kbd">C</span>
+      </div>
+
+      <div class="f-align gap-1.5 mt-3">
+        <span class="kbd kbd-lg">Ctrl</span>
+        <span>+</span>
+        <span class="kbd kbd-lg">C</span>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Alert</p>
+    <div class="container mt-6">
+      <p>Sizes</p>
+      <div class="mt-3">
+        <div class="alert alert-sm">
+          <i
+            class="alert-icon-size"
+            data-lucide="info"></i>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
+            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
+            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
+            Eligendi!
+          </p>
+        </div>
+
+        <div class="alert mt-3">
+          <i
+            class="alert-icon-size"
+            data-lucide="info"></i>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
+            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
+            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
+            Eligendi!
+          </p>
+        </div>
+
+        <div class="alert alert-lg mt-3">
+          <i
+            class="alert-icon-size"
+            data-lucide="info"></i>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
+            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
+            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
+            Eligendi!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Join</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="join mt-3">
+        <button class="btn btn-soft">Item 1</button>
+        <button class="btn btn-soft">Item 2</button>
+        <button class="btn btn-soft">Item 3</button>
+      </div>
+
+      <div class="join join-border mt-3">
+        <button class="btn btn-soft">Inner border 1</button>
+        <button class="btn btn-soft">Inner border 2</button>
+        <button class="btn btn-soft">Inner border 3</button>
+      </div>
+
+      <div class="join join-fix-border mt-3">
+        <button class="btn btn-outline">Fix inner border 1</button>
+        <button class="btn btn-outline">Fix inner border 2</button>
+        <button class="btn btn-outline">Fix inner border 3</button>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Position</p>
+    <div class="container mt-6">
+      <div class="card h-[33vh] relative">
+        <span class="badge badge-fill absolute top-center">Top center</span>
+        <span class="badge badge-fill absolute left-1/4 top-boundary">Top boundry</span>
+        <span class="badge badge-fill absolute right-0 top-out">Top out</span>
+
+        <span class="badge badge-fill absolute right-center">Right center</span>
+        <span class="badge badge-fill absolute right-boundary">Right boundry</span>
+        <span class="badge badge-fill absolute bottom-0 right-out">Right out</span>
+
+        <span class="badge badge-fill absolute bottom-center">Bottom center</span>
+        <span class="badge badge-fill absolute bottom-boundary">Bottom boundry</span>
+        <span class="badge badge-fill absolute right-0 bottom-out">Bottom out</span>
+
+        <span class="badge badge-fill absolute bottom-0 left-center">Left center</span>
+        <span class="badge badge-fill absolute left-boundary">Left boundry</span>
+        <span class="badge badge-fill absolute bottom-0 left-out">Left out</span>
+
+        <span class="badge badge-fill absolute inset-center">Inset center</span>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Separator</p>
+    <div class="container mt-6">
+      <p>Variants</p>
+      <div class="flex items-start flex-col mt-3">
+        <span class="separate separate-t">Separate top</span>
+
+        <span class="separate separate-r mt-6">Separate right</span>
+
+        <span class="separate separate-b mt-6">Separate bottom</span>
+
+        <span class="separate separate-l mt-6">Separate left</span>
+
+        <span class="separate separate-y">Separate vertical</span>
+
+        <span class="separate separate-x mt-6">Separate horizontal</span>
+      </div>
+
+      <p class="mt-6">Sizes</p>
+      <div class="flex items-start flex-col mt-3">
+        <span class="separate-sm separate-t">Small separate</span>
+        <span class="separate separate-t">Meduim separate</span>
+        <span class="separate-lg separate-t">Large separate</span>
+      </div>
+    </div>
+
+    <p class="container heading mt-12">Other</p>
+    <div class="container mt-6">
+      <button class="btn btn-ghost link">Link</button>
+
+      <p class="mt-3">
+        Lorem ipsum dolor sit <span class="highlight">This is a highlight</span> nemo,
+        esse.
+      </p>
+
+      <div class="f-center skeleton h-[33vh] mt-3">Skeleton</div>
+
+      <input
+        class="range-slider mt-3"
+        type="range" />
+
+      <div class="mt-3">
+        <button
+          id="toggle-text-btn"
+          class="btn btn-fill"></button>
+        <p
+          class="mt-1.5"
+          id="toggle-text-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eius alias
+          dolorem maxime suscipit placeat eligendi omnis esse ducimus doloremque est
+          voluptas laudantium, voluptatum cumque unde consequuntur error quae minima.
+        </p>
+      </div>
+
+      <p class="container heading my-12">The end</p>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script
+      type="module"
+      src="/src/main.ts"></script>
+  </body>
+</html>

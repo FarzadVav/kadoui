@@ -1,0 +1,7 @@
+@utility context-menu {
+  @apply relative;
+}
+
+@utility context-menu-body {
+  @apply z-10 fixed transition-all data-[state=false]:ignore;
+}
