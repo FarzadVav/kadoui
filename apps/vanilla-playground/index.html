@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,8 +17,19 @@
     <title>Kadoui TailwindCSS Playground</title>
   </head>
   <body>
-    <p class="container heading mt-12">Layout</p>
-    <div class="container mt-6">
+    <header class="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b z-40">
+      <div class="wrapper flex items-center justify-between h-full">
+        <span class="title">Kadoui Playground</span>
+        <button
+          id="theme-toggle-btn"
+          class="btn btn-fill">
+          Theme: System
+        </button>
+      </div>
+    </header>
+
+    <p class="wrapper heading mt-12">Layout</p>
+    <div class="wrapper mt-6">
       <p>.f-align</p>
       <div
         data-kadoui="element"
@@ -84,8 +95,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Button</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Button</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="f-align gap-3 mt-3">
         <button
@@ -143,8 +154,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Input</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Input</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="mt-3">
         <label class="input">
@@ -224,8 +235,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Badge</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Badge</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="f-align gap-3 mt-3">
         <span class="badge">Ghost badge</span>
@@ -249,8 +260,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Card</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Card</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="mt-3">
         <div class="card">
@@ -306,8 +317,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Kbd</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Kbd</p>
+    <div class="wrapper mt-6">
       <p>Sizes</p>
       <div class="f-align gap-1.5 mt-3">
         <span class="kbd kbd-sm">Ctrl</span>
@@ -328,8 +339,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Alert</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Alert</p>
+    <div class="wrapper mt-6">
       <p>Sizes</p>
       <div class="mt-3">
         <div class="alert alert-sm">
@@ -370,8 +381,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Join</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Join</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="join mt-3">
         <button class="btn btn-soft">Item 1</button>
@@ -392,8 +403,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Position</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Position</p>
+    <div class="wrapper mt-6">
       <div class="card h-[33vh] relative">
         <span class="badge badge-fill absolute top-center">Top center</span>
         <span class="badge badge-fill absolute left-1/4 top-boundary">Top boundry</span>
@@ -415,8 +426,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Separator</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Separator</p>
+    <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="flex items-start flex-col mt-3">
         <span class="separate separate-t">Separate top</span>
@@ -440,8 +451,8 @@
       </div>
     </div>
 
-    <p class="container heading mt-12">Other</p>
-    <div class="container mt-6">
+    <p class="wrapper heading mt-12">Other</p>
+    <div class="wrapper mt-6">
       <button class="btn btn-ghost link">Link</button>
 
       <p class="mt-3">
@@ -468,7 +479,7 @@
         </p>
       </div>
 
-      <p class="container heading my-12">The end</p>
+      <p class="wrapper heading my-12">The end</p>
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>

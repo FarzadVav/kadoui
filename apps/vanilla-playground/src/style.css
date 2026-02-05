@@ -2,7 +2,6 @@
 @import "@kadoui/tailwindcss";
 
 @theme {
-  --color-*: initial;
   --color-background: #efefef;
   --color-background-thick: #dfdfdf;
   --color-foreground: #151515;
@@ -34,11 +33,23 @@
 }
 
 @layer base {
-  html {
+  body {
     font-family: sans-serif;
   }
+
+  * {
+    @apply border-background-thick;
+  }
+}
+
+@utility wrapper {
+  @apply px-6 max-w-5xl mx-auto;
 }
 
 @utility heading {
   @apply text-5xl font-black;
+}
+
+@utility title {
+  @apply text-2xl font-bold;
 }
