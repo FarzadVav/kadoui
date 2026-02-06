@@ -15,10 +15,6 @@ export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
   const [isOpen, setOpen] = useState(defaultOpen);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
@@ -34,15 +30,25 @@ export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
   }, []);
 
   useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const scrollbarWidth = getBrowserScrollbarWith();
+
+    const removeOverStyles = () => {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
+    }
 
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = "unset";
-      document.body.style.paddingRight = "0px";
+      removeOverStyles();
     }
+
+    return () => removeOverStyles();
   }, [isOpen]);
 
   return <ModalContext value={{ isOpen, setOpen }}>{children}</ModalContext>;

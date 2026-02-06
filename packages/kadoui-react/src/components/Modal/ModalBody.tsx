@@ -10,12 +10,12 @@ export type ModalBodyPropsT = HTMLMotionProps<"div">;
 
 export function ModalBody(p: ModalBodyPropsT) {
   const { isOpen } = use(ModalContext);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
-        const focusableElement = contentRef.current?.querySelector("[data-modal='focus']") as
+        const focusableElement = bodyRef.current?.querySelector("[data-modal='focus']") as
           HTMLElement | null | undefined;
         focusableElement?.focus();
       }, FRAMER_MOTION_DURATION);
@@ -26,7 +26,7 @@ export function ModalBody(p: ModalBodyPropsT) {
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          ref={contentRef}
+          ref={bodyRef}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}

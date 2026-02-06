@@ -14,10 +14,6 @@ export function DrawerRoot({ children }: DrawerRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     const handleEscape = (ev: KeyboardEvent) => {
       if (ev.key === "Escape") {
         setOpen(false);
@@ -33,15 +29,25 @@ export function DrawerRoot({ children }: DrawerRootPropsT) {
   }, []);
 
   useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const scrollbarWidth = getBrowserScrollbarWith();
+
+    const removeOverStyles = () => {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
+    }
 
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = "unset";
-      document.body.style.paddingRight = "0px";
+      removeOverStyles();
     }
+
+    return () => removeOverStyles();
   }, [isOpen]);
 
   return <DrawerContext value={{ isOpen, setOpen }}>{children}</DrawerContext>;

@@ -709,9 +709,15 @@ function Page() {
               </Sheet.Header>
 
               <Sheet.Content className="sheet-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo
-                numquam sed dolorem nesciunt repellat deleniti quisquam laudantium? Quas
-                ullam magni voluptate esse animi vero dicta maxime mollitia amet dolor.
+                <label className="input input-outline">
+                  <SearchIcon className="element-icon-size" />
+                  <input type="text" className="input-field" placeholder="Search..." data-sheet="focus" />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo
+                  numquam sed dolorem nesciunt repellat deleniti quisquam laudantium? Quas
+                  ullam magni voluptate esse animi vero dicta maxime mollitia amet dolor.
+                </p>
               </Sheet.Content>
             </Sheet.Body>
           </Sheet.Portal>

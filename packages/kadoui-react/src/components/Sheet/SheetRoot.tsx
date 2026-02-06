@@ -5,6 +5,7 @@ import { useMotionValue, useAnimate } from "framer-motion";
 import { PropsWithChildren, useEffect, useState } from "react";
 
 import { SheetContext } from "./SheetContext";
+import { getBrowserScrollbarWith } from "../../utils";
 
 export type SheetRootPropsT = PropsWithChildren;
 
@@ -17,23 +18,43 @@ export function SheetRoot({ children }: SheetRootPropsT) {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
+  useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
+    const scrollbarWidth = getBrowserScrollbarWith();
     const bodyElem = document.body;
 
-    const removeOverflow = () => {
+    const removeOverStyles = () => {
       bodyElem.style.overflow = "unset";
+      bodyElem.style.overflow = "unset";
+      bodyElem.style.paddingRight = "0px";
     };
 
     if (isOpen) {
       bodyElem.style.overflow = "hidden";
+      bodyElem.style.overflow = "hidden";
+      bodyElem.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      removeOverflow();
+      removeOverStyles();
     }
 
-    return () => removeOverflow();
+    return () => removeOverStyles();
   }, [isOpen]);
 
   const closeHandler = async () => {
