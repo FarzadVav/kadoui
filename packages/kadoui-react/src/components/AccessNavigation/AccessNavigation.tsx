@@ -26,7 +26,9 @@ export function AccessNavigation({
     const focusableChildren = selectAccessibleChildren(accessNavigationRef.current);
 
     if (focusOnMount) {
-      focusableChildren[0]?.focus();
+      setTimeout(() => {
+        focusableChildren[0]?.focus();
+      }, 150);
     }
   }, []);
 
@@ -50,8 +52,8 @@ export function AccessNavigation({
       (direction === "y"
         ? "ArrowDown"
         : currentDir === "ltr"
-        ? "ArrowRight"
-        : "ArrowLeft")
+          ? "ArrowRight"
+          : "ArrowLeft")
     ) {
       ev.preventDefault();
       ev.stopPropagation();

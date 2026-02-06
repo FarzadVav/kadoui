@@ -190,7 +190,35 @@ function Page() {
         </Breadcrumbs>
 
         <p className="heading mt-20">Carousel</p>
-        <Carousel className="carousel mt-6" mouseSwipe="swipe">
+        <p className="title mt-6">Auto mouse scroll</p>
+        <Carousel className="carousel mt-3" mouseScroll="auto">
+          <Carousel.LeftFade className="carousel-left-fade" />
+          <Carousel.RightFade className="carousel-right-fade" />
+
+          <Carousel.Container className="carousel-container gap-3 scroll-smooth">
+            {Array.from({ length: 12 }).map((_, index) => (
+              <article
+                key={index}
+                className="carousel-children card w-[90%] max-sm:min-w-[90%] sm:w-2/5 sm:min-w-2/5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                doloremque error rem ex, necessitatibus dolore deleniti alias aperiam cum
+                ipsum, suscipit possimus porro provident totam mollitia? Voluptate, eaque
+                quas. Culpa.
+              </article>
+            ))}
+          </Carousel.Container>
+
+          <div className="flex items-center justify-center gap-3 mt-3">
+            <Carousel.PrevBtn className="btn btn-outline btn-square">
+              <ArrowLeftIcon className="element-icon-size" />
+            </Carousel.PrevBtn>
+            <Carousel.NextBtn className="btn btn-outline btn-square">
+              <ArrowRightIcon className="element-icon-size" />
+            </Carousel.NextBtn>
+          </div>
+        </Carousel>
+        <p className="title mt-6">Swipe mouse scroll</p>
+        <Carousel className="carousel mt-3" mouseScroll="swipe">
           <Carousel.LeftFade className="carousel-left-fade" />
           <Carousel.RightFade className="carousel-right-fade" />
 
@@ -224,32 +252,36 @@ function Page() {
         </ClientOnly>
 
         <p className="heading mt-20">Clipboard</p>
-        <Clipboard
-          text="Kadoui-react"
-          className="btn btn-soft btn-square mt-6"
-          copiedChildren={<CopyCheckIcon className="element-icon-size" />}>
-          <CopyIcon className="element-icon-size" />
-        </Clipboard>
+        <label htmlFor="copy" className="input input-soft mt-6">
+          <input type="text" className="input-field" defaultValue={"Kadoui-react"} readOnly />
+          <Clipboard
+            text="Kadoui-react"
+            className="btn btn-ghost element-sm"
+            copiedChildren={<CopyCheckIcon className="element-icon-size" />}
+          >
+            <CopyIcon className="element-icon-size" />
+          </Clipboard>
+        </label>
 
         <p className="heading mt-20">ContextMenu</p>
         <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
           <span className="absolute inset-center">Context menu!</span>
 
           <ContextMenu.Body className="context-menu-body">
-            <AccessNavigation className="card card-menu card-y">
-              <button className="btn btn-ghost">
-                <TrashIcon className="compatible-icon" />
+            <ContextMenu.Navigation className="context-menu-navigation bg-background-thick">
+              <ContextMenu.Item className="btn btn-ghost" onClick={() => alert("slkjflkdsjfldj")}>
+                <TrashIcon className="element-icon-size" />
                 <span>DELETE</span>
-              </button>
-              <button className="btn btn-ghost">
-                <RefreshCwIcon className="compatible-icon" />
+              </ContextMenu.Item>
+              <ContextMenu.Item className="btn btn-ghost">
+                <RefreshCwIcon className="element-icon-size" />
                 <span>RELOAD</span>
-              </button>
-              <button className="btn btn-ghost">
-                <FlagIcon className="compatible-icon" />
+              </ContextMenu.Item>
+              <ContextMenu.Item className="btn btn-ghost">
+                <FlagIcon className="element-icon-size" />
                 <span>IGNORE IT</span>
-              </button>
-            </AccessNavigation>
+              </ContextMenu.Item>
+            </ContextMenu.Navigation>
           </ContextMenu.Body>
         </ContextMenu>
 

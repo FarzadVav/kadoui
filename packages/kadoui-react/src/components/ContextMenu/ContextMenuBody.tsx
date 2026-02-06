@@ -1,31 +1,13 @@
 "use client";
 
-import { type ComponentProps, use, useEffect } from "react";
+import { type ComponentProps, use } from "react";
 
-import { selectAccessibleChildren } from "../../utils";
 import { ContextMenuContext } from "./ContextMenuContext";
 
 export type ContextMenuBodyPropsT = ComponentProps<"div">;
 
 export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);
-
-  useEffect(() => {
-    if (!contentRef.current) {
-      return;
-    }
-
-    if (isOpen) {
-      const children = selectAccessibleChildren(contentRef.current);
-      const firstChild = children[0];
-
-      if (!firstChild) {
-        return;
-      }
-
-      firstChild.focus();
-    }
-  }, [isOpen, position, contentRef]);
 
   return (
     <div

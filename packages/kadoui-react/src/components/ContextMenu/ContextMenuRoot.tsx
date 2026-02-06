@@ -13,10 +13,14 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
 
   const contentRef = useRef<HTMLDivElement>(null);
 
+  const closeHandler = () => {
+    setOpen(false);
+    setPosition(undefined);
+  }
+
   const handleClickOutside = useCallback((ev: globalThis.MouseEvent) => {
     if (!contentRef.current?.contains(ev.target as Node)) {
-      setOpen(false);
-      setPosition(undefined);
+      closeHandler();
     }
   }, []);
 
@@ -66,7 +70,7 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
 
 
   return (
-    <ContextMenuContext value={{ contentRef, isOpen, position }}>
+    <ContextMenuContext value={{ contentRef, isOpen, closeHandler, position }}>
       <div
         onContextMenu={ev => {
           onContextMenu?.(ev);

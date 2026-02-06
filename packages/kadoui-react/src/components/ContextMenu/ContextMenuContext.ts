@@ -1,7 +1,8 @@
-import { createContext, RefObject } from 'react'
+import { createContext, Dispatch, RefObject, SetStateAction } from 'react'
 
 export type ContextMenuContextT = {
   isOpen: boolean;
+  closeHandler: () => void;
   position: { x: number, y: number } | undefined;
   contentRef: RefObject<HTMLDivElement | null>;
 }

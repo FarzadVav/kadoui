@@ -7,7 +7,7 @@ import { CarouselContext } from "./CarouselContext";
 export type CarouselContainerPropsT = ComponentProps<"div">;
 
 export function CarouselContainer({ children, style, ...p }: CarouselContainerPropsT) {
-  const { scrollRef, mouseSwipe, childrenWidth } = use(CarouselContext);
+  const { scrollRef, mouseScroll, childrenWidth } = use(CarouselContext);
 
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -22,7 +22,7 @@ export function CarouselContainer({ children, style, ...p }: CarouselContainerPr
 
   const handleMouseDown = useCallback(
     (e: React.MouseEvent) => {
-      if (!mouseSwipe || !scrollRef.current) return;
+      if (!mouseScroll || !scrollRef.current) return;
 
       isDragging.current = true;
       startX.current = e.pageX;
@@ -50,9 +50,9 @@ export function CarouselContainer({ children, style, ...p }: CarouselContainerPr
         document.removeEventListener("mouseup", onMouseUp);
         cleanupRef.current = null;
 
-        if (mouseSwipe === "auto") {
+        if (mouseScroll === "auto") {
           scrollRef.current.style.scrollBehavior = "";
-        } else if (mouseSwipe === "swipe") {
+        } else if (mouseScroll === "swipe") {
           scrollRef.current.style.scrollBehavior = "";
           const dx = ev.pageX - startX.current;
 
@@ -82,15 +82,15 @@ export function CarouselContainer({ children, style, ...p }: CarouselContainerPr
 
       e.preventDefault();
     },
-    [mouseSwipe, scrollRef, childrenWidth],
+    [mouseScroll, scrollRef, childrenWidth],
   );
 
   return (
     <div
       ref={scrollRef}
-      onMouseDown={mouseSwipe ? handleMouseDown : undefined}
+      onMouseDown={mouseScroll ? handleMouseDown : undefined}
       style={{
-        ...(mouseSwipe ? { cursor: "grab" } : {}),
+        ...(mouseScroll ? { cursor: "grab" } : {}),
         ...style,
       }}
       {...p}
