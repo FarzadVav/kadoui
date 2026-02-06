@@ -190,7 +190,7 @@ function Page() {
         </Breadcrumbs>
 
         <p className="heading mt-20">Carousel</p>
-        <Carousel className="carousel mt-6">
+        <Carousel className="carousel mt-6" mouseSwipe="swipe">
           <Carousel.LeftFade className="carousel-left-fade" />
           <Carousel.RightFade className="carousel-right-fade" />
 

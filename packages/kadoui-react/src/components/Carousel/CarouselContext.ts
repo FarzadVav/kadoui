@@ -5,6 +5,7 @@ export type CarouselContextPropsT = {
   leftOpacity: number;
   rightOpacity: number;
   childrenWidth: number;
+  mouseSwipe?: "auto" | "swipe";
 }
 
 export const CarouselContext = createContext<CarouselContextPropsT>({} as CarouselContextPropsT);

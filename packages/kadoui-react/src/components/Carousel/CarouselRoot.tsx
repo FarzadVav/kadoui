@@ -4,9 +4,11 @@ import { type ComponentProps, useEffect, useRef, useState } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
-export type CarouselRootPropsT = ComponentProps<"div">;
+export type CarouselRootPropsT = ComponentProps<"div"> & {
+  mouseSwipe?: "auto" | "swipe";
+};
 
-export function CarouselRoot({ dir, ...p }: CarouselRootPropsT) {
+export function CarouselRoot({ dir, mouseSwipe, ...p }: CarouselRootPropsT) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [leftOpacity, setLeftOpacity] = useState(0);
   const [rightOpacity, setRightOpacity] = useState(0);
@@ -65,7 +67,7 @@ export function CarouselRoot({ dir, ...p }: CarouselRootPropsT) {
   }, []);
 
   return (
-    <CarouselContext value={{ scrollRef, leftOpacity, rightOpacity, childrenWidth }}>
+    <CarouselContext value={{ scrollRef, leftOpacity, rightOpacity, childrenWidth, mouseSwipe }}>
       <div {...p} />
     </CarouselContext>
   );
