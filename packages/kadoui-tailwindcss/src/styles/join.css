@@ -4,7 +4,11 @@
 
 /* Consider border color may not be suitable for your use, you should change it */
 @utility join-border {
-  @apply ltr:*:not-last:border-r rtl:*:not-last:border-l *:border-palette;
+  @apply ltr:*:not-last:border-r rtl:*:not-last:border-l;
+
+  * {
+    border-color: color-mix(in oklab, var(--color-palette) 50%, var(--color-brush))
+  }
 }
 
 @utility join-fix-border {

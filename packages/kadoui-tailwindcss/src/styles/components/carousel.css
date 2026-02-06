@@ -3,7 +3,7 @@
 }
 
 @utility carousel-container {
-  @apply flex scroll-smooth;
+  @apply flex items-center overflow-x-auto scroll-smooth;
 }
 
 @utility carousel-left-fade {

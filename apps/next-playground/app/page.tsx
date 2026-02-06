@@ -148,7 +148,7 @@ function Page() {
         <p className="heading">AccessNavigation</p>
         <AccessNavigation
           direction="x"
-          className="join mt-6">
+          className="join join-border mt-6">
           <button className="btn btn-soft">One</button>
           <button className="btn btn-soft">Two</button>
           <button className="btn btn-soft">Three</button>
@@ -162,36 +162,25 @@ function Page() {
             <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
           </Accordion.Toggle>
           <Accordion.Body>
-            <p className="p-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-              unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-              earum culpa asperiores eaque ea enim possimus vero esse!
-            </p>
+            <div className="pt-3">
+              <div className="card bg-background-thin">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                earum culpa asperiores eaque ea enim possimus vero esse!
+              </div>
+            </div>
           </Accordion.Body>
         </Accordion>
 
         <p className="heading mt-20">Breadcrumbs</p>
-        <Breadcrumbs className="breadcrumbs mt-6">
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn btn-soft">Home</button>
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn btn-soft">Articles</button>
-          </Breadcrumbs.Item>
-          <Breadcrumbs.Item
-            className="breadcrumbs-item"
-            isLastItem>
-            <button className="btn btn-fill">How to gain money?</button>
-          </Breadcrumbs.Item>
-        </Breadcrumbs>
         <Breadcrumbs
-          separator={<ChevronRightIcon className="size-5" />}
-          className="breadcrumbs mt-3">
+          separator={<ChevronRightIcon className="element-icon-size" />}
+          className="breadcrumbs element-xs mt-3">
           <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn btn-soft">Home</button>
+            <button className="btn link">Home</button>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn btn-soft">Articles</button>
+            <button className="btn link">Articles</button>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item
             className="breadcrumbs-item"
@@ -209,7 +198,7 @@ function Page() {
             {Array.from({ length: 12 }).map((_, index) => (
               <article
                 key={index}
-                className="carousel-children card slidable">
+                className="carousel-children card w-[90%] max-sm:min-w-[90%] sm:w-2/5 sm:min-w-2/5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
                 doloremque error rem ex, necessitatibus dolore deleniti alias aperiam cum
                 ipsum, suscipit possimus porro provident totam mollitia? Voluptate, eaque

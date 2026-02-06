@@ -5,11 +5,11 @@ import type { ComponentProps, ReactNode } from "react";
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 
 export type BreadcrumbsRootPropsT = ComponentProps<"nav"> & {
-  separator?: ReactNode;
+  separator: ReactNode;
 };
 
 export function BreadcrumbsRoot({
-  separator = <span>|</span>,
+  separator,
   ...p
 }: BreadcrumbsRootPropsT) {
   return (
