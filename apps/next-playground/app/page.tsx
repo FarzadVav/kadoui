@@ -15,6 +15,7 @@ import {
   FlagIcon,
   LoaderIcon,
   RefreshCwIcon,
+  SearchIcon,
   SendHorizonalIcon,
   StarIcon,
   TrashIcon,
@@ -108,6 +109,8 @@ const SWAP_KEYS = ["one", "two", "three"];
 function Page() {
   const { theme, setTheme } = useTheme();
 
+  const [page, setPage] = useState(1);
+  const [pageWithPage, setPageWithPage] = useState(1);
   const [rating, setRating] = useState(3);
   const [singleSelectBoxValue, singleSetSelectBoxValue] =
     useState<SelectBoxOptionT | null>(null);
@@ -129,7 +132,7 @@ function Page() {
           <Popover
             className="popover"
             mode="click">
-            <Popover.AccessNavigation>
+            <Popover.Navigation>
               <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
                 Theme: {theme || <LoaderIcon className="element-icon-size animate-spin" />}
               </Popover.Toggle>
@@ -139,7 +142,7 @@ function Page() {
                 <button className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("dark")}>Dark</button>
                 <button className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("system")}>System</button>
               </Popover.Body>
-            </Popover.AccessNavigation>
+            </Popover.Navigation>
           </Popover>
         </nav>
       </header>
@@ -209,10 +212,10 @@ function Page() {
           </Carousel.Container>
 
           <div className="flex items-center justify-center gap-3 mt-3">
-            <Carousel.PrevBtn className="btn btn-outline btn-square">
+            <Carousel.PrevBtn className="btn btn-outline element-square-size">
               <ArrowLeftIcon className="element-icon-size" />
             </Carousel.PrevBtn>
-            <Carousel.NextBtn className="btn btn-outline btn-square">
+            <Carousel.NextBtn className="btn btn-outline element-square-size">
               <ArrowRightIcon className="element-icon-size" />
             </Carousel.NextBtn>
           </div>
@@ -236,10 +239,10 @@ function Page() {
           </Carousel.Container>
 
           <div className="flex items-center justify-center gap-3 mt-3">
-            <Carousel.PrevBtn className="btn btn-outline btn-square">
+            <Carousel.PrevBtn className="btn btn-outline element-square-size">
               <ArrowLeftIcon className="element-icon-size" />
             </Carousel.PrevBtn>
-            <Carousel.NextBtn className="btn btn-outline btn-square">
+            <Carousel.NextBtn className="btn btn-outline element-square-size">
               <ArrowRightIcon className="element-icon-size" />
             </Carousel.NextBtn>
           </div>
@@ -291,9 +294,15 @@ function Page() {
 
           <Drawer.Portal className="drawer-portal">
             <Drawer.Body className="drawer-body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-              delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-              incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+              <label htmlFor="drawer-input" className="input input-outline">
+                <SearchIcon className="element-icon-size" />
+                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+              </label>
+              <p className="mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+              </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
@@ -301,12 +310,16 @@ function Page() {
           <Drawer.Toggle className="btn btn-soft mt-3">Open top drawer</Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
-            <Drawer.Body
-              className="drawer-body"
-              position="top">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-              delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-              incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+            <Drawer.Body className="drawer-body" position="top">
+              <label htmlFor="drawer-input" className="input input-outline">
+                <SearchIcon className="element-icon-size" />
+                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+              </label>
+              <p className="mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+              </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
@@ -314,12 +327,16 @@ function Page() {
           <Drawer.Toggle className="btn btn-soft mt-3">Open right drawer</Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
-            <Drawer.Body
-              className="drawer-body"
-              position="right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-              delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-              incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+            <Drawer.Body className="drawer-body" position="right">
+              <label htmlFor="drawer-input" className="input input-outline">
+                <SearchIcon className="element-icon-size" />
+                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+              </label>
+              <p className="mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+              </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
@@ -327,12 +344,16 @@ function Page() {
           <Drawer.Toggle className="btn btn-soft mt-3">Open bottom drawer</Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
-            <Drawer.Body
-              className="drawer-body"
-              position="bottom">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-              delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-              incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+            <Drawer.Body className="drawer-body" position="bottom">
+              <label htmlFor="drawer-input" className="input input-outline">
+                <SearchIcon className="element-icon-size" />
+                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+              </label>
+              <p className="mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
+                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
+                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+              </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
@@ -347,9 +368,15 @@ function Page() {
                 Say hello to modal
               </Modal.Header>
               <Modal.Content className="modal-content max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
-                ratione repudiandae eveniet quisquam, vitae, nobis iure voluptas harum est
-                incidunt odio? Dolorem quod numquam placeat sed beatae, natus cum porro!
+                <label className="input input-outline">
+                  <SearchIcon className="element-icon-size" />
+                  <input type="text" className="input-field" placeholder="Search..." data-modal="focus" />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
+                  ratione repudiandae eveniet quisquam, vitae, nobis iure voluptas harum est
+                  incidunt odio? Dolorem quod numquam placeat sed beatae, natus cum porro!
+                </p>
               </Modal.Content>
             </Modal.Body>
           </Modal.Portal>
@@ -359,7 +386,7 @@ function Page() {
         <Otp className="otp mt-6">
           <Otp.Inputs
             length={6}
-            className="input input-outline input-square"
+            className="input input-outline element-square-size"
             onLastChange={(otp) => alert(otp)}
           />
 
@@ -368,15 +395,15 @@ function Page() {
 
         <p className="heading mt-20">Pagination</p>
         <p className="mt-6">With state:</p>
-        <PaginationWithState pagesLength={6}>
+        <PaginationWithState pagesLength={6} page={page} setPage={setPage}>
           <div className="pagination mt-3">
-            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+            <PaginationWithState.PrevBtn className="btn btn-soft element-square-size">
               <ChevronLeftIcon className="element-icon-size" />
             </PaginationWithState.PrevBtn>
 
-            <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+            <PaginationWithState.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+            <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
               <ChevronRightIcon className="element-icon-size" />
             </PaginationWithState.NextBtn>
           </div>
@@ -385,13 +412,13 @@ function Page() {
         <Suspense>
           <PaginationWithSearchParams pagesLength={6}>
             <div className="pagination mt-3">
-              <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+              <PaginationWithSearchParams.PrevBtn className="btn btn-soft element-square-size">
                 <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithSearchParams.PrevBtn>
 
-              <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+              <PaginationWithSearchParams.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-              <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+              <PaginationWithSearchParams.NextBtn className="btn btn-soft element-square-size">
                 <ChevronRightIcon className="element-icon-size" />
               </PaginationWithSearchParams.NextBtn>
             </div>
@@ -400,18 +427,18 @@ function Page() {
 
         <p className="heading mt-20">Pagination with pages</p>
         <p className="mt-6">With state:</p>
-        <PaginationWithState pages={PAGES_WITH_STATE}>
+        <PaginationWithState pages={PAGES_WITH_STATE} page={pageWithPage} setPage={setPageWithPage}>
           <div className="max-w-96">
             <PaginationWithState.Pages />
 
             <div className="pagination mt-3">
-              <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+              <PaginationWithState.PrevBtn className="btn btn-soft element-square-size">
                 <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithState.PrevBtn>
 
-              <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+              <PaginationWithState.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-              <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+              <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
                 <ChevronRightIcon className="element-icon-size" />
               </PaginationWithState.NextBtn>
             </div>
@@ -424,13 +451,13 @@ function Page() {
               <PaginationWithSearchParams.Pages />
 
               <div className="pagination mt-3">
-                <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
+                <PaginationWithSearchParams.PrevBtn className="btn btn-soft element-square-size">
                   <ChevronLeftIcon className="element-icon-size" />
                 </PaginationWithSearchParams.PrevBtn>
 
-                <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+                <PaginationWithSearchParams.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-                <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
+                <PaginationWithSearchParams.NextBtn className="btn btn-soft element-square-size">
                   <ChevronRightIcon className="element-icon-size" />
                 </PaginationWithSearchParams.NextBtn>
               </div>
@@ -442,7 +469,7 @@ function Page() {
         <PasswordInput className="input input-outline mt-3">
           <PasswordInput.Field className="input-field" />
           <PasswordInput.Toggle
-            className="btn btn-ghost btn-sm"
+            className="btn btn-ghost element-sm"
             visibleChildren={<EyeIcon className="element-icon-size" />}>
             <EyeClosedIcon className="element-icon-size" />
           </PasswordInput.Toggle>
@@ -454,7 +481,7 @@ function Page() {
           mode="hover">
           <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
-          <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
+          <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
@@ -463,19 +490,19 @@ function Page() {
           mode="both">
           <Popover.Toggle className="btn btn-soft">Hover and click me</Popover.Toggle>
 
-          <Popover.Body className="popover-body popover-body-b card card-menu max-w-[200%]">
+          <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
         <Popover
           className="popover mt-3"
           mode="click">
-          <Popover.AccessNavigation>
+          <Popover.Navigation>
             <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
               Click me
             </Popover.Toggle>
 
-            <Popover.Body className="popover-body popover-body-b card card-menu">
+            <Popover.Body className="popover-body position-b card card-menu bg-background-thin">
               <button className="btn btn-ghost">Like</button>
               <button className="btn btn-ghost">Ignore</button>
               <button className="btn btn-ghost">Download</button>
@@ -484,7 +511,7 @@ function Page() {
                   <span>Share via</span>
                   <ChevronRightIcon className="element-icon-size" />
                 </Popover.Toggle>
-                <Popover.Body className="popover-body popover-body-r card card-menu">
+                <Popover.Body className="popover-body position-r card card-menu bg-background-thin">
                   <button className="btn btn-ghost">Link</button>
                   <button className="btn btn-ghost">Instagram</button>
                   <button className="btn btn-ghost">Telegram</button>
@@ -492,7 +519,7 @@ function Page() {
                 </Popover.Body>
               </Popover>
             </Popover.Body>
-          </Popover.AccessNavigation>
+          </Popover.Navigation>
         </Popover>
 
         <p className="heading mt-20">Portal</p>
@@ -619,9 +646,9 @@ function Page() {
         <p className="heading mt-20">Rating</p>
         <Rating className="rating mt-3">
           <Rating.Items
-            className="rating-items"
             count={5}
             value={rating}
+            className="rating-items"
             onValueChange={setRating}
             element={<StarIcon className="size-9" />}
             activeElement={<StarIcon className="fill-foreground size-9" />}
@@ -630,41 +657,40 @@ function Page() {
 
         <p className="heading mt-20">SelectBox</p>
         <div className="mt-6">
-          <p>Single select mode:</p>
-          <SelectBox className="mt-3">
-            <SelectBox.Input className="relative input input-soft group">
+          <p className="title">Single select mode:</p>
+          <SelectBox className="mt-3" options={SELECT_BOX_OPTIONS} optionValue={singleSelectBoxValue} setOptionValue={singleSetSelectBoxValue}>
+            <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
-                search
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="card card-y absolute bottom-out left-0 right-0 cursor-default z-10">
+              <SelectBox.List className="select-box-list bg-background-thin">
+                <SelectBox.SearchInput className="input input-outline">
+                  <SearchIcon className="element-icon-size" />
+                  <SelectBox.SearchField className="input-field" />
+                </SelectBox.SearchInput>
                 <SelectBox.Options
-                  options={SELECT_BOX_OPTIONS}
-                  optionValue={singleSelectBoxValue}
-                  setOptionValue={singleSetSelectBoxValue}
-                  className="btn data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill btn-full justify-start"
+                  className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill"
                 />
               </SelectBox.List>
             </SelectBox.Input>
           </SelectBox>
 
-          <p className="mt-6">Multi select mode:</p>
-          <SelectBox className="mt-3">
+          <p className="title mt-6">Multi select mode:</p>
+          <SelectBox className="mt-3" multiSelect options={SELECT_BOX_OPTIONS} optionValue={multiSelectBoxValue} setOptionValue={setMultiSelectBoxValue}>
             <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
-                search
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="select-box-list">
+              <SelectBox.List className="select-box-list bg-background-thin">
+                <SelectBox.SearchInput className="input input-outline">
+                  <SearchIcon className="element-icon-size" />
+                  <SelectBox.SearchField className="input-field" />
+                </SelectBox.SearchInput>
                 <SelectBox.Options
-                  multiSelect
-                  options={SELECT_BOX_OPTIONS}
-                  optionValue={multiSelectBoxValue}
-                  setOptionValue={setMultiSelectBoxValue}
                   className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill"
                 />
               </SelectBox.List>

@@ -4,6 +4,7 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 
 import { DrawerContext } from "./DrawerContext";
+import { FRAMER_MOTION_DURATION } from "../../configs";
 
 export type DrawerBodyPropsT = HTMLMotionProps<"div"> & {
   position?: "top" | "right" | "bottom" | "left";
@@ -16,8 +17,11 @@ export function DrawerBody({ position, dir, children, ...p }: DrawerBodyPropsT) 
 
   useEffect(() => {
     if (isOpen) {
-      const indexElement = bodyRef.current?.querySelector("[data-drawer='index']") as HTMLElement | null | undefined;
-      indexElement?.focus();
+      setTimeout(() => {
+        const focusableElement = bodyRef.current?.querySelector("[data-drawer='focus']") as
+          HTMLElement | null | undefined;
+        focusableElement?.focus();
+      }, FRAMER_MOTION_DURATION);
     };
   }, [isOpen]);
 
@@ -56,7 +60,7 @@ export function DrawerBody({ position, dir, children, ...p }: DrawerBodyPropsT) 
                 : { top: 0, bottom: 0, left: 0 }
         )
       }}
-      transition={{ ease: "easeInOut" }}
+      transition={{ ease: "easeInOut", duration: FRAMER_MOTION_DURATION }}
       {...p}
     >
       {children as ReactNode}

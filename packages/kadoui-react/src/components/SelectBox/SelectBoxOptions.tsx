@@ -1,40 +1,16 @@
 "use client";
 
-import { type ComponentProps, Dispatch, SetStateAction, use } from "react";
+import { use } from "react";
 
-import { SelectBoxOptionT } from "./types";
 import { SelectBoxContext } from "./SelectBoxContext";
+import type { SelectBoxOptionT, SelectBoxOptionsPropsT } from "./selectBoxTypes";
 
-type WithMultiSelect = {
-  multiSelect: true;
-  optionValue: SelectBoxOptionT[];
-  setOptionValue: Dispatch<SetStateAction<SelectBoxOptionT[]>>;
-};
-
-type WithSingleSelect = {
-  multiSelect?: false;
-  optionValue: SelectBoxOptionT | null;
-  setOptionValue: Dispatch<SetStateAction<SelectBoxOptionT | null>>;
-};
-
-type MergedSelectMode = WithMultiSelect | WithSingleSelect;
-
-type SelectBoxOptionsPropsT = ComponentProps<"button"> &
-  MergedSelectMode & {
-    options: SelectBoxOptionT[];
-  };
-
-export default function SelectBoxOptions({
-  options,
-  multiSelect,
-  optionValue,
-  setOptionValue,
-  ...p
-}: SelectBoxOptionsPropsT) {
-  const { setInputFocused, inputSearch, setInputSearch } = use(SelectBoxContext);
+export default function SelectBoxOptions(p: SelectBoxOptionsPropsT) {
+  const { multiSelect, options, optionValue, setOptionValue, setInputFocused, inputSearch } = use(SelectBoxContext);
 
   const filteredOptions: SelectBoxOptionT[] = [];
   const otherOptions: SelectBoxOptionT[] = [];
+
   options.forEach((item) => {
     if (item.name.toLowerCase().includes(inputSearch.toLowerCase().trim())) {
       filteredOptions.push(item);
@@ -43,8 +19,8 @@ export default function SelectBoxOptions({
     }
   });
 
-  const renderOptions = (options: SelectBoxOptionT[], isOther?: boolean) => {
-    return options.map((item) => {
+  const renderOptions = (opts: SelectBoxOptionT[], isOther?: boolean) =>
+    opts.map((item) => {
       const isSelected = multiSelect
         ? optionValue.some((v) => v.value === item.value)
         : optionValue?.value === item.value;
@@ -67,7 +43,6 @@ export default function SelectBoxOptions({
                 setOptionValue(null);
               } else {
                 setOptionValue(item);
-                setInputSearch(item.name);
                 setInputFocused(false);
               }
             }
@@ -77,7 +52,6 @@ export default function SelectBoxOptions({
         </button>
       );
     });
-  };
 
   return (
     <>

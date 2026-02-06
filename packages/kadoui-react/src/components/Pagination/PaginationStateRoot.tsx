@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { SetStateAction, Dispatch } from "react";
 
 import { PaginationPropsT } from "./PaginationTypes";
 import { PaginationContext } from "./PaginationContext";
 
-export function PaginationStateRoot({ pages, pagesLength, ...p }: PaginationPropsT) {
-  const [page, setPage] = useState(1);
+type PaginationStateRootPropsT = PaginationPropsT & {
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
+}
 
+export function PaginationStateRoot({ page, setPage, pages, pagesLength, ...p }: PaginationStateRootPropsT) {
   const correctPagesLength = (pages?.length || pagesLength) as number;
 
   const nextPage = () => setPage((prev) => (prev < correctPagesLength ? prev + 1 : prev));

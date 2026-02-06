@@ -3,5 +3,5 @@
 }
 
 @utility rating-items {
-  @apply transition-all px-[calc(var(--element-spacing)/2)] not-active:hover:-translate-y-[calc(var(--element-spacing)/2)];
+  @apply transition-all px-1 not-active:hover:-translate-y-1;
 }

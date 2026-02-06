@@ -7,9 +7,9 @@
 }
 
 @utility modal-header {
-  @apply w-full h-[calc(var(--element-h)*1.5)] flex items-center px-(--element-spacing) bg-background rounded-t-(--element-rounded-lg) border-b border-background-thin sticky top-0;
+  @apply w-full h-[calc(var(--element-h)*1.5)] flex items-center px-(--element-spacing) bg-background rounded-t-(--element-rounded) border-b border-background-thin sticky top-0;
 }
 
 @utility modal-content {
-  @apply w-full py-(--element-spacing) px-(--element-spacing) bg-background rounded-b-(--element-rounded-lg) max-h-[calc(100%-(var(--element-h)*1.5))] overflow-y-auto;
+  @apply w-full py-(--element-spacing) px-(--element-spacing) bg-background rounded-b-(--element-rounded) max-h-[calc(100%-(var(--element-h)*1.5))] overflow-y-auto;
 }

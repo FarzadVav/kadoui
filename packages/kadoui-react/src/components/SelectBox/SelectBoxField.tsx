@@ -1,22 +1,18 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
+import type { SelectBoxFieldPropsT } from "./selectBoxTypes";
 
-type SelectBoxFieldPropsT = ComponentProps<"input"> & {
-  search?: boolean;
-};
-
-export default function SelectBoxField({ search, ...p }: SelectBoxFieldPropsT) {
-  const { setInputFocused, inputSearch, setInputSearch } = use(SelectBoxContext);
+export default function SelectBoxField(p: SelectBoxFieldPropsT) {
+  const { multiSelect, optionValue, setInputFocused } = use(SelectBoxContext);
 
   return (
     <input
+      readOnly
       onFocus={() => setInputFocused(true)}
-      value={search ? inputSearch : undefined}
-      onChange={search ? (e) => setInputSearch(e.target.value) : undefined}
-      readOnly={!search}
+      defaultValue={multiSelect ? optionValue.map(val => val.name).join(", ") : optionValue?.name}
       {...p}
     />
   );

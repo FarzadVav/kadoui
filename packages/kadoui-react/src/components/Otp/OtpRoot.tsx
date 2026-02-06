@@ -8,14 +8,18 @@ import {
   AccessNavigationPropsT,
 } from "../AccessNavigation/AccessNavigation";
 
-export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction">;
+export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction"> & {
+  autoFocus?: boolean;
+};
 
-export function OtpRoot(p: OtpRootPropsT) {
+export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
-    inputs.current[0]?.focus();
-  }, []);
+    if (autoFocus) {
+      inputs.current[0]?.focus();
+    }
+  }, [autoFocus]);
 
   const getInputsValue = () => {
     return inputs?.current.map((input) => input?.value || "").join("") || "";

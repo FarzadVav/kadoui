@@ -1,12 +1,7 @@
 "use client";
 
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-type SelectBoxContextT = {
-  inputFocused: boolean;
-  setInputFocused: Dispatch<SetStateAction<boolean>>;
-  inputSearch: string;
-  setInputSearch: Dispatch<SetStateAction<string>>;
-};
+import type { SelectBoxContextT } from "./selectBoxTypes";
 
 export const SelectBoxContext = createContext({} as SelectBoxContextT);

@@ -1,6 +1,4 @@
-import type { ComponentProps } from "react";
-
-type SelectBoxInputPropsT = ComponentProps<"label">;
+import type { SelectBoxInputPropsT } from "./selectBoxTypes";
 
 export default function SelectBoxInput(p: SelectBoxInputPropsT) {
   return <label {...p} />;

@@ -1,0 +1,1 @@
+export const FRAMER_MOTION_DURATION = 0.150;

@@ -3,6 +3,6 @@ import {
   AccessNavigationPropsT,
 } from "../AccessNavigation/AccessNavigation";
 
-export function PopoverAccessNavigation(p: AccessNavigationPropsT) {
+export function PopoverNavigation(p: AccessNavigationPropsT) {
   return <AccessNavigation {...p} />;
 }

@@ -1,10 +1,10 @@
 import { PopoverBody } from "./PopoverBody";
 import { PopoverRoot } from "./PopoverRoot";
 import { PopoverToggle } from "./PopoverToggle";
-import { PopoverAccessNavigation } from "./PopoverAccessNavigation";
+import { PopoverNavigation } from "./PopoverNavigation";
 
 export const Popover = Object.assign(PopoverRoot, {
-  AccessNavigation: PopoverAccessNavigation,
+  Navigation: PopoverNavigation,
   Toggle: PopoverToggle,
   Body: PopoverBody,
 });

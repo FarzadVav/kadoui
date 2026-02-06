@@ -1,9 +1,9 @@
 @utility select-box-input {
-  @apply relative;
+  @apply relative cursor-pointer *:cursor-pointer;
 }
 
 @utility select-box-list {
-  @apply card card-y absolute bottom-out left-0 right-0 cursor-default z-10;
+  @apply card card-y absolute position-b w-full cursor-default z-10;
 }
 
 @utility select-box-option {
