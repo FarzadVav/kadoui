@@ -1,13 +1,13 @@
 "use client"
 
-import { HTMLAttributes, useEffect, useRef, useState } from "react";
+import { type ComponentProps, useEffect, useRef, useState } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
-export type ShowMoreRootPropsT = HTMLAttributes<HTMLDivElement> & {
+export type ShowMoreRootPropsT = ComponentProps<"div"> & {
   maxLines: number;
   defaultExpanded?: boolean;
-}
+};
 
 export function ShowMoreRoot({ maxLines, defaultExpanded = false, style, ...p }: ShowMoreRootPropsT) {
   const [shouldShowMore, setShouldShowMore] = useState(false);

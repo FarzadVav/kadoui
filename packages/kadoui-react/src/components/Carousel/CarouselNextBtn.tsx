@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
-export type CarouselNextBtnPropsT = HTMLAttributes<HTMLButtonElement>;
+export type CarouselNextBtnPropsT = ComponentProps<"button">;
 
 export function CarouselNextBtn({ onClick, ...props }: CarouselNextBtnPropsT) {
   const { scrollRef, childrenWidth } = use(CarouselContext);

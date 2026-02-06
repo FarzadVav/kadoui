@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, HTMLAttributes } from "react";
+import { useState, useEffect, type ComponentProps } from "react";
 
-export type AffixPropsT = HTMLAttributes<HTMLButtonElement>;
+export type AffixPropsT = ComponentProps<"button">;
 
 export const Affix = ({ onClick, ...p }: AffixPropsT) => {
   const [isVisible, setIsVisible] = useState(false);

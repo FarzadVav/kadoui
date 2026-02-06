@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { PopoverContext } from "./PopoverContext";
 
-export type PopoverBodyPropsT = HTMLAttributes<HTMLDivElement> & {
+export type PopoverBodyPropsT = ComponentProps<"div"> & {
   preventClose?: boolean;
 };
 

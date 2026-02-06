@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, ReactNode, use } from "react";
+import { type ComponentProps, ReactNode, use } from "react";
 
 import { AccordionContext } from "./AccordionContext";
 
-export type AccordionTogglePropsT = HTMLAttributes<HTMLButtonElement> & {
+export type AccordionTogglePropsT = ComponentProps<"button"> & {
   icon?: ReactNode;
 };
 

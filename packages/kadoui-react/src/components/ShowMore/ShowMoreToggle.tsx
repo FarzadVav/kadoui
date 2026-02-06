@@ -1,10 +1,10 @@
 "use client";
 
-import { ButtonHTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
-export type ShowMoreTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement>;
+export type ShowMoreTogglePropsT = ComponentProps<"button">;
 
 export function ShowMoreToggle({ onClick, style, ...p }: ShowMoreTogglePropsT) {
   const { setIsShowMore } = use(ShowMoreContext);

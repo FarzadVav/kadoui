@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonHTMLAttributes, Dispatch, SetStateAction, use } from "react";
+import { type ComponentProps, Dispatch, SetStateAction, use } from "react";
 
 import { SelectBoxOptionT } from "./types";
 import { SelectBoxContext } from "./SelectBoxContext";
@@ -19,7 +19,7 @@ type WithSingleSelect = {
 
 type MergedSelectMode = WithMultiSelect | WithSingleSelect;
 
-type SelectBoxOptionsPropsT = ButtonHTMLAttributes<HTMLButtonElement> &
+type SelectBoxOptionsPropsT = ComponentProps<"button"> &
   MergedSelectMode & {
     options: SelectBoxOptionT[];
   };

@@ -1,10 +1,10 @@
 "use client"
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 
-export type ShowMoreContentPropsT = HTMLAttributes<HTMLDivElement>;
+export type ShowMoreContentPropsT = ComponentProps<"div">;
 
 export function ShowMoreContent({ children, style, ...props }: ShowMoreContentPropsT) {
   const { contentRef, shouldShowMore, isShowMore, maxHeight } = use(ShowMoreContext);

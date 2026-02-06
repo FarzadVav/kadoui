@@ -1,16 +1,16 @@
 "use client";
 
-import { ButtonHTMLAttributes, ReactNode, use } from "react";
+import { type ComponentProps, ReactNode, use } from "react";
 
 import { RatingContext } from "./RatingContext";
 
-export type RatingItemsPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type RatingItemsPropsT = ComponentProps<"button"> & {
   count: number;
   value: number;
   onValueChange: (newValue: number) => void;
   element: ReactNode;
   activeElement: ReactNode;
-}
+};
 
 export function RatingItems({ count, value, onValueChange, element, activeElement, ...p }: RatingItemsPropsT) {
   const { hoverValue, setHoverValue } = use(RatingContext);

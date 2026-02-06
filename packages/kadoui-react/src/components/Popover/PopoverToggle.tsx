@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { PopoverContext } from "./PopoverContext";
 
-export type PopoverTogglePropsT = HTMLAttributes<HTMLButtonElement>;
+export type PopoverTogglePropsT = ComponentProps<"button">;
 
 export function PopoverToggle({ onClick, ...props }: PopoverTogglePropsT) {
   const { mode, toggleRef, isOpen, setOpen } = use(PopoverContext);

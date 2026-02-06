@@ -1,8 +1,8 @@
 "use client";
 
-import type { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-export type ModalHeaderPropsT = HTMLAttributes<HTMLDivElement>;
+export type ModalHeaderPropsT = ComponentProps<"div">;
 
 export function ModalHeader({ onClick, ...p }: ModalHeaderPropsT) {
   return (

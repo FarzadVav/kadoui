@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, KeyboardEvent, RefObject, useEffect, useRef } from "react";
+import { ComponentPropsWithoutRef, KeyboardEvent, RefObject, useEffect, useRef } from "react";
 
 import { selectAccessibleChildren } from "../../utils";
 
-export type AccessNavigationPropsT = HTMLAttributes<HTMLDivElement> & {
+export type AccessNavigationPropsT = ComponentPropsWithoutRef<"div"> & {
   ref?: RefObject<HTMLDivElement | null>;
   focusOnMount?: boolean;
   direction?: "y" | "x";

@@ -1,11 +1,11 @@
 "use client";
 
-import { HTMLAttributes, use, useEffect } from "react";
+import { type ComponentProps, use, useEffect } from "react";
 
 import { selectAccessibleChildren } from "../../utils";
 import { ContextMenuContext } from "./ContextMenuContext";
 
-export type ContextMenuBodyPropsT = HTMLAttributes<HTMLDivElement>;
+export type ContextMenuBodyPropsT = ComponentProps<"div">;
 
 export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);

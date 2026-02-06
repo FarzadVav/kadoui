@@ -1,13 +1,10 @@
 "use client";
 
-import { ButtonHTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
 
-export type PaginationCountsPropsT = Omit<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  "children"
->;
+export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children">;
 
 export function PaginationCounts({ onClick, ...p }: PaginationCountsPropsT) {
   const { pagesLength, page, setPage } = use(PaginationContext);

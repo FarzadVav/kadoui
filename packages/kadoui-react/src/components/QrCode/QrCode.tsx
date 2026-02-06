@@ -1,9 +1,9 @@
 "use client";
 
 import QRCode, { QRCodeRenderersOptions } from "qrcode";
-import { CanvasHTMLAttributes, useEffect, useRef } from "react";
+import { type ComponentProps, useEffect, useRef } from "react";
 
-export type QrCodePropsT = CanvasHTMLAttributes<HTMLCanvasElement> & {
+export type QrCodePropsT = ComponentProps<"canvas"> & {
   value: string;
   options?: QRCodeRenderersOptions;
 };

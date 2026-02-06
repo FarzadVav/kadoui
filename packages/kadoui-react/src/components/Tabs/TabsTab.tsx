@@ -1,10 +1,10 @@
 "use client";
 
-import { type HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { TabsContext } from "./TabsContext";
 
-export type TabsTabPropsT = HTMLAttributes<HTMLButtonElement> & {
+export type TabsTabPropsT = ComponentProps<"button"> & {
   value: string;
 };
 

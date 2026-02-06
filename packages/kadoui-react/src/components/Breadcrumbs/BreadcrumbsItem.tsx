@@ -1,10 +1,10 @@
 "use client";
 
-import { type HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 
-export type BreadcrumbsItemPropsT = HTMLAttributes<HTMLDivElement> & {
+export type BreadcrumbsItemPropsT = ComponentProps<"div"> & {
   isLastItem?: boolean;
 };
 

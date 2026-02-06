@@ -1,11 +1,11 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import { SubmitContext } from "./SubmitContext";
 
-export type SubmitRootPropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type SubmitRootPropsT = ComponentProps<"button"> & {
   loader?: ReactNode;
 };
 

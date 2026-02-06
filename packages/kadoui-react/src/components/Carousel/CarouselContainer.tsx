@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
-export type CarouselContainerPropsT = HTMLAttributes<HTMLDivElement>;
+export type CarouselContainerPropsT = ComponentProps<"div">;
 
 export function CarouselContainer({ children, ...p }: CarouselContainerPropsT) {
   const { scrollRef } = use(CarouselContext);

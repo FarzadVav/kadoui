@@ -1,6 +1,6 @@
-import { LabelHTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-type SelectBoxInputPropsT = LabelHTMLAttributes<HTMLLabelElement>;
+type SelectBoxInputPropsT = ComponentProps<"label">;
 
 export default function SelectBoxInput(p: SelectBoxInputPropsT) {
   return <label {...p} />;

@@ -1,10 +1,10 @@
 "use client";
 
-import { ButtonHTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { DrawerContext } from "./DrawerContext";
 
-export type DrawerTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement>;
+export type DrawerTogglePropsT = ComponentProps<"button">;
 
 export function DrawerToggle({ onClick, ...props }: DrawerTogglePropsT) {
   const { setOpen } = use(DrawerContext);

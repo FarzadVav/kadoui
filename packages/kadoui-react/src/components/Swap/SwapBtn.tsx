@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { SwapContext } from "./SwapContext";
 
-export type SwapBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
+export type SwapBtnPropsT = ComponentProps<"button"> & {
   btnKey: string;
 };
 

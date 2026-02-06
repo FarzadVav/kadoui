@@ -1,11 +1,11 @@
 "use client";
 
-import { HTMLAttributes, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
+import { type ComponentProps, MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { getBrowserScrollbarWith } from "../../utils";
 import { ContextMenuContext, ContextMenuContextT } from "./ContextMenuContext";
 
-export type ContextMenuRootPropsT = HTMLAttributes<HTMLDivElement>;
+export type ContextMenuRootPropsT = ComponentProps<"div">;
 
 export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) {
   const [position, setPosition] = useState<ContextMenuContextT["position"]>(undefined);

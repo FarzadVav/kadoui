@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 
-type SelectBoxListPropsT = HTMLAttributes<HTMLDivElement>;
+type SelectBoxListPropsT = ComponentProps<"div">;
 
 export default function SelectBoxList(p: SelectBoxListPropsT) {
   const { inputFocused } = use(SelectBoxContext);

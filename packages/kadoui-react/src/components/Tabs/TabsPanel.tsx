@@ -1,12 +1,12 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { TabsContext } from "./TabsContext";
 
-export type TabsPanelPropsT = HTMLAttributes<HTMLDivElement> & {
+export type TabsPanelPropsT = ComponentProps<"div"> & {
   value: string;
-}
+};
 
 export function TabsPanel({ value, ...p }: TabsPanelPropsT) {
   const { activeTab } = use(TabsContext);

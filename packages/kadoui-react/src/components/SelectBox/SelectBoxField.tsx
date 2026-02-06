@@ -1,10 +1,10 @@
 "use client";
 
-import { InputHTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 
-type SelectBoxFieldPropsT = InputHTMLAttributes<HTMLInputElement> & {
+type SelectBoxFieldPropsT = ComponentProps<"input"> & {
   search?: boolean;
 };
 

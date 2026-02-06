@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 export type PaginationPagesT = {
   name: string;
@@ -17,4 +17,4 @@ type PaginationWithPagesT = {
 
 type MergedPaginationT = PaginationWithLengthT | PaginationWithPagesT;
 
-export type PaginationPropsT = HTMLAttributes<HTMLDivElement> & MergedPaginationT;
+export type PaginationPropsT = ComponentProps<"div"> & MergedPaginationT;

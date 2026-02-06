@@ -1,10 +1,10 @@
 "use client";
 
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 
-export type BreadcrumbsRootPropsT = HTMLAttributes<HTMLElement> & {
+export type BreadcrumbsRootPropsT = ComponentProps<"nav"> & {
   separator?: ReactNode;
 };
 

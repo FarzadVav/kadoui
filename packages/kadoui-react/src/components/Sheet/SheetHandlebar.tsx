@@ -1,8 +1,8 @@
 "use client";
 
-import { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-export type SheetHandlebarPropsT = HTMLAttributes<HTMLDivElement>;
+export type SheetHandlebarPropsT = ComponentProps<"div">;
 
 export function SheetHandlebar({ ...p }: SheetHandlebarPropsT) {
   return <div {...p} />;

@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
-type CarouselRightFadePropsT = HTMLAttributes<HTMLDivElement>;
+type CarouselRightFadePropsT = ComponentProps<"div">;
 
 export function CarouselRightFade({ style, ...p }: CarouselRightFadePropsT) {
   const { rightOpacity } = use(CarouselContext);

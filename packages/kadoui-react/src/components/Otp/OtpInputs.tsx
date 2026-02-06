@@ -1,13 +1,13 @@
 "use client";
 
-import { ClipboardEvent, InputHTMLAttributes, KeyboardEvent, use } from "react";
+import { ClipboardEvent, type ComponentProps, KeyboardEvent, use } from "react";
 
 import { OtpContext } from "./OtpContext";
 
-export type OtpInputsPropsT = InputHTMLAttributes<HTMLInputElement> & {
+export type OtpInputsPropsT = ComponentProps<"input"> & {
   length: number;
   onLastChange?: (otp: string) => void;
-}
+};
 
 export function OtpInputs({ name, length, onLastChange, ...props }: OtpInputsPropsT) {
   const { inputs, getInputsValue } = use(OtpContext);

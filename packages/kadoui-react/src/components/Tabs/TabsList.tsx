@@ -1,8 +1,8 @@
 "use client"
 
-import { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-export type TabsListPropsT = HTMLAttributes<HTMLDivElement>;
+export type TabsListPropsT = ComponentProps<"div">;
 
 export function TabsList(p: TabsListPropsT) {
   return <div {...p} />;

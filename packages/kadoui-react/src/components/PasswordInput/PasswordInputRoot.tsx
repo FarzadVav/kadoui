@@ -1,10 +1,10 @@
 "use client";
 
-import { LabelHTMLAttributes, useState } from "react";
+import { type ComponentProps, useState } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
 
-export type PasswordInputRootPropsT = LabelHTMLAttributes<HTMLLabelElement>;
+export type PasswordInputRootPropsT = ComponentProps<"label">;
 
 export function PasswordInputRoot(props: PasswordInputRootPropsT) {
   const [isVisible, setIsVisible] = useState(false);

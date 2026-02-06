@@ -1,10 +1,10 @@
 "use client";
 
-import { InputHTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
 
-export type PasswordInputFieldPropsT = InputHTMLAttributes<HTMLInputElement>;
+export type PasswordInputFieldPropsT = ComponentProps<"input">;
 
 export function PasswordInputField(props: PasswordInputFieldPropsT) {
   const { isVisible } = use(PasswordInputContext);

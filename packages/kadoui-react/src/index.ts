@@ -25,4 +25,4 @@ export * from "./components/Tabs/Tabs";
 export * from "./components/Choice/Choice";
 export * from "./components/Submit/Submit";
 export * from "./components/LinkLoader/LinkLoader";
-export * from "./components/ThemeAdapter/ThemeAdapter";
+export * from "./components/Theme/Theme";

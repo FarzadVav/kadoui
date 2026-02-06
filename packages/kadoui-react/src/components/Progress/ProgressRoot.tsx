@@ -1,13 +1,13 @@
 "use client"
 
-import type { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
 import { ProgressContext } from "./ProgressContext";
 
-export type ProgressRootPropsT = HTMLAttributes<HTMLDivElement> & {
+export type ProgressRootPropsT = ComponentProps<"div"> & {
   value: number;
   maxValue?: number;
-}
+};
 
 export function ProgressRoot({ value, maxValue = 100, ...p }: ProgressRootPropsT) {
   return (

@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, useEffect, useRef, useState } from "react";
+import { type ComponentProps, useEffect, useRef, useState } from "react";
 
 import { CarouselContext } from "./CarouselContext";
 
-export type CarouselRootPropsT = HTMLAttributes<HTMLDivElement>;
+export type CarouselRootPropsT = ComponentProps<"div">;
 
 export function CarouselRoot({ dir, ...p }: CarouselRootPropsT) {
   const scrollRef = useRef<HTMLDivElement>(null);

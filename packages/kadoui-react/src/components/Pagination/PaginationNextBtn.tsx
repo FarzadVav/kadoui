@@ -1,10 +1,10 @@
 "use client";
 
-import { HTMLAttributes, use } from "react";
+import { type ComponentProps, use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
 
-export type PaginationNextBtnPropsT = HTMLAttributes<HTMLButtonElement> & {
+export type PaginationNextBtnPropsT = ComponentProps<"button"> & {
   disabled?: boolean;
 };
 

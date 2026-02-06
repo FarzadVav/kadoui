@@ -1,10 +1,10 @@
 "use client";
 
-import { ButtonHTMLAttributes, ReactNode, use } from "react";
+import { type ComponentProps, ReactNode, use } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
 
-export type PasswordInputTogglePropsT = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type PasswordInputTogglePropsT = ComponentProps<"button"> & {
   visibleChildren: ReactNode;
 };
 

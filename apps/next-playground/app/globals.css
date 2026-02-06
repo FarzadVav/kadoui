@@ -1,44 +1,119 @@
 @import "tailwindcss";
 @import "@kadoui/tailwindcss";
 
-@theme {
-  --color-*: initial;
-  --color-background: #efefef;
-  --color-background-thick: #dfdfdf;
-  --color-foreground: #151515;
+:root {
+  --background: #efefef;
+  --background-thin: #ffffff;
+  --background-thick: #dfdfdf;
+  --foreground: #151515;
+  --foreground-thin: #303030;
+  --foreground-thick: #000000;
+  --primary: #ff5e00;
+  --primary-foreground: #ffffff;
+  --secondary: #ab00c2;
+  --secondary-foreground: #ffffff;
+  --error: #ff0000;
+  --error-foreground: #ffffff;
+  --success: #00b600;
+  --success-foreground: #ffffff;
+  --warning: #ffd900;
+  --warning-foreground: #ffffff;
+  --info: #0000dd;
+  --info-foreground: #ffffff;
 
-  --color-palette: var(--color-foreground);
-  --color-brush: var(--color-background);
+  --palette: var(--foreground);
+  --brush: var(--background);
+
+  --element-xs-h: calc(var(--spacing) * 6);
+  --element-sm-h: calc(var(--spacing) * 8);
+  --element-medium-h: calc(var(--spacing) * 10);
+  --element-lg-h: calc(var(--spacing) * 12);
+  --element-xl-h: calc(var(--spacing) * 14);
+
+  --element-xs-spacing: calc(var(--spacing) * 1);
+  --element-sm-spacing: calc(var(--spacing) * 1.5);
+  --element-medium-spacing: calc(var(--spacing) * 3);
+  --element-lg-spacing: calc(var(--spacing) * 6);
+  --element-xl-spacing: calc(var(--spacing) * 9);
+
+  --element-xs-text: var(--text-xs);
+  --element-sm-text: var(--text-sm);
+  --element-medium-text: var(--text-base);
+  --element-lg-text: var(--text-lg);
+  --element-xl-text: var(--text-xl);
+
+  --element-xs-leading: var(--tw-leading, var(--text-xs--line-height));
+  --element-sm-leading: var(--tw-leading, var(--text-sm--line-height));
+  --element-medium-leading: var(--tw-leading, var(--text-base--line-height));
+  --element-lg-leading: var(--tw-leading, var(--text-lg--line-height));
+  --element-xl-leading: var(--tw-leading, var(--text-xl--line-height));
+
+  --element-xs-rounded: var(--radius-sm);
+  --element-sm-rounded: var(--radius-md);
+  --element-medium-rounded: var(--radius-lg);
+  --element-lg-rounded: var(--radius-xl);
+  --element-xl-rounded: var(--radius-2xl);
+
+  --element-h: var(--element-medium-h);
+  --element-spacing: var(--element-medium-spacing);
+  --element-text: var(--element-medium-text);
+  --element-leading: var(--element-medium-leading);
+  --element-rounded: var(--element-medium-rounded);
 }
+
+@theme {
+  --color-background: var(--background);
+  --color-background-thin: var(--background-thin);
+  --color-background-thick: var(--background-thick);
+  --color-foreground: var(--foreground);
+  --color-foreground-thin: var(--foreground-thin);
+  --color-foreground-thick: var(--foreground-thick);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-palette: var(--palette);
+  --color-brush: var(--brush);
+}
+
+/* Dark mode */
 
 [data-theme="dark"] {
-  --color-background: #151515;
-  --color-background-thick: #202020;
-  --color-foreground: #fafafa;
+  --background: #151515;
+  --background-thin: #303030;
+  --background-thick: #000000;
+  --foreground: #efefef;
+  --foreground-thin: #ffffff;
+  --foreground-thick: #dfdfdf;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-@utility palette-background {
-  --color-palette: var(--color-background);
-  --color-brush: var(--color-foreground);
-}
-
-@utility palette-background-thick {
-  --color-palette: var(--color-background-thick);
-  --color-brush: var(--color-foreground);
-}
-
-@utility palette-foreground {
-  --color-palette: var(--color-foreground);
-}
+/* Base styles */
 
 @layer base {
-  html {
+  body {
     font-family: sans-serif;
   }
 }
 
+/* Layout utilities */
+
+@utility wrapper {
+  @apply px-(--element-spacing) max-w-5xl mx-auto;
+}
+
 @utility heading {
   @apply text-5xl font-black;
+}
+
+@utility title {
+  @apply text-2xl font-bold;
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { HTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-export type SheetContentPropsT = HTMLAttributes<HTMLDivElement>;
+export type SheetContentPropsT = ComponentProps<"div">;
 
 export function SheetContent({ style, onScroll, ...p }: SheetContentPropsT) {
   return (
