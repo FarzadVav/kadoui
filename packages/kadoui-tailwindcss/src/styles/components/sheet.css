@@ -7,7 +7,7 @@
 }
 
 @utility sheet-header {
-  @apply p-3 f-center;
+  @apply p-(--element-spacing) flex items-center justify-center;
 }
 
 @utility sheet-handlebar {
@@ -15,5 +15,5 @@
 }
 
 @utility sheet-content {
-  @apply overflow-y-auto flex-1 p-3;
+  @apply overflow-y-auto flex-1 p-(--element-spacing);
 }

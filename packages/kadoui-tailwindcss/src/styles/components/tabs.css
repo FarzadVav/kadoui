@@ -3,5 +3,5 @@
 }
 
 @utility tabs-panel {
-  @apply card mt-1.5;
+  @apply card mt-[calc(var(--element-spacing)/2)];
 }

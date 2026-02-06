@@ -1,15 +1,15 @@
 @utility modal-portal {
-  @apply fixed inset-0 z-50 f-center bg-foreground/50;
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-foreground/50;
 }
 
 @utility modal-body {
-  @apply w-max max-w-[90%] h-full max-h-[90%] f-center flex-col;
+  @apply w-max max-w-[90%] h-full max-h-[90%] flex items-center justify-center flex-col;
 }
 
 @utility modal-header {
-  @apply w-full h-16 f-align px-3 bg-background rounded-t-2xl border-b border-separator sticky top-0;
+  @apply w-full h-[calc(var(--element-h)*1.5)] flex items-center px-(--element-spacing) bg-background rounded-t-(--element-rounded-lg) border-b border-separator sticky top-0;
 }
 
 @utility modal-content {
-  @apply w-full py-3 px-3 bg-background rounded-b-2xl max-h-[calc(100%-4rem)] overflow-y-auto;
+  @apply w-full py-(--element-spacing) px-(--element-spacing) bg-background rounded-b-(--element-rounded-lg) max-h-[calc(100%-(var(--element-h)*1.5))] overflow-y-auto;
 }

@@ -3,5 +3,5 @@
 }
 
 @utility drawer-body {
-  @apply absolute bg-background p-3 overflow-y-auto;
+  @apply absolute bg-background p-(--element-spacing) overflow-y-auto;
 }

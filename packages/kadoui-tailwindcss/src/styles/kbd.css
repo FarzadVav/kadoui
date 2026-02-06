@@ -1,32 +1,13 @@
 @utility kbd {
-  --kbd-p: calc(var(--spacing) * 3);
-  --kbd-radius: var(--radius-lg);
-  --kbd-text: var(--text-sm);
-  --kbd-line: var(--tw-leading, var(--text-sm--line-height));
+  @apply bg-palette/10 text-palette transition-transform active:translate-y-0.5;
 
-  @apply bg-background-thick transition-transform active:translate-y-0.5;
-
-  padding: var(--kbd-p);
-  border-radius: var(--kbd-radius);
-  font-size: var(--kbd-text);
-  line-height: var(--kbd-line);
-  box-shadow: 0 2px 0 1px var(--color-foreground);
+  padding: var(--element-spacing);
+  border-radius: var(--element-rounded);
+  font-size: var(--element-text);
+  line-height: var(--element-line);
+  box-shadow: 0 2px 0 1px var(--color-palette);
 
   &:active {
-    box-shadow: 0 1px 0 1px var(--color-foreground);
+    box-shadow: 0 1px 0 1px var(--color-palette);
   }
-}
-
-@utility kbd-sm {
-  --kbd-p: calc(var(--spacing) * 1.5);
-  --kbd-radius: var(--radius-md);
-  --kbd-text: var(--text-xs);
-  --kbd-line: var(--tw-leading, var(--text-xs--line-height));
-}
-
-@utility kbd-lg {
-  --kbd-p: calc(var(--spacing) * 6);
-  --kbd-radius: var(--radius-xl);
-  --kbd-text: var(--text-base);
-  --kbd-line: var(--tw-leading, var(--text-base--line-height));
 }

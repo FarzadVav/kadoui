@@ -133,7 +133,7 @@ function Page() {
       <Accordion>
         <Accordion.Toggle className="btn btn-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
           <span>Open accordion</span>
-          <ChevronDownIcon className="transition-transform btn-icon-size group-data-[state=true]:-scale-y-100" />
+          <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
         </Accordion.Toggle>
         <Accordion.Body>
           <p className="p-3">
@@ -192,12 +192,12 @@ function Page() {
           ))}
         </Carousel.Container>
 
-        <div className="f-center gap-3 mt-3">
+        <div className="flex items-center justify-center gap-3 mt-3">
           <Carousel.PrevBtn className="btn btn-outline btn-square">
-            <ArrowLeftIcon className="btn-icon-size" />
+            <ArrowLeftIcon className="element-icon-size" />
           </Carousel.PrevBtn>
           <Carousel.NextBtn className="btn btn-outline btn-square">
-            <ArrowRightIcon className="btn-icon-size" />
+            <ArrowRightIcon className="element-icon-size" />
           </Carousel.NextBtn>
         </div>
       </Carousel>
@@ -212,8 +212,8 @@ function Page() {
       <Clipboard
         text="Kadoui-react"
         className="btn btn-soft btn-square mt-6"
-        copiedChildren={<CopyCheckIcon className="btn-icon-size" />}>
-        <CopyIcon className="btn-icon-size" />
+        copiedChildren={<CopyCheckIcon className="element-icon-size" />}>
+        <CopyIcon className="element-icon-size" />
       </Clipboard>
 
       <p className="heading mt-20">ContextMenu</p>
@@ -324,13 +324,13 @@ function Page() {
       <PaginationWithState pagesLength={6}>
         <div className="pagination mt-3">
           <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-            <ChevronLeftIcon className="btn-icon-size" />
+            <ChevronLeftIcon className="element-icon-size" />
           </PaginationWithState.PrevBtn>
 
           <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
           <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-            <ChevronRightIcon className="btn-icon-size" />
+            <ChevronRightIcon className="element-icon-size" />
           </PaginationWithState.NextBtn>
         </div>
       </PaginationWithState>
@@ -339,13 +339,13 @@ function Page() {
         <PaginationWithSearchParams pagesLength={6}>
           <div className="pagination mt-3">
             <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-              <ChevronLeftIcon className="btn-icon-size" />
+              <ChevronLeftIcon className="element-icon-size" />
             </PaginationWithSearchParams.PrevBtn>
 
             <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
             <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-              <ChevronRightIcon className="btn-icon-size" />
+              <ChevronRightIcon className="element-icon-size" />
             </PaginationWithSearchParams.NextBtn>
           </div>
         </PaginationWithSearchParams>
@@ -359,13 +359,13 @@ function Page() {
 
           <div className="pagination mt-3">
             <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-              <ChevronLeftIcon className="btn-icon-size" />
+              <ChevronLeftIcon className="element-icon-size" />
             </PaginationWithState.PrevBtn>
 
             <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
             <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-              <ChevronRightIcon className="btn-icon-size" />
+              <ChevronRightIcon className="element-icon-size" />
             </PaginationWithState.NextBtn>
           </div>
         </div>
@@ -378,13 +378,13 @@ function Page() {
 
             <div className="pagination mt-3">
               <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-                <ChevronLeftIcon className="btn-icon-size" />
+                <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithSearchParams.PrevBtn>
 
               <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
               <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-                <ChevronRightIcon className="btn-icon-size" />
+                <ChevronRightIcon className="element-icon-size" />
               </PaginationWithSearchParams.NextBtn>
             </div>
           </div>
@@ -396,8 +396,8 @@ function Page() {
         <PasswordInput.Field className="input-field" />
         <PasswordInput.Toggle
           className="btn btn-ghost btn-sm"
-          visibleChildren={<EyeIcon className="btn-icon-size" />}>
-          <EyeClosedIcon className="btn-icon-size" />
+          visibleChildren={<EyeIcon className="element-icon-size" />}>
+          <EyeClosedIcon className="element-icon-size" />
         </PasswordInput.Toggle>
       </PasswordInput>
 
@@ -435,7 +435,7 @@ function Page() {
             <Popover className="popover">
               <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
-                <ChevronRightIcon className="btn-icon-size" />
+                <ChevronRightIcon className="element-icon-size" />
               </Popover.Toggle>
               <Popover.Body className="popover-body popover-body-r card card-menu">
                 <button className="btn btn-ghost">Link</button>
@@ -586,7 +586,7 @@ function Page() {
         <p>Single select mode:</p>
         <SelectBox className="mt-3">
           <SelectBox.Input className="relative input input-soft group">
-            <ChevronDownIcon className="input-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
             <SelectBox.Field
               search
               className="input-field"
@@ -606,7 +606,7 @@ function Page() {
         <p className="mt-6">Multi select mode:</p>
         <SelectBox className="mt-3">
           <SelectBox.Input className="select-box-input input input-soft group">
-            <ChevronDownIcon className="input-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
             <SelectBox.Field
               search
               className="input-field"
@@ -679,8 +679,8 @@ function Page() {
         }}>
         <Submit className="btn btn-soft">
           <span>Press the from</span>
-          <Submit.Loader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
-            <SendHorizonalIcon className="btn-icon-size" />
+          <Submit.Loader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+            <SendHorizonalIcon className="element-icon-size" />
           </Submit.Loader>
         </Submit>
       </form>
@@ -780,8 +780,8 @@ function Page() {
         className="btn btn-soft mt-6"
         href={"/test"}>
         <span>Test page</span>
-        <LinkLoader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
-          <ArrowRightIcon className="btn-icon-size" />
+        <LinkLoader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+          <ArrowRightIcon className="element-icon-size" />
         </LinkLoader>
       </Link>
 
@@ -789,7 +789,7 @@ function Page() {
       <p className="mt-6">Filter mode:</p>
       <Choice
         multiple
-        className="f-align gap-3 mt-3"
+        className="flex items-center gap-3 mt-3"
         activeChoice={filterChoice}
         setActiveChoice={setFilterChoice}>
         <Choice.Trigger
@@ -812,7 +812,7 @@ function Page() {
       <p className="mt-6">Radio Mode:</p>
       <Choice
         requiredOne
-        className="f-align gap-3 mt-3"
+        className="flex items-center gap-3 mt-3"
         activeChoice={singleChoice}
         setActiveChoice={setSingleChoice}>
         <Choice.Trigger
@@ -835,7 +835,7 @@ function Page() {
       <p className="mt-6">CheckBox Mode:</p>
       <Choice
         multiple
-        className="f-align gap-3 mt-3"
+        className="flex items-center gap-3 mt-3"
         activeChoice={multipleChoice}
         setActiveChoice={setMultipleChoice}
         requiredOne>
@@ -865,7 +865,7 @@ function Page() {
       <p className="mt-6">Switch mode:</p>
       <Choice
         multiple
-        className="f-align gap-3 mt-3"
+        className="flex items-center gap-3 mt-3"
         activeChoice={switchChoice}
         setActiveChoice={setSwitchChoice}
         requiredOne>

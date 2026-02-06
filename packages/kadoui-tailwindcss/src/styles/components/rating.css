@@ -1,7 +1,7 @@
 @utility rating {
-  @apply f-align w-fit max-w-full;
+  @apply flex items-center w-fix;
 }
 
 @utility rating-items {
-  @apply transition-all px-0.5 not-active:hover:-translate-y-0.5;
+  @apply transition-all px-[calc(var(--element-spacing)/2)] not-active:hover:-translate-y-[calc(var(--element-spacing)/2)];
 }

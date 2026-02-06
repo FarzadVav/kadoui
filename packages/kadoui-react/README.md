@@ -31,7 +31,7 @@ For add arrow-key nagivations to your UIs.
 <Accordion>
   <Accordion.Toggle className="btn btn-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
     <span>Open accordion</span>
-    <ChevronDownIcon className="transition-transform btn-icon-size group-data-[state=true]:-scale-y-100" />
+    <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
   </Accordion.Toggle>
   <Accordion.Body>
     <p className="p-3">
@@ -98,12 +98,12 @@ or
     ))}
   </Carousel.Container>
 
-  <div className="f-center gap-3 mt-3">
+  <div className="flex items-center justify-center gap-3 mt-3">
     <Carousel.PrevBtn className="btn btn-outline btn-square">
-      <ArrowLeftIcon className="btn-icon-size" />
+      <ArrowLeftIcon className="element-icon-size" />
     </Carousel.PrevBtn>
     <Carousel.NextBtn className="btn btn-outline btn-square">
-      <ArrowRightIcon className="btn-icon-size" />
+      <ArrowRightIcon className="element-icon-size" />
     </Carousel.NextBtn>
   </div>
 </Carousel>
@@ -124,8 +124,8 @@ or
 <Clipboard
   text="Kadoui-react"
   className="btn btn-soft btn-square"
-  copiedChildren={<CopyCheckIcon className="btn-icon-size" />}>
-  <CopyIcon className="btn-icon-size" />
+  copiedChildren={<CopyCheckIcon className="element-icon-size" />}>
+  <CopyIcon className="element-icon-size" />
 </Clipboard>
 ```
 
@@ -267,13 +267,13 @@ With state:
 <PaginationWithState pagesLength={6}>
   <div className="pagination">
     <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-      <ChevronLeftIcon className="btn-icon-size" />
+      <ChevronLeftIcon className="element-icon-size" />
     </PaginationWithState.PrevBtn>
 
     <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
     <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-      <ChevronRightIcon className="btn-icon-size" />
+      <ChevronRightIcon className="element-icon-size" />
     </PaginationWithState.NextBtn>
   </div>
 </PaginationWithState>
@@ -286,13 +286,13 @@ With search params:
   <PaginationWithSearchParams pagesLength={6}>
     <div className="pagination">
       <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-        <ChevronLeftIcon className="btn-icon-size" />
+        <ChevronLeftIcon className="element-icon-size" />
       </PaginationWithSearchParams.PrevBtn>
 
       <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
       <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-        <ChevronRightIcon className="btn-icon-size" />
+        <ChevronRightIcon className="element-icon-size" />
       </PaginationWithSearchParams.NextBtn>
     </div>
   </PaginationWithSearchParams>
@@ -333,13 +333,13 @@ const PAGES_WITH_STATE = [
 
     <div className="pagination">
       <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-        <ChevronLeftIcon className="btn-icon-size" />
+        <ChevronLeftIcon className="element-icon-size" />
       </PaginationWithState.PrevBtn>
 
       <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
       <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-        <ChevronRightIcon className="btn-icon-size" />
+        <ChevronRightIcon className="element-icon-size" />
       </PaginationWithState.NextBtn>
     </div>
   </div>
@@ -379,13 +379,13 @@ const PAGES_WITH_SEARCHPARAMS = [
 
       <div className="pagination">
         <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-          <ChevronLeftIcon className="btn-icon-size" />
+          <ChevronLeftIcon className="element-icon-size" />
         </PaginationWithSearchParams.PrevBtn>
 
         <PaginationWithSearchParams.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
         <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-          <ChevronRightIcon className="btn-icon-size" />
+          <ChevronRightIcon className="element-icon-size" />
         </PaginationWithSearchParams.NextBtn>
       </div>
     </div>
@@ -400,8 +400,8 @@ const PAGES_WITH_SEARCHPARAMS = [
   <PasswordInput.Field className="input-field" />
   <PasswordInput.Toggle
     className="btn btn-ghost btn-sm"
-    visibleChildren={<EyeIcon className="btn-icon-size" />}>
-    <EyeClosedIcon className="btn-icon-size" />
+    visibleChildren={<EyeIcon className="element-icon-size" />}>
+    <EyeClosedIcon className="element-icon-size" />
   </PasswordInput.Toggle>
 </PasswordInput>
 ```
@@ -559,8 +559,8 @@ const [rating, setRating] = useState(3);
   }}>
   <Submit className="btn btn-soft">
     <span>Press the from</span>
-    <Submit.Loader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
-      <SendHorizonalIcon className="btn-icon-size" />
+    <Submit.Loader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+      <SendHorizonalIcon className="element-icon-size" />
     </Submit.Loader>
   </Submit>
 </form>
@@ -668,8 +668,8 @@ const [activeTab, setActiveTab] = useState("1");
   className="btn btn-soft mt-6"
   href={"/test"}>
   <span>Test page</span>
-  <LinkLoader loader={<LoaderIcon className="btn-icon-size animate-spin" />}>
-    <ArrowRightIcon className="btn-icon-size" />
+  <LinkLoader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+    <ArrowRightIcon className="element-icon-size" />
   </LinkLoader>
 </Link>
 ```

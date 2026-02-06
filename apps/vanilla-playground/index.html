@@ -16,8 +16,10 @@
 
     <title>Kadoui TailwindCSS Playground</title>
   </head>
+
   <body>
-    <header class="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b z-40">
+    <header
+      class="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b border-background-thin z-40">
       <div class="wrapper flex items-center justify-between h-full">
         <span class="title">Kadoui Playground</span>
         <button
@@ -28,77 +30,24 @@
       </div>
     </header>
 
-    <p class="wrapper heading mt-12">Layout</p>
+    <p class="wrapper heading mt-12">Other</p>
     <div class="wrapper mt-6">
-      <p>.f-align</p>
-      <div
-        data-kadoui="element"
-        class="card f-align mt-3 gap-3">
-        <div class="p-3 bg-background">Item 1</div>
-        <div class="p-3 bg-background">Item 2</div>
-        <div class="p-3 bg-background">Item 3</div>
-      </div>
+      <button class="btn link">Link</button>
 
-      <p class="mt-6">.f-center</p>
-      <div
-        data-kadoui="element"
-        class="card f-center mt-3 gap-3">
-        <div class="p-3 bg-background">Item 1</div>
-        <div class="p-3 bg-background">Item 2</div>
-        <div class="p-3 bg-background">Item 3</div>
-      </div>
+      <p class="mt-6">
+        Lorem ipsum dolor sit <span class="highlight">This is a highlight</span> nemo,
+        esse.
+      </p>
 
-      <p class="mt-6">.f-align-scroll + .slidable</p>
-      <div
-        data-kadoui="element"
-        class="f-align-scroll mt-3 gap-3">
-        <div
-          data-kadoui="element"
-          class="card slidable">
-          Item 1
-        </div>
-        <div
-          data-kadoui="element"
-          class="card slidable">
-          Item 2
-        </div>
-        <div
-          data-kadoui="element"
-          class="card slidable">
-          Item 3
-        </div>
-      </div>
-
-      <p class="mt-6">.no-scrollbar</p>
-      <div
-        data-kadoui="element"
-        class="f-align-scroll no-scrollbar mt-3 gap-3">
-        <div class="card slidable">Item 1</div>
-        <div class="card slidable">Item 2</div>
-        <div class="card slidable">Item 3</div>
-      </div>
-
-      <p class="mt-6">.w-fix</p>
-      <div class="card w-full max-w-96 mt-3">
-        <div
-          data-kadoui="element"
-          class="w-fix p-3 bg-background">
-          Item 1
-        </div>
-        <div
-          data-kadoui="element"
-          class="w-fix p-3 bg-background mt-3">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ullam veniam libero,
-          doloremque nobis perferendis eos temporibus autem, laboriosam aliquam mollitia
-          quam assumenda culpa consequatur saepe quod enim esse neque!
-        </div>
-      </div>
+      <input
+        class="range-slider mt-6"
+        type="range" />
     </div>
 
     <p class="wrapper heading mt-12">Button</p>
     <div class="wrapper mt-6">
       <p>Variants</p>
-      <div class="f-align gap-3 mt-3">
+      <div class="flex items-center gap-3 mt-3">
         <button
           data-kadoui="element"
           class="btn btn-fill">
@@ -122,9 +71,14 @@
       </div>
 
       <p class="mt-6">Sizes</p>
-      <div class="f-align gap-3 mt-3">
+      <div class="flex items-center gap-3 mt-3">
         <button
-          class="btn btn-fill btn-sm"
+          class="btn btn-fill element-xs"
+          data-kadoui="element">
+          Xsmall
+        </button>
+        <button
+          class="btn btn-fill element-sm"
           data-kadoui="element">
           Small
         </button>
@@ -134,12 +88,17 @@
           Medium
         </button>
         <button
-          class="btn btn-fill btn-lg"
+          class="btn btn-fill element-lg"
           data-kadoui="element">
           Large
         </button>
         <button
-          class="btn btn-fill btn-square"
+          class="btn btn-fill element-xl"
+          data-kadoui="element">
+          XLarge
+        </button>
+        <button
+          class="btn btn-fill element-square-size"
           data-kadoui="element">
           SQ
         </button>
@@ -148,7 +107,7 @@
           data-kadoui="element">
           <span>With icon</span>
           <i
-            class="btn-icon-size"
+            class="element-icon-size"
             data-lucide="sparkles"></i>
         </button>
       </div>
@@ -181,19 +140,26 @@
 
         <label class="input input-outline mt-3">
           <i
-            class="input-icon-size"
+            class="element-icon-size"
             data-lucide="search"></i>
           <input
             placeholder="Outline input..."
             class="input-field"
             type="text" />
-          <button class="btn btn-ghost btn-sm">Enter</button>
+          <button class="btn btn-ghost element-xs">Enter</button>
         </label>
       </div>
 
       <p class="mt-6">Sizes</p>
       <div class="mt-3">
-        <label class="input input-outline input-sm mt-3">
+        <label class="input input-outline element-xs mt-3">
+          <input
+            placeholder="Xsmall input..."
+            class="input-field"
+            type="text" />
+        </label>
+
+        <label class="input input-outline element-sm mt-3">
           <input
             placeholder="Small input..."
             class="input-field"
@@ -207,28 +173,35 @@
             type="text" />
         </label>
 
-        <label class="input input-outline input-lg mt-3">
+        <label class="input input-outline element-lg mt-3">
           <input
             placeholder="Large input..."
             class="input-field"
             type="text" />
         </label>
 
+        <label class="input input-outline element-xl mt-3">
+          <input
+            placeholder="XLarge input..."
+            class="input-field"
+            type="text" />
+        </label>
+
         <div class="otp mt-3">
           <input
-            class="input input-outline input-square"
+            class="input input-outline element-square-size"
             placeholder="SQ"
             type="text" />
           <input
-            class="input input-outline input-square"
+            class="input input-outline element-square-size"
             placeholder="SQ"
             type="text" />
           <input
-            class="input input-outline input-square"
+            class="input input-outline element-square-size"
             placeholder="SQ"
             type="text" />
           <input
-            class="input input-outline input-square"
+            class="input input-outline element-square-size"
             placeholder="SQ"
             type="text" />
         </div>
@@ -238,25 +211,27 @@
     <p class="wrapper heading mt-12">Badge</p>
     <div class="wrapper mt-6">
       <p>Variants</p>
-      <div class="f-align gap-3 mt-3">
+      <div class="flex items-center gap-3 mt-3">
         <span class="badge">Ghost badge</span>
         <span class="badge badge-fill">Fill badge</span>
         <span class="badge badge-outline">Outline badge</span>
         <span class="badge badge-soft">Soft badge</span>
         <span class="badge badge-soft">
           <i
-            class="badge-icon-size"
+            class="element-icon-size"
             data-lucide="sparkles"></i>
           <span>With icon</span>
         </span>
       </div>
 
       <p class="mt-6">Sizes</p>
-      <div class="f-align gap-3 mt-3">
-        <span class="badge badge-soft badge-sm">Small badge</span>
+      <div class="flex items-center gap-3 mt-3">
+        <span class="badge badge-soft element-xs">XSmall badge</span>
+        <span class="badge badge-soft element-sm">Small badge</span>
         <span class="badge badge-soft">Medium badge</span>
-        <span class="badge badge-soft badge-lg">Large badge</span>
-        <span class="badge badge-soft badge-square">SQ</span>
+        <span class="badge badge-soft element-lg">Large badge</span>
+        <span class="badge badge-soft element-xl">XLarge badge</span>
+        <span class="badge badge-soft element-square-size">SQ</span>
       </div>
     </div>
 
@@ -264,13 +239,13 @@
     <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="mt-3">
-        <div class="card">
+        <div class="card bg-background-thin">
           Basic card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
           at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
         </div>
 
-        <ul class="card card-menu card-y mt-3">
+        <ul class="card card-menu card-y bg-background-thin mt-3">
           <li>
             <button class="btn btn-ghost">Vertical card menu</button>
           </li>
@@ -282,7 +257,7 @@
           </li>
         </ul>
 
-        <ul class="card card-menu card-x mt-3">
+        <ul class="card card-menu card-x bg-background-thin mt-3">
           <li>
             <button class="btn btn-ghost">Horizontal card menu</button>
           </li>
@@ -297,20 +272,32 @@
 
       <p class="mt-6">Sizes</p>
       <div class="mt-3">
-        <div class="card card-sm">
+        <div class="card element-xs bg-background-thin">
+          XSmall card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+
+        <div class="card element-sm bg-background-thin mt-3">
           Small card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
           at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
         </div>
 
-        <div class="card mt-3">
+        <div class="card bg-background-thin mt-3">
           Medium card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
           at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
         </div>
 
-        <div class="card mt-3 card-lg">
+        <div class="card element-lg bg-background-thin mt-3">
           Large card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
+          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+        </div>
+
+        <div class="card element-xl bg-background-thin mt-3">
+          XLarge card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
           at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
         </div>
@@ -320,22 +307,34 @@
     <p class="wrapper heading mt-12">Kbd</p>
     <div class="wrapper mt-6">
       <p>Sizes</p>
-      <div class="f-align gap-1.5 mt-3">
-        <span class="kbd kbd-sm">Ctrl</span>
-        <span>+</span>
-        <span class="kbd kbd-sm">C</span>
-      </div>
-
-      <div class="f-align gap-1.5 mt-3">
+      <div class="flex items-center element-xs gap-1.5 mt-3">
         <span class="kbd">Ctrl</span>
         <span>+</span>
         <span class="kbd">C</span>
       </div>
 
-      <div class="f-align gap-1.5 mt-3">
-        <span class="kbd kbd-lg">Ctrl</span>
+      <div class="flex items-center element-sm gap-1.5 mt-3">
+        <span class="kbd">Ctrl</span>
         <span>+</span>
-        <span class="kbd kbd-lg">C</span>
+        <span class="kbd">C</span>
+      </div>
+
+      <div class="flex items-center gap-1.5 mt-3">
+        <span class="kbd">Ctrl</span>
+        <span>+</span>
+        <span class="kbd">C</span>
+      </div>
+
+      <div class="flex items-center element-lg gap-1.5 mt-3">
+        <span class="kbd">Ctrl</span>
+        <span>+</span>
+        <span class="kbd">C</span>
+      </div>
+
+      <div class="flex items-center element-xl gap-1.5 mt-3">
+        <span class="kbd">Ctrl</span>
+        <span>+</span>
+        <span class="kbd">C</span>
       </div>
     </div>
 
@@ -343,9 +342,21 @@
     <div class="wrapper mt-6">
       <p>Sizes</p>
       <div class="mt-3">
-        <div class="alert alert-sm">
+        <div class="alert element-xs">
           <i
-            class="alert-icon-size"
+            class="element-icon-size"
+            data-lucide="info"></i>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
+            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
+            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
+            Eligendi!
+          </p>
+        </div>
+
+        <div class="alert element-sm mt-3">
+          <i
+            class="element-icon-size"
             data-lucide="info"></i>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
@@ -357,7 +368,7 @@
 
         <div class="alert mt-3">
           <i
-            class="alert-icon-size"
+            class="element-icon-size"
             data-lucide="info"></i>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
@@ -367,9 +378,21 @@
           </p>
         </div>
 
-        <div class="alert alert-lg mt-3">
+        <div class="alert element-lg mt-3">
           <i
-            class="alert-icon-size"
+            class="element-icon-size"
+            data-lucide="info"></i>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
+            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
+            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
+            Eligendi!
+          </p>
+        </div>
+
+        <div class="alert element-xl mt-3">
+          <i
+            class="element-icon-size"
             data-lucide="info"></i>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
@@ -405,7 +428,7 @@
 
     <p class="wrapper heading mt-12">Position</p>
     <div class="wrapper mt-6">
-      <div class="card h-[33vh] relative">
+      <div class="card bg-background-thin h-[33vh] relative">
         <span class="badge badge-fill absolute top-center">Top center</span>
         <span class="badge badge-fill absolute left-1/4 top-boundary">Top boundry</span>
         <span class="badge badge-fill absolute right-0 top-out">Top out</span>
@@ -424,63 +447,55 @@
 
         <span class="badge badge-fill absolute inset-center">Inset center</span>
       </div>
+
+      <div class="card bg-background-thin h-[33vh] relative mt-24">
+        <span class="badge badge-fill absolute position-t">Top (position-t)</span>
+        <span class="badge badge-fill absolute position-tr">Top right (position-tr)</span>
+        <span class="badge badge-fill absolute position-r">Right (position-r)</span>
+        <span class="badge badge-fill absolute position-br"
+          >Bottom right (position-br)</span
+        >
+        <span class="badge badge-fill absolute position-b">Bottom (position-b)</span>
+        <span class="badge badge-fill absolute position-bl"
+          >Bottom left (position-bl)</span
+        >
+        <span class="badge badge-fill absolute position-l">Left (position-l)</span>
+        <span class="badge badge-fill absolute position-tl">Top left (position-tl)</span>
+      </div>
     </div>
 
     <p class="wrapper heading mt-12">Separator</p>
     <div class="wrapper mt-6">
-      <p>Variants</p>
+      <p class="title">Variants</p>
       <div class="flex items-start flex-col mt-3">
-        <span class="separate separate-t">Separate top</span>
+        <span class="separate-t border-background-thin">Separate top</span>
 
-        <span class="separate separate-r mt-6">Separate right</span>
+        <span class="separate-r border-background-thin mt-3">Separate right</span>
 
-        <span class="separate separate-b mt-6">Separate bottom</span>
+        <span class="separate-b border-background-thin mt-3">Separate bottom</span>
 
-        <span class="separate separate-l mt-6">Separate left</span>
+        <span class="separate-l border-background-thin mt-3">Separate left</span>
 
-        <span class="separate separate-y">Separate vertical</span>
+        <span class="separate-y border-background-thin">Separate vertical</span>
 
-        <span class="separate separate-x mt-6">Separate horizontal</span>
+        <span class="separate-x border-background-thin mt-3">Separate horizontal</span>
       </div>
 
-      <p class="mt-6">Sizes</p>
+      <p class="title mt-6">Sizes</p>
       <div class="flex items-start flex-col mt-3">
-        <span class="separate-sm separate-t">Small separate</span>
-        <span class="separate separate-t">Meduim separate</span>
-        <span class="separate-lg separate-t">Large separate</span>
+        <span class="separate-t border-background-thin element-xs"
+          >XSmall separate-t</span
+        >
+        <span class="separate-t border-background-thin element-sm">Small separate-t</span>
+        <span class="separate-t border-background-thin">Meduim separate-t</span>
+        <span class="separate-t border-background-thin element-lg">Large separate-t</span>
+        <span class="separate-t border-background-thin element-xl"
+          >XLarge separate-t</span
+        >
       </div>
     </div>
 
-    <p class="wrapper heading mt-12">Other</p>
-    <div class="wrapper mt-6">
-      <button class="btn btn-ghost link">Link</button>
-
-      <p class="mt-3">
-        Lorem ipsum dolor sit <span class="highlight">This is a highlight</span> nemo,
-        esse.
-      </p>
-
-      <div class="f-center skeleton h-[33vh] mt-3">Skeleton</div>
-
-      <input
-        class="range-slider mt-3"
-        type="range" />
-
-      <div class="mt-3">
-        <button
-          id="toggle-text-btn"
-          class="btn btn-fill"></button>
-        <p
-          class="mt-1.5"
-          id="toggle-text-p">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eius alias
-          dolorem maxime suscipit placeat eligendi omnis esse ducimus doloremque est
-          voluptas laudantium, voluptatum cumque unde consequuntur error quae minima.
-        </p>
-      </div>
-
-      <p class="wrapper heading my-12">The end</p>
-    </div>
+    <p class="wrapper heading my-12">The end</p>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>

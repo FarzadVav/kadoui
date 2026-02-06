@@ -1,60 +1,41 @@
-@utility border-separator {
-  @apply border-background-thick;
-}
-
-@utility separate {
-  --separate-space-y: calc(var(--spacing) * 6);
-  --separate-space-x: calc(var(--spacing) * 3);
-}
-
-@utility separate-sm {
-  --separate-space-y: calc(var(--spacing) * 3);
-  --separate-space-x: calc(var(--spacing) * 1.5);
-}
-
-@utility separate-lg {
-  --separate-space-y: calc(var(--spacing) * 9);
-  --separate-space-x: calc(var(--spacing) * 6);
-}
-
 @utility separate-t {
-  @apply border-t border-separator;
+  @apply border-t;
 
-  padding-top: var(--separate-space-y);
-  margin-top: var(--separate-space-y);
+  padding-top: var(--element-spacing);
+  margin-top: var(--element-spacing);
 }
 
 @utility separate-r {
-  @apply border-r border-separator;
+  @apply border-r;
 
-  padding-right: var(--separate-space-x);
-  margin-right: var(--separate-space-x);
+  padding-right: var(--element-spacing);
+  margin-right: var(--element-spacing);
 }
 
 @utility separate-b {
-  @apply border-b border-separator;
+  @apply border-b;
 
-  padding-bottom: var(--separate-space-y);
-  margin-bottom: var(--separate-space-y);
+  padding-bottom: var(--element-spacing);
+  margin-bottom: var(--element-spacing);
 }
 
 @utility separate-l {
-  @apply border-l border-separator;
+  @apply border-l;
 
-  padding-left: var(--separate-space-x);
-  margin-left: var(--separate-space-x);
+  padding-left: var(--element-spacing);
+  margin-left: var(--element-spacing);
 }
 
 @utility separate-y {
-  @apply border-y border-separator;
+  @apply border-y;
 
-  padding: var(--separate-space-y) 0;
-  margin: var(--separate-space-y) 0;
+  padding: var(--element-spacing) 0;
+  margin: var(--element-spacing) 0;
 }
 
 @utility separate-x {
-  @apply border-x border-separator;
+  @apply border-x;
 
-  padding: 0 var(--separate-space-x);
-  margin: 0 var(--separate-space-x);
+  padding: 0 var(--element-spacing);
+  margin: 0 var(--element-spacing);
 }

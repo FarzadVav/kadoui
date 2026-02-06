@@ -1,21 +1,8 @@
 @utility card {
-  --card-space: calc(var(--spacing) * 3);
-  --card-radius: var(--radius-xl);
-
-  @apply bg-background-thick;
-
-  padding: var(--card-space);
-  border-radius: var(--card-radius);
-}
-
-@utility card-sm {
-  --card-space: calc(var(--spacing) * 1.5);
-  --card-radius: var(--radius-lg);
-}
-
-@utility card-lg {
-  --card-space: calc(var(--spacing) * 6);
-  --card-radius: var(--radius-2xl);
+  padding: var(--element-spacing);
+  border-radius: var(--element-rounded);
+  font-size: var(--element-text);
+  line-height: var(--element-line);
 }
 
 @utility card-menu {
@@ -23,13 +10,13 @@
 }
 
 @utility card-y {
-  @apply flex flex-col justify-between;
+  @apply flex flex-col;
 
-  row-gap: calc(var(--card-space) / 2);
+  row-gap: calc(var(--element-spacing) / 2);
 }
 
 @utility card-x {
-  @apply f-align justify-between;
+  @apply flex items-center justify-between;
 
-  column-gap: calc(var(--card-space) / 2);
+  column-gap: calc(var(--element-spacing) / 2);
 }

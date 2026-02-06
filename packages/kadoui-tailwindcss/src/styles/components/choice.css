@@ -1,77 +1,68 @@
 @utility choice {
-  --choice-size: calc(var(--spacing) * 9);
-  --choice-p: calc(var(--spacing) * 0.75);
+  --choice-spacing: calc(var(--element-spacing) / 2);
 
   @apply border border-palette focus-visible:outline-1 outline-offset-2;
 
-  width: var(--choice-size);
-  height: var(--choice-size);
-  padding: var(--choice-p);
-}
-
-@utility choice-sm {
-  --choice-size: calc(var(--spacing) * 6);
-}
-
-@utility choice-lg {
-  --choice-size: calc(var(--spacing) * 12);
+  width: var(----element-h);
+  height: var(----element-h);
+  padding: var(--choice-spacing);
 }
 
 @utility choice-radio {
-  @apply rounded-full f-center;
+  @apply rounded-full flex items-center justify-center;
 
-  &[data-state="false"] > .choice-radio-trigger {
+  &[data-state="false"]>.choice-radio-trigger {
     @apply opacity-0 scale-0;
   }
 }
 
 @utility choice-radio-trigger {
-  @apply bg-palette rounded-full transition-all f-center text-brush;
+  @apply bg-palette rounded-full transition-all flex items-center justify-center text-brush;
 
-  width: calc(var(--choice-size) - var(--choice-p) * 2);
-  height: calc(var(--choice-size) - var(--choice-p) * 2);
+  width: calc(var(--element-h) - var(--choice-spacing) * 2);
+  height: calc(var(--element-h) - var(--choice-spacing) * 2);
 }
 
 @utility choice-checkbox {
-  @apply rounded f-center;
+  @apply rounded flex items-center justify-center;
 
-  &[data-state="false"] > .choice-checkbox-trigger {
+  &[data-state="false"]>.choice-checkbox-trigger {
     @apply opacity-0 scale-0;
   }
 }
 
 @utility choice-checkbox-trigger {
-  @apply bg-palette rounded-xs transition-all f-center text-brush;
+  @apply bg-palette rounded-xs transition-all flex items-center justify-center text-brush;
 
-  width: calc(var(--choice-size) - var(--choice-p) * 2);
-  height: calc(var(--choice-size) - var(--choice-p) * 2);
+  width: calc(var(--element-h) - var(--choice-spacing) * 2);
+  height: calc(var(--element-h) - var(--choice-spacing) * 2);
 }
 
 @utility choice-switch {
-  @apply relative rounded-full f-align;
+  @apply relative rounded-full flex items-center;
 
-  width: calc(var(--choice-size) * 2) !important;
+  width: calc(var(--element-h) * 2) !important;
 
   &[data-state="true"] {
     @apply bg-background-thick;
 
-    & > .choice-switch-trigger {
+    &>.choice-switch-trigger {
       @apply bg-palette;
 
-      left: calc(var(--choice-size) + var(--choice-p) / 2);
+      left: calc(var(--element-h) + var(--choice-spacing) / 2);
     }
   }
-  
-  &[data-state="false"] > .choice-switch-trigger {
+
+  &[data-state="false"]>.choice-switch-trigger {
     @apply bg-background-thick;
-    
-    left: var(--choice-p);
+
+    left: var(--choice-spacing);
   }
 }
 
 @utility choice-switch-trigger {
-  @apply absolute bg-palette rounded-full transition-all f-center text-brush duration-300;
+  @apply absolute bg-palette rounded-full transition-all flex items-center justify-center text-brush duration-300;
 
-  width: calc(var(--choice-size) - var(--choice-p) * 2);
-  height: calc(var(--choice-size) - var(--choice-p) * 2);
+  width: calc(var(--element-h) - var(--choice-spacing) * 2);
+  height: calc(var(--element-h) - var(--choice-spacing) * 2);
 }

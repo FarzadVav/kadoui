@@ -1,13 +1,19 @@
+/* Base styles */
+
 @layer base {
   html {
-    @apply scroll-smooth bg-background text-foreground;
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 
   * {
     @apply select-none;
 
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--color-foreground)) transparent;
+    scrollbar-color: var(--color-foreground) transparent;
   }
 
   a,
@@ -28,4 +34,143 @@
   textarea {
     @apply resize-none;
   }
+}
+
+/* Dark mode */
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Palette colors */
+
+@utility palette-background {
+  --color-palette: var(--color-background);
+  --color-brush: var(--color-foreground);
+}
+
+@utility palette-foreground {
+  --color-palette: var(--color-foreground);
+  --color-brush: var(--color-background);
+}
+
+@utility palette-primary {
+  --color-palette: var(--color-primary);
+  --color-brush: var(--color-primary-foreground);
+}
+
+@utility palette-secondary {
+  --color-palette: var(--color-secondary);
+  --color-brush: var(--color-secondary-foreground);
+}
+
+@utility palette-error {
+  --color-palette: var(--color-error);
+  --color-brush: var(--color-error-foreground);
+}
+
+@utility palette-success {
+  --color-palette: var(--color-success);
+  --color-brush: var(--color-success-foreground);
+}
+
+@utility palette-warning {
+  --color-palette: var(--color-warning);
+  --color-brush: var(--color-warning-foreground);
+}
+
+@utility palette-info {
+  --color-palette: var(--color-info);
+  --color-brush: var(--color-info-foreground);
+}
+
+/* Element sizes */
+
+@utility element-xs {
+  --element-h: var(--element-xs-h);
+  --element-spacing: var(--element-xs-spacing);
+  --element-text: var(--element-xs-text);
+  --element-leading: var(--element-xs-leading);
+  --element-rounded: var(--element-xs-rounded);
+}
+
+@utility element-sm {
+  --element-h: var(--element-sm-h);
+  --element-spacing: var(--element-sm-spacing);
+  --element-text: var(--element-sm-text);
+  --element-leading: var(--element-sm-leading);
+  --element-rounded: var(--element-sm-rounded);
+}
+
+@utility element-md {
+  --element-h: var(--element-medium-h);
+  --element-spacing: var(--element-medium-spacing);
+  --element-text: var(--element-medium-text);
+  --element-leading: var(--element-medium-leading);
+  --element-rounded: var(--element-medium-rounded);
+}
+
+@utility element-lg {
+  --element-h: var(--element-lg-h);
+  --element-spacing: var(--element-lg-spacing);
+  --element-text: var(--element-lg-text);
+  --element-leading: var(--element-lg-leading);
+  --element-rounded: var(--element-lg-rounded);
+}
+
+@utility element-xl {
+  --element-h: var(--element-xl-h);
+  --element-spacing: var(--element-xl-spacing);
+  --element-text: var(--element-xl-text);
+  --element-leading: var(--element-xl-leading);
+  --element-rounded: var(--element-xl-rounded);
+}
+
+/* Use element sizes */
+
+@utility element-square-size {
+  --element-w: var(--element-h);
+  --element-spacing: 0;
+
+  text-align: center;
+  min-width: var(--element-w);
+}
+
+@utility element-full-w {
+  --element-w: 100%;
+}
+
+@utility element-icon-size {
+  width: calc(var(--element-h) / 2);
+  min-width: calc(var(--element-h) / 2);
+  height: calc(var(--element-h) / 2);
+  min-height: calc(var(--element-h) / 2);
+}
+
+/* Utilities */
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+}
+
+@utility w-fix {
+  @apply w-max max-w-full;
+}
+
+@utility link {
+  @apply underline decoration-transparent decoration-0 hover:decoration-palette focus-visible:decoration-palette;
+}
+
+@utility highlight {
+  @apply px-[calc(var(--element-spacing)/2)] bg-palette/10 text-palette rounded font-bold;
+}
+
+@utility ignore {
+  @apply opacity-0 invisible pointer-events-none;
+}
+
+@utility not-ignore {
+  @apply opacity-100 visible pointer-events-auto;
+}
+
+@utility range-slider {
+  @apply bg-palette rounded-full appearance-none cursor-grab active:cursor-grabbing;
 }

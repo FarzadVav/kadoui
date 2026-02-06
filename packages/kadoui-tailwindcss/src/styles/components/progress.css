@@ -1,7 +1,7 @@
 @utility progress {
-  @apply w-full rounded-lg overflow-hidden h-6 bg-palette/10;
+  @apply w-full rounded-(--element-rounded) overflow-hidden h-[calc(var(--element-h)/2)] bg-palette/10;
 }
 
 @utility progress-bar {
-  @apply f-center h-full bg-palette text-brush max-w-full;
+  @apply flex items-center justify-center h-full bg-palette text-brush max-w-full;
 }
