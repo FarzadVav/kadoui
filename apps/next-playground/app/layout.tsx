@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { ThemeProvider, ThemeScript } from "@kadoui/react";
 
 import "./globals.css";
-import { ThemeProvider, ThemeScript } from "@kadoui/react";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -13,8 +13,9 @@
     "build": "tsc"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./utils": "./dist/utils.js"
+    ".": "./dist/react-exports.js",
+    "./next": "./dist/next-exports.js",
+    "./utils": "./dist/utils-exports.js"
   },
   "keywords": [
     "@kadoui/react",

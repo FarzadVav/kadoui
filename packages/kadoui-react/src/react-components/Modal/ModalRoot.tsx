@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, PropsWithChildren } from "react";
 
 import { ModalContext } from "./ModalContext";
-import { getBrowserScrollbarWith } from "../../utils";
+import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export type ModalRootPropsT = PropsWithChildren & {
   defaultOpen?: boolean;

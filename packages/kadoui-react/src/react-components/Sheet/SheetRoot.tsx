@@ -5,7 +5,7 @@ import { useMotionValue, useAnimate } from "framer-motion";
 import { PropsWithChildren, useEffect, useState } from "react";
 
 import { SheetContext } from "./SheetContext";
-import { getBrowserScrollbarWith } from "../../utils";
+import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export type SheetRootPropsT = PropsWithChildren;
 

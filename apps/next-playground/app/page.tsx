@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { Suspense, useState } from "react";
+import { LinkLoader } from "@kadoui/react/next";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -29,7 +31,6 @@ import {
   Clipboard,
   ContextMenu,
   Drawer,
-  LinkLoader,
   Modal,
   Otp,
   PaginationWithSearchParams,
@@ -51,7 +52,6 @@ import {
   Choice,
   useTheme,
 } from "@kadoui/react";
-import Link from "next/link";
 
 const PAGES_WITH_STATE = [
   {
@@ -132,7 +132,7 @@ function Page() {
           <Popover
             className="popover"
             mode="click">
-            <Popover.Navigation>
+            <Popover.Navigation direction="y">
               <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
                 Theme: {theme || <LoaderIcon className="element-icon-size animate-spin" />}
               </Popover.Toggle>
@@ -271,7 +271,7 @@ function Page() {
           <span className="absolute inset-center">Context menu!</span>
 
           <ContextMenu.Body className="context-menu-body">
-            <ContextMenu.Navigation className="context-menu-navigation bg-background-thick">
+            <ContextMenu.Navigation className="context-menu-navigation bg-background-thick" direction="y">
               <ContextMenu.Item className="btn btn-ghost" onClick={() => alert("slkjflkdsjfldj")}>
                 <TrashIcon className="element-icon-size" />
                 <span>DELETE</span>
@@ -497,7 +497,7 @@ function Page() {
         <Popover
           className="popover mt-3"
           mode="click">
-          <Popover.Navigation>
+          <Popover.Navigation direction="y">
             <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
               Click me
             </Popover.Toggle>
@@ -525,8 +525,8 @@ function Page() {
         <p className="heading mt-20">Portal</p>
         <p className="mt-6">Portal are a large text on the end of page</p>
         <Portal>
-          <p className="container my-20">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
+          <p className="wrapper my-20">
+            PORTAL: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
             mollitia veniam consequuntur dicta! Harum, eos consectetur iste rem minus omnis
             aut est officiis quos in quae nisi? Dignissimos deleniti dolorem consequuntur,
             itaque, possimus molestiae ex, quasi facilis similique commodi vitae
@@ -740,14 +740,7 @@ function Page() {
 
         <p className="heading mt-20">Spoiler</p>
         <p className="mt-6">
-          Lorem ipsum dolor sit{" "}
-          <Spoiler className="spoiler">
-            <Spoiler.Blur className="spoiler-blur">
-              amet consectetur adipisicing
-            </Spoiler.Blur>
-          </Spoiler>{" "}
-          elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae harum iusto,
-          libero labore! Ea quo dolore accusantium veniam illo vel quae nihil iure aliquid.
+          <Spoiler className="spoiler">Lorem ipsum dolor sit <Spoiler.Blur className="spoiler-blur">amet consectetur adipisicing</Spoiler.Blur> elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae harum iusto, libero labore! Ea quo dolore accusantium veniam illo vel quae nihil iure aliquid.</Spoiler>
         </p>
 
         <p className="heading mt-20">Submit</p>
@@ -791,30 +784,26 @@ function Page() {
         <Tabs
           activeTab={activeTab}
           setActiveTab={setActiveTab}>
-          <AccessNavigation
-            className="mt-6"
-            direction="x">
-            <Tabs.List className="tabs-list join-border">
-              <Tabs.Tab
-                value="1"
-                className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-                Tab 1
-              </Tabs.Tab>
-              <Tabs.Tab
-                value="2"
-                className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-                Tab 2
-              </Tabs.Tab>
-              <Tabs.Tab
-                value="3"
-                className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-                Tab 3
-              </Tabs.Tab>
-            </Tabs.List>
-          </AccessNavigation>
+          <Tabs.List className="join join-border mt-6" direction="x">
+            <Tabs.Tab
+              value="1"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 1
+            </Tabs.Tab>
+            <Tabs.Tab
+              value="2"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 2
+            </Tabs.Tab>
+            <Tabs.Tab
+              value="3"
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Tab 3
+            </Tabs.Tab>
+          </Tabs.List>
 
           <Tabs.Panel
-            className="tabs-panel card-lg"
+            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"1"}
             value="1">
             Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
@@ -824,7 +813,7 @@ function Page() {
           </Tabs.Panel>
 
           <Tabs.Panel
-            className="tabs-panel card-lg"
+            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"2"}
             value="2">
             Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
@@ -833,7 +822,7 @@ function Page() {
           </Tabs.Panel>
 
           <Tabs.Panel
-            className="tabs-panel card-lg"
+            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"3"}
             value="3">
             Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
@@ -868,101 +857,143 @@ function Page() {
         <p className="mt-6">Filter mode:</p>
         <Choice
           multiple
-          className="flex items-center gap-3 mt-3"
+          className="mt-3"
           activeChoice={filterChoice}
           setActiveChoice={setFilterChoice}>
-          <Choice.Trigger
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="1">
-            Filter 1
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="2">
-            Filter 2
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="3">
-            Filter 3
-          </Choice.Trigger>
+          <Choice.Navigation className="flex items-center gap-3" direction="x">
+            <Choice.Trigger
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+              choiceName="1">
+              Filter 1
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+              choiceName="2">
+              Filter 2
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+              choiceName="3">
+              Filter 3
+            </Choice.Trigger>
+          </Choice.Navigation>
         </Choice>
 
         <p className="mt-6">Radio Mode:</p>
         <Choice
           requiredOne
-          className="flex items-center gap-3 mt-3"
+          className="mt-3"
           activeChoice={singleChoice}
           setActiveChoice={setSingleChoice}>
-          <Choice.Trigger
-            className="choice choice-sm choice-radio"
-            choiceName="1">
-            <span className="choice-radio-trigger" />
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-radio"
-            choiceName="2">
-            <span className="choice-radio-trigger" />
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-lg choice-radio"
-            choiceName="3">
-            <span className="choice-radio-trigger" />
-          </Choice.Trigger>
+          <Choice.Navigation className="flex items-center gap-3" direction="x">
+            <Choice.Trigger
+              className="choice element-xs choice-radio"
+              choiceName="1">
+              <span className="choice-radio-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-sm choice-radio"
+              choiceName="2">
+              <span className="choice-radio-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice choice-radio"
+              choiceName="3">
+              <span className="choice-radio-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-lg choice-radio"
+              choiceName="4">
+              <span className="choice-radio-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-xl choice-radio"
+              choiceName="5">
+              <span className="choice-radio-trigger" />
+            </Choice.Trigger>
+          </Choice.Navigation>
         </Choice>
 
         <p className="mt-6">CheckBox Mode:</p>
         <Choice
           multiple
-          className="flex items-center gap-3 mt-3"
+          className="mt-3"
           activeChoice={multipleChoice}
           setActiveChoice={setMultipleChoice}
           requiredOne>
-          <Choice.Trigger
-            className="choice choice-sm choice-checkbox"
-            choiceName="1">
-            <span className="choice-checkbox-trigger">
-              <CheckIcon className="size-2/3" />
-            </span>
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-checkbox"
-            choiceName="2">
-            <span className="choice-checkbox-trigger">
-              <CheckIcon className="size-2/3" />
-            </span>
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-lg choice-checkbox"
-            choiceName="3">
-            <span className="choice-checkbox-trigger">
-              <CheckIcon className="size-2/3" />
-            </span>
-          </Choice.Trigger>
+          <Choice.Navigation className="flex items-center gap-3" direction="x">
+            <Choice.Trigger
+              className="choice element-xs choice-checkbox"
+              choiceName="1">
+              <span className="choice-checkbox-trigger">
+                <CheckIcon className="size-2/3" />
+              </span>
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-sm choice-checkbox"
+              choiceName="2">
+              <span className="choice-checkbox-trigger">
+                <CheckIcon className="size-2/3" />
+              </span>
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice choice-checkbox"
+              choiceName="3">
+              <span className="choice-checkbox-trigger">
+                <CheckIcon className="size-2/3" />
+              </span>
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-lg choice-checkbox"
+              choiceName="4">
+              <span className="choice-checkbox-trigger">
+                <CheckIcon className="size-2/3" />
+              </span>
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-xl choice-checkbox rounded-xl"
+              choiceName="5">
+              <span className="choice-checkbox-trigger">
+                <CheckIcon className="size-2/3" />
+              </span>
+            </Choice.Trigger>
+          </Choice.Navigation>
         </Choice>
 
         <p className="mt-6">Switch mode:</p>
         <Choice
           multiple
-          className="flex items-center gap-3 mt-3"
+          className="mt-3"
           activeChoice={switchChoice}
           setActiveChoice={setSwitchChoice}
           requiredOne>
-          <Choice.Trigger
-            className="choice choice-sm choice-switch"
-            choiceName="1">
-            <span className="choice-switch-trigger" />
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-switch"
-            choiceName="2">
-            <span className="choice-switch-trigger" />
-          </Choice.Trigger>
-          <Choice.Trigger
-            className="choice choice-lg choice-switch"
-            choiceName="3">
-            <span className="choice-switch-trigger" />
-          </Choice.Trigger>
+          <Choice.Navigation className="flex items-center gap-3" direction="x">
+            <Choice.Trigger
+              className="choice element-xs choice-switch"
+              choiceName="1">
+              <span className="choice-switch-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-sm choice-switch"
+              choiceName="2">
+              <span className="choice-switch-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice choice-switch"
+              choiceName="3">
+              <span className="choice-switch-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-lg choice-switch"
+              choiceName="4">
+              <span className="choice-switch-trigger" />
+            </Choice.Trigger>
+            <Choice.Trigger
+              className="choice element-xl choice-switch"
+              choiceName="5">
+              <span className="choice-switch-trigger" />
+            </Choice.Trigger>
+          </Choice.Navigation>
         </Choice>
       </div>
     </>

@@ -1,7 +1,0 @@
-@utility tabs-list {
-  @apply join;
-}
-
-@utility tabs-panel {
-  @apply card mt-[calc(var(--element-spacing)/2)];
-}

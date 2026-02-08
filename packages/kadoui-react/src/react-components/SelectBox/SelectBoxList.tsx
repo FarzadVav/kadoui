@@ -9,5 +9,5 @@ import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 export default function SelectBoxList(p: SelectBoxListPropsT) {
   const { inputFocused } = use(SelectBoxContext);
 
-  return inputFocused ? <AccessNavigation focusOnMount {...p} /> : null;
+  return inputFocused ? <AccessNavigation focusOnMount direction="y" {...p} /> : null;
 }

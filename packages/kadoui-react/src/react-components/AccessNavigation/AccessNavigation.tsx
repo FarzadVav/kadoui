@@ -2,18 +2,18 @@
 
 import { ComponentPropsWithoutRef, KeyboardEvent, RefObject, useEffect, useRef } from "react";
 
-import { selectAccessibleChildren } from "../../utils";
+import { selectAccessibleChildren } from "../../utils-exports";
 
 export type AccessNavigationPropsT = ComponentPropsWithoutRef<"div"> & {
-  ref?: RefObject<HTMLDivElement | null>;
+  direction: "y" | "x";
   focusOnMount?: boolean;
-  direction?: "y" | "x";
+  ref?: RefObject<HTMLDivElement | null>;
 };
 
 export function AccessNavigation({
   ref,
   focusOnMount,
-  direction = "y",
+  direction,
   dir,
   onKeyDown,
   ...p

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { type ComponentProps, useEffect, useRef, useState } from "react";
 
-import { selectAccessibleChildren } from "../../utils";
+import { selectAccessibleChildren } from "../../utils-exports";
 import { PopoverContext, PopoverContextT } from "./PopoverContext";
 
 export type PopoverRootPropsT = ComponentProps<"div"> & {
