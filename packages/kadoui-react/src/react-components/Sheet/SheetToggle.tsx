@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { SheetContext } from "./SheetContext";
-
-export type SheetTogglePropsT = ComponentProps<"button">;
+import type { SheetTogglePropsT } from "./sheetTypes";
 
 export function SheetToggle({ onClick, ...props }: SheetTogglePropsT) {
   const { setOpen } = use(SheetContext);

@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { SwapContext } from "./SwapContext";
-
-export type SwapBtnPropsT = ComponentProps<"button"> & {
-  btnKey: string;
-};
+import type { SwapBtnPropsT } from "./swapTypes";
 
 export function SwapBtn({ btnKey, onClick, children, ...p }: SwapBtnPropsT) {
   const { keys, activeKey, setActiveKey } = use(SwapContext);

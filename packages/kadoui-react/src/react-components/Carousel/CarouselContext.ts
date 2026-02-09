@@ -1,11 +1,5 @@
-import { createContext, RefObject } from "react";
+import { createContext } from "react";
 
-export type CarouselContextPropsT = {
-  scrollRef: RefObject<HTMLDivElement | null>;
-  leftOpacity: number;
-  rightOpacity: number;
-  childrenWidth: number;
-  mouseScroll?: "auto" | "swipe";
-}
+import type { CarouselContextPropsT } from "./carouselTypes";
 
 export const CarouselContext = createContext<CarouselContextPropsT>({} as CarouselContextPropsT);

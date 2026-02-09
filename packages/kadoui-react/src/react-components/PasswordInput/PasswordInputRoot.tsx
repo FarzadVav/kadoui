@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, useState } from "react";
+import { useState } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
-
-export type PasswordInputRootPropsT = ComponentProps<"label">;
+import type { PasswordInputRootPropsT } from "./passwordInputTypes";
 
 export function PasswordInputRoot(props: PasswordInputRootPropsT) {
   const [isVisible, setIsVisible] = useState(false);

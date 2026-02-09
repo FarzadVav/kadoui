@@ -1,12 +1,7 @@
 "use client";
 
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type ThemeT = "dark" | "light" | "system";
+import type { ThemeContextT } from "./themeTypes";
 
-export type ThemeContextT = {
-  theme: ThemeT | undefined;
-  setTheme: (theme: ThemeT) => void;
-}
-
-export const ThemeContext = createContext<ThemeContextT>({} as ThemeContextT)
+export const ThemeContext = createContext<ThemeContextT>({} as ThemeContextT);

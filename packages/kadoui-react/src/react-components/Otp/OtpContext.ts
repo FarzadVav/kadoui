@@ -1,10 +1,7 @@
-import { createContext, RefObject } from "react";
+import { createContext } from "react";
 
-export type createContextT = {
-  inputs?: RefObject<(HTMLInputElement | null)[]>;
-  getInputsValue: () => string
-}
+import type { OtpContextT } from "./otpTypes";
 
-export const OtpContext = createContext<createContextT>({
+export const OtpContext = createContext<OtpContextT>({
   getInputsValue: () => ""
 });

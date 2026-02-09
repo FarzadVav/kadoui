@@ -1,14 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { type ComponentProps, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { selectAccessibleChildren } from "../../utils-exports";
-import { PopoverContext, PopoverContextT } from "./PopoverContext";
-
-export type PopoverRootPropsT = ComponentProps<"div"> & {
-  mode?: PopoverContextT["mode"];
-};
+import { PopoverContext } from "./PopoverContext";
+import type { PopoverRootPropsT } from "./popoverTypes";
 
 export function PopoverRoot({
   mode = "click",

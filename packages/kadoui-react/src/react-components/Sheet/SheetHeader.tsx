@@ -1,8 +1,6 @@
 "use client";
 
-import type { ComponentProps } from "react";
-
-export type SheetHeaderPropsT = ComponentProps<"div">;
+import type { SheetHeaderPropsT } from "./sheetTypes";
 
 export function SheetHeader({ ...p }: SheetHeaderPropsT) {
   return <div {...p} />;

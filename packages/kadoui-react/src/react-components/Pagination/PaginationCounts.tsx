@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
-
-export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children">;
+import type { PaginationCountsPropsT } from "./PaginationTypes";
 
 export function PaginationCounts({ onClick, ...p }: PaginationCountsPropsT) {
   const { pagesLength, page, setPage } = use(PaginationContext);

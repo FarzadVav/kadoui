@@ -1,14 +1,11 @@
 "use client";
 
-import { motion, HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 
-import { DrawerContext } from "./DrawerContext";
 import { FRAMER_MOTION_DURATION } from "../../configs";
-
-export type DrawerBodyPropsT = HTMLMotionProps<"div"> & {
-  position?: "top" | "right" | "bottom" | "left";
-};
+import { DrawerContext } from "./DrawerContext";
+import type { DrawerBodyPropsT } from "./drawerTypes";
 
 export function DrawerBody({ position, dir, children, ...p }: DrawerBodyPropsT) {
   const { isOpen } = use(DrawerContext);

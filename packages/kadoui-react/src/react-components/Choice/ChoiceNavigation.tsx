@@ -1,6 +1,6 @@
-import { AccessNavigation, AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation"
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-type ChoiceNavigationPropsT = AccessNavigationPropsT;
+import type { ChoiceNavigationPropsT } from "./choiceTypes";
 
 export function ChoiceNavigation(p: ChoiceNavigationPropsT) {
   return (

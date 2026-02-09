@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { ModalContext } from "./ModalContext";
-
-export type ModalTogglePropsT = ComponentProps<"button">;
+import type { ModalTogglePropsT } from "./modalTypes";
 
 export function ModalToggle({ onClick, ...props }: ModalTogglePropsT) {
   const { setOpen } = use(ModalContext);

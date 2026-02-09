@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
-
-export type ShowMoreFadePropsT = ComponentProps<"div">;
+import type { ShowMoreFadePropsT } from "./showMoreTypes";
 
 export function ShowMoreFade(p: ShowMoreFadePropsT) {
   const { shouldShowMore, isShowMore } = use(ShowMoreContext);

@@ -1,9 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type SwapContextT = {
-  keys: string[];
-  activeKey: string;
-  setActiveKey: Dispatch<SetStateAction<string>>;
-};
+import type { SwapContextT } from "./swapTypes";
 
 export const SwapContext = createContext<SwapContextT>({} as SwapContextT);

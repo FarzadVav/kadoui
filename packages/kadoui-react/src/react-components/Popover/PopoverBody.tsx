@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { PopoverContext } from "./PopoverContext";
-
-export type PopoverBodyPropsT = ComponentProps<"div"> & {
-  preventClose?: boolean;
-};
+import type { PopoverBodyPropsT } from "./popoverTypes";
 
 export function PopoverBody({ preventClose, onClick, ...p }: PopoverBodyPropsT) {
   const { bodyRef, isOpen } = use(PopoverContext);

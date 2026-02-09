@@ -1,13 +1,12 @@
 "use client";
 
 import { use } from "react";
-import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
+import { ClientOnly } from "../ClientOnly/ClientOnly";
 import { Portal } from "../Portal/Portal";
 import { DrawerContext } from "./DrawerContext";
-import { ClientOnly } from "../ClientOnly/ClientOnly";
-
-export type DrawerPortalPropsT = HTMLMotionProps<"div">;
+import type { DrawerPortalPropsT } from "./drawerTypes";
 
 export function DrawerPortal({ onClick, ...p }: DrawerPortalPropsT) {
   const { isOpen, setOpen } = use(DrawerContext);

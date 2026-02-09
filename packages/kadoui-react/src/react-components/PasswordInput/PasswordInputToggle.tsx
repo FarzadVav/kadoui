@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, ReactNode, use } from "react";
+import { use } from "react";
 
 import { PasswordInputContext } from "./PasswordInputContext";
-
-export type PasswordInputTogglePropsT = ComponentProps<"button"> & {
-  visibleChildren: ReactNode;
-};
+import type { PasswordInputTogglePropsT } from "./passwordInputTypes";
 
 export function PasswordInputToggle({ visibleChildren, onClick, children, ...props }: PasswordInputTogglePropsT) {
   const { isVisible, setIsVisible } = use(PasswordInputContext);

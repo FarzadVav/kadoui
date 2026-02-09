@@ -1,13 +1,9 @@
 "use client";
 
 import { useClipboard } from "@mantine/hooks";
-import { type ComponentProps, MouseEvent, ReactNode } from "react";
+import { MouseEvent } from "react";
 
-export type ClipboardPropsT = ComponentProps<"button"> & {
-  text: string;
-  timeout?: number;
-  copiedChildren?: ReactNode;
-};
+import type { ClipboardPropsT } from "./clipboardTypes";
 
 export function Clipboard({
   copiedChildren,

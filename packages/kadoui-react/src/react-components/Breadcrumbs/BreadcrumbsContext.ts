@@ -1,7 +1,5 @@
-import { createContext, ReactNode } from "react";
+import { createContext } from "react";
 
-export type BreadcrumbsContextT = {
-  separator: ReactNode;
-}
+import type { BreadcrumbsContextT } from "./breadcrumbsTypes";
 
 export const BreadcrumbsContext = createContext<BreadcrumbsContextT>({} as BreadcrumbsContextT);

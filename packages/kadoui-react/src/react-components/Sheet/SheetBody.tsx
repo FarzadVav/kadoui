@@ -1,12 +1,11 @@
 "use client";
 
 import { use, useEffect, useRef } from "react";
-import { HTMLMotionProps, motion, useDragControls } from "framer-motion";
+import { motion, useDragControls } from "framer-motion";
 
-import { SheetContext } from "./SheetContext";
 import { FRAMER_MOTION_DURATION } from "../../configs";
-
-export type SheetBodyPropsT = HTMLMotionProps<"div">;
+import { SheetContext } from "./SheetContext";
+import type { SheetBodyPropsT } from "./sheetTypes";
 
 export function SheetBody({ onPointerDown, ...p }: SheetBodyPropsT) {
   const controls = useDragControls();

@@ -1,8 +1,6 @@
 "use client";
 
-import type { ComponentProps } from "react";
-
-export type ModalContentPropsT = ComponentProps<"div">;
+import type { ModalContentPropsT } from "./modalTypes";
 
 export function ModalContent({ onClick, ...p }: ModalContentPropsT) {
   return (

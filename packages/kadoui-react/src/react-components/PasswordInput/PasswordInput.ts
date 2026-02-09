@@ -6,3 +6,5 @@ export const PasswordInput = Object.assign(PasswordInputRoot, {
   Field: PasswordInputField,
   Toggle: PasswordInputToggle
 });
+
+export * from "./passwordInputTypes";

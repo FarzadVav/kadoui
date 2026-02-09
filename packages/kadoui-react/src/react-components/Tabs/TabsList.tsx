@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { AccessNavigation, AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export type TabsListPropsT = AccessNavigationPropsT;
+import type { TabsListPropsT } from "./tabsTypes";
 
 export function TabsList(p: TabsListPropsT) {
   return <AccessNavigation {...p} />;

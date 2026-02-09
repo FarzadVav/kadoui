@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type RatingContextT = {
-  hoverValue: number | null;
-  setHoverValue: Dispatch<SetStateAction<number | null>>;
-}
+import type { RatingContextT } from "./ratingTypes";
 
 export const RatingContext = createContext<RatingContextT>({} as RatingContextT);

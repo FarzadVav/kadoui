@@ -1,13 +1,12 @@
 "use client";
 
 import { use } from "react";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
+import { ClientOnly } from "../ClientOnly/ClientOnly";
 import { Portal } from "../Portal/Portal";
 import { SheetContext } from "./SheetContext";
-import { ClientOnly } from "../ClientOnly/ClientOnly";
-
-export type SheetPortalPropsT = HTMLMotionProps<"div">;
+import type { SheetPortalPropsT } from "./sheetTypes";
 
 export function SheetPortal(p: SheetPortalPropsT) {
   const { isOpen, closeHandler: handleClose, scope } = use(SheetContext);

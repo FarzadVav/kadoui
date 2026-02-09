@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { SpoilerContext } from "./SpoilerContext";
-
-export type SpoilerBlurPropsT = ComponentProps<"span">;
+import type { SpoilerBlurPropsT } from "./spoilerTypes";
 
 export function SpoilerBlur(p: SpoilerBlurPropsT) {
   const { isOpen } = use(SpoilerContext);

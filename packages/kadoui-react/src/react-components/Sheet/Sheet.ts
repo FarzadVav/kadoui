@@ -14,3 +14,5 @@ export const Sheet = Object.assign(SheetRoot, {
   Content: SheetContent,
   Toggle: SheetToggle,
 });
+
+export * from "./sheetTypes";

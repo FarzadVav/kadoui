@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
-
-export type ShowMoreTogglePropsT = ComponentProps<"button">;
+import type { ShowMoreTogglePropsT } from "./showMoreTypes";
 
 export function ShowMoreToggle({ onClick, style, ...p }: ShowMoreTogglePropsT) {
   const { setIsShowMore } = use(ShowMoreContext);

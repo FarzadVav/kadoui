@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
-
-export type PaginationPrevBtnPropsT = ComponentProps<"button"> & {
-  disabled?: boolean;
-}
+import type { PaginationPrevBtnPropsT } from "./PaginationTypes";
 
 export function PaginationPrevBtn({ onClick, disabled, ...p }: PaginationPrevBtnPropsT) {
   const { page, prevPage } = use(PaginationContext);

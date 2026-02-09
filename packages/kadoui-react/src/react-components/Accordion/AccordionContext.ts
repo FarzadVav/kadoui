@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type AccordionContextT = {
-  isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
+import type { AccordionContextT } from "./accordionTypes";
 
-export const AccordionContext = createContext<AccordionContextT>({} as AccordionContextT)
+export const AccordionContext = createContext<AccordionContextT>({} as AccordionContextT);

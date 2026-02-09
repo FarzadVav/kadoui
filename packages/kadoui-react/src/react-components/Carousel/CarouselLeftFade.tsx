@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { CarouselContext } from "./CarouselContext";
-
-type CarouselLeftFadePropsT = ComponentProps<"div">;
+import type { CarouselLeftFadePropsT } from "./carouselTypes";
 
 export function CarouselLeftFade({ style, ...p }: CarouselLeftFadePropsT) {
   const { leftOpacity } = use(CarouselContext);

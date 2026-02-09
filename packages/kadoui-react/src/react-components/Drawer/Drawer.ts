@@ -8,3 +8,5 @@ export const Drawer = Object.assign(DrawerRoot, {
   Portal: DrawerPortal,
   Body: DrawerBody
 });
+
+export * from "./drawerTypes";

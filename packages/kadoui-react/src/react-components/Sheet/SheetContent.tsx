@@ -1,8 +1,6 @@
 "use client";
 
-import type { ComponentProps } from "react";
-
-export type SheetContentPropsT = ComponentProps<"div">;
+import type { SheetContentPropsT } from "./sheetTypes";
 
 export function SheetContent({ style, onScroll, ...p }: SheetContentPropsT) {
   return (

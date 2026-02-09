@@ -1,13 +1,10 @@
-"use client"
+"use client";
 
 import { use } from "react";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { ProgressContext } from "./ProgressContext";
-
-export type ProgressBarPropsT = HTMLMotionProps<"div"> & {
-  duration?: number;
-}
+import type { ProgressBarPropsT } from "./progressTypes";
 
 export function ProgressBar({ duration, children, ...p }: ProgressBarPropsT) {
   const { value, maxValue } = use(ProgressContext);

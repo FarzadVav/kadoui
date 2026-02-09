@@ -4,3 +4,5 @@ import { ProgressRoot } from "./ProgressRoot";
 export const Progress = Object.assign(ProgressRoot, {
   Bar: ProgressBar
 });
+
+export * from "./progressTypes";

@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type SpoilerContextT = {
-  isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
+import type { SpoilerContextT } from "./spoilerTypes";
 
 export const SpoilerContext = createContext({} as SpoilerContextT);

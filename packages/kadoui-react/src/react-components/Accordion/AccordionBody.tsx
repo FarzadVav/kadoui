@@ -1,11 +1,10 @@
 "use client";
 
 import { ReactNode, use } from "react";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { AccordionContext } from "./AccordionContext";
-
-export type AccordionBodyPropsT = HTMLMotionProps<"div">;
+import type { AccordionBodyPropsT } from "./accordionTypes";
 
 export function AccordionBody({ children, ...props }: AccordionBodyPropsT) {
   const { isOpen } = use(AccordionContext);

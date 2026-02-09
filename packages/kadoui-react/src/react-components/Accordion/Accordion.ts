@@ -6,3 +6,5 @@ export const Accordion = Object.assign(AccordionRoot, {
   Toggle: AccordionToggle,
   Body: AccordionBody
 });
+
+export * from "./accordionTypes";

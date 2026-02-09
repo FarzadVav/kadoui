@@ -8,3 +8,5 @@ export const Popover = Object.assign(PopoverRoot, {
   Toggle: PopoverToggle,
   Body: PopoverBody,
 });
+
+export * from "./popoverTypes";

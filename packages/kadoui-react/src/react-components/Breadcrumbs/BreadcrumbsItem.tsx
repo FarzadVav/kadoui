@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
-
-export type BreadcrumbsItemPropsT = ComponentProps<"div"> & {
-  isLastItem?: boolean;
-};
+import type { BreadcrumbsItemPropsT } from "./breadcrumbsTypes";
 
 export function BreadcrumbsItem({
   isLastItem = false,

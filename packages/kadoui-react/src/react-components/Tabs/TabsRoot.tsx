@@ -1,13 +1,7 @@
-"use client"
-
-import { Dispatch, PropsWithChildren, SetStateAction } from "react";
+"use client";
 
 import { TabsContext } from "./TabsContext";
-
-export type TabsRootPropsT = PropsWithChildren & {
-  activeTab: string;
-  setActiveTab: Dispatch<SetStateAction<string>>;
-}
+import type { TabsRootPropsT } from "./tabsTypes";
 
 export function TabsRoot({ activeTab, setActiveTab, children }: TabsRootPropsT) {
   return (

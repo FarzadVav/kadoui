@@ -1,11 +1,5 @@
-import { createContext, Dispatch, RefObject, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type PopoverContextT = {
-  isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  toggleRef: RefObject<HTMLButtonElement | null>;
-  bodyRef: RefObject<HTMLDivElement | null>;
-  mode: "click" | "hover" | "both";
-};
+import type { PopoverContextT } from "./popoverTypes";
 
 export const PopoverContext = createContext<PopoverContextT>({} as PopoverContextT);

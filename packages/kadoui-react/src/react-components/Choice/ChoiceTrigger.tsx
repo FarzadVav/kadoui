@@ -1,12 +1,9 @@
 "use client";
 
-import { ComponentProps, use } from "react";
+import { use } from "react";
 
 import { ChoiceContext } from "./ChoiceContext";
-
-type ChoiceTriggerPropsT = ComponentProps<"button"> & {
-  choiceName: string;
-};
+import type { ChoiceTriggerPropsT } from "./choiceTypes";
 
 export function ChoiceTrigger({
   choiceName,

@@ -8,3 +8,5 @@ export const Tabs = Object.assign(TabsRoot, {
   Tab: TabsTab,
   Panel: TabsPanel
 });
+
+export * from "./tabsTypes";

@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { ContextMenuContext } from "./ContextMenuContext";
-
-export type ContextMenuBodyPropsT = ComponentProps<"div">;
+import type { ContextMenuBodyPropsT } from "./contextMenuTypes";
 
 export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);

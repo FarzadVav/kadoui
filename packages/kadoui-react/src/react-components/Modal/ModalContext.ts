@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type ModalContextT = {
-  isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-};
+import type { ModalContextT } from "./modalTypes";
 
 export const ModalContext = createContext<ModalContextT>({} as ModalContextT);

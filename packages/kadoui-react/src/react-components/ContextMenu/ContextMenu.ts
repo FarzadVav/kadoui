@@ -8,3 +8,5 @@ export const ContextMenu = Object.assign(ContextMenuRoot, {
   Navigation: ContextMenuNavigation,
   Item: ContextMenuItem
 });
+
+export * from "./contextMenuTypes";

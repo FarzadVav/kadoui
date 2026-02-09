@@ -1,10 +1,5 @@
-import { createContext, Dispatch, RefObject, SetStateAction } from 'react'
+import { createContext } from "react";
 
-export type ContextMenuContextT = {
-  isOpen: boolean;
-  closeHandler: () => void;
-  position: { x: number, y: number } | undefined;
-  contentRef: RefObject<HTMLDivElement | null>;
-}
+import type { ContextMenuContextT } from "./contextMenuTypes";
 
 export const ContextMenuContext = createContext<ContextMenuContextT>({} as ContextMenuContextT);

@@ -1,9 +1,6 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type TabsContextT = {
-  activeTab: string;
-  setActiveTab: Dispatch<SetStateAction<string>>;
-}
+import type { TabsContextT } from "./tabsTypes";
 
 export const TabsContext = createContext<TabsContextT>({
   activeTab: "",

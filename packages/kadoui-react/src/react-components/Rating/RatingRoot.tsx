@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import { type ComponentProps, useState } from "react";
+import { useState } from "react";
 
-import { RatingContext, RatingContextT } from "./RatingContext";
-
-export type RatingRootPropsT = ComponentProps<"div">;
+import { RatingContext } from "./RatingContext";
+import type { RatingContextT, RatingRootPropsT } from "./ratingTypes";
 
 export const RatingRoot = (p: RatingRootPropsT) => {
   const [hoverValue, setHoverValue] = useState<RatingContextT["hoverValue"]>(null);

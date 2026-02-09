@@ -2,12 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import { useMotionValue, useAnimate } from "framer-motion";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { SheetContext } from "./SheetContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-
-export type SheetRootPropsT = PropsWithChildren;
+import { SheetContext } from "./SheetContext";
+import type { SheetRootPropsT } from "./sheetTypes";
 
 export function SheetRoot({ children }: SheetRootPropsT) {
   const pathname = usePathname();

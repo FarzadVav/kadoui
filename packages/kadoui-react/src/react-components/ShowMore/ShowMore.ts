@@ -8,3 +8,5 @@ export const ShowMore = Object.assign(ShowMoreRoot, {
   Toggle: ShowMoreToggle,
   Fade: ShowMoreFade
 });
+
+export * from "./showMoreTypes";

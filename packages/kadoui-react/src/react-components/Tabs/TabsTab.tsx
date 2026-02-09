@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { TabsContext } from "./TabsContext";
-
-export type TabsTabPropsT = ComponentProps<"button"> & {
-  value: string;
-};
+import type { TabsTabPropsT } from "./tabsTypes";
 
 export function TabsTab({ value, onClick, ...p }: TabsTabPropsT) {
   const { activeTab, setActiveTab } = use(TabsContext);

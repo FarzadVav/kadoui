@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, useState } from "react";
+import { useState } from "react";
 
 import { SpoilerContext } from "./SpoilerContext";
-
-export type SpoilerRootProps = ComponentProps<"span">;
+import type { SpoilerRootProps } from "./spoilerTypes";
 
 export function SpoilerRoot(p: SpoilerRootProps) {
   const [isOpen, setOpen] = useState(false);

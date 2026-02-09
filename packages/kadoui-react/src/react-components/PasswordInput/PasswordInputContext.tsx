@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-export type PasswordInputContextT = {
-  isVisible: boolean;
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
-}
+import type { PasswordInputContextT } from "./passwordInputTypes";
 
 export const PasswordInputContext = createContext<PasswordInputContextT>({} as PasswordInputContextT);

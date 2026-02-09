@@ -12,3 +12,5 @@ export const Carousel = Object.assign(CarouselRoot, {
   NextBtn: CarouselNextBtn,
   PrevBtn: CarouselPrevBtn,
 });
+
+export * from "./carouselTypes";

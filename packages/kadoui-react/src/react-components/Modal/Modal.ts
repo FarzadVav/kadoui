@@ -12,3 +12,5 @@ export const Modal = Object.assign(ModalRoot, {
   Header: ModalHeader,
   Content: ModalContent,
 });
+
+export * from "./modalTypes";

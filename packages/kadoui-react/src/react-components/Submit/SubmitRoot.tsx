@@ -1,13 +1,9 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
-import type { ComponentProps, ReactNode } from "react";
 
 import { SubmitContext } from "./SubmitContext";
-
-export type SubmitRootPropsT = ComponentProps<"button"> & {
-  loader?: ReactNode;
-};
+import type { SubmitRootPropsT } from "./submitTypes";
 
 export function SubmitRoot({ disabled, ...p }: SubmitRootPropsT) {
   const { pending } = useFormStatus()

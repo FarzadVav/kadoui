@@ -3,12 +3,8 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-import { PaginationPropsT } from "./PaginationTypes";
 import { PaginationContext } from "./PaginationContext";
-
-export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
-  pageKey?: string;
-};
+import type { PaginationSearchParamsRootPropsT } from "./PaginationTypes";
 
 export function PaginationSearchParamsRoot({
   pages,

@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use, useCallback, useEffect, useRef } from "react";
+import { use, useCallback, useEffect, useRef } from "react";
 
 import { CarouselContext } from "./CarouselContext";
-
-export type CarouselContainerPropsT = ComponentProps<"div">;
+import type { CarouselContainerPropsT } from "./carouselTypes";
 
 export function CarouselContainer({ children, style, ...p }: CarouselContainerPropsT) {
   const { scrollRef, mouseScroll, childrenWidth } = use(CarouselContext);

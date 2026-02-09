@@ -1,9 +1,9 @@
 "use client";
 
-import { ComponentProps, use } from "react"
-import { ContextMenuContext } from "./ContextMenuContext";
+import { use } from "react";
 
-type ContextMenuItemPropsT = ComponentProps<"button">;
+import { ContextMenuContext } from "./ContextMenuContext";
+import type { ContextMenuItemPropsT } from "./contextMenuTypes";
 
 export function ContextMenuItem({ onClick, ...p }: ContextMenuItemPropsT) {
   const { closeHandler } = use(ContextMenuContext);

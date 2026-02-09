@@ -1,12 +1,9 @@
 "use client";
 
-import { type ComponentProps, ReactNode, use } from "react";
+import { use } from "react";
 
 import { AccordionContext } from "./AccordionContext";
-
-export type AccordionTogglePropsT = ComponentProps<"button"> & {
-  icon?: ReactNode;
-};
+import type { AccordionTogglePropsT } from "./accordionTypes";
 
 export function AccordionToggle({ onClick, ...props }: AccordionTogglePropsT) {
   const { isOpen, setOpen } = use(AccordionContext);

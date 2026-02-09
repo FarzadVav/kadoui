@@ -1,12 +1,11 @@
 "use client";
 
 import { use, useEffect, useRef } from "react";
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { ModalContext } from "./ModalContext";
 import { FRAMER_MOTION_DURATION } from "../../configs";
-
-export type ModalBodyPropsT = HTMLMotionProps<"div">;
+import { ModalContext } from "./ModalContext";
+import type { ModalBodyPropsT } from "./modalTypes";
 
 export function ModalBody(p: ModalBodyPropsT) {
   const { isOpen } = use(ModalContext);

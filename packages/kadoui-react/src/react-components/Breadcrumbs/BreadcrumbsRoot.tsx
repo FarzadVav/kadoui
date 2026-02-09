@@ -1,12 +1,7 @@
 "use client";
 
-import type { ComponentProps, ReactNode } from "react";
-
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
-
-export type BreadcrumbsRootPropsT = ComponentProps<"nav"> & {
-  separator: ReactNode;
-};
+import type { BreadcrumbsRootPropsT } from "./breadcrumbsTypes";
 
 export function BreadcrumbsRoot({
   separator,

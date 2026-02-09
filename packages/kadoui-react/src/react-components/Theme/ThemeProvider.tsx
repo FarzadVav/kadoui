@@ -1,10 +1,9 @@
 "use client";
 
-import { PropsWithChildren, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { ThemeContext, ThemeT } from "./ThemeContext";
-
-type ThemeProviderPropsT = PropsWithChildren;
+import { ThemeContext } from "./ThemeContext";
+import type { ThemeProviderPropsT, ThemeT } from "./themeTypes";
 
 export function ThemeProvider({ children }: ThemeProviderPropsT) {
   const [theme, setTheme] = useState<ThemeT | undefined>(undefined);

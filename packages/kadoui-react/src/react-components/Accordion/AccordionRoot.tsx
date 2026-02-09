@@ -1,10 +1,9 @@
 "use client";
 
-import { PropsWithChildren, useState } from "react";
+import { useState } from "react";
 
 import { AccordionContext } from "./AccordionContext";
-
-export type AccordionRootPropsT = PropsWithChildren;
+import type { AccordionRootPropsT } from "./accordionTypes";
 
 export function AccordionRoot({ children }: AccordionRootPropsT) {
   const [isOpen, setOpen] = useState(false);

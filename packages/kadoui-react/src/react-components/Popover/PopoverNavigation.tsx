@@ -1,8 +1,7 @@
-import {
-  AccessNavigation,
-  AccessNavigationPropsT,
-} from "../AccessNavigation/AccessNavigation";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export function PopoverNavigation(p: AccessNavigationPropsT) {
+import type { PopoverNavigationPropsT } from "./popoverTypes";
+
+export function PopoverNavigation(p: PopoverNavigationPropsT) {
   return <AccessNavigation {...p} />;
 }

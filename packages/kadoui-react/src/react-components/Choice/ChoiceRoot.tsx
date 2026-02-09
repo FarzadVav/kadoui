@@ -1,10 +1,7 @@
 "use client";
 
-import { ComponentProps } from "react";
-
-import { ChoiceContext, ChoiceContextT } from "./ChoiceContext";
-
-type ChoiceRootPropsT = ComponentProps<"div"> & ChoiceContextT;
+import { ChoiceContext } from "./ChoiceContext";
+import type { ChoiceContextT, ChoiceRootPropsT } from "./choiceTypes";
 
 export function ChoiceRoot({
   multiple,

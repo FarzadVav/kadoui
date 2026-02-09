@@ -6,3 +6,5 @@ export const Choice = Object.assign(ChoiceRoot, {
   Navigation: ChoiceNavigation,
   Trigger: ChoiceTrigger,
 });
+
+export * from "./choiceTypes";

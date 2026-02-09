@@ -1,13 +1,7 @@
-"use client"
-
-import type { ComponentProps } from "react";
+"use client";
 
 import { ProgressContext } from "./ProgressContext";
-
-export type ProgressRootPropsT = ComponentProps<"div"> & {
-  value: number;
-  maxValue?: number;
-};
+import type { ProgressRootPropsT } from "./progressTypes";
 
 export function ProgressRoot({ value, maxValue = 100, ...p }: ProgressRootPropsT) {
   return (

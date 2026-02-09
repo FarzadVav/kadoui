@@ -1,10 +1,9 @@
 "use client";
 
-import { type ComponentProps, use } from "react";
+import { use } from "react";
 
 import { OtpContext } from "./OtpContext";
-
-export type OtpHiddenInputPropsT = ComponentProps<"input">;
+import type { OtpHiddenInputPropsT } from "./otpTypes";
 
 export function OtpHiddenInput({ name, ...p }: OtpHiddenInputPropsT) {
   const { getInputsValue } = use(OtpContext);
