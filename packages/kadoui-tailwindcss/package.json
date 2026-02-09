@@ -6,6 +6,9 @@
   "license": "MIT",
   "type": "module",
   "repository": "https://github.com/FarzadVav/kadoui/packages/kadoui-tailwindcss",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./src/index.css",
     "./postcss": "./postcss.config.js"
