@@ -1,7 +1,7 @@
 @utility alert {
   @apply flex items-center bg-palette/10 text-palette border border-palette;
 
-  min-height: var(--element-h);
+  min-height: var(--element-size);
   padding: var(--element-spacing);
   gap: calc(var(--element-spacing));
   border-radius: var(--element-rounded);

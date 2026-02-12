@@ -90,11 +90,11 @@ Set up your color system and design tokens:
   --brush: var(--background);
 
   /* Element sizing variables */
-  --element-xs-h: calc(var(--spacing) * 6);
-  --element-sm-h: calc(var(--spacing) * 8);
-  --element-medium-h: calc(var(--spacing) * 10);
-  --element-lg-h: calc(var(--spacing) * 12);
-  --element-xl-h: calc(var(--spacing) * 14);
+  --element-xs-size: calc(var(--spacing) * 6);
+  --element-sm-size: calc(var(--spacing) * 8);
+  --element-medium-size: calc(var(--spacing) * 10);
+  --element-lg-size: calc(var(--spacing) * 12);
+  --element-xl-size: calc(var(--spacing) * 14);
 
   --element-xs-spacing: calc(var(--spacing) * 1);
   --element-sm-spacing: calc(var(--spacing) * 1.5);
@@ -103,7 +103,7 @@ Set up your color system and design tokens:
   --element-xl-spacing: calc(var(--spacing) * 9);
 
   /* Default element size */
-  --element-h: var(--element-medium-h);
+  --element-size: var(--element-medium-size);
   --element-spacing: var(--element-medium-spacing);
   --element-text: var(--text-base);
   --element-leading: var(--text-base--line-height);
@@ -279,7 +279,7 @@ The element sizing system provides consistent sizing across components:
 
 Each size variant sets:
 
-- `--element-h` - Height
+- `--element-size` - Height
 - `--element-spacing` - Padding/spacing
 - `--element-text` - Font size
 - `--element-leading` - Line height
@@ -1270,7 +1270,7 @@ Use the `dark:` variant:
 }
 
 @utility element-xxl {
-  --element-h: var(--element-xxl-h);
+  --element-size: var(--element-xxl-h);
   --element-spacing: var(--element-xxl-spacing);
   --element-text: var(--element-xxl-text);
   --element-leading: var(--element-xxl-leading);

@@ -1,10 +1,10 @@
 @utility btn {
-  --element-w: max-content;
+  --element-w: min(max-content, 100%);
 
-  @apply max-w-full flex items-center justify-center transition-all outline-solid outline-2 outline-transparent focus-visible:outline-palette disabled:opacity-50 disabled:cursor-not-allowed active:opacity-50;
+  @apply flex items-center justify-center transition-all outline-solid outline-2 outline-transparent focus-visible:outline-palette disabled:opacity-50 disabled:cursor-not-allowed active:opacity-50;
 
   width: var(--element-w);
-  height: var(--element-h);
+  height: var(--element-size);
   padding: 0 var(--element-spacing);
   gap: calc(var(--element-spacing) / 1.5);
   border-radius: var(--element-rounded);

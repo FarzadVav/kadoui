@@ -24,11 +24,11 @@
   --palette: var(--foreground);
   --brush: var(--background);
 
-  --element-xs-h: calc(var(--spacing) * 6);
-  --element-sm-h: calc(var(--spacing) * 8);
-  --element-medium-h: calc(var(--spacing) * 10);
-  --element-lg-h: calc(var(--spacing) * 12);
-  --element-xl-h: calc(var(--spacing) * 14);
+  --element-xs-size: calc(var(--spacing) * 6);
+  --element-sm-size: calc(var(--spacing) * 8);
+  --element-medium-size: calc(var(--spacing) * 10);
+  --element-lg-size: calc(var(--spacing) * 12);
+  --element-xl-size: calc(var(--spacing) * 14);
 
   --element-xs-spacing: calc(var(--spacing) * 1);
   --element-sm-spacing: calc(var(--spacing) * 1.5);
@@ -54,7 +54,7 @@
   --element-lg-rounded: var(--radius-xl);
   --element-xl-rounded: var(--radius-2xl);
 
-  --element-h: var(--element-medium-h);
+  --element-size: var(--element-medium-size);
   --element-spacing: var(--element-medium-spacing);
   --element-text: var(--element-medium-text);
   --element-leading: var(--element-medium-leading);

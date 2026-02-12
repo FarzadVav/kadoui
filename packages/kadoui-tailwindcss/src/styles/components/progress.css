@@ -1,5 +1,5 @@
 @utility progress {
-  @apply w-full rounded-(--element-rounded) overflow-hidden h-(--element-h) bg-palette/10;
+  @apply w-full rounded-(--element-rounded) overflow-hidden h-(--element-size) bg-palette/10;
 }
 
 @utility progress-bar {

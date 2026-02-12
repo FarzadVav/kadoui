@@ -15,11 +15,11 @@
 }
 
 @utility modal-header {
-  @apply min-h-(--element-h) flex items-center p-(--element-spacing) gap-(--element-spacing) bg-background rounded-t-(--element-rounded) border-b border-background-thin sticky top-0 shrink-0;
+  @apply min-h-(--element-size) flex items-center p-(--element-spacing) gap-(--element-spacing) bg-background rounded-t-(--element-rounded) border-b border-background-thin sticky top-0 shrink-0;
 }
 
 @utility modal-footer {
-  @apply min-h-(--element-h) flex items-center p-(--element-spacing) gap-(--element-spacing) bg-background rounded-b-(--element-rounded) border-t border-background-thin sticky bottom-0 shrink-0;
+  @apply min-h-(--element-size) flex items-center p-(--element-spacing) gap-(--element-spacing) bg-background rounded-b-(--element-rounded) border-t border-background-thin sticky bottom-0 shrink-0;
 }
 
 @utility modal-content {

@@ -5,8 +5,8 @@
 @utility choice-radio {
   @apply rounded-full flex items-center justify-center;
 
-  width: var(--element-h);
-  height: var(--element-h);
+  width: var(--element-size);
+  height: var(--element-size);
 
   &[data-state="false"]>.choice-radio-trigger {
     @apply opacity-0 scale-0;
@@ -16,15 +16,15 @@
 @utility choice-radio-trigger {
   @apply bg-palette rounded-full transition-all flex items-center justify-center text-brush;
 
-  width: calc(var(--element-h) - 0.5rem);
-  height: calc(var(--element-h) - 0.5rem);
+  width: calc(var(--element-size) - 0.5rem);
+  height: calc(var(--element-size) - 0.5rem);
 }
 
 @utility choice-checkbox {
   @apply rounded-(--element-rounded) flex items-center justify-center;
 
-  width: var(--element-h);
-  height: var(--element-h);
+  width: var(--element-size);
+  height: var(--element-size);
 
   &[data-state="false"]>.choice-checkbox-trigger {
     @apply opacity-0 scale-0;
@@ -34,15 +34,15 @@
 @utility choice-checkbox-trigger {
   @apply bg-palette rounded-[calc(var(--element-rounded)-0.25rem)] transition-all flex items-center justify-center text-brush;
 
-  width: calc(var(--element-h) - 0.5rem);
-  height: calc(var(--element-h) - 0.5rem);
+  width: calc(var(--element-size) - 0.5rem);
+  height: calc(var(--element-size) - 0.5rem);
 }
 
 @utility choice-switch {
   @apply relative rounded-full flex items-center;
 
-  width: calc(var(--element-h) * 2);
-  height: var(--element-h);
+  width: calc(var(--element-size) * 2);
+  height: var(--element-size);
 
   &[data-state="true"] {
     @apply bg-palette text-brush;
@@ -50,7 +50,7 @@
     &>.choice-switch-trigger {
       @apply bg-brush text-palette;
 
-      left: calc(var(--element-h) + 0.25rem);
+      left: calc(var(--element-size) + 0.25rem);
     }
   }
 
@@ -64,6 +64,6 @@
 @utility choice-switch-trigger {
   @apply absolute rounded-full transition-all flex items-center justify-center;
 
-  width: calc(var(--element-h) - 0.5rem);
-  height: calc(var(--element-h) - 0.5rem);
+  width: calc(var(--element-size) - 0.5rem);
+  height: calc(var(--element-size) - 0.5rem);
 }

@@ -6,7 +6,7 @@
   @apply text-palette flex cursor-text relative transition-all outline-solid outline-2 outline-transparent focus-within:outline-palette disabled:opacity-50 disabled:cursor-not-allowed has-[[type=file]]:cursor-pointer;
 
   width: var(--element-w);
-  height: var(--element-h);
+  height: var(--element-size);
   border-radius: var(--element-rounded);
   padding: var(--element-spacing);
   gap: var(--element-spacing);

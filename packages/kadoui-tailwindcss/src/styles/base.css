@@ -47,43 +47,58 @@
 /* Element sizes */
 
 @utility element-xs {
-  --element-h: var(--element-xs-h);
+  --element-size: var(--element-xs-size);
   --element-spacing: var(--element-xs-spacing);
   --element-text: var(--element-xs-text);
   --element-leading: var(--element-xs-leading);
-  --element-rounded: var(--element-xs-rounded);
+
+  &:not(*:is(.element-rounded-full)) {
+    --element-rounded: var(--element-xs-rounded);
+  }
 }
 
 @utility element-sm {
-  --element-h: var(--element-sm-h);
+  --element-size: var(--element-sm-size);
   --element-spacing: var(--element-sm-spacing);
   --element-text: var(--element-sm-text);
   --element-leading: var(--element-sm-leading);
-  --element-rounded: var(--element-sm-rounded);
+
+  &:not(*:is(.element-rounded-full)) {
+    --element-rounded: var(--element-sm-rounded);
+  }
 }
 
 @utility element-md {
-  --element-h: var(--element-medium-h);
+  --element-size: var(--element-medium-size);
   --element-spacing: var(--element-medium-spacing);
   --element-text: var(--element-medium-text);
   --element-leading: var(--element-medium-leading);
-  --element-rounded: var(--element-medium-rounded);
+
+  &:not(*:is(.element-rounded-full)) {
+    --element-rounded: var(--element-medium-rounded);
+  }
 }
 
 @utility element-lg {
-  --element-h: var(--element-lg-h);
+  --element-size: var(--element-lg-size);
   --element-spacing: var(--element-lg-spacing);
   --element-text: var(--element-lg-text);
   --element-leading: var(--element-lg-leading);
-  --element-rounded: var(--element-lg-rounded);
+
+  &:not(*:is(.element-rounded-full)) {
+    --element-rounded: var(--element-lg-rounded);
+  }
 }
 
 @utility element-xl {
-  --element-h: var(--element-xl-h);
+  --element-size: var(--element-xl-size);
   --element-spacing: var(--element-xl-spacing);
   --element-text: var(--element-xl-text);
   --element-leading: var(--element-xl-leading);
-  --element-rounded: var(--element-xl-rounded);
+
+  &:not(*:is(.element-rounded-full)) {
+    --element-rounded: var(--element-xl-rounded);
+  }
 }
 
 /* Base styles */
@@ -130,11 +145,10 @@
 /* Use element sizes */
 
 @utility element-square-size {
-  --element-w: var(--element-h);
+  --element-w: min(var(--element-size), var(--element-size));
   --element-spacing: 0;
 
-  text-align: center;
-  min-width: var(--element-w);
+  @apply text-center justify-center items-center;
 }
 
 @utility element-w-full {
@@ -142,10 +156,10 @@
 }
 
 @utility element-icon-size {
-  width: calc(var(--element-h) / 2);
-  min-width: calc(var(--element-h) / 2);
-  height: calc(var(--element-h) / 2);
-  min-height: calc(var(--element-h) / 2);
+  width: calc(var(--element-size) / 2);
+  min-width: calc(var(--element-size) / 2);
+  height: calc(var(--element-size) / 2);
+  min-height: calc(var(--element-size) / 2);
 }
 
 @utility element-rounded-full {
