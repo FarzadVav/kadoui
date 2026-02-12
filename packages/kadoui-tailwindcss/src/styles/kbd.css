@@ -3,8 +3,6 @@
 
   padding: var(--element-spacing);
   border-radius: var(--element-rounded);
-  font-size: var(--element-text);
-  line-height: var(--element-line);
   box-shadow: 0 2px 0 1px var(--color-palette);
 
   &:active {

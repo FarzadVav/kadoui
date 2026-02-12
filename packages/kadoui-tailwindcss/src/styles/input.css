@@ -7,8 +7,6 @@
 
   width: var(--element-w);
   height: var(--element-h);
-  font-size: var(--element-text);
-  line-height: var(--element-line);
   border-radius: var(--element-rounded);
   padding: var(--element-spacing);
   gap: var(--element-spacing);

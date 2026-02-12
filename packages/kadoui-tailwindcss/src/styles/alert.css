@@ -2,8 +2,6 @@
   @apply flex items-center bg-palette/10 text-palette border border-palette;
 
   min-height: var(--element-h);
-  font-size: var(--element-text);
-  line-height: var(--element-line);
   padding: var(--element-spacing);
   gap: calc(var(--element-spacing));
   border-radius: var(--element-rounded);

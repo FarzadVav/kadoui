@@ -8,8 +8,6 @@
   padding: 0 var(--element-spacing);
   gap: calc(var(--element-spacing) / 1.5);
   border-radius: var(--element-rounded);
-  font-size: var(--element-text);
-  line-height: var(--element-line);
 }
 
 @utility btn-fill {

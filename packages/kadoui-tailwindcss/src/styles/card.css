@@ -1,8 +1,6 @@
 @utility card {
   padding: var(--element-spacing);
   border-radius: var(--element-rounded);
-  font-size: var(--element-text);
-  line-height: var(--element-line);
 }
 
 @utility card-menu {

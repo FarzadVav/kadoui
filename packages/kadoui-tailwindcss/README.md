@@ -65,12 +65,12 @@ Set up your color system and design tokens:
   --background: #efefef;
   --background-thin: #ffffff;
   --background-thick: #dfdfdf;
-  
+
   /* Foreground colors */
   --foreground: #151515;
   --foreground-thin: #303030;
   --foreground-thick: #000000;
-  
+
   /* Semantic colors */
   --primary: #ff5e00;
   --primary-foreground: #ffffff;
@@ -84,24 +84,24 @@ Set up your color system and design tokens:
   --warning-foreground: #ffffff;
   --info: #0000dd;
   --info-foreground: #ffffff;
-  
+
   /* Palette system */
   --palette: var(--foreground);
   --brush: var(--background);
-  
+
   /* Element sizing variables */
   --element-xs-h: calc(var(--spacing) * 6);
   --element-sm-h: calc(var(--spacing) * 8);
   --element-medium-h: calc(var(--spacing) * 10);
   --element-lg-h: calc(var(--spacing) * 12);
   --element-xl-h: calc(var(--spacing) * 14);
-  
+
   --element-xs-spacing: calc(var(--spacing) * 1);
   --element-sm-spacing: calc(var(--spacing) * 1.5);
   --element-medium-spacing: calc(var(--spacing) * 3);
   --element-lg-spacing: calc(var(--spacing) * 6);
   --element-xl-spacing: calc(var(--spacing) * 9);
-  
+
   /* Default element size */
   --element-h: var(--element-medium-h);
   --element-spacing: var(--element-medium-spacing);
@@ -129,7 +129,7 @@ Set up your color system and design tokens:
   --color-warning-foreground: var(--warning-foreground);
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
-  
+
   --color-palette: var(--palette);
   --color-brush: var(--brush);
 }
@@ -177,28 +177,29 @@ export default {
 
 The design system uses a consistent spacing scale based on Tailwind's default spacing:
 
-| Level | Value | Usage |
-|-------|-------|-------|
+| Level | Value       | Usage                |
+| ----- | ----------- | -------------------- |
 | lvl-1 | `0.5` (2px) | Tight spacing, icons |
-| lvl-2 | `1.5` (6px) | Small gaps |
-| lvl-3 | `3` (12px) | Default spacing |
-| lvl-4 | `6` (24px) | Large gaps |
-| lvl-5 | `9` (36px) | Extra large gaps |
-| lvl-6 | `12` (48px) | Section spacing |
-| lvl-7 | `16` (64px) | Page sections |
-| lvl-8 | `20` (80px) | Major sections |
+| lvl-2 | `1.5` (6px) | Small gaps           |
+| lvl-3 | `3` (12px)  | Default spacing      |
+| lvl-4 | `6` (24px)  | Large gaps           |
+| lvl-5 | `9` (36px)  | Extra large gaps     |
+| lvl-6 | `12` (48px) | Section spacing      |
+| lvl-7 | `16` (64px) | Page sections        |
+| lvl-8 | `20` (80px) | Major sections       |
 
 ### Breakpoints
 
-| Breakpoint | Min Width | Description |
-|------------|-----------|-------------|
-| `sm` | 640px | Mobile |
-| `md` | 768px | Tablet |
-| `lg` | 1024px | Desktop |
-| `xl` | 1280px | Large desktop |
-| `2xl` | 1536px | Extra large desktop |
+| Breakpoint | Min Width | Description         |
+| ---------- | --------- | ------------------- |
+| `sm`       | 640px     | Mobile              |
+| `md`       | 768px     | Tablet              |
+| `lg`       | 1024px    | Desktop             |
+| `xl`       | 1280px    | Large desktop       |
+| `2xl`      | 1536px    | Extra large desktop |
 
 **Recommended Usage:**
+
 - `sm` - Mobile-first (default)
 - `sm:` - Tablet and up
 - `lg:` - Desktop and up
@@ -277,6 +278,7 @@ The element sizing system provides consistent sizing across components:
 - `element-xl` - Extra large (14 × spacing)
 
 Each size variant sets:
+
 - `--element-h` - Height
 - `--element-spacing` - Padding/spacing
 - `--element-text` - Font size
@@ -299,7 +301,7 @@ Each size variant sets:
 #### Element Utilities
 
 - `element-square-size` - Makes element square (width = height)
-- `element-full-w` - Full width element
+- `element-w-full` - Full width element
 - `element-icon-size` - Icon size (half of element height)
 
 **Example:**
@@ -311,7 +313,7 @@ Each size variant sets:
 </button>
 
 <!-- Full width button -->
-<button class="btn btn-fill element-full-w">Full Width</button>
+<button class="btn btn-fill element-w-full">Full Width</button>
 
 <!-- Icon -->
 <Icon class="element-icon-size" />
@@ -319,13 +321,13 @@ Each size variant sets:
 
 ### Border Radius
 
-| Level | Class | Value |
-|-------|-------|-------|
-| lvl-1 | `rounded` | Small radius |
-| lvl-2 | `rounded-md` | Medium radius |
-| lvl-3 | `rounded-lg` | Large radius |
-| lvl-4 | `rounded-xl` | Extra large radius |
-| lvl-5 | `rounded-2xl` | 2XL radius |
+| Level | Class         | Value              |
+| ----- | ------------- | ------------------ |
+| lvl-1 | `rounded`     | Small radius       |
+| lvl-2 | `rounded-md`  | Medium radius      |
+| lvl-3 | `rounded-lg`  | Large radius       |
+| lvl-4 | `rounded-xl`  | Extra large radius |
+| lvl-5 | `rounded-2xl` | 2XL radius         |
 
 ---
 
@@ -340,6 +342,7 @@ Each size variant sets:
 ```
 
 **Recommended Pattern:**
+
 ```html
 <h1 class="text-xl sm:text-2xl lg:text-5xl font-black">Responsive Heading</h1>
 ```
@@ -351,6 +354,7 @@ Each size variant sets:
 ```
 
 **Recommended Pattern:**
+
 ```html
 <h2 class="text-base sm:text-lg lg:text-xl font-bold">Responsive Title</h2>
 ```
@@ -358,6 +362,7 @@ Each size variant sets:
 #### Paragraphs
 
 **Recommended Pattern:**
+
 ```html
 <p class="text-sm sm:text-base">Responsive paragraph text</p>
 ```
@@ -383,7 +388,11 @@ Centered container with max-width:
 Styled link with hover underline:
 
 ```html
-<a href="#" class="link">Link text</a>
+<a
+  href="#"
+  class="link"
+  >Link text</a
+>
 ```
 
 #### Highlight
@@ -457,6 +466,7 @@ Buttons are the foundation of interactive elements.
 #### Button States
 
 Buttons automatically handle:
+
 - `disabled` - Reduced opacity, no pointer events
 - `focus-visible` - Outline ring
 - `active` - Reduced opacity
@@ -465,7 +475,11 @@ Buttons automatically handle:
 **Example:**
 
 ```html
-<button class="btn btn-fill" disabled>Disabled</button>
+<button
+  class="btn btn-fill"
+  disabled>
+  Disabled
+</button>
 ```
 
 #### Button Sizes
@@ -489,16 +503,14 @@ Buttons automatically handle:
 #### Full Width Buttons
 
 ```html
-<button class="btn btn-fill element-full-w">Full Width</button>
+<button class="btn btn-fill element-w-full">Full Width</button>
 ```
 
 #### Button with Data States
 
 ```html
 <!-- Active state -->
-<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">
-  Toggle
-</button>
+<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">Toggle</button>
 ```
 
 ---
@@ -511,7 +523,10 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input">
-  <input type="text" class="input-field" placeholder="Enter text" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Enter text" />
 </label>
 ```
 
@@ -525,12 +540,18 @@ Inputs are built using `<label>` elements for better accessibility.
 ```html
 <!-- Outlined input -->
 <label class="input input-outline">
-  <input type="text" class="input-field" placeholder="Outlined" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Outlined" />
 </label>
 
 <!-- Soft input -->
 <label class="input input-soft">
-  <input type="text" class="input-field" placeholder="Soft" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Soft" />
 </label>
 ```
 
@@ -539,7 +560,10 @@ Inputs are built using `<label>` elements for better accessibility.
 ```html
 <label class="input input-outline">
   <SearchIcon class="element-icon-size" />
-  <input type="text" class="input-field" placeholder="Search" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Search" />
 </label>
 ```
 
@@ -547,15 +571,24 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline element-xs">
-  <input type="text" class="input-field" placeholder="XS" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="XS" />
 </label>
 
 <label class="input input-outline element-sm">
-  <input type="text" class="input-field" placeholder="SM" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="SM" />
 </label>
 
 <label class="input input-outline">
-  <input type="text" class="input-field" placeholder="Default" />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Default" />
 </label>
 ```
 
@@ -563,7 +596,9 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline">
-  <textarea class="input-field" placeholder="Message"></textarea>
+  <textarea
+    class="input-field"
+    placeholder="Message"></textarea>
 </label>
 ```
 
@@ -571,7 +606,9 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline">
-  <input type="file" class="input-field" />
+  <input
+    type="file"
+    class="input-field" />
 </label>
 ```
 
@@ -584,9 +621,7 @@ Card component for content containers.
 #### Base Card
 
 ```html
-<div class="card">
-  Card content
-</div>
+<div class="card">Card content</div>
 ```
 
 #### Card Variants
@@ -669,9 +704,7 @@ Alert component for notifications and messages.
 #### Base Alert
 
 ```html
-<div class="alert">
-  Alert message
-</div>
+<div class="alert">Alert message</div>
 ```
 
 **Example:**
@@ -687,19 +720,13 @@ Alert component for notifications and messages.
 
 ```html
 <!-- Error alert -->
-<div class="alert palette-error">
-  Error occurred
-</div>
+<div class="alert palette-error">Error occurred</div>
 
 <!-- Success alert -->
-<div class="alert palette-success">
-  Operation successful
-</div>
+<div class="alert palette-success">Operation successful</div>
 
 <!-- Info alert -->
-<div class="alert palette-info">
-  Information message
-</div>
+<div class="alert palette-info">Information message</div>
 ```
 
 ---
@@ -778,14 +805,10 @@ Separate content with borders and spacing.
 
 ```html
 <!-- Bottom separator -->
-<div class="separate-b">
-  Content with bottom border and spacing
-</div>
+<div class="separate-b">Content with bottom border and spacing</div>
 
 <!-- Vertical separator -->
-<div class="separate-y">
-  Content with top and bottom borders
-</div>
+<div class="separate-y">Content with top and bottom borders</div>
 ```
 
 ---
@@ -797,26 +820,31 @@ Position elements relative to their container.
 #### Individual Positions
 
 **Top:**
+
 - `top-center` - Center vertically, top edge
 - `top-boundary` - Top boundary
 - `top-out` - Outside top edge
 
 **Right:**
+
 - `right-center` - Center horizontally, right edge
 - `right-boundary` - Right boundary
 - `right-out` - Outside right edge
 
 **Bottom:**
+
 - `bottom-center` - Center vertically, bottom edge
 - `bottom-boundary` - Bottom boundary
 - `bottom-out` - Outside bottom edge
 
 **Left:**
+
 - `left-center` - Center horizontally, left edge
 - `left-boundary` - Left boundary
 - `left-out` - Outside left edge
 
 **Center:**
+
 - `inset-center` - Perfect center (top-center + left-center)
 
 #### Compound Positions
@@ -834,9 +862,7 @@ Position elements relative to their container.
 
 ```html
 <div class="relative">
-  <div class="absolute position-b card">
-    Popover content
-  </div>
+  <div class="absolute position-b card">Popover content</div>
 </div>
 ```
 
@@ -847,9 +873,7 @@ Position elements relative to their container.
 ### Accordion
 
 ```html
-<div class="accordion-body">
-  Accordion content
-</div>
+<div class="accordion-body">Accordion content</div>
 ```
 
 ---
@@ -862,13 +886,9 @@ Position elements relative to their container.
   <!-- Body -->
   <div class="modal-body">
     <!-- Header -->
-    <div class="modal-header">
-      Modal Title
-    </div>
+    <div class="modal-header">Modal Title</div>
     <!-- Content -->
-    <div class="modal-content">
-      Modal content
-    </div>
+    <div class="modal-content">Modal content</div>
   </div>
 </div>
 ```
@@ -881,9 +901,7 @@ Position elements relative to their container.
 <!-- Portal (backdrop) -->
 <div class="drawer-portal">
   <!-- Body -->
-  <div class="drawer-body">
-    Drawer content
-  </div>
+  <div class="drawer-body">Drawer content</div>
 </div>
 ```
 
@@ -901,9 +919,7 @@ Position elements relative to their container.
       <div class="sheet-handlebar"></div>
     </div>
     <!-- Content -->
-    <div class="sheet-content">
-      Sheet content
-    </div>
+    <div class="sheet-content">Sheet content</div>
   </div>
 </div>
 ```
@@ -915,13 +931,12 @@ Position elements relative to their container.
 ```html
 <div class="popover">
   <button class="btn">Trigger</button>
-  <div class="popover-body position-b card">
-    Popover content
-  </div>
+  <div class="popover-body position-b card">Popover content</div>
 </div>
 ```
 
 **Position Classes:**
+
 - `position-t` - Top
 - `position-tr` - Top right
 - `position-r` - Right
@@ -960,11 +975,16 @@ Position elements relative to their container.
 ```html
 <div class="select-box-input input input-outline">
   <ChevronDownIcon />
-  <input type="text" class="input-field" placeholder="Select..." />
+  <input
+    type="text"
+    class="input-field"
+    placeholder="Select..." />
   <div class="select-box-list card card-y">
     <div class="input input-outline">
       <SearchIcon />
-      <input type="text" class="input-field" />
+      <input
+        type="text"
+        class="input-field" />
     </div>
     <button class="select-box-option btn">Option 1</button>
     <button class="select-box-option btn">Option 2</button>
@@ -1017,6 +1037,7 @@ Choice component for radio buttons, checkboxes, and switches.
 **States:**
 
 Use `data-state` attribute:
+
 - `data-state="true"` - Active/checked
 - `data-state="false"` - Inactive/unchecked
 
@@ -1039,7 +1060,9 @@ Use `data-state` attribute:
 
 ```html
 <div class="progress">
-  <div class="progress-bar" style="width: 45%">
+  <div
+    class="progress-bar"
+    style="width: 45%">
     45%
   </div>
 </div>
@@ -1066,7 +1089,7 @@ Use `data-state` attribute:
   <!-- Fade overlays -->
   <div class="carousel-left-fade"></div>
   <div class="carousel-right-fade"></div>
-  
+
   <!-- Container -->
   <div class="carousel-container">
     <div class="carousel-children card">Item 1</div>
@@ -1084,10 +1107,18 @@ Use `data-state` attribute:
 ```html
 <nav class="breadcrumbs">
   <div class="breadcrumbs-item">
-    <a href="#" class="btn link">Home</a>
+    <a
+      href="#"
+      class="btn link"
+      >Home</a
+    >
   </div>
   <div class="breadcrumbs-item">
-    <a href="#" class="btn link">Articles</a>
+    <a
+      href="#"
+      class="btn link"
+      >Articles</a
+    >
   </div>
   <div class="breadcrumbs-item">
     <span class="btn btn-fill">Current</span>
@@ -1101,9 +1132,15 @@ Use `data-state` attribute:
 
 ```html
 <div class="otp">
-  <input type="text" class="input input-outline input-square" />
-  <input type="text" class="input input-outline input-square" />
-  <input type="text" class="input input-outline input-square" />
+  <input
+    type="text"
+    class="input input-outline input-square" />
+  <input
+    type="text"
+    class="input input-outline input-square" />
+  <input
+    type="text"
+    class="input input-outline input-square" />
 </div>
 ```
 
@@ -1113,9 +1150,7 @@ Use `data-state` attribute:
 
 ```html
 <div class="relative">
-  <div class="show-more-content">
-    Long content here...
-  </div>
+  <div class="show-more-content">Long content here...</div>
   <div class="show-more-fade"></div>
   <button class="btn">Show more</button>
 </div>
@@ -1132,6 +1167,7 @@ Use `data-state` attribute:
 ```
 
 **States:**
+
 - `data-state="false"` - Blurred (default)
 - `data-state="true"` - Revealed
 
@@ -1146,6 +1182,7 @@ Use `data-state` attribute:
 ```
 
 **States:**
+
 - `data-state="false"` - Hidden
 - `data-state="true"` - Visible
 
@@ -1183,9 +1220,7 @@ Dark mode is supported via the `[data-theme="dark"]` attribute.
 Use the `dark:` variant:
 
 ```html
-<div class="bg-background dark:bg-background-thick">
-  Content
-</div>
+<div class="bg-background dark:bg-background-thick">Content</div>
 ```
 
 ---
@@ -1309,9 +1344,7 @@ Use `data-state` for component states:
 
 ```html
 <!-- ✅ Good -->
-<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">
-  Toggle
-</button>
+<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">Toggle</button>
 ```
 
 ---
@@ -1324,13 +1357,9 @@ This package is designed to work seamlessly with `@kadoui/react`:
 import { Accordion } from "@kadoui/react";
 
 <Accordion>
-  <Accordion.Toggle className="btn btn-soft">
-    Toggle
-  </Accordion.Toggle>
-  <Accordion.Body className="accordion-body">
-    Content
-  </Accordion.Body>
-</Accordion>
+  <Accordion.Toggle className="btn btn-soft">Toggle</Accordion.Toggle>
+  <Accordion.Body className="accordion-body">Content</Accordion.Body>
+</Accordion>;
 ```
 
 See [@kadoui/react documentation](https://www.npmjs.com/package/@kadoui/react) for component usage.

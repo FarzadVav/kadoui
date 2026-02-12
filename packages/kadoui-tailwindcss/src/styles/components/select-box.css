@@ -7,5 +7,5 @@
 }
 
 @utility select-box-option {
-  @apply btn element-full-w justify-start;
+  @apply btn element-w-full justify-start;
 }
