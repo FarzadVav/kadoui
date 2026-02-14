@@ -52,9 +52,9 @@
   --element-text: var(--element-xs-text);
   --element-leading: var(--element-xs-leading);
 
-  .element-rounded-full &,
-  &.element-rounded-full {
-    --element-rounded: var(--element-xs-rounded);
+  &.element-rounded-full,
+  .element-rounded-full * {
+    --element-rounded: calc(infinity * 1px);
   }
 }
 
@@ -64,9 +64,9 @@
   --element-text: var(--element-sm-text);
   --element-leading: var(--element-sm-leading);
 
-  .element-rounded-full &,
-  &.element-rounded-full {
-    --element-rounded: var(--element-sm-rounded);
+  &.element-rounded-full,
+  .element-rounded-full * {
+    --element-rounded: calc(infinity * 1px);
   }
 }
 
@@ -76,9 +76,9 @@
   --element-text: var(--element-medium-text);
   --element-leading: var(--element-medium-leading);
 
-  .element-rounded-full &,
-  &.element-rounded-full {
-    --element-rounded: var(--element-medium-rounded);
+  &.element-rounded-full,
+  .element-rounded-full * {
+    --element-rounded: calc(infinity * 1px);
   }
 }
 
@@ -88,9 +88,9 @@
   --element-text: var(--element-lg-text);
   --element-leading: var(--element-lg-leading);
 
-  .element-rounded-full &,
-  &.element-rounded-full {
-    --element-rounded: var(--element-lg-rounded);
+  &.element-rounded-full,
+  .element-rounded-full * {
+    --element-rounded: calc(infinity * 1px);
   }
 }
 
@@ -100,9 +100,9 @@
   --element-text: var(--element-xl-text);
   --element-leading: var(--element-xl-leading);
 
-  .element-rounded-full &,
-  &.element-rounded-full {
-    --element-rounded: var(--element-xl-rounded);
+  &.element-rounded-full,
+  .element-rounded-full * {
+    --element-rounded: calc(infinity * 1px);
   }
 }
 
