@@ -3,9 +3,9 @@
 import { use, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { FRAMER_MOTION_DURATION } from "../../configs";
 import { ModalContext } from "./ModalContext";
 import type { ModalBodyPropsT } from "./modalTypes";
+import { FRAMER_MOTION_DURATION } from "../../configs";
 
 export function ModalBody(p: ModalBodyPropsT) {
   const { isOpen } = use(ModalContext);
