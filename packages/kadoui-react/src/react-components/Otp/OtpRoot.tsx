@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import { OtpContext } from "./OtpContext";
 import type { OtpRootPropsT } from "./otpTypes";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
 export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
@@ -22,6 +22,7 @@ export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
   return (
     <OtpContext value={{ inputs, getInputsValue }}>
       <AccessNavigation
+        dir="ltr"
         direction="x"
         {...p}
       />

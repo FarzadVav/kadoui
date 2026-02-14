@@ -7,7 +7,7 @@ export type OtpContextT = {
   getInputsValue: () => string;
 };
 
-export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction"> & {
+export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction" | "dir"> & {
   autoFocus?: boolean;
 };
 
