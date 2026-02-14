@@ -52,7 +52,8 @@
   --element-text: var(--element-xs-text);
   --element-leading: var(--element-xs-leading);
 
-  &:not(*:is(.element-rounded-full)) {
+  .element-rounded-full &,
+  &.element-rounded-full {
     --element-rounded: var(--element-xs-rounded);
   }
 }
@@ -63,7 +64,8 @@
   --element-text: var(--element-sm-text);
   --element-leading: var(--element-sm-leading);
 
-  &:not(*:is(.element-rounded-full)) {
+  .element-rounded-full &,
+  &.element-rounded-full {
     --element-rounded: var(--element-sm-rounded);
   }
 }
@@ -74,7 +76,8 @@
   --element-text: var(--element-medium-text);
   --element-leading: var(--element-medium-leading);
 
-  &:not(*:is(.element-rounded-full)) {
+  .element-rounded-full &,
+  &.element-rounded-full {
     --element-rounded: var(--element-medium-rounded);
   }
 }
@@ -85,7 +88,8 @@
   --element-text: var(--element-lg-text);
   --element-leading: var(--element-lg-leading);
 
-  &:not(*:is(.element-rounded-full)) {
+  .element-rounded-full &,
+  &.element-rounded-full {
     --element-rounded: var(--element-lg-rounded);
   }
 }
@@ -96,7 +100,8 @@
   --element-text: var(--element-xl-text);
   --element-leading: var(--element-xl-leading);
 
-  &:not(*:is(.element-rounded-full)) {
+  .element-rounded-full &,
+  &.element-rounded-full {
     --element-rounded: var(--element-xl-rounded);
   }
 }
