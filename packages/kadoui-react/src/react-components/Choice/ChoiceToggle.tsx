@@ -3,13 +3,13 @@
 import { use } from "react";
 
 import { ChoiceContext } from "./ChoiceContext";
-import type { ChoiceTriggerPropsT } from "./choiceTypes";
+import type { ChoiceTogglePropsT } from "./choiceTypes";
 
 export function ChoiceToggle({
   choiceName,
   onClick,
   ...p
-}: ChoiceTriggerPropsT) {
+}: ChoiceTogglePropsT) {
   const { multiple, activeChoice, setActiveChoice, requiredOne } = use(ChoiceContext);
 
   const isActive = multiple

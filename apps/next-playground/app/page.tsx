@@ -893,27 +893,27 @@ function Page() {
             <Choice.Toggle
               className="choice element-xs choice-radio"
               choiceName="1">
-              <span className="choice-radio-trigger" />
+              <span className="choice-radio-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-sm choice-radio"
               choiceName="2">
-              <span className="choice-radio-trigger" />
+              <span className="choice-radio-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice choice-radio"
               choiceName="3">
-              <span className="choice-radio-trigger" />
+              <span className="choice-radio-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-lg choice-radio"
               choiceName="4">
-              <span className="choice-radio-trigger" />
+              <span className="choice-radio-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-xl choice-radio"
               choiceName="5">
-              <span className="choice-radio-trigger" />
+              <span className="choice-radio-thumb" />
             </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
@@ -930,35 +930,35 @@ function Page() {
               className="choice element-xs choice-checkbox"
               choiceName="1">
               <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="size-2/3" />
+                <CheckIcon className="element-icon-size" />
               </Choice.Thumb>
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-sm choice-checkbox"
               choiceName="2">
               <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="size-2/3" />
+                <CheckIcon className="element-icon-size" />
               </Choice.Thumb>
             </Choice.Toggle>
             <Choice.Toggle
               className="choice choice-checkbox"
               choiceName="3">
               <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="size-2/3" />
+                <CheckIcon className="element-icon-size" />
               </Choice.Thumb>
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-lg choice-checkbox"
               choiceName="4">
               <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="size-2/3" />
+                <CheckIcon className="element-icon-size" />
               </Choice.Thumb>
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-xl choice-checkbox rounded-xl"
               choiceName="5">
               <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="size-2/3" />
+                <CheckIcon className="element-icon-size" />
               </Choice.Thumb>
             </Choice.Toggle>
           </Choice.Navigation>
@@ -975,27 +975,27 @@ function Page() {
             <Choice.Toggle
               className="choice element-xs choice-switch"
               choiceName="1">
-              <span className="choice-switch-trigger" />
+              <span className="choice-switch-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-sm choice-switch"
               choiceName="2">
-              <span className="choice-switch-trigger" />
+              <span className="choice-switch-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice choice-switch"
               choiceName="3">
-              <span className="choice-switch-trigger" />
+              <span className="choice-switch-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-lg choice-switch"
               choiceName="4">
-              <span className="choice-switch-trigger" />
+              <span className="choice-switch-thumb" />
             </Choice.Toggle>
             <Choice.Toggle
               className="choice element-xl choice-switch"
               choiceName="5">
-              <span className="choice-switch-trigger" />
+              <span className="choice-switch-thumb" />
             </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
