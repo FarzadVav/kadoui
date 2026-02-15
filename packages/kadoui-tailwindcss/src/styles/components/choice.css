@@ -8,12 +8,12 @@
   width: var(--element-size);
   height: var(--element-size);
 
-  &[data-state="false"]>.choice-radio-trigger {
+  &[data-state="false"]>.choice-radio-thumb {
     @apply opacity-0 scale-0;
   }
 }
 
-@utility choice-radio-trigger {
+@utility choice-radio-thumb {
   @apply bg-palette rounded-full transition-all flex items-center justify-center text-brush;
 
   width: calc(var(--element-size) - 0.5rem);
@@ -26,12 +26,12 @@
   width: var(--element-size);
   height: var(--element-size);
 
-  &[data-state="false"]>.choice-checkbox-trigger {
+  &[data-state="false"]>.choice-checkbox-thumb {
     @apply opacity-0 scale-0;
   }
 }
 
-@utility choice-checkbox-trigger {
+@utility choice-checkbox-thumb {
   @apply bg-palette rounded-[calc(var(--element-rounded)-0.25rem)] transition-all flex items-center justify-center text-brush;
 
   width: calc(var(--element-size) - 0.5rem);
@@ -47,21 +47,21 @@
   &[data-state="true"] {
     @apply bg-palette text-brush;
 
-    &>.choice-switch-trigger {
+    &>.choice-switch-thumb {
       @apply bg-brush text-palette;
 
       left: calc(var(--element-size) + 0.25rem);
     }
   }
 
-  &[data-state="false"]>.choice-switch-trigger {
+  &[data-state="false"]>.choice-switch-thumb {
     @apply bg-palette text-brush;
 
     left: 0.25rem;
   }
 }
 
-@utility choice-switch-trigger {
+@utility choice-switch-thumb {
   @apply absolute rounded-full transition-all flex items-center justify-center;
 
   width: calc(var(--element-size) - 0.5rem);

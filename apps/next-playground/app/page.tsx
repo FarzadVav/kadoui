@@ -929,37 +929,37 @@ function Page() {
             <Choice.Trigger
               className="choice element-xs choice-checkbox"
               choiceName="1">
-              <span className="choice-checkbox-trigger">
+              <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
-              </span>
+              </Choice.Thumb>
             </Choice.Trigger>
             <Choice.Trigger
               className="choice element-sm choice-checkbox"
               choiceName="2">
-              <span className="choice-checkbox-trigger">
+              <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
-              </span>
+              </Choice.Thumb>
             </Choice.Trigger>
             <Choice.Trigger
               className="choice choice-checkbox"
               choiceName="3">
-              <span className="choice-checkbox-trigger">
+              <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
-              </span>
+              </Choice.Thumb>
             </Choice.Trigger>
             <Choice.Trigger
               className="choice element-lg choice-checkbox"
               choiceName="4">
-              <span className="choice-checkbox-trigger">
+              <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
-              </span>
+              </Choice.Thumb>
             </Choice.Trigger>
             <Choice.Trigger
               className="choice element-xl choice-checkbox rounded-xl"
               choiceName="5">
-              <span className="choice-checkbox-trigger">
+              <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
-              </span>
+              </Choice.Thumb>
             </Choice.Trigger>
           </Choice.Navigation>
         </Choice>

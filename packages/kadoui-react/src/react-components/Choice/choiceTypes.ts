@@ -27,3 +27,5 @@ export type ChoiceTriggerPropsT = ComponentProps<"button"> & {
 };
 
 export type ChoiceNavigationPropsT = AccessNavigationPropsT;
+
+export type ChoiceThumbPropsT = ComponentProps<"span">;
