@@ -5,7 +5,7 @@ import { use } from "react";
 import { ChoiceContext } from "./ChoiceContext";
 import type { ChoiceTriggerPropsT } from "./choiceTypes";
 
-export function ChoiceTrigger({
+export function ChoiceToggle({
   choiceName,
   onClick,
   ...p

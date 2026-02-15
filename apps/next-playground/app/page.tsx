@@ -865,21 +865,21 @@ function Page() {
           activeChoice={filterChoice}
           setActiveChoice={setFilterChoice}>
           <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Trigger
+            <Choice.Toggle
               className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
               choiceName="1">
               Filter 1
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
               choiceName="2">
               Filter 2
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
               choiceName="3">
               Filter 3
-            </Choice.Trigger>
+            </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
 
@@ -890,31 +890,31 @@ function Page() {
           activeChoice={singleChoice}
           setActiveChoice={setSingleChoice}>
           <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Trigger
+            <Choice.Toggle
               className="choice element-xs choice-radio"
               choiceName="1">
               <span className="choice-radio-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-sm choice-radio"
               choiceName="2">
               <span className="choice-radio-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice choice-radio"
               choiceName="3">
               <span className="choice-radio-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-lg choice-radio"
               choiceName="4">
               <span className="choice-radio-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-xl choice-radio"
               choiceName="5">
               <span className="choice-radio-trigger" />
-            </Choice.Trigger>
+            </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
 
@@ -926,41 +926,41 @@ function Page() {
           setActiveChoice={setMultipleChoice}
           requiredOne>
           <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Trigger
+            <Choice.Toggle
               className="choice element-xs choice-checkbox"
               choiceName="1">
               <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
               </Choice.Thumb>
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-sm choice-checkbox"
               choiceName="2">
               <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
               </Choice.Thumb>
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice choice-checkbox"
               choiceName="3">
               <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
               </Choice.Thumb>
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-lg choice-checkbox"
               choiceName="4">
               <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
               </Choice.Thumb>
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-xl choice-checkbox rounded-xl"
               choiceName="5">
               <Choice.Thumb className="choice-checkbox-thumb">
                 <CheckIcon className="size-2/3" />
               </Choice.Thumb>
-            </Choice.Trigger>
+            </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
 
@@ -972,31 +972,31 @@ function Page() {
           setActiveChoice={setSwitchChoice}
           requiredOne>
           <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Trigger
+            <Choice.Toggle
               className="choice element-xs choice-switch"
               choiceName="1">
               <span className="choice-switch-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-sm choice-switch"
               choiceName="2">
               <span className="choice-switch-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice choice-switch"
               choiceName="3">
               <span className="choice-switch-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-lg choice-switch"
               choiceName="4">
               <span className="choice-switch-trigger" />
-            </Choice.Trigger>
-            <Choice.Trigger
+            </Choice.Toggle>
+            <Choice.Toggle
               className="choice element-xl choice-switch"
               choiceName="5">
               <span className="choice-switch-trigger" />
-            </Choice.Trigger>
+            </Choice.Toggle>
           </Choice.Navigation>
         </Choice>
       </div>

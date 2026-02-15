@@ -1,11 +1,11 @@
 import { ChoiceRoot } from "./ChoiceRoot";
 import { ChoiceThumb } from "./ChoiceThumb";
-import { ChoiceTrigger } from "./ChoiceTrigger";
+import { ChoiceToggle } from "./ChoiceToggle";
 import { ChoiceNavigation } from "./ChoiceNavigation";
 
 export const Choice = Object.assign(ChoiceRoot, {
   Navigation: ChoiceNavigation,
-  Trigger: ChoiceTrigger,
+  Toggle: ChoiceToggle,
   Thumb: ChoiceThumb
 });
 
