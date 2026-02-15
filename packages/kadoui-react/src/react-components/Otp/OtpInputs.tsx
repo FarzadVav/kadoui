@@ -5,7 +5,7 @@ import { ClipboardEvent, KeyboardEvent, use } from "react";
 import { OtpContext } from "./OtpContext";
 import type { OtpInputsPropsT } from "./otpTypes";
 
-export function OtpInputs({ name, length, onLastChange, ...props }: OtpInputsPropsT) {
+export function OtpInputs({ name, length, onLastChange, ...p }: OtpInputsPropsT) {
   const { inputs, getInputsValue } = use(OtpContext);
 
   const handlePaste = (ev: ClipboardEvent<HTMLInputElement>, startIndex: number) => {
@@ -73,7 +73,7 @@ export function OtpInputs({ name, length, onLastChange, ...props }: OtpInputsPro
           inputs.current[index] = el;
         }
       }}
-      {...props}
+      {...p}
     />
   )
   );

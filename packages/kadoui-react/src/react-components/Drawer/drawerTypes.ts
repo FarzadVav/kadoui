@@ -12,6 +12,6 @@ export type DrawerBodyPropsT = HTMLMotionProps<"div"> & {
   position?: "top" | "right" | "bottom" | "left";
 };
 
-export type DrawerTogglePropsT = ComponentProps<"button">;
+export type DrawerTogglePropsT = Omit<ComponentProps<"button">, "type">;
 
 export type DrawerPortalPropsT = HTMLMotionProps<"div">;

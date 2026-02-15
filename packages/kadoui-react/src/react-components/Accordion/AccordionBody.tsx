@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AccordionContext } from "./AccordionContext";
 import type { AccordionBodyPropsT } from "./accordionTypes";
 
-export function AccordionBody({ children, ...props }: AccordionBodyPropsT) {
+export function AccordionBody({ children, ...p }: AccordionBodyPropsT) {
   const { isOpen } = use(AccordionContext);
 
   return (
@@ -16,7 +16,7 @@ export function AccordionBody({ children, ...props }: AccordionBodyPropsT) {
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          {...props}
+          {...p}
         >
           {children as ReactNode}
         </motion.div>

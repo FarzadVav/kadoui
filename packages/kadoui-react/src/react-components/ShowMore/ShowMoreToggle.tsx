@@ -10,6 +10,7 @@ export function ShowMoreToggle({ onClick, style, ...p }: ShowMoreTogglePropsT) {
 
   return (
     <button
+      type="button"
       style={{
         position: "relative",
         ...style

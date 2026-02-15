@@ -18,6 +18,7 @@ export function ChoiceToggle({
 
   return (
     <button
+      type="button"
       data-state={isActive}
       onClick={(ev) => {
         onClick?.(ev);

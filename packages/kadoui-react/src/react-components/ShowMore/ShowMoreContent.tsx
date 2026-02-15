@@ -5,7 +5,7 @@ import { use } from "react";
 import { ShowMoreContext } from "./ShowMoreContext";
 import type { ShowMoreContentPropsT } from "./showMoreTypes";
 
-export function ShowMoreContent({ children, style, ...props }: ShowMoreContentPropsT) {
+export function ShowMoreContent({ children, style, ...p }: ShowMoreContentPropsT) {
   const { contentRef, shouldShowMore, isShowMore, maxHeight } = use(ShowMoreContext);
 
   return (
@@ -23,7 +23,7 @@ export function ShowMoreContent({ children, style, ...props }: ShowMoreContentPr
           : "auto",
         ...style
       }}
-      {...props}
+      {...p}
     >
       {children}
     </div>

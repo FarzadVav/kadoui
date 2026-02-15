@@ -5,7 +5,7 @@ import { use } from "react";
 import { PasswordInputContext } from "./PasswordInputContext";
 import type { PasswordInputTogglePropsT } from "./passwordInputTypes";
 
-export function PasswordInputToggle({ visibleChildren, onClick, children, ...props }: PasswordInputTogglePropsT) {
+export function PasswordInputToggle({ visibleChildren, onClick, children, ...p }: PasswordInputTogglePropsT) {
   const { isVisible, setIsVisible } = use(PasswordInputContext);
 
   return (
@@ -15,7 +15,7 @@ export function PasswordInputToggle({ visibleChildren, onClick, children, ...pro
         setIsVisible(prev => !prev);
         onClick?.(ev);
       }}
-      {...props}
+      {...p}
     >
       {isVisible ? visibleChildren : children}
     </button>

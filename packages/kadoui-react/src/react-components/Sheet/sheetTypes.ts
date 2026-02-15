@@ -19,6 +19,6 @@ export type SheetHeaderPropsT = ComponentProps<"div">;
 
 export type SheetHandlebarPropsT = ComponentProps<"div">;
 
-export type SheetTogglePropsT = ComponentProps<"button">;
+export type SheetTogglePropsT = Omit<ComponentProps<"button">, "type">;
 
 export type SheetPortalPropsT = HTMLMotionProps<"div">;

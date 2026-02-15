@@ -10,6 +10,6 @@ export type AccordionRootPropsT = PropsWithChildren;
 
 export type AccordionBodyPropsT = HTMLMotionProps<"div">;
 
-export type AccordionTogglePropsT = ComponentProps<"button"> & {
+export type AccordionTogglePropsT = Omit<ComponentProps<"button">, "type"> & {
   icon?: ReactNode;
 };

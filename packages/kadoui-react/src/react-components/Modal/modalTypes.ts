@@ -14,7 +14,7 @@ export type ModalContentPropsT = ComponentProps<"div">;
 
 export type ModalHeaderPropsT = ComponentProps<"div">;
 
-export type ModalTogglePropsT = ComponentProps<"button">;
+export type ModalTogglePropsT = Omit<ComponentProps<"button">, "type">;
 
 export type ModalBodyPropsT = HTMLMotionProps<"div">;
 

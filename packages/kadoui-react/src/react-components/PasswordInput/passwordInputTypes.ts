@@ -9,6 +9,6 @@ export type PasswordInputRootPropsT = ComponentProps<"label">;
 
 export type PasswordInputFieldPropsT = ComponentProps<"input">;
 
-export type PasswordInputTogglePropsT = ComponentProps<"button"> & {
+export type PasswordInputTogglePropsT = Omit<ComponentProps<"button">, "type"> & {
   visibleChildren: ReactNode;
 };

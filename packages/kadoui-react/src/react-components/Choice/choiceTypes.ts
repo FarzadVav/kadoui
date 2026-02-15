@@ -22,7 +22,7 @@ export type ChoiceContextT = MergedModeT & {
 
 export type ChoiceRootPropsT = ComponentProps<"div"> & ChoiceContextT;
 
-export type ChoiceTogglePropsT = ComponentProps<"button"> & {
+export type ChoiceTogglePropsT = Omit<ComponentProps<"button">, "type"> & {
   choiceName: string;
 };
 

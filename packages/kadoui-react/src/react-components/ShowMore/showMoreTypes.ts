@@ -17,4 +17,4 @@ export type ShowMoreContentPropsT = ComponentProps<"div">;
 
 export type ShowMoreFadePropsT = ComponentProps<"div">;
 
-export type ShowMoreTogglePropsT = ComponentProps<"button">;
+export type ShowMoreTogglePropsT = Omit<ComponentProps<"button">, "type">;

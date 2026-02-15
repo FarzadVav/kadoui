@@ -13,7 +13,7 @@ export function Clipboard({
   title,
   "aria-label": ariaLabel,
   timeout = 3_000,
-  ...props
+  ...p
 }: ClipboardPropsT) {
   const { copy, copied } = useClipboard({ timeout });
 
@@ -27,7 +27,7 @@ export function Clipboard({
       aria-label={ariaLabel || text}
       title={title || text}
       onClick={handleClick}
-      {...props}>
+      {...p}>
       {copiedChildren && copied ? copiedChildren : children}
     </button>
   );

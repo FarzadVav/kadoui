@@ -18,6 +18,6 @@ export type PopoverBodyPropsT = ComponentProps<"div"> & {
   preventClose?: boolean;
 };
 
-export type PopoverTogglePropsT = ComponentProps<"button">;
+export type PopoverTogglePropsT = Omit<ComponentProps<"button">, "type">;
 
 export type PopoverNavigationPropsT = AccessNavigationPropsT;
