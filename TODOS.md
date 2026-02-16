@@ -1,4 +1,5 @@
 # KadoUI React
+
 - [ ] Remove ThemeScript
 - [ ] Remove @mantine/hooks and Write hooks ourselves
 - [ ] Remove framer-motion and Write animations ourselves
@@ -29,6 +30,7 @@
 - [ ] Add support for screen safe area (components mustn't get off the screen)
 
 # KadoUI TailwindCSS
+
 - [ ] Add skeletons
 - [ ] Add effects (like noise)
 - [ ] Add transition config (for compatibilty with components like AccessNavigation)
@@ -39,11 +41,14 @@
 - [ ] Remove components obviously styles
 
 # General
+
 - [ ] Full RTL support
 - [ ] Add full MD documentions
 - [ ] Add documentation website (with Docusaurus)
+- [ ] Add CLI for push source code to developer device
 
 # More compatibility
+
 - [ ] @kadoui/javascript
 - [ ] @kadoui/css
 - [ ] @kadoui/vue
