@@ -669,7 +669,7 @@ function Page() {
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="select-box-list bg-background-thin">
+              <SelectBox.List className="select-box-list offset bg-background-thin">
                 <SelectBox.SearchInput className="input input-outline">
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />
@@ -689,7 +689,7 @@ function Page() {
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="select-box-list bg-background-thin">
+              <SelectBox.List className="select-box-list offset bg-background-thin">
                 <SelectBox.SearchInput className="input input-outline">
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />

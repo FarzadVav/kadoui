@@ -1,3 +1,7 @@
+@utility offset {
+  --offset: calc(0px - var(--element-spacing));
+}
+
 @utility top-center {
   @apply top-1/2 -translate-y-1/2;
 }
@@ -7,7 +11,9 @@
 }
 
 @utility top-out {
-  @apply top-0 -translate-y-full;
+  @apply -translate-y-full;
+
+  top: var(--offset, 0);
 }
 
 @utility right-center {
@@ -19,7 +25,9 @@
 }
 
 @utility right-out {
-  @apply right-0 translate-x-full;
+  @apply translate-x-full;
+
+  right: var(--offset, 0);
 }
 
 @utility bottom-center {
@@ -31,7 +39,9 @@
 }
 
 @utility bottom-out {
-  @apply bottom-0 translate-y-full;
+  @apply translate-y-full;
+
+  bottom: var(--offset, 0);
 }
 
 @utility left-center {
@@ -43,7 +53,9 @@
 }
 
 @utility left-out {
-  @apply left-0 -translate-x-full;
+  @apply -translate-x-full;
+
+  left: var(--offset, 0);
 }
 
 @utility inset-center {

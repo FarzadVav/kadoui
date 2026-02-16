@@ -3,7 +3,7 @@
 @utility input {
   --element-w: auto;
 
-  @apply text-palette flex cursor-text relative transition-all outline-solid outline-2 outline-transparent focus-within:outline-palette has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[[type=file]]:cursor-pointer;
+  @apply text-palette flex cursor-text relative transition-all outline-solid outline-2 outline-transparent focus-within:outline-palette has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[input:disabled]:*:cursor-not-allowed not-has-[input:disabled]:has-[[type=file]]:cursor-pointer;
 
   width: var(--element-w);
   height: var(--element-size);
@@ -25,10 +25,10 @@
 }
 
 @utility input-field {
-  @apply bg-transparent placeholder:text-palette/50 flex-1 not-[[type=file]]:h-full max-w-full [[type=file]]:cursor-pointer;
+  @apply bg-transparent placeholder:text-palette/50 flex-1 not-[[type=file]]:h-full max-w-full not-disabled:[[type=file]]:cursor-pointer;
 
   &:where(select) {
-    @apply cursor-pointer;
+    @apply not-disabled:cursor-pointer;
   }
 }
 

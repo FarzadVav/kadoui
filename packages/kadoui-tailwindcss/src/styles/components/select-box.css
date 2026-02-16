@@ -1,5 +1,5 @@
 @utility select-box-input {
-  @apply relative cursor-pointer *:cursor-pointer;
+  @apply relative;
 }
 
 @utility select-box-list {
