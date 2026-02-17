@@ -10,11 +10,11 @@
 @utility card-y {
   @apply flex flex-col;
 
-  row-gap: calc(var(--element-spacing) / 2);
+  row-gap: var(--element-spacing);
 }
 
 @utility card-x {
   @apply flex items-center justify-between;
 
-  column-gap: calc(var(--element-spacing) / 2);
+  column-gap: var(--element-spacing);
 }
