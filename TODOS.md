@@ -1,5 +1,8 @@
 # KadoUI React
 
+- [ ] Remove Dispatch types and add Void function type
+- [ ] Remove Next useSearchParams from searchParams adaptors 
+- [ ] Add searchParams adaptor to all components
 - [ ] Remove ThemeScript
 - [ ] Remove @mantine/hooks and Write hooks ourselves
 - [ ] Remove framer-motion and Write animations ourselves
@@ -31,6 +34,8 @@
 
 # KadoUI TailwindCSS
 
+- [ ] Add more positions (with more offset features)
+- [ ] Add layouts styles
 - [ ] Add skeletons
 - [ ] Add effects (like noise)
 - [ ] Add transition config (for compatibilty with components like AccessNavigation)
