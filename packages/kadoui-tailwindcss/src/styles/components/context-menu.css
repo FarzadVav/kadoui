@@ -5,7 +5,3 @@
 @utility context-menu-body {
   @apply z-10 fixed transition-all card card-menu card-y data-[state=false]:ignore;
 }
-
-@utility context-menu-navigation {
-  @apply card card-menu card-y;
-}

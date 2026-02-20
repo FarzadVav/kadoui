@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import type { SelectBoxContextT, SelectBoxRootPropsT } from "./selectBoxTypes";
 
 export function SelectBoxRoot({ multiSelect, optionValue, setOptionValue, options, ref, ...p }: SelectBoxRootPropsT) {
@@ -17,8 +18,19 @@ export function SelectBoxRoot({ multiSelect, optionValue, setOptionValue, option
       }
     };
 
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setInputFocused(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
     document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleClickOutside);
+    }
   }, []);
 
   const contextValue = {
@@ -34,7 +46,7 @@ export function SelectBoxRoot({ multiSelect, optionValue, setOptionValue, option
 
   return (
     <SelectBoxContext value={contextValue}>
-      <div ref={selectBoxRootRef} {...p} />
+      <AccessNavigation ref={selectBoxRootRef} {...p} />
     </SelectBoxContext>
   );
 }

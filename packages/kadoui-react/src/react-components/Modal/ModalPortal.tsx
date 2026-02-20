@@ -3,10 +3,10 @@
 import { use } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { ClientOnly } from "../ClientOnly/ClientOnly";
 import { Portal } from "../Portal/Portal";
 import { ModalContext } from "./ModalContext";
 import type { ModalPortalPropsT } from "./modalTypes";
+import { ClientOnly } from "../ClientOnly/ClientOnly";
 
 export function ModalPortal({ onClick, ...p }: ModalPortalPropsT) {
   const { isOpen, setOpen } = use(ModalContext);

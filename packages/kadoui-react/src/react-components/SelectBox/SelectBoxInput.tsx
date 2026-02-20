@@ -1,3 +1,5 @@
+"use client";
+
 import type { SelectBoxInputPropsT } from "./selectBoxTypes";
 
 export default function SelectBoxInput(p: SelectBoxInputPropsT) {

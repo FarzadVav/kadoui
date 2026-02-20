@@ -11,8 +11,8 @@ export function SpoilerRoot(p: SpoilerRootProps) {
   return (
     <SpoilerContext value={{ isOpen, setOpen }}>
       <span
-        onClick={() => setOpen(true)}
         data-state={isOpen}
+        onClick={() => setOpen(true)}
         {...p}
       />
     </SpoilerContext>

@@ -3,5 +3,5 @@
 }
 
 @utility popover-body {
-  @apply absolute w-max rounded-lg z-10;
+  @apply absolute w-max rounded-lg z-10 data-[state=false]:ignore;
 }

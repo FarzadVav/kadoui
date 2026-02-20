@@ -3,9 +3,9 @@
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-import { getBrowserScrollbarWith } from "../../utils-exports";
 import { DrawerContext } from "./DrawerContext";
 import type { DrawerRootPropsT } from "./drawerTypes";
+import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export function DrawerRoot({ children }: DrawerRootPropsT) {
   const pathname = usePathname();

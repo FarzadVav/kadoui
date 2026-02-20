@@ -11,8 +11,9 @@ export function PasswordInputToggle({ visibleChildren, onClick, children, ...p }
   return (
     <button
       type="button"
+      data-state={isVisible}
       onClick={ev => {
-        setIsVisible(prev => !prev);
+        setIsVisible(isVisible);
         onClick?.(ev);
       }}
       {...p}

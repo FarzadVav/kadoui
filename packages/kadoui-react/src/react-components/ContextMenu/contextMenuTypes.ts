@@ -1,4 +1,4 @@
-import type { ComponentProps, Dispatch, RefObject, SetStateAction } from "react";
+import type { ComponentProps, RefObject } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 
@@ -9,10 +9,8 @@ export type ContextMenuContextT = {
   contentRef: RefObject<HTMLDivElement | null>;
 };
 
-export type ContextMenuRootPropsT = ComponentProps<"div">;
+export type ContextMenuRootPropsT = AccessNavigationPropsT;
 
 export type ContextMenuBodyPropsT = ComponentProps<"div">;
 
 export type ContextMenuItemPropsT = ComponentProps<"button">;
-
-export type ContextMenuNavigationPropsT = AccessNavigationPropsT;

@@ -1,12 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useMotionValue, useAnimate } from "framer-motion";
-import { useEffect, useState } from "react";
 
-import { getBrowserScrollbarWith } from "../../utils-exports";
 import { SheetContext } from "./SheetContext";
 import type { SheetRootPropsT } from "./sheetTypes";
+import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export function SheetRoot({ children }: SheetRootPropsT) {
   const pathname = usePathname();

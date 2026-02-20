@@ -8,10 +8,11 @@ import type { PopoverBodyPropsT } from "./popoverTypes";
 export function PopoverBody({ preventClose, onClick, ...p }: PopoverBodyPropsT) {
   const { bodyRef, isOpen } = use(PopoverContext);
 
-  return isOpen ? (
+  return (
     <div
       ref={bodyRef}
       data-state={isOpen}
+      data-access-navigation={isOpen}
       onClick={(ev) => {
         if (preventClose) {
           ev.stopPropagation();
@@ -21,5 +22,5 @@ export function PopoverBody({ preventClose, onClick, ...p }: PopoverBodyPropsT) 
       }}
       {...p}
     />
-  ) : null;
+  )
 }

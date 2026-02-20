@@ -1,7 +1,7 @@
 import { ShowMoreRoot } from "./ShowMoreRoot";
 import { ShowMoreFade } from "./ShowMoreFade";
-import { ShowMoreContent } from "./ShowMoreContent";
 import { ShowMoreToggle } from "./ShowMoreToggle";
+import { ShowMoreContent } from "./ShowMoreContent";
 
 export const ShowMore = Object.assign(ShowMoreRoot, {
   Content: ShowMoreContent,

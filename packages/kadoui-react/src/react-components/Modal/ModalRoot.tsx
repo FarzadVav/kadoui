@@ -1,11 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
-import { getBrowserScrollbarWith } from "../../utils-exports";
 import { ModalContext } from "./ModalContext";
 import type { ModalRootPropsT } from "./modalTypes";
+import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
   const pathname = usePathname();

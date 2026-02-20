@@ -12,6 +12,7 @@ export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) 
     <div
       ref={contentRef}
       data-state={isOpen}
+      data-access-navigation={isOpen}
       onContextMenu={(ev) => {
         ev.stopPropagation();
         ev.preventDefault();

@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { ReactNode, use, useEffect, useRef } from "react";
 
-import { FRAMER_MOTION_DURATION } from "../../configs";
 import { DrawerContext } from "./DrawerContext";
+import { FRAMER_MOTION_DURATION } from "../../configs";
 import type { DrawerBodyPropsT } from "./drawerTypes";
 
 export function DrawerBody({ position, dir, children, ...p }: DrawerBodyPropsT) {

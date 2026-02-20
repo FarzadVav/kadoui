@@ -1,9 +1,9 @@
 import type { HTMLMotionProps } from "framer-motion";
-import type { ComponentProps, Dispatch, PropsWithChildren, SetStateAction } from "react";
+import type { ComponentProps, PropsWithChildren } from "react";
 
 export type ModalContextT = {
   isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  setOpen: (newState: boolean) => void;
 };
 
 export type ModalRootPropsT = PropsWithChildren & {

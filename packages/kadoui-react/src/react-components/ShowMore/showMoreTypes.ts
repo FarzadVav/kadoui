@@ -1,10 +1,10 @@
-import type { ComponentProps, Dispatch, RefObject, SetStateAction } from "react";
+import type { ComponentProps, RefObject } from "react";
 
 export type ShowMoreContextT = {
   contentRef: RefObject<HTMLDivElement | null>;
   shouldShowMore: boolean;
   isShowMore: boolean;
-  setIsShowMore: Dispatch<SetStateAction<boolean>>;
+  setIsShowMore: (newState: boolean) => void;
   maxHeight: number;
 };
 

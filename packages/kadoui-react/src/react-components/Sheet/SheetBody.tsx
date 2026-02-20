@@ -3,9 +3,9 @@
 import { use, useEffect, useRef } from "react";
 import { motion, useDragControls } from "framer-motion";
 
-import { FRAMER_MOTION_DURATION } from "../../configs";
 import { SheetContext } from "./SheetContext";
 import type { SheetBodyPropsT } from "./sheetTypes";
+import { FRAMER_MOTION_DURATION } from "../../configs";
 
 export function SheetBody({ onPointerDown, ...p }: SheetBodyPropsT) {
   const controls = useDragControls();

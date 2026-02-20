@@ -35,7 +35,9 @@ export function AccessNavigation({
   const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
     const focusableChildren = selectAccessibleChildren(ev.currentTarget);
 
-    if (!focusableChildren.length) {
+    // console.log(focusableChildren);
+
+    if (focusableChildren.length < 2) {
       return;
     }
 

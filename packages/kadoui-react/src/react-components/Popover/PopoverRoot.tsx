@@ -3,9 +3,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { selectAccessibleChildren } from "../../utils-exports";
 import { PopoverContext } from "./PopoverContext";
 import type { PopoverRootPropsT } from "./popoverTypes";
+import { selectAccessibleChildren } from "../../utils-exports";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
 export function PopoverRoot({
   mode = "click",
@@ -57,8 +58,7 @@ export function PopoverRoot({
 
   return (
     <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
-      <div
-        data-state={isOpen}
+      <AccessNavigation
         onMouseEnter={(ev) => {
           onMouseEnter?.(ev);
           if (["hover", "both"].includes(mode)) {

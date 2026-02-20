@@ -17,7 +17,7 @@ export function PopoverToggle({ onClick, ...p }: PopoverTogglePropsT) {
         onClick?.(ev);
         ev.stopPropagation();
         if (["click", "both"].includes(mode)) {
-          setOpen((prev) => !prev);
+          setOpen(!isOpen);
         }
       }}
       {...p}

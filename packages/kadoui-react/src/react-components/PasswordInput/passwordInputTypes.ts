@@ -1,8 +1,8 @@
-import type { ComponentProps, Dispatch, ReactNode, SetStateAction } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 export type PasswordInputContextT = {
   isVisible: boolean;
-  setIsVisible: Dispatch<SetStateAction<boolean>>;
+  setIsVisible: (newState: boolean) => void;
 };
 
 export type PasswordInputRootPropsT = ComponentProps<"label">;

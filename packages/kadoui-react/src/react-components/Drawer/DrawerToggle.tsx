@@ -6,14 +6,14 @@ import { DrawerContext } from "./DrawerContext";
 import type { DrawerTogglePropsT } from "./drawerTypes";
 
 export function DrawerToggle({ onClick, ...p }: DrawerTogglePropsT) {
-  const { setOpen } = use(DrawerContext);
+  const { isOpen, setOpen } = use(DrawerContext);
 
   return (
     <button
       type="button"
       onClick={(ev) => {
         onClick?.(ev);
-        setOpen(prev => !prev);
+        setOpen(isOpen);
       }}
       {...p}
     />

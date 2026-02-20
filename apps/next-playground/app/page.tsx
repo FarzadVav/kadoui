@@ -132,19 +132,19 @@ function Page() {
           <h1 className="title">KadoUI React + TailwindCSS</h1>
 
           <Popover
+            mode="click"
+            direction="y"
             className="popover"
-            mode="click">
-            <Popover.Navigation direction="y">
-              <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-                Theme: {theme || <LoaderIcon className="element-icon-size animate-spin" />}
-              </Popover.Toggle>
+          >
+            <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              Theme: {theme || <LoaderIcon className="element-icon-size animate-spin" />}
+            </Popover.Toggle>
 
-              <Popover.Body className="popover-body position-b card card-menu card-y bg-background-thin">
-                <button className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("light")}>Light</button>
-                <button className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("dark")}>Dark</button>
-                <button className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("system")}>System</button>
-              </Popover.Body>
-            </Popover.Navigation>
+            <Popover.Body className="popover-body position-b card card-menu card-y bg-background-thin">
+              <button className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("light")}>Light</button>
+              <button className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("dark")}>Dark</button>
+              <button className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("system")}>System</button>
+            </Popover.Body>
           </Popover>
         </nav>
       </header>
@@ -350,24 +350,22 @@ function Page() {
         </label>
 
         <p className="heading mt-20">ContextMenu</p>
-        <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
+        <ContextMenu direction="y" className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
           <span className="absolute inset-center">Context menu!</span>
 
-          <ContextMenu.Body className="context-menu-body">
-            <ContextMenu.Navigation className="context-menu-navigation bg-background-thick" direction="y">
-              <ContextMenu.Item className="btn btn-ghost" onClick={() => alert("slkjflkdsjfldj")}>
-                <TrashIcon className="element-icon-size" />
-                <span>DELETE</span>
-              </ContextMenu.Item>
-              <ContextMenu.Item className="btn btn-ghost">
-                <RefreshCwIcon className="element-icon-size" />
-                <span>RELOAD</span>
-              </ContextMenu.Item>
-              <ContextMenu.Item className="btn btn-ghost">
-                <FlagIcon className="element-icon-size" />
-                <span>IGNORE IT</span>
-              </ContextMenu.Item>
-            </ContextMenu.Navigation>
+          <ContextMenu.Body className="context-menu-body bg-background-thick">
+            <ContextMenu.Item className="btn btn-ghost">
+              <TrashIcon className="element-icon-size" />
+              <span>DELETE</span>
+            </ContextMenu.Item>
+            <ContextMenu.Item className="btn btn-ghost">
+              <RefreshCwIcon className="element-icon-size" />
+              <span>RELOAD</span>
+            </ContextMenu.Item>
+            <ContextMenu.Item className="btn btn-ghost">
+              <FlagIcon className="element-icon-size" />
+              <span>IGNORE IT</span>
+            </ContextMenu.Item>
           </ContextMenu.Body>
         </ContextMenu>
 
@@ -564,8 +562,10 @@ function Page() {
 
         <p className="heading mt-20">Popover</p>
         <Popover
+          mode="hover"
+          direction="y"
           className="popover mt-6"
-          mode="hover">
+        >
           <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
           <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
@@ -573,8 +573,10 @@ function Page() {
           </Popover.Body>
         </Popover>
         <Popover
+          mode="both"
+          direction="y"
           className="popover mt-3"
-          mode="both">
+        >
           <Popover.Toggle className="btn btn-soft">Hover and click me</Popover.Toggle>
 
           <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
@@ -582,31 +584,32 @@ function Page() {
           </Popover.Body>
         </Popover>
         <Popover
+          mode="click"
+          direction="y"
           className="popover mt-3"
-          mode="click">
-          <Popover.Navigation direction="y">
-            <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-              Click me
-            </Popover.Toggle>
+        >
+          <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+            Click me
+          </Popover.Toggle>
 
-            <Popover.Body className="popover-body position-b card card-menu bg-background-thin">
-              <button className="btn btn-ghost">Like</button>
-              <button className="btn btn-ghost">Ignore</button>
-              <button className="btn btn-ghost">Download</button>
-              <Popover className="popover">
-                <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
-                  <span>Share via</span>
-                  <ChevronRightIcon className="element-icon-size" />
-                </Popover.Toggle>
-                <Popover.Body className="popover-body position-r card card-menu bg-background-thin">
-                  <button className="btn btn-ghost">Link</button>
-                  <button className="btn btn-ghost">Instagram</button>
-                  <button className="btn btn-ghost">Telegram</button>
-                  <button className="btn btn-ghost">X</button>
-                </Popover.Body>
-              </Popover>
-            </Popover.Body>
-          </Popover.Navigation>
+          <Popover.Body className="popover-body position-b card card-menu bg-background-thin">
+            <button className="btn btn-ghost">Like</button>
+            <button className="btn btn-ghost">Ignore</button>
+            <button className="btn btn-ghost">Download</button>
+            <Popover direction="y" className="popover">
+              <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
+                <span>Share via</span>
+                <ChevronRightIcon className="element-icon-size" />
+              </Popover.Toggle>
+              <Popover.Body className="popover-body position-r card card-menu bg-background-thin">
+                <button className="btn btn-ghost">Link</button>
+                <button className="btn btn-ghost">Instagram</button>
+                <button className="btn btn-ghost">Telegram</button>
+                <button className="btn btn-ghost">X</button>
+              </Popover.Body>
+            </Popover>
+          </Popover.Body>
+
         </Popover>
 
         <p className="heading mt-20">Portal</p>
@@ -745,7 +748,7 @@ function Page() {
         <p className="heading mt-20">SelectBox</p>
         <div className="mt-6">
           <p className="title">Single select mode:</p>
-          <SelectBox className="mt-3" options={SELECT_BOX_OPTIONS} optionValue={singleSelectBoxValue} setOptionValue={singleSetSelectBoxValue}>
+          <SelectBox direction="y" className="mt-3" options={SELECT_BOX_OPTIONS} optionValue={singleSelectBoxValue} setOptionValue={singleSetSelectBoxValue}>
             <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
@@ -765,7 +768,7 @@ function Page() {
           </SelectBox>
 
           <p className="title mt-6">Multi select mode:</p>
-          <SelectBox className="mt-3" multiSelect options={SELECT_BOX_OPTIONS} optionValue={multiSelectBoxValue} setOptionValue={setMultiSelectBoxValue}>
+          <SelectBox direction="y" className="mt-3" multiSelect options={SELECT_BOX_OPTIONS} optionValue={multiSelectBoxValue} setOptionValue={setMultiSelectBoxValue}>
             <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field

@@ -3,7 +3,7 @@
 }
 
 @utility select-box-list {
-  @apply card card-y absolute position-b w-full cursor-default z-10;
+  @apply card card-y absolute position-b w-full cursor-default z-10 data-[state=false]:ignore;
 }
 
 @utility select-box-option {
