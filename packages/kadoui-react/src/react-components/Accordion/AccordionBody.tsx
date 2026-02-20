@@ -5,9 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { AccordionContext } from "./AccordionContext";
 import type { AccordionBodyPropsT } from "./accordionTypes";
+import { AccordionItemContext } from "./AccordionItemContext";
 
 export function AccordionBody({ children, ...p }: AccordionBodyPropsT) {
-  const { isOpen } = use(AccordionContext);
+  const { multiple, accordionState } = use(AccordionContext);
+  const { itemName } = use(AccordionItemContext);
+
+  const isOpen = multiple ? accordionState.includes(itemName) : accordionState === itemName;
 
   return (
     <AnimatePresence>

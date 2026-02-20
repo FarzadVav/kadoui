@@ -2,7 +2,7 @@ import type { ComponentProps, Dispatch, SetStateAction } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 
-type MultiModeT = {
+type MultipleModeT = {
   multiple: true;
   activeChoice: string[];
   setActiveChoice: Dispatch<SetStateAction<string[]>>;
@@ -14,7 +14,7 @@ type SingleModeT = {
   setActiveChoice: Dispatch<SetStateAction<string | null>>;
 };
 
-type MergedModeT = SingleModeT | MultiModeT;
+type MergedModeT = SingleModeT | MultipleModeT;
 
 export type ChoiceContextT = MergedModeT & {
   requiredOne?: boolean;

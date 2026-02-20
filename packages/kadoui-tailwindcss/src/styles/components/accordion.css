@@ -1,3 +1,7 @@
 @utility accordion-body {
   @apply overflow-hidden;
 }
+
+@utility accordion-content {
+  @apply pt-(--element-rounded);
+}

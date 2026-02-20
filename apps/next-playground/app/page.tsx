@@ -109,6 +109,8 @@ const SWAP_KEYS = ["one", "two", "three"];
 function Page() {
   const { theme, setTheme } = useTheme();
 
+  const [accordionItems, setAccordionItems] = useState<string[]>([]);
+  const [accordionItem, setAccordionItem] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [pageWithPage, setPageWithPage] = useState(1);
   const [rating, setRating] = useState(3);
@@ -159,20 +161,101 @@ function Page() {
         </AccessNavigation>
 
         <p className="heading mt-20">Accordion</p>
-        <Accordion>
-          <Accordion.Toggle className="btn btn-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
-            <span>Open accordion</span>
-            <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-          </Accordion.Toggle>
-          <Accordion.Body>
-            <div className="pt-3">
-              <div className="card bg-background-thin">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                earum culpa asperiores eaque ea enim possimus vero esse!
-              </div>
-            </div>
-          </Accordion.Body>
+        <p className="title mt-6">Multiple mode</p>
+        <Accordion direction="y" multiple accordionState={accordionItems} onAccordionChange={(newItems) => setAccordionItems(newItems)}>
+          <Accordion.Item itemName="1">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 1</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="2">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 2</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="3">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 3</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+        <p className="title mt-6">Single mode</p>
+        <Accordion direction="y" accordionState={accordionItem} onAccordionChange={(newItems) => setAccordionItem(newItems)}>
+          <Accordion.Item itemName="1">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 1</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="2">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 2</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="3">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              <span>Open accordion 3</span>
+              <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
+            </Accordion.Toggle>
+            <Accordion.Body className="accordion-body">
+              <Accordion.Content className="accordion-content">
+                <div className="card bg-background-thin">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
+                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
+                  earum culpa asperiores eaque ea enim possimus vero esse!
+                </div>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
         </Accordion>
 
         <p className="heading mt-20">Breadcrumbs</p>

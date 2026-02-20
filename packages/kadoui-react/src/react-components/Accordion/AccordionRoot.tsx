@@ -1,16 +1,13 @@
 "use client";
 
-import { useState } from "react";
-
 import { AccordionContext } from "./AccordionContext";
-import type { AccordionRootPropsT } from "./accordionTypes";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
+import type { AccordionContextT, AccordionRootPropsT } from "./accordionTypes";
 
-export function AccordionRoot({ children }: AccordionRootPropsT) {
-  const [isOpen, setOpen] = useState(false);
-
+export function AccordionRoot({ multiple, accordionState, onAccordionChange, ...p }: AccordionRootPropsT) {
   return (
-    <AccordionContext value={{ isOpen, setOpen }}>
-      {children}
+    <AccordionContext value={{ multiple, accordionState, onAccordionChange } as AccordionContextT}>
+      <AccessNavigation {...p} />
     </AccordionContext>
   )
 }
