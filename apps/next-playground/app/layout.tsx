@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ThemeProvider, ThemeScript } from "@kadoui/react";
+import { Affix, ThemeProvider, ThemeScript } from "@kadoui/react";
 
 import "./globals.css";
+import { ChevronUpIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +22,10 @@ export default function RootLayout({
       <body className="antialiased">
         <ThemeProvider>
           {children}
+
+          <Affix className="affix btn btn-fill bottom-3 right-3" viewportOffset={1}>
+            <ChevronUpIcon className="element-icon-size" />
+          </Affix>
         </ThemeProvider>
       </body>
     </html>

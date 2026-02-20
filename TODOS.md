@@ -7,6 +7,7 @@
 - Fix transition durations configs conflicts with events (like AccessNavigation focusOnMount) (Doing)
 - Add position-offset to Popover component (Doing)
 - Extend Pagination to a full-featured component and Remove Tabs component (Doing)
+- Add screen safe aria data-set to components (Doing)
 - Remove @mantine/hooks and Write hooks ourselves
 - Remove framer-motion and Write animations ourselves
 - Add Calendar component
