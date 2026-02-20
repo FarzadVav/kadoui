@@ -10,11 +10,11 @@ export function ChoiceToggle({
   onClick,
   ...p
 }: ChoiceTogglePropsT) {
-  const { multiple, activeChoice, setActiveChoice, requiredOne } = use(ChoiceContext);
+  const { multiple, choiceState, onChoiceChange, requiredOne } = use(ChoiceContext);
 
   const isActive = multiple
-    ? activeChoice.includes(choiceName)
-    : activeChoice === choiceName;
+    ? choiceState.includes(choiceName)
+    : choiceState === choiceName;
 
   return (
     <button
@@ -24,19 +24,19 @@ export function ChoiceToggle({
         onClick?.(ev);
         if (isActive) {
           if (multiple) {
-            if (!requiredOne || activeChoice.length > 1) {
-              setActiveChoice((prev) => prev.filter((item) => item !== choiceName));
+            if (!requiredOne || choiceState.length > 1) {
+              onChoiceChange(choiceState.filter((item) => item !== choiceName));
             }
           } else {
             if (!requiredOne) {
-              setActiveChoice(null);
+              onChoiceChange(null);
             }
           }
         } else {
           if (multiple) {
-            setActiveChoice((prev) => [...prev, choiceName]);
+            onChoiceChange([...choiceState, choiceName]);
           } else {
-            setActiveChoice(choiceName);
+            onChoiceChange(choiceName);
           }
         }
       }}

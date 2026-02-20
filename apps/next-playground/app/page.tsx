@@ -944,143 +944,142 @@ function Page() {
         <p className="mt-6">Filter mode:</p>
         <Choice
           multiple
-          className="mt-3"
-          activeChoice={filterChoice}
-          setActiveChoice={setFilterChoice}>
-          <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Toggle
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-              choiceName="1">
-              Filter 1
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-              choiceName="2">
-              Filter 2
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-              choiceName="3">
-              Filter 3
-            </Choice.Toggle>
-          </Choice.Navigation>
+          direction="x"
+          className="flex items-center gap-3 mt-3"
+          choiceState={filterChoice}
+          onChoiceChange={setFilterChoice}>
+          <Choice.Toggle
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            choiceName="1">
+            Filter 1
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            choiceName="2">
+            Filter 2
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            choiceName="3">
+            Filter 3
+          </Choice.Toggle>
         </Choice>
 
         <p className="mt-6">Radio Mode:</p>
         <Choice
           requiredOne
-          className="mt-3"
-          activeChoice={singleChoice}
-          setActiveChoice={setSingleChoice}>
-          <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Toggle
-              className="choice element-xs choice-radio"
-              choiceName="1">
-              <span className="choice-radio-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-sm choice-radio"
-              choiceName="2">
-              <span className="choice-radio-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice choice-radio"
-              choiceName="3">
-              <span className="choice-radio-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-lg choice-radio"
-              choiceName="4">
-              <span className="choice-radio-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-xl choice-radio"
-              choiceName="5">
-              <span className="choice-radio-thumb" />
-            </Choice.Toggle>
-          </Choice.Navigation>
+          direction="x"
+          className="flex items-center gap-3 mt-3"
+          choiceState={singleChoice}
+          onChoiceChange={setSingleChoice}>
+          <Choice.Toggle
+            className="choice element-xs choice-radio"
+            choiceName="1">
+            <span className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-sm choice-radio"
+            choiceName="2">
+            <span className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice choice-radio"
+            choiceName="3">
+            <span className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-lg choice-radio"
+            choiceName="4">
+            <span className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-xl choice-radio"
+            choiceName="5">
+            <span className="choice-radio-thumb" />
+          </Choice.Toggle>
         </Choice>
 
         <p className="mt-6">CheckBox Mode:</p>
         <Choice
           multiple
-          className="mt-3"
-          activeChoice={multipleChoice}
-          setActiveChoice={setMultipleChoice}
-          requiredOne>
-          <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Toggle
-              className="choice element-xs choice-checkbox"
-              choiceName="1">
-              <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="element-icon-size" />
-              </Choice.Thumb>
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-sm choice-checkbox"
-              choiceName="2">
-              <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="element-icon-size" />
-              </Choice.Thumb>
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice choice-checkbox"
-              choiceName="3">
-              <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="element-icon-size" />
-              </Choice.Thumb>
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-lg choice-checkbox"
-              choiceName="4">
-              <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="element-icon-size" />
-              </Choice.Thumb>
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-xl choice-checkbox rounded-xl"
-              choiceName="5">
-              <Choice.Thumb className="choice-checkbox-thumb">
-                <CheckIcon className="element-icon-size" />
-              </Choice.Thumb>
-            </Choice.Toggle>
-          </Choice.Navigation>
+          requiredOne
+          direction="x"
+          className="flex items-center gap-3 mt-3"
+          choiceState={multipleChoice}
+          onChoiceChange={setMultipleChoice}
+        >
+          <Choice.Toggle
+            className="choice element-xs choice-checkbox"
+            choiceName="1">
+            <Choice.Thumb className="choice-checkbox-thumb">
+              <CheckIcon className="element-icon-size" />
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-sm choice-checkbox"
+            choiceName="2">
+            <Choice.Thumb className="choice-checkbox-thumb">
+              <CheckIcon className="element-icon-size" />
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice choice-checkbox"
+            choiceName="3">
+            <Choice.Thumb className="choice-checkbox-thumb">
+              <CheckIcon className="element-icon-size" />
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-lg choice-checkbox"
+            choiceName="4">
+            <Choice.Thumb className="choice-checkbox-thumb">
+              <CheckIcon className="element-icon-size" />
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-xl choice-checkbox rounded-xl"
+            choiceName="5">
+            <Choice.Thumb className="choice-checkbox-thumb">
+              <CheckIcon className="element-icon-size" />
+            </Choice.Thumb>
+          </Choice.Toggle>
         </Choice>
 
         <p className="mt-6">Switch mode:</p>
         <Choice
           multiple
-          className="mt-3"
-          activeChoice={switchChoice}
-          setActiveChoice={setSwitchChoice}
-          requiredOne>
-          <Choice.Navigation className="flex items-center gap-3" direction="x">
-            <Choice.Toggle
-              className="choice element-xs choice-switch"
-              choiceName="1">
-              <span className="choice-switch-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-sm choice-switch"
-              choiceName="2">
-              <span className="choice-switch-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice choice-switch"
-              choiceName="3">
-              <span className="choice-switch-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-lg choice-switch"
-              choiceName="4">
-              <span className="choice-switch-thumb" />
-            </Choice.Toggle>
-            <Choice.Toggle
-              className="choice element-xl choice-switch"
-              choiceName="5">
-              <span className="choice-switch-thumb" />
-            </Choice.Toggle>
-          </Choice.Navigation>
+          requiredOne
+          direction="x"
+          className="flex items-center gap-3 mt-3"
+          choiceState={switchChoice}
+          onChoiceChange={setSwitchChoice}
+        >
+          <Choice.Toggle
+            className="choice element-xs choice-switch"
+            choiceName="1">
+            <span className="choice-switch-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-sm choice-switch"
+            choiceName="2">
+            <span className="choice-switch-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice choice-switch"
+            choiceName="3">
+            <span className="choice-switch-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-lg choice-switch"
+            choiceName="4">
+            <span className="choice-switch-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
+            className="choice element-xl choice-switch"
+            choiceName="5">
+            <span className="choice-switch-thumb" />
+          </Choice.Toggle>
+
         </Choice>
       </div>
     </>

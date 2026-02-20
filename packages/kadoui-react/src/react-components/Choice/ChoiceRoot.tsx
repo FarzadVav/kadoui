@@ -2,18 +2,19 @@
 
 import { ChoiceContext } from "./ChoiceContext";
 import type { ChoiceContextT, ChoiceRootPropsT } from "./choiceTypes";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
 export function ChoiceRoot({
   multiple,
-  activeChoice,
-  setActiveChoice,
+  choiceState,
+  onChoiceChange,
   requiredOne,
   ...p
 }: ChoiceRootPropsT) {
   return (
     <ChoiceContext
-      value={{ multiple, activeChoice, setActiveChoice, requiredOne } as ChoiceContextT}>
-      <div {...p} />
+      value={{ multiple, choiceState, onChoiceChange, requiredOne } as ChoiceContextT}>
+      <AccessNavigation {...p} />
     </ChoiceContext>
   );
 }

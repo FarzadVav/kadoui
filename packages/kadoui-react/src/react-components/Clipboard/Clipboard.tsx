@@ -1,7 +1,7 @@
 "use client";
 
-import { useClipboard } from "@mantine/hooks";
 import { MouseEvent } from "react";
+import { useClipboard } from "@mantine/hooks";
 
 import type { ClipboardPropsT } from "./clipboardTypes";
 
