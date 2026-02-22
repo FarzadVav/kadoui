@@ -1,5 +1,9 @@
 {
   "name": "kadoui",
   "license": "MIT",
+  "scripts": {
+    "br": "pnpm --filter @kadoui/react build",
+    "np": "pnpm --filter next-playground dev"
+  },
   "packageManager": "pnpm@10.25.0"
 }

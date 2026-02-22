@@ -4,15 +4,20 @@ import { use } from "react";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 import type { ContextMenuBodyPropsT } from "./contextMenuTypes";
+import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
 export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);
 
+  // useEffect(() => {
+  //   contentRef.current?.focus();
+  // }, [isOpen, position])
+
   return (
-    <div
+    <AccessNavigation
       ref={contentRef}
       data-state={isOpen}
-      data-access-navigation={isOpen}
+      focusTrap={position}
       onContextMenu={(ev) => {
         ev.stopPropagation();
         ev.preventDefault();

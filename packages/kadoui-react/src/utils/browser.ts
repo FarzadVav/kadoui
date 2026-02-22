@@ -17,12 +17,11 @@ export const getBrowserScrollbarWith = () => {
 
 export const selectAccessibleChildren = (scope: HTMLElement) => {
   const FOCUSABLE_SELECTOR = `
-    a[href],
-    button,
-    input:not([type="hidden"]),
-    select,
-    textarea,
-    [tabindex]:not([tabindex="-1"])
+    a[href]:not([tabindex="-1"]),
+    button:not([disabled]):not([tabindex="-1"]),
+    input:not([type="hidden"]):not([disabled]):not([tabindex="-1"]),
+    select:not([disabled]):not([tabindex="-1"]),
+    textarea:not([disabled]):not([tabindex="-1"])
   `;
 
   const candidates = Array.from(
@@ -30,7 +29,6 @@ export const selectAccessibleChildren = (scope: HTMLElement) => {
   );
 
   return candidates.filter((el) => {
-    // اگر داخل subtree غیرفعال باشد حذف شود
     if (el.closest('[data-access-navigation="false"]')) return false;
 
     if ('disabled' in el && (el as any).disabled) return false;

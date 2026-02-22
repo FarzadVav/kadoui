@@ -9,8 +9,8 @@ export type ContextMenuContextT = {
   contentRef: RefObject<HTMLDivElement | null>;
 };
 
-export type ContextMenuRootPropsT = AccessNavigationPropsT;
+export type ContextMenuRootPropsT = ComponentProps<"div">;
 
-export type ContextMenuBodyPropsT = ComponentProps<"div">;
+export type ContextMenuBodyPropsT = AccessNavigationPropsT;
 
 export type ContextMenuItemPropsT = ComponentProps<"button">;

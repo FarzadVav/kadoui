@@ -4,7 +4,7 @@
 - Remove Next useSearchParams from searchParams adaptors (Doing)
 - Add searchParams adaptor to all components (Doing)
 - Remove ThemeScript (Doing)
-- Fix transition durations configs conflicts with events (like AccessNavigation focusOnMount) (Doing)
+- Fix transition durations configs conflicts with events (like AccessNavigation focusTrap) (Doing)
 - Add position-offset to Popover component (Doing)
 - Extend Pagination to a full-featured component and Remove Tabs component (Doing)
 - Add screen safe aria data-set to components (Doing)

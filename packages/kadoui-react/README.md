@@ -93,7 +93,7 @@ Add keyboard navigation (arrow keys) to your UI elements.
 
 **Props:**
 - `direction: "x" | "y"` - Navigation direction
-- `focusOnMount?: boolean` - Auto-focus first element on mount
+- `focusTrap?: boolean` - Auto-focus first element on mount
 - `dir?: "ltr" | "rtl"` - Text direction (defaults to document direction)
 
 **Example:**

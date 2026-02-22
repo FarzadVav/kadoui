@@ -6,13 +6,13 @@ import { selectAccessibleChildren } from "../../utils-exports";
 
 export type AccessNavigationPropsT = ComponentPropsWithoutRef<"div"> & {
   direction: "y" | "x";
-  focusOnMount?: boolean;
+  focusTrap?: any;
   ref?: RefObject<HTMLDivElement | null>;
 };
 
 export function AccessNavigation({
   ref,
-  focusOnMount,
+  focusTrap,
   direction,
   dir,
   onKeyDown,
@@ -21,21 +21,20 @@ export function AccessNavigation({
   const accessNavigationRef = ref || useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!accessNavigationRef.current) return;
-
-    const focusableChildren = selectAccessibleChildren(accessNavigationRef.current);
-
-    if (focusOnMount) {
+    if (focusTrap) {
       setTimeout(() => {
+        if (!accessNavigationRef.current) return;
+
+        const focusableChildren = selectAccessibleChildren(accessNavigationRef.current);
         focusableChildren[0]?.focus();
       }, 150);
     }
-  }, []);
+  }, [focusTrap]);
 
   const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
     const focusableChildren = selectAccessibleChildren(ev.currentTarget);
 
-    // console.log(focusableChildren);
+    console.log(focusableChildren);
 
     if (focusableChildren.length < 2) {
       return;

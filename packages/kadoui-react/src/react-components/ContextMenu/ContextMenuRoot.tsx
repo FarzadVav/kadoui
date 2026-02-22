@@ -4,7 +4,6 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import type { ContextMenuContextT, ContextMenuRootPropsT } from "./contextMenuTypes";
 
 export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) {
@@ -86,7 +85,7 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
 
   return (
     <ContextMenuContext value={{ contentRef, isOpen, closeHandler, position }}>
-      <AccessNavigation
+      <div
         onContextMenu={ev => {
           onContextMenu?.(ev);
           handleContextMenu(ev);

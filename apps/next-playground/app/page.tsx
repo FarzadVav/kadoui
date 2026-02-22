@@ -350,10 +350,10 @@ function Page() {
         </label>
 
         <p className="heading mt-20">ContextMenu</p>
-        <ContextMenu direction="y" className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
+        <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
           <span className="absolute inset-center">Context menu!</span>
 
-          <ContextMenu.Body className="context-menu-body bg-background-thick">
+          <ContextMenu.Body direction="y" className="context-menu-body bg-background-thick">
             <ContextMenu.Item className="btn btn-ghost">
               <TrashIcon className="element-icon-size" />
               <span>DELETE</span>
