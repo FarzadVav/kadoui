@@ -2,8 +2,10 @@
   "name": "kadoui",
   "license": "MIT",
   "scripts": {
-    "br": "pnpm --filter @kadoui/react build",
-    "np": "pnpm --filter next-playground dev"
+    "b-r": "pnpm --filter @kadoui/react build",
+    "p-r": "pnpm --filter @kadoui/react publish",
+    "d-np": "pnpm --filter next-playground dev",
+    "d-vp": "pnpm --filter vanilla-playground dev"
   },
   "packageManager": "pnpm@10.25.0"
 }
