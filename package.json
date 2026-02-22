@@ -4,6 +4,7 @@
   "scripts": {
     "b-r": "pnpm --filter @kadoui/react build",
     "p-r": "pnpm --filter @kadoui/react publish",
+    "p-t": "pnpm --filter @kadoui/tailwindcss publish",
     "d-np": "pnpm --filter next-playground dev",
     "d-vp": "pnpm --filter vanilla-playground dev"
   },
