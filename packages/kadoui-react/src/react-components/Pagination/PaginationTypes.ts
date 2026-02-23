@@ -38,7 +38,9 @@ export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
 };
 
 export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children"> & {
+  children?: (count: number) => ReactNode;
   ProgressElem?: JSX.Element;
+  enableNextClick?: boolean;
 };
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {

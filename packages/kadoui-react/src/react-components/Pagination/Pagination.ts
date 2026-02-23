@@ -18,3 +18,6 @@ export const PaginationWithSearchParams = Object.assign(
   PaginationSearchParamsRoot,
   baseComponents,
 );
+
+
+export * from "./PaginationTypes";
