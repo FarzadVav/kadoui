@@ -87,10 +87,30 @@ const PAGES_WITH_SEARCHPARAMS = [
     ),
   },
   {
-    name: "Finish",
+    name: "The Game",
     component: (
       <p>
         Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+  {
+    name: "Greating",
+    component: (
+      <p>
+        Three: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
+        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
+        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+      </p>
+    ),
+  },
+  {
+    name: "Finish",
+    component: (
+      <p>
+        Four: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
         dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
         voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
       </p>
@@ -547,6 +567,23 @@ function Page() {
                 </PaginationWithSearchParams.NextBtn>
               </div>
             </div>
+          </PaginationWithSearchParams>
+        </Suspense>
+        <p className="mt-6">With proggres bar:</p>
+        <Suspense>
+          <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
+            <div className="pagination my-3">
+              <PaginationWithSearchParams.Counts
+                className="btn shrink-0 element-square-size data-[skipped=false]:data-[state=false]:btn-ghost data-[state=true]:btn-soft data-[skipped=true]:btn-fill"
+                ProgressElem={(
+                  <div className="w-32 h-2 rounded-full overflow-hidden bg-background-thin group">
+                    <div className="w-0 group-data-[state=true]:w-1/2 group-data-[skipped=true]:w-full h-full bg-foreground"></div>
+                  </div>
+                )}
+              />
+            </div>
+
+            <PaginationWithSearchParams.Pages />
           </PaginationWithSearchParams>
         </Suspense>
 

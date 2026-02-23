@@ -1,4 +1,4 @@
-import type { ComponentProps, Dispatch, ReactNode, SetStateAction } from "react";
+import type { ComponentProps, ComponentType, Dispatch, JSX, ReactElement, ReactNode, SetStateAction } from "react";
 
 export type PaginationPagesT = {
   name: string;
@@ -37,7 +37,9 @@ export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
   pageKey?: string;
 };
 
-export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children">;
+export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children"> & {
+  ProgressElem?: JSX.Element;
+};
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {
   disabled?: boolean;
