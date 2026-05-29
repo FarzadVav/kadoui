@@ -25,5 +25,5 @@
     "tailwindcss": "4.1.18",
     "@tailwindcss/postcss": "4.1.18"
   },
-  "packageManager": "pnpm@10.25.0"
+  "packageManager": "pnpm@11.4.0"
 }

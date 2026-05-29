@@ -13,7 +13,7 @@ export function PasswordInputToggle({ visibleChildren, onClick, children, ...p }
       type="button"
       data-state={isVisible}
       onClick={ev => {
-        setIsVisible(isVisible);
+        setIsVisible(!isVisible);
         onClick?.(ev);
       }}
       {...p}

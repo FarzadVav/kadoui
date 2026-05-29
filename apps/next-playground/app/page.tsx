@@ -513,8 +513,8 @@ function Page() {
         <Otp className="otp mt-6">
           <Otp.Inputs
             length={6}
-            className="input input-outline element-square-size"
             onLastChange={(otp) => alert(otp)}
+            className="input input-outline element-square-size"
           />
 
           <Otp.HiddenInput />
@@ -1120,9 +1120,9 @@ function Page() {
           multiple
           requiredOne
           direction="x"
-          className="flex items-center gap-3 mt-3"
           choiceState={switchChoice}
           onChoiceChange={setSwitchChoice}
+          className="flex items-center gap-3 mt-3"
         >
           <Choice.Toggle
             className="choice element-xs choice-switch"

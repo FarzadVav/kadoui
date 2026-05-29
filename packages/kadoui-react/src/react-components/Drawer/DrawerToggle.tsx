@@ -13,7 +13,7 @@ export function DrawerToggle({ onClick, ...p }: DrawerTogglePropsT) {
       type="button"
       onClick={(ev) => {
         onClick?.(ev);
-        setOpen(isOpen);
+        setOpen(!isOpen);
       }}
       {...p}
     />
