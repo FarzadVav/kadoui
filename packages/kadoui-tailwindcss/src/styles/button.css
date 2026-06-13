@@ -1,27 +1,253 @@
+/*
+  Main
+*/
 @utility btn {
-  --element-w: max-content;
+  --btn-width: max-content;
 
-  @apply max-w-full flex items-center justify-center transition-all outline-solid outline-2 outline-transparent focus-visible:outline-palette disabled:opacity-50 disabled:cursor-not-allowed active:opacity-50;
+  --btn-palette: var(--color-foreground);
+  --btn-brush: var(--color-background);
 
-  width: var(--element-w);
-  height: var(--element-size);
-  padding: 0 var(--element-spacing);
-  gap: calc(var(--element-spacing) / 1.5);
-  border-radius: var(--element-rounded);
+  @apply max-w-full flex items-center justify-center transition-all outline-solid outline-2 outline-transparent disabled:opacity-50 disabled:cursor-not-allowed active:opacity-50 [a]:underline [a]:decoration-transparent;
+
+  width: var(--btn-width);
+  height: var(--btn-height, calc(var(--spacing) * 10));
+  padding: var(--btn-spacing, calc(var(--spacing) * 3));
+  gap: calc(var(--btn-spacing, calc(var(--spacing) * 3)) * 0.5);
+  font-size: var(--btn-text, var(--text-base));
+  line-height: var(--btn-leading, var(--text-base--line-height));
+  border-radius: var(--btn-rounded, var(--radius-lg));
+
+  &:focus-visible {
+    outline-color: var(--btn-palette);
+  }
+
+  & > svg {
+    width: calc(var(--btn-height) / 2);
+    height: calc(var(--btn-height) / 2);
+    flex-shrink: 0;
+  }
 }
+/*
+  Main
+*/
 
+/*
+  Variants
+*/
 @utility btn-fill {
-  @apply bg-palette text-brush outline-offset-2 hover:bg-palette/90;
-}
+  @apply outline-offset-2;
 
-@utility btn-outline {
-  @apply border border-palette text-palette outline-offset-2 hover:bg-palette/10;
+  background-color: var(--btn-palette);
+  color: var(--btn-brush);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-palette) 90%, transparent);
+  }
+
+  &:is(a) {
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--btn-brush);
+    }
+  }
 }
 
 @utility btn-soft {
-  @apply bg-palette/10 text-palette hover:bg-palette/20;
+  background-color: color-mix(in oklab, var(--btn-palette) 10%, transparent);
+  color: var(--btn-palette);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-palette) 20%, transparent);
+  }
+
+  &:is(a) {
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--btn-palette);
+    }
+  }
 }
 
 @utility btn-ghost {
-  @apply text-palette hover:bg-palette/10;
+  color: var(--btn-palette);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-palette) 10%, transparent);
+  }
+
+  &:is(a) {
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--btn-palette);
+    }
+  }
 }
+
+@utility btn-soft-outline {
+  @apply border outline-offset-2;
+
+  background-color: color-mix(in oklab, var(--btn-palette) 10%, transparent);
+  border-color: var(--btn-palette);
+  color: var(--btn-palette);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-palette) 20%, transparent);
+  }
+
+  &:is(a) {
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--btn-palette);
+    }
+  }
+}
+
+@utility btn-ghost-outline {
+  @apply border outline-offset-2;
+
+  border-color: var(--btn-palette);
+  color: var(--btn-palette);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--btn-palette) 10%, transparent);
+  }
+
+  &:is(a) {
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--btn-palette);
+    }
+  }
+}
+
+@utility btn-link {}
+/*
+  Variants
+*/
+
+/*
+  Colors
+*/
+@utility btn-background {
+  --btn-palette: var(--color-background);
+  --btn-brush: var(--color-foreground);
+}
+
+@utility btn-foreground {
+  --btn-palette: var(--color-foreground);
+  --btn-brush: var(--color-background);
+}
+
+@utility btn-card {
+  --btn-palette: var(--color-card);
+  --btn-brush: var(--color-card-foreground);
+}
+
+@utility btn-primary {
+  --btn-palette: var(--color-primary);
+  --btn-brush: var(--color-primary-foreground);
+}
+
+@utility btn-secondary {
+  --btn-palette: var(--color-secondary);
+  --btn-brush: var(--color-secondary-foreground);
+}
+
+@utility btn-error {
+  --btn-palette: var(--color-error);
+  --btn-brush: var(--color-error-foreground);
+}
+
+@utility btn-success {
+  --btn-palette: var(--color-success);
+  --btn-brush: var(--color-success-foreground);
+}
+
+@utility btn-warning {
+  --btn-palette: var(--color-warning);
+  --btn-brush: var(--color-warning-foreground);
+}
+
+@utility btn-info {
+  --btn-palette: var(--color-info);
+  --btn-brush: var(--color-info-foreground);
+}
+/*
+  Colors
+*/
+
+/*
+  Sizes
+*/
+@utility btn-xs {
+  --btn-height: calc(var(--spacing) * 7);
+  --btn-spacing: calc(var(--spacing) * 1);
+  --btn-text: var(--text-xs);
+  --btn-leading: var(--text-xs--line-height);
+  --btn-rounded: var(--radius-sm);
+
+  &.btn-rounded, .btn-rounded * {
+    --btn-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility btn-sm {
+  --btn-height: calc(var(--spacing) * 9);
+  --btn-spacing: calc(var(--spacing) * 2);
+  --btn-text: var(--text-sm);
+  --btn-leading: var(--text-sm--line-height);
+  --btn-rounded: var(--radius-md);
+
+  &.btn-rounded, .btn-rounded * {
+    --btn-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility btn-md {
+  --btn-height: calc(var(--spacing) * 10);
+  --btn-spacing: calc(var(--spacing) * 3);
+  --btn-text: var(--text-base);
+  --btn-leading: var(--text-base--line-height);
+  --btn-rounded: var(--radius-lg);
+
+  &.btn-rounded, .btn-rounded * {
+    --btn-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility btn-lg {
+  --btn-height: calc(var(--spacing) * 11);
+  --btn-spacing: calc(var(--spacing) * 4);
+  --btn-text: var(--text-lg);
+  --btn-leading: var(--text-lg--line-height);
+  --btn-rounded: var(--radius-xl);
+
+  &.btn-rounded, .btn-rounded * {
+    --btn-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility btn-xl {
+  --btn-height: calc(var(--spacing) * 13);
+  --btn-spacing: calc(var(--spacing) * 6);
+  --btn-text: var(--text-xl);
+  --btn-leading: var(--text-xl--line-height);
+  --btn-rounded: var(--radius-2xl);
+
+  &.btn-rounded, .btn-rounded * {
+    --btn-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility btn-square {
+  --btn-width: min(var(--btn-height), var(--btn-height));
+  --btn-spacing: 0;
+
+  @apply text-center justify-center items-center;
+}
+
+@utility btn-full {
+  --btn-width: 100%;
+}
+
+@utility btn-rounded {
+  --btn-rounded: calc(infinity * 1px);
+}
+/*
+  Sizes
+*/

@@ -1,5 +1,5 @@
 @utility alert {
-  @apply flex items-center bg-palette/10 text-palette border border-palette;
+  @apply flex items-center border;
 
   min-height: var(--element-size);
   padding: var(--element-spacing);

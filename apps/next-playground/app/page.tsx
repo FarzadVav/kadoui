@@ -202,6 +202,58 @@ function Page() {
           <button className="btn btn-soft">Four</button>
         </AccessNavigation>
 
+        <p className="heading mt-20">Buttons</p>
+        <p className="title mt-6">Variants</p>
+        <div className="flex items-center gap-3 mt-3">
+          <button className="btn btn-fill">
+            Click Me
+          </button>
+          <button className="btn btn-soft">
+            Click Me
+          </button>
+          <button className="btn btn-ghost">
+            Click Me
+          </button>
+          <button className="btn btn-soft-outline">
+            Click Me
+          </button>
+          <button className="btn btn-ghost-outline">
+            Click Me
+          </button>
+        </div>
+        <p className="title mt-6">Colors</p>
+        <div className="flex items-center gap-3 mt-3">
+          <button className="btn btn-fill">
+            Click Me
+          </button>
+          <div className="p-1 bg-foreground">
+            <button className="btn btn-fill btn-background">
+              Click Me
+            </button>
+          </div>
+          <button className="btn btn-fill btn-card">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-primary">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-secondary">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-error">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-success">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-warning">
+            Click Me
+          </button>
+          <button className="btn btn-fill btn-info">
+            Click Me
+          </button>
+        </div>
+
         <p className="heading mt-20">Accordion</p>
         <p className="title mt-6">Multiple mode</p>
         <Accordion direction="y" multiple accordionState={accordionItems} onAccordionChange={(newItems) => setAccordionItems(newItems)}>

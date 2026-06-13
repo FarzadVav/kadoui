@@ -1,111 +1,3 @@
-/* Dark mode */
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-/* Palette colors */
-
-@utility palette-background {
-  --color-palette: var(--color-background);
-  --color-brush: var(--color-foreground);
-}
-
-@utility palette-foreground {
-  --color-palette: var(--color-foreground);
-  --color-brush: var(--color-background);
-}
-
-@utility palette-primary {
-  --color-palette: var(--color-primary);
-  --color-brush: var(--color-primary-foreground);
-}
-
-@utility palette-secondary {
-  --color-palette: var(--color-secondary);
-  --color-brush: var(--color-secondary-foreground);
-}
-
-@utility palette-error {
-  --color-palette: var(--color-error);
-  --color-brush: var(--color-error-foreground);
-}
-
-@utility palette-success {
-  --color-palette: var(--color-success);
-  --color-brush: var(--color-success-foreground);
-}
-
-@utility palette-warning {
-  --color-palette: var(--color-warning);
-  --color-brush: var(--color-warning-foreground);
-}
-
-@utility palette-info {
-  --color-palette: var(--color-info);
-  --color-brush: var(--color-info-foreground);
-}
-
-/* Element sizes */
-
-@utility element-xs {
-  --element-size: var(--element-xs-size);
-  --element-spacing: var(--element-xs-spacing);
-  --element-text: var(--element-xs-text);
-  --element-leading: var(--element-xs-leading);
-
-  &.element-rounded-full,
-  .element-rounded-full * {
-    --element-rounded: calc(infinity * 1px);
-  }
-}
-
-@utility element-sm {
-  --element-size: var(--element-sm-size);
-  --element-spacing: var(--element-sm-spacing);
-  --element-text: var(--element-sm-text);
-  --element-leading: var(--element-sm-leading);
-
-  &.element-rounded-full,
-  .element-rounded-full * {
-    --element-rounded: calc(infinity * 1px);
-  }
-}
-
-@utility element-md {
-  --element-size: var(--element-medium-size);
-  --element-spacing: var(--element-medium-spacing);
-  --element-text: var(--element-medium-text);
-  --element-leading: var(--element-medium-leading);
-
-  &.element-rounded-full,
-  .element-rounded-full * {
-    --element-rounded: calc(infinity * 1px);
-  }
-}
-
-@utility element-lg {
-  --element-size: var(--element-lg-size);
-  --element-spacing: var(--element-lg-spacing);
-  --element-text: var(--element-lg-text);
-  --element-leading: var(--element-lg-leading);
-
-  &.element-rounded-full,
-  .element-rounded-full * {
-    --element-rounded: calc(infinity * 1px);
-  }
-}
-
-@utility element-xl {
-  --element-size: var(--element-xl-size);
-  --element-spacing: var(--element-xl-spacing);
-  --element-text: var(--element-xl-text);
-  --element-leading: var(--element-xl-leading);
-
-  &.element-rounded-full,
-  .element-rounded-full * {
-    --element-rounded: calc(infinity * 1px);
-  }
-}
-
 /* Base styles */
 
 @layer base {
@@ -121,10 +13,7 @@
     @apply select-none;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--color-foreground) transparent;
-
-    font-size: var(--element-text);
-    line-height: var(--element-line);
+    scrollbar-color: var(--color-primary) transparent;
   }
 
   a,
@@ -143,32 +32,8 @@
   }
 
   textarea {
-    @apply resize-y;
+    @apply resize-none;
   }
-}
-
-/* Use element sizes */
-
-@utility element-square-size {
-  --element-w: min(var(--element-size), var(--element-size));
-  --element-spacing: 0;
-
-  @apply text-center justify-center items-center;
-}
-
-@utility element-w-full {
-  --element-w: 100%;
-}
-
-@utility element-icon-size {
-  width: calc(var(--element-size) / 2);
-  min-width: calc(var(--element-size) / 2);
-  height: calc(var(--element-size) / 2);
-  min-height: calc(var(--element-size) / 2);
-}
-
-@utility element-rounded-full {
-  --element-rounded: calc(infinity * 1px);
 }
 
 /* Utilities */
@@ -185,12 +50,8 @@
   @apply h-max max-h-full;
 }
 
-@utility link {
-  @apply underline decoration-transparent decoration-0 hover:decoration-palette focus-visible:decoration-palette;
-}
-
 @utility highlight {
-  @apply px-[calc(var(--element-spacing)/2)] bg-palette/10 text-palette rounded font-bold;
+  @apply px-1.5 bg-primary/10 text-primary-foreground rounded;
 }
 
 @utility ignore {

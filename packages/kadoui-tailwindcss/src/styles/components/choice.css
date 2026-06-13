@@ -48,7 +48,7 @@
     @apply bg-palette text-brush;
 
     &>.choice-switch-thumb {
-      @apply bg-brush text-palette;
+      /* @apply bg-brush text-palette; */
 
       left: calc(var(--element-size) + 0.25rem);
     }

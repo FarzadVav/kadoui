@@ -1,5 +1,5 @@
 @utility kbd {
-  @apply bg-palette/10 text-palette transition-transform active:translate-y-0.5;
+  /* @apply bg-palette/10 text-palette transition-transform active:translate-y-0.5; */
 
   padding: var(--element-spacing);
   border-radius: var(--element-rounded);

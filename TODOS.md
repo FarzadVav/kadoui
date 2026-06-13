@@ -21,6 +21,7 @@
 
 ### Later
 
+- Add Carousel.
 - Add Tour component.
 - Add Table component.
 - Add Toast component.
@@ -31,7 +32,6 @@
 - Add Slider component (with multiple triggers).
 - Add HashLink component (with active & not-active state).
 - Extend Drawer to a full-featured component and Remove Sheet component.
-- Develop Carousel to a full-featured component (x & y boundry shadows).
 - Add ActionInput component (e.g for add product features and variants).
 - Add more shapes like circular, circle, semi-circle, etc. to Progress component.
 

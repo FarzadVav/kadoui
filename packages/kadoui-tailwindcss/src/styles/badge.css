@@ -1,23 +1,20 @@
 @utility badge {
-  --element-w: max-content;
+  --badge-width: max-content;
 
   @apply flex items-center justify-center max-w-full;
 
-  width: var(--element-w);
-  height: var(--element-size);
-  padding: 0 var(--element-spacing);
-  gap: calc(var(--element-spacing) / 1.5);
-  border-radius: var(--element-rounded);
+  width: ;
+  height: ;
+  padding: ;
+  gap: ;
+  border-radius: ;
 }
 
 @utility badge-fill {
-  @apply bg-palette text-brush;
 }
 
 @utility badge-outline {
-  @apply border border-palette text-palette;
 }
 
 @utility badge-soft {
-  @apply bg-palette/10 text-palette;
 }
