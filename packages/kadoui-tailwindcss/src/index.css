@@ -4,12 +4,8 @@
 @import "./styles/base.css";
 @import "./styles/button.css";
 @import "./styles/input.css";
-@import "./styles/badge.css";
 @import "./styles/card.css";
-@import "./styles/kbd.css";
-@import "./styles/alert.css";
 @import "./styles/join.css";
-@import "./styles/position.css";
 @import "./styles/separator.css";
 
 /* Components */

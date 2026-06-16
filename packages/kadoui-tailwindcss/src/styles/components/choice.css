@@ -1,4 +1,4 @@
-@utility choice {
+/* @utility choice {
   @apply border border-palette p-1 outline-solid outline-2 outline-transparent focus-visible:outline-palette outline-offset-2;
 }
 
@@ -48,7 +48,7 @@
     @apply bg-palette text-brush;
 
     &>.choice-switch-thumb {
-      /* @apply bg-brush text-palette; */
+      @apply bg-brush text-palette;
 
       left: calc(var(--element-size) + 0.25rem);
     }
@@ -66,4 +66,4 @@
 
   width: calc(var(--element-size) - 0.5rem);
   height: calc(var(--element-size) - 0.5rem);
-}
+} */

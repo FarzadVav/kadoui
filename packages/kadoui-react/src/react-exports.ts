@@ -2,7 +2,6 @@ export * from "./react-components/AccessNavigation/AccessNavigation";
 export * from "./react-components/Accordion/Accordion";
 export * from "./react-components/Affix/Affix";
 export * from "./react-components/Breadcrumbs/Breadcrumbs";
-export * from "./react-components/Carousel/Carousel";
 export * from "./react-components/ClientOnly/ClientOnly";
 export * from "./react-components/Clipboard/Clipboard";
 export * from "./react-components/ContextMenu/ContextMenu";

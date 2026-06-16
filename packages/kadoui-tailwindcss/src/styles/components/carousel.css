@@ -1,4 +1,4 @@
-@utility carousel {
+/* @utility carousel {
   @apply relative;
 }
 
@@ -12,4 +12,4 @@
 
 @utility carousel-right-fade {
   @apply pointer-events-none absolute left-0 top-0 h-full w-1/3 lg:w-1/6 bg-linear-to-r from-background from-10% lg:from-5% to-transparent z-10 transition-opacity;
-}
+} */

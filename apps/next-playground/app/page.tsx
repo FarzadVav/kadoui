@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Suspense, useState } from "react";
 import { LinkLoader } from "@kadoui/react/next";
 import {
-  ArrowLeftIcon,
   ArrowRightIcon,
   CheckIcon,
   ChevronDownIcon,
@@ -26,7 +25,6 @@ import {
   AccessNavigation,
   Accordion,
   Breadcrumbs,
-  Carousel,
   ClientOnly,
   Clipboard,
   ContextMenu,
@@ -191,67 +189,350 @@ function Page() {
         </nav>
       </header>
 
-      <div className="wrapper my-20">
-        <p className="heading">AccessNavigation</p>
-        <AccessNavigation
-          direction="x"
-          className="join join-border mt-6">
-          <button className="btn btn-soft">One</button>
-          <button className="btn btn-soft">Two</button>
-          <button className="btn btn-soft">Three</button>
-          <button className="btn btn-soft">Four</button>
-        </AccessNavigation>
 
-        <p className="heading mt-20">Buttons</p>
-        <p className="title mt-6">Variants</p>
-        <div className="flex items-center gap-3 mt-3">
-          <button className="btn btn-fill">
-            Click Me
-          </button>
-          <button className="btn btn-soft">
-            Click Me
-          </button>
-          <button className="btn btn-ghost">
-            Click Me
-          </button>
-          <button className="btn btn-soft-outline">
-            Click Me
-          </button>
-          <button className="btn btn-ghost-outline">
-            Click Me
-          </button>
+      <div className="wrapper mt-40">
+        <p className="heading text-primary">TailwindCSS  <ChevronDownIcon className="inline size-12" /></p>
+      </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Buttons</p>
+        <div>
+          <p className="title mt-6">Variants</p>
+          <div className="flex items-center gap-3 mt-3">
+            <button className="btn btn-fill">
+              Btn Fill
+            </button>
+            <button className="btn btn-soft">
+              Btn Soft 
+            </button>
+            <button className="btn btn-ghost">
+              Btn Ghost
+            </button>
+            <button className="btn btn-soft-outline">
+              Btn Soft-Outline
+            </button>
+            <button className="btn btn-ghost-outline">
+              Btn Ghost-Outline
+            </button>
+            <button className="btn btn-ghost btn-link">
+              Btn Link
+            </button>
+          </div>
         </div>
-        <p className="title mt-6">Colors</p>
-        <div className="flex items-center gap-3 mt-3">
-          <button className="btn btn-fill">
-            Click Me
-          </button>
-          <div className="p-1 bg-foreground">
-            <button className="btn btn-fill btn-background">
+        <div>
+          <p className="title mt-6">Colors</p>
+          <div className="flex items-center gap-3 mt-3">
+            <button className="btn btn-fill">
+              Click Me
+            </button>
+            <div className="p-1 bg-foreground">
+              <button className="btn btn-fill btn-background">
+                Click Me
+              </button>
+            </div>
+            <button className="btn btn-fill btn-card">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-primary">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-secondary">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-error">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-success">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-warning">
+              Click Me
+            </button>
+            <button className="btn btn-fill btn-info">
               Click Me
             </button>
           </div>
-          <button className="btn btn-fill btn-card">
-            Click Me
+        </div>
+        <div>
+          <p className="title mt-6">Sizes</p>
+          <div className="flex items-center gap-3 mt-3">
+            <button className="btn btn-fill btn-xs">
+              Btn XS
+            </button>
+            <button className="btn btn-fill btn-sm">
+              Btn SM
+            </button>
+            <button className="btn btn-fill">
+              Btn MD
+            </button>
+            <button className="btn btn-fill btn-rounded">
+              Btn Rounded
+            </button>
+            <button className="btn btn-fill btn-square">
+              SQ
+            </button>
+            <button className="btn btn-fill btn-lg">
+              Btn LG
+            </button>
+            <button className="btn btn-fill btn-xl">
+              Btn XL
+            </button>
+          </div>
+          <button className="btn btn-fill btn-full mt-3">
+            Btn Full
           </button>
-          <button className="btn btn-fill btn-primary">
-            Click Me
-          </button>
-          <button className="btn btn-fill btn-secondary">
-            Click Me
-          </button>
-          <button className="btn btn-fill btn-error">
-            Click Me
-          </button>
-          <button className="btn btn-fill btn-success">
-            Click Me
-          </button>
-          <button className="btn btn-fill btn-warning">
-            Click Me
-          </button>
-          <button className="btn btn-fill btn-info">
-            Click Me
-          </button>
+        </div>
+      </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Inputs</p>
+        <div>
+          <p className="title mt-6">Variants</p>
+          <div className="space-y-3 mt-3">
+            <label className="input input-ghost">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input Ghost..."
+              />
+              <button className="btn btn-ghost">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input Ghost-Outline..."
+              />
+              <button className="btn btn-ghost">
+                Go
+              </button>
+            </label>
+            <label className="input input-soft">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input Soft..."
+              />
+              <button className="btn btn-ghost">
+                Go
+              </button>
+            </label>
+            <label className="input input-soft-outline">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input Soft-Outline..."
+              />
+              <button className="btn btn-ghost">
+                Go
+              </button>
+            </label>
+          </div>
+        </div>
+        <div>
+          <p className="title mt-6">Colors</p>
+          <div className="space-y-3 mt-3">
+            <label className="input input-ghost-outline">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input foreground..."
+              />
+              <button className="btn btn-ghost">
+                Go
+              </button>
+            </label>
+            <div className="p-3 bg-foreground">
+              <label className="input input-ghost-outline input-background">
+                <SearchIcon className="element-icon-size" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="Input background..."
+                />
+                <button className="btn btn-ghost btn-background">
+                  Go
+                </button>
+              </label>
+            </div>
+            <label className="input input-ghost-outline input-card">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input card..."
+                />
+              <button className="btn btn-ghost btn-card">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-primary">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input primary..."
+              />
+              <button className="btn btn-ghost btn-primary">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-secondary">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input secondary..."
+              />
+              <button className="btn btn-ghost btn-secondary">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-error">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input error..."
+              />
+              <button className="btn btn-ghost btn-error">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-success">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input success..."
+              />
+              <button className="btn btn-ghost btn-success">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-warning">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input warning..."
+              />
+              <button className="btn btn-ghost btn-warning">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-info">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input info..."
+              />
+              <button className="btn btn-ghost btn-info">
+                Go
+              </button>
+            </label>
+          </div>
+        </div>
+        <div>
+          <p className="title mt-6">Sizes</p>
+          <div className="space-y-3 mt-3">
+            <label className="input input-ghost-outline input-xs">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input xs..."
+              />
+              <button className="btn btn-ghost btn-xs">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-sm">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input sm..."
+              />
+              <button className="btn btn-ghost btn-sm">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input md..."
+              />
+              <button className="btn btn-ghost btn-md">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-rounded">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input rounded..."
+              />
+              <button className="btn btn-ghost btn-md btn-rounded">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-square">
+              <input
+                type="text"
+                placeholder="SQ"
+                className="input-field"
+              />
+            </label>
+            <label className="input input-ghost-outline input-lg">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input lg..."
+              />
+              <button className="btn btn-ghost btn-lg">
+                Go
+              </button>
+            </label>
+            <label className="input input-ghost-outline input-xl">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input xl..."
+              />
+              <button className="btn btn-ghost btn-xl">
+                Go
+              </button>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="wrapper mt-40">
+        <p className="heading text-primary">React  <ChevronDownIcon className="inline size-12" /></p>
+      </div>
+      <div className="wrapper my-20">
+        <div>
+          <p className="heading">AccessNavigation</p>
+          <AccessNavigation
+            direction="x"
+            className="join join-border mt-6">
+            <button className="btn btn-soft">One</button>
+            <button className="btn btn-soft">Two</button>
+            <button className="btn btn-soft">Three</button>
+            <button className="btn btn-soft">Four</button>
+          </AccessNavigation>
         </div>
 
         <p className="heading mt-20">Accordion</p>
@@ -368,62 +649,6 @@ function Page() {
             <button className="btn btn-fill">How to gain money?</button>
           </Breadcrumbs.Item>
         </Breadcrumbs>
-
-        <p className="heading mt-20">Carousel</p>
-        <p className="title mt-6">Auto mouse scroll</p>
-        <Carousel className="carousel mt-3" mouseScroll="auto">
-          <Carousel.LeftFade className="carousel-left-fade" />
-          <Carousel.RightFade className="carousel-right-fade" />
-
-          <Carousel.Container className="carousel-container gap-3 scroll-smooth">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <article
-                key={index}
-                className="carousel-children card w-[90%] max-sm:min-w-[90%] sm:w-2/5 sm:min-w-2/5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-                doloremque error rem ex, necessitatibus dolore deleniti alias aperiam cum
-                ipsum, suscipit possimus porro provident totam mollitia? Voluptate, eaque
-                quas. Culpa.
-              </article>
-            ))}
-          </Carousel.Container>
-
-          <div className="flex items-center justify-center gap-3 mt-3">
-            <Carousel.PrevBtn className="btn btn-outline element-square-size">
-              <ArrowLeftIcon className="element-icon-size" />
-            </Carousel.PrevBtn>
-            <Carousel.NextBtn className="btn btn-outline element-square-size">
-              <ArrowRightIcon className="element-icon-size" />
-            </Carousel.NextBtn>
-          </div>
-        </Carousel>
-        <p className="title mt-6">Swipe mouse scroll</p>
-        <Carousel className="carousel mt-3" mouseScroll="swipe">
-          <Carousel.LeftFade className="carousel-left-fade" />
-          <Carousel.RightFade className="carousel-right-fade" />
-
-          <Carousel.Container className="carousel-container gap-3 scroll-smooth">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <article
-                key={index}
-                className="carousel-children card w-[90%] max-sm:min-w-[90%] sm:w-2/5 sm:min-w-2/5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-                doloremque error rem ex, necessitatibus dolore deleniti alias aperiam cum
-                ipsum, suscipit possimus porro provident totam mollitia? Voluptate, eaque
-                quas. Culpa.
-              </article>
-            ))}
-          </Carousel.Container>
-
-          <div className="flex items-center justify-center gap-3 mt-3">
-            <Carousel.PrevBtn className="btn btn-outline element-square-size">
-              <ArrowLeftIcon className="element-icon-size" />
-            </Carousel.PrevBtn>
-            <Carousel.NextBtn className="btn btn-outline element-square-size">
-              <ArrowRightIcon className="element-icon-size" />
-            </Carousel.NextBtn>
-          </div>
-        </Carousel>
 
         <p className="heading mt-20">ClientOnly</p>
         <p className="mt-6">There is server</p>
@@ -1197,11 +1422,10 @@ function Page() {
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-xl choice-switch"
+            className="choice element-xl choice-switch placeholder:text-palette/50"
             choiceName="5">
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
-
         </Choice>
       </div>
     </>

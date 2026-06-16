@@ -4,7 +4,7 @@
 :root {
   --background: #efefef;
   --foreground: #151515;
-  --card: #dfdfdf;
+  --card: #afafaf;
   --card-foreground: #202020;
   --primary: #ff5e00;
   --primary-foreground: #ffffff;
@@ -46,7 +46,7 @@
 [data-theme="dark"] {
   --background: #151515;
   --foreground: #efefef;
-  --card: #202020;
+  --card: #505050;
   --card-foreground: #dfdfdf;
 }
 

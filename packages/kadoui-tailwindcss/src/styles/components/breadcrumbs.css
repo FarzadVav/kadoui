@@ -1,7 +1,7 @@
-@utility breadcrumbs {
+/* @utility breadcrumbs {
   @apply flex items-center flex-wrap gap-x-(--element-spacing);
 }
 
 @utility breadcrumbs-item {
   @apply flex items-center;
-}
+} */

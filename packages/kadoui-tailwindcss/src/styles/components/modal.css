@@ -1,4 +1,4 @@
-@utility modal-portal {
+/* @utility modal-portal {
   @apply fixed inset-0 z-50 p-(--element-spacing) flex bg-foreground/50;
 }
 
@@ -24,4 +24,4 @@
 
 @utility modal-content {
   @apply w-full p-(--element-spacing) bg-background rounded-(--element-rounded) overflow-y-auto;
-}
+} */

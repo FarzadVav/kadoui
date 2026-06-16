@@ -1,41 +1,251 @@
-/* Input element should be a `label` */
+/*
+  Notes:
+  - Input element should be a `label`
+*/
 
+/*
+  Start Main
+*/
 @utility input {
-  --element-w: auto;
+  --input-palette: var(--color-foreground);
+  --input-brush: var(--color-background);
 
-  @apply flex cursor-text relative transition-all outline-solid outline-2 outline-transparent focus-within:outline-palette has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[input:disabled]:*:cursor-not-allowed not-has-[input:disabled]:has-[[type=file]]:cursor-pointer;
+  @apply flex cursor-text relative transition-all outline-solid outline-1 outline-transparent has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[input:disabled]:*:cursor-not-allowed not-has-[input:disabled]:has-[[type=file]]:cursor-pointer;
 
-  width: var(--element-w);
-  height: var(--element-size);
-  border-radius: var(--element-rounded);
-  padding: var(--element-spacing);
-  gap: var(--element-spacing);
+  width: var(--input-width, 100%);
+  height: var(--input-height, calc(var(--spacing) * 10));
+  padding: 0 var(--input-spacing, calc(var(--spacing) * 3));
+  gap: var(--input-spacing, calc(var(--spacing) * 3));
+  font-size: var(--input-text, var(--text-base));
+  line-height: var(--input-leading, var(--text-base--line-height));
+  border-radius: var(--input-rounded, var(--radius-lg));
+
+  &:focus-within {
+    outline-color: var(--input-palette);
+  }
 
   &:has(input, select) {
     @apply items-center;
-
-    padding: 0 var(--element-spacing);
   }
 
   &:has(textarea) {
     @apply h-[25dvh];
 
-    padding: var(--element-spacing);
+    padding: var(--input-spacing, calc(var(--spacing) * 3));
+  }
+
+  & > svg {
+    width: calc(var(--input-height) / 2);
+    height: calc(var(--input-height) / 2);
+    flex-shrink: 0;
+  }
+
+  &:has(*:is(.btn:last-child)) {
+    padding-inline-end: calc((var(--btn-height, calc(var(--spacing) * 10)) * 0.125));
+  }
+
+  &:has(*:is(.btn:first-child)) {
+    padding-inline-start: calc((var(--btn-height, calc(var(--spacing) * 10)) * 0.125));
   }
 }
+/*
+  End Main
+*/
 
+/*
+  Start Variants
+*/
 @utility input-field {
-  /* @apply bg-transparent placeholder:text-palette/50 flex-1 not-[[type=file]]:h-full max-w-full not-disabled:[[type=file]]:cursor-pointer;
+  @apply bg-transparent w-full not-[[type=file]]:h-full max-w-full not-disabled:[[type=file]]:cursor-pointer;
+
+  &::placeholder {
+    color: color-mix(in oklab, var(--input-palette) 50%, transparent);
+  }
 
   &:where(select) {
     @apply not-disabled:cursor-pointer;
-  } */
+  }
 }
 
-@utility input-outline {
-  /* @apply border border-palette outline-offset-2; */
+@utility input-ghost {
+  color: var(--input-palette);
+
+  &:not(:focus-within) {
+    &:hover {
+      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+    }
+  }
+}
+
+@utility input-soft-outline {
+  @apply outline-offset-2;
+
+  color: var(--input-palette);
+  border: 1px solid var(--input-palette);
+  background-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+
+  &:not(:focus-within) {
+    &:hover {
+      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+    }
+  }
+}
+
+@utility input-ghost-outline {
+  @apply outline-offset-2;
+
+  color: var(--input-palette);
+  border: 1px solid var(--input-palette);
+
+  &:not(:focus-within) {
+    &:hover {
+      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+    }
+  }
 }
 
 @utility input-soft {
-  /* @apply bg-palette/10; */
+  color: var(--input-palette);
+  background-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+
+  &:not(:focus-within) {
+    &:hover {
+      outline-color: color-mix(in oklab, var(--input-palette) 50%, transparent);
+    }
+  }
 }
+/*
+  End Variants
+*/
+
+/*
+  Start Colors
+*/
+@utility input-background {
+  --input-palette: var(--color-background);
+  --input-brush: var(--color-foreground);
+}
+
+@utility input-foreground {
+  --input-palette: var(--color-foreground);
+  --input-brush: var(--color-background);
+}
+
+@utility input-card {
+  --input-palette: var(--color-card);
+  --input-brush: var(--color-card-foreground);
+}
+
+@utility input-primary {
+  --input-palette: var(--color-primary);
+  --input-brush: var(--color-primary-foreground);
+}
+
+@utility input-secondary {
+  --input-palette: var(--color-secondary);
+  --input-brush: var(--color-secondary-foreground);
+}
+
+@utility input-error {
+  --input-palette: var(--color-error);
+  --input-brush: var(--color-error-foreground);
+}
+
+@utility input-success {
+  --input-palette: var(--color-success);
+  --input-brush: var(--color-success-foreground);
+}
+
+@utility input-warning {
+  --input-palette: var(--color-warning);
+  --input-brush: var(--color-warning-foreground);
+}
+
+@utility input-info {
+  --input-palette: var(--color-info);
+  --input-brush: var(--color-info-foreground);
+}
+/*
+  End Colors
+*/
+
+/*
+  Start Sizes
+*/
+@utility input-xs {
+  --input-height: calc(var(--spacing) * 7);
+  --input-spacing: calc(var(--spacing) * 1);
+  --input-text: var(--text-xs);
+  --input-leading: var(--text-xs--line-height);
+  --input-rounded: var(--radius-sm);
+
+  &.input-rounded, .input-rounded * {
+    --input-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility input-sm {
+  --input-height: calc(var(--spacing) * 9);
+  --input-spacing: calc(var(--spacing) * 2);
+  --input-text: var(--text-sm);
+  --input-leading: var(--text-sm--line-height);
+  --input-rounded: var(--radius-md);
+
+  &.input-rounded, .input-rounded * {
+    --input-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility input-md {
+  --input-height: calc(var(--spacing) * 10);
+  --input-spacing: calc(var(--spacing) * 3);
+  --input-text: var(--text-base);
+  --input-leading: var(--text-base--line-height);
+  --input-rounded: var(--radius-lg);
+
+  &.input-rounded, .input-rounded * {
+    --input-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility input-lg {
+  --input-height: calc(var(--spacing) * 11);
+  --input-spacing: calc(var(--spacing) * 4);
+  --input-text: var(--text-lg);
+  --input-leading: var(--text-lg--line-height);
+  --input-rounded: var(--radius-xl);
+
+  &.input-rounded, .input-rounded * {
+    --input-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility input-xl {
+  --input-height: calc(var(--spacing) * 13);
+  --input-spacing: calc(var(--spacing) * 6);
+  --input-text: var(--text-xl);
+  --input-leading: var(--text-xl--line-height);
+  --input-rounded: var(--radius-2xl);
+
+  &.input-rounded, .input-rounded * {
+    --input-rounded: calc(infinity * 1px);
+  }
+}
+
+@utility input-square {
+  --input-width: min(var(--input-height, calc(var(--spacing) * 10)), var(--input-height, calc(var(--spacing) * 10)));
+  --input-spacing: 0;
+
+  @apply **:text-center **:justify-center **:items-center;
+}
+
+@utility input-full {
+  --input-width: 100%;
+}
+
+@utility input-rounded {
+  --input-rounded: calc(infinity * 1px);
+}
+/*
+  End Sizes
+*/

@@ -1,7 +1,7 @@
-@utility rating {
+/* @utility rating {
   @apply flex items-center w-fix;
 }
 
 @utility rating-items {
   @apply transition-all px-1 not-active:hover:-translate-y-1;
-}
+} */

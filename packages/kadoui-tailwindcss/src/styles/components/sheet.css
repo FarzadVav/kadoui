@@ -1,4 +1,4 @@
-@utility sheet-portal {
+/* @utility sheet-portal {
   @apply fixed inset-0 z-50 bg-foreground/50;
 }
 
@@ -16,4 +16,4 @@
 
 @utility sheet-content {
   @apply overflow-y-auto flex-1 p-(--element-spacing);
-}
+} */

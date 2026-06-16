@@ -1,5 +1,6 @@
-/* Base styles */
-
+/*
+  Start Base styles
+*/
 @layer base {
   html {
     @apply scroll-smooth;
@@ -13,17 +14,13 @@
     @apply select-none;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--color-primary) transparent;
+    scrollbar-color: var(--color-foreground) transparent;
   }
 
   a,
   span,
   label {
     @apply inline-block;
-  }
-
-  button {
-    @apply cursor-pointer;
   }
 
   input:focus,
@@ -35,9 +32,13 @@
     @apply resize-none;
   }
 }
+/*
+  End Base styles
+*/
 
-/* Utilities */
-
+/*
+  Start Utilities
+*/
 @utility no-scrollbar {
   scrollbar-width: none;
 }
@@ -63,5 +64,8 @@
 }
 
 @utility range-slider {
-  @apply bg-palette rounded-full appearance-none cursor-grab active:cursor-grabbing;
+  @apply bg-primary rounded-full appearance-none cursor-grab active:cursor-grabbing;
 }
+/*
+  Start Utilities
+*/
