@@ -120,6 +120,10 @@
 @utility btn-link {
   @apply underline decoration-transparent;
 }
+
+@utility btn-row {
+  @apply btn-full justify-between;
+}
 /*
   End Variants
 */

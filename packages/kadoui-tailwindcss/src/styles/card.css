@@ -3,6 +3,7 @@
 */
 @utility card {
   width: var(--card-width, 100%);
+  max-width: var(--card-max-width, 100%);
   padding: var(--card-spacing, calc(var(--spacing) * 3));
   border-radius: var(--card-rounded, var(--radius-lg));
 }
@@ -15,6 +16,12 @@
 */
 @utility card-menu {
   --card-width: max-content;
+  --card-max-width: max-content;
+}
+
+@utility card-fix-menu {
+  --card-width: max-content;
+  --card-max-width: 100%;
 }
 
 @utility card-y {
@@ -36,28 +43,28 @@
   Start Sizes
 */
 @utility card-xs {
-  --card-spacing: var(--card-spacing, calc(var(--spacing) * 1.5));
-  --card-rounded: var(--card-rounded, var(--radius-md));
+  --card-spacing: calc(var(--spacing) * 1.5);
+  --card-rounded: var(--radius-md);
 }
 
 @utility card-sm {
-  --card-spacing: var(--card-spacing, calc(var(--spacing) * 3));
-  --card-rounded: var(--card-rounded, var(--radius-lg));
+  --card-spacing: calc(var(--spacing) * 3);
+  --card-rounded: var(--radius-lg);
 }
 
 @utility card-md {
-  --card-spacing: var(--card-spacing, calc(var(--spacing) * 5));
-  --card-rounded: var(--card-rounded, var(--radius-xl));
+  --card-spacing: calc(var(--spacing) * 5);
+  --card-rounded: var(--radius-xl);
 }
 
 @utility card-lg {
-  --card-spacing: var(--card-spacing, calc(var(--spacing) * 8));
-  --card-rounded: var(--card-rounded, var(--radius-2xl));
+  --card-spacing: calc(var(--spacing) * 8);
+  --card-rounded: var(--radius-2xl);
 }
 
 @utility card-xl {
-  --card-spacing: var(--card-spacing, calc(var(--spacing) * 12));
-  --card-rounded: var(--card-rounded, var(--radius-3xl));
+  --card-spacing: calc(var(--spacing) * 12);
+  --card-rounded: var(--radius-3xl);
 }
 /*
   End Sizes

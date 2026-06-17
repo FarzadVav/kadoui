@@ -56,9 +56,10 @@ const PAGES_WITH_STATE = [
     name: "Hello world",
     component: (
       <p>
-        One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+        One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+        officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+        voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad nam
+        eligendi dignissimos.
       </p>
     ),
   },
@@ -66,9 +67,10 @@ const PAGES_WITH_STATE = [
     name: "Finish",
     component: (
       <p>
-        Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-        dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-        voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+        Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+        officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+        voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad nam
+        eligendi dignissimos.
       </p>
     ),
   },
@@ -79,12 +81,15 @@ const PAGES_WITH_SEARCHPARAMS = [
     component: (
       <div>
         <p>
-          One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-          dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-          voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+          One: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+          officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+          voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad
+          nam eligendi dignissimos.
         </p>
         <div className="flex items-center gap-3 mt-3">
-          <PaginationWithSearchParams.NextBtn className="btn btn-soft">Next</PaginationWithSearchParams.NextBtn>
+          <PaginationWithSearchParams.NextBtn className="btn btn-soft">
+            Next
+          </PaginationWithSearchParams.NextBtn>
         </div>
       </div>
     ),
@@ -94,13 +99,18 @@ const PAGES_WITH_SEARCHPARAMS = [
     component: (
       <div>
         <p>
-          Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-          dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-          voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+          Two: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+          officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+          voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad
+          nam eligendi dignissimos.
         </p>
         <div className="flex items-center gap-3 mt-3">
-          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">Prev</PaginationWithSearchParams.PrevBtn>
-          <PaginationWithSearchParams.NextBtn className="btn btn-soft">Next</PaginationWithSearchParams.NextBtn>
+          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">
+            Prev
+          </PaginationWithSearchParams.PrevBtn>
+          <PaginationWithSearchParams.NextBtn className="btn btn-soft">
+            Next
+          </PaginationWithSearchParams.NextBtn>
         </div>
       </div>
     ),
@@ -110,13 +120,18 @@ const PAGES_WITH_SEARCHPARAMS = [
     component: (
       <div>
         <p>
-          Three: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-          dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-          voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+          Three: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+          officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+          voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad
+          nam eligendi dignissimos.
         </p>
         <div className="flex items-center gap-3 mt-3">
-          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">Prev</PaginationWithSearchParams.PrevBtn>
-          <PaginationWithSearchParams.NextBtn className="btn btn-soft">Next</PaginationWithSearchParams.NextBtn>
+          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">
+            Prev
+          </PaginationWithSearchParams.PrevBtn>
+          <PaginationWithSearchParams.NextBtn className="btn btn-soft">
+            Next
+          </PaginationWithSearchParams.NextBtn>
         </div>
       </div>
     ),
@@ -126,12 +141,15 @@ const PAGES_WITH_SEARCHPARAMS = [
     component: (
       <div>
         <p>
-          Four: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis quia,
-          dolores similique, cumque ut vel aspernatur non vitae voluptas reiciendis? Veniam,
-          voluptates impedit soluta blanditiis ad nam eligendi dignissimos.
+          Four: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+          officiis quia, dolores similique, cumque ut vel aspernatur non vitae
+          voluptas reiciendis? Veniam, voluptates impedit soluta blanditiis ad
+          nam eligendi dignissimos.
         </p>
         <div className="flex items-center gap-3 mt-3">
-          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">Prev</PaginationWithSearchParams.PrevBtn>
+          <PaginationWithSearchParams.PrevBtn className="btn btn-soft">
+            Prev
+          </PaginationWithSearchParams.PrevBtn>
         </div>
       </div>
     ),
@@ -156,7 +174,9 @@ function Page() {
   const [rating, setRating] = useState(3);
   const [singleSelectBoxValue, singleSetSelectBoxValue] =
     useState<SelectBoxOptionT | null>(null);
-  const [multiSelectBoxValue, setMultiSelectBoxValue] = useState<SelectBoxOptionT[]>([]);
+  const [multiSelectBoxValue, setMultiSelectBoxValue] = useState<
+    SelectBoxOptionT[]
+  >([]);
   const [swapKey, setSwapKey] = useState(SWAP_KEYS[0] as string);
   const [activeTab, setActiveTab] = useState("1");
 
@@ -171,114 +191,105 @@ function Page() {
         <nav className="wrapper flex items-center justify-between h-full">
           <h1 className="title">KadoUI React + TailwindCSS</h1>
 
-          <Popover
-            mode="click"
-            direction="y"
-            className="popover"
-          >
+          <Popover mode="click" direction="y" className="popover">
             <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-              Theme: {theme || <LoaderIcon className="element-icon-size animate-spin" />}
+              Theme:{" "}
+              {theme || (
+                <LoaderIcon className="element-icon-size animate-spin" />
+              )}
             </Popover.Toggle>
 
             <Popover.Body className="popover-body position-b card card-menu card-y bg-background-thin">
-              <button className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("light")}>Light</button>
-              <button className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("dark")}>Dark</button>
-              <button className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`} onClick={() => setTheme("system")}>System</button>
+              <button
+                className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`}
+                onClick={() => setTheme("light")}
+              >
+                Light
+              </button>
+              <button
+                className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`}
+                onClick={() => setTheme("dark")}
+              >
+                Dark
+              </button>
+              <button
+                className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`}
+                onClick={() => setTheme("system")}
+              >
+                System
+              </button>
             </Popover.Body>
           </Popover>
         </nav>
       </header>
 
-
       <div className="wrapper mt-40">
-        <p className="heading text-primary">TailwindCSS  <ChevronDownIcon className="inline size-12" /></p>
+        <p className="heading text-primary">
+          TailwindCSS <ChevronDownIcon className="inline size-12" />
+        </p>
       </div>
       <div className="wrapper mt-20">
         <p className="heading">Buttons</p>
         <div>
           <p className="title mt-6">Variants</p>
           <div className="flex items-center gap-3 mt-3">
-            <button className="btn btn-fill">
-              Btn Fill
-            </button>
-            <button className="btn btn-soft">
-              Btn Soft 
-            </button>
-            <button className="btn btn-ghost">
-              Btn Ghost
-            </button>
-            <button className="btn btn-soft-outline">
-              Btn Soft-Outline
-            </button>
-            <button className="btn btn-ghost-outline">
-              Btn Ghost-Outline
-            </button>
-            <button className="btn btn-ghost btn-link">
-              Btn Link
-            </button>
+            <button className="btn btn-fill">Btn Fill</button>
+            <button className="btn btn-soft">Btn Soft</button>
+            <button className="btn btn-ghost">Btn Ghost</button>
+            <button className="btn btn-soft-outline">Btn Soft-Outline</button>
+            <button className="btn btn-ghost-outline">Btn Ghost-Outline</button>
+            <button className="btn btn-ghost btn-link">Btn Link</button>
           </div>
         </div>
         <div>
           <p className="title mt-6">Colors</p>
           <div className="flex items-center gap-3 mt-3">
-            <button className="btn btn-fill">
-              Click Me
-            </button>
+            <button className="btn btn-fill">Click Me</button>
             <div className="p-1 bg-foreground">
-              <button className="btn btn-fill btn-background">
-                Click Me
-              </button>
+              <button className="btn btn-fill btn-background">Click Me</button>
             </div>
-            <button className="btn btn-fill btn-card">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-primary">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-secondary">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-error">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-success">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-warning">
-              Click Me
-            </button>
-            <button className="btn btn-fill btn-info">
-              Click Me
-            </button>
+            <button className="btn btn-fill btn-card">Click Me</button>
+            <button className="btn btn-fill btn-primary">Click Me</button>
+            <button className="btn btn-fill btn-secondary">Click Me</button>
+            <button className="btn btn-fill btn-error">Click Me</button>
+            <button className="btn btn-fill btn-success">Click Me</button>
+            <button className="btn btn-fill btn-warning">Click Me</button>
+            <button className="btn btn-fill btn-info">Click Me</button>
           </div>
         </div>
         <div>
           <p className="title mt-6">Sizes</p>
           <div className="flex items-center gap-3 mt-3">
             <button className="btn btn-fill btn-xs">
-              Btn XS
+              <span>Btn XS</span>
+              <CheckIcon />
             </button>
             <button className="btn btn-fill btn-sm">
-              Btn SM
+              <span>Btn SM</span>
+              <CheckIcon />
             </button>
             <button className="btn btn-fill">
-              Btn MD
+              <span>Btn MD</span>
+              <CheckIcon />
             </button>
             <button className="btn btn-fill btn-rounded">
-              Btn Rounded
+              <span>Btn Rounded</span>
+              <CheckIcon />
             </button>
-            <button className="btn btn-fill btn-square">
-              SQ
-            </button>
+            <button className="btn btn-fill btn-square">SQ</button>
             <button className="btn btn-fill btn-lg">
-              Btn LG
+              <span>Btn LG</span>
+              <CheckIcon />
             </button>
             <button className="btn btn-fill btn-xl">
-              Btn XL
+              <span>Btn XL</span>
+              <CheckIcon />
             </button>
           </div>
-          <button className="btn btn-fill btn-full mt-3">
-            Btn Full
+          <button className="btn btn-fill btn-full mt-3">Btn Full</button>
+          <button className="btn btn-fill btn-row mt-3">
+            <span>Btn Row</span>
+            <CheckIcon />
           </button>
         </div>
       </div>
@@ -294,9 +305,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input Ghost..."
               />
-              <button className="btn btn-ghost">
-                Go
-              </button>
+              <button className="btn btn-ghost">Go</button>
             </label>
             <label className="input input-ghost-outline">
               <SearchIcon className="element-icon-size" />
@@ -305,9 +314,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input Ghost-Outline..."
               />
-              <button className="btn btn-ghost">
-                Go
-              </button>
+              <button className="btn btn-ghost">Go</button>
             </label>
             <label className="input input-soft">
               <SearchIcon className="element-icon-size" />
@@ -316,9 +323,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input Soft..."
               />
-              <button className="btn btn-ghost">
-                Go
-              </button>
+              <button className="btn btn-ghost">Go</button>
             </label>
             <label className="input input-soft-outline">
               <SearchIcon className="element-icon-size" />
@@ -327,9 +332,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input Soft-Outline..."
               />
-              <button className="btn btn-ghost">
-                Go
-              </button>
+              <button className="btn btn-ghost">Go</button>
             </label>
           </div>
         </div>
@@ -343,9 +346,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input foreground..."
               />
-              <button className="btn btn-ghost">
-                Go
-              </button>
+              <button className="btn btn-ghost">Go</button>
             </label>
             <div className="p-3 bg-foreground">
               <label className="input input-ghost-outline input-background">
@@ -355,9 +356,7 @@ function Page() {
                   className="input-field"
                   placeholder="Input background..."
                 />
-                <button className="btn btn-ghost btn-background">
-                  Go
-                </button>
+                <button className="btn btn-ghost btn-background">Go</button>
               </label>
             </div>
             <label className="input input-ghost-outline input-card">
@@ -366,10 +365,8 @@ function Page() {
                 type="text"
                 className="input-field"
                 placeholder="Input card..."
-                />
-              <button className="btn btn-ghost btn-card">
-                Go
-              </button>
+              />
+              <button className="btn btn-ghost btn-card">Go</button>
             </label>
             <label className="input input-ghost-outline input-primary">
               <SearchIcon className="element-icon-size" />
@@ -378,9 +375,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input primary..."
               />
-              <button className="btn btn-ghost btn-primary">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-primary">Go</button>
             </label>
             <label className="input input-ghost-outline input-secondary">
               <SearchIcon className="element-icon-size" />
@@ -389,9 +384,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input secondary..."
               />
-              <button className="btn btn-ghost btn-secondary">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-secondary">Go</button>
             </label>
             <label className="input input-ghost-outline input-error">
               <SearchIcon className="element-icon-size" />
@@ -400,9 +393,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input error..."
               />
-              <button className="btn btn-ghost btn-error">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-error">Go</button>
             </label>
             <label className="input input-ghost-outline input-success">
               <SearchIcon className="element-icon-size" />
@@ -411,9 +402,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input success..."
               />
-              <button className="btn btn-ghost btn-success">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-success">Go</button>
             </label>
             <label className="input input-ghost-outline input-warning">
               <SearchIcon className="element-icon-size" />
@@ -422,9 +411,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input warning..."
               />
-              <button className="btn btn-ghost btn-warning">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-warning">Go</button>
             </label>
             <label className="input input-ghost-outline input-info">
               <SearchIcon className="element-icon-size" />
@@ -433,9 +420,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input info..."
               />
-              <button className="btn btn-ghost btn-info">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-info">Go</button>
             </label>
           </div>
         </div>
@@ -449,9 +434,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input xs..."
               />
-              <button className="btn btn-ghost btn-xs">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-xs">Go</button>
             </label>
             <label className="input input-ghost-outline input-sm">
               <SearchIcon className="element-icon-size" />
@@ -460,9 +443,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input sm..."
               />
-              <button className="btn btn-ghost btn-sm">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-sm">Go</button>
             </label>
             <label className="input input-ghost-outline">
               <SearchIcon className="element-icon-size" />
@@ -471,9 +452,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input md..."
               />
-              <button className="btn btn-ghost btn-md">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-md">Go</button>
             </label>
             <label className="input input-ghost-outline input-rounded">
               <SearchIcon className="element-icon-size" />
@@ -482,16 +461,10 @@ function Page() {
                 className="input-field"
                 placeholder="Input rounded..."
               />
-              <button className="btn btn-ghost btn-md btn-rounded">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-md btn-rounded">Go</button>
             </label>
             <label className="input input-ghost-outline input-square">
-              <input
-                type="text"
-                placeholder="SQ"
-                className="input-field"
-              />
+              <input type="text" placeholder="SQ" className="input-field" />
             </label>
             <label className="input input-ghost-outline input-lg">
               <SearchIcon className="element-icon-size" />
@@ -500,9 +473,7 @@ function Page() {
                 className="input-field"
                 placeholder="Input lg..."
               />
-              <button className="btn btn-ghost btn-lg">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-lg">Go</button>
             </label>
             <label className="input input-ghost-outline input-xl">
               <SearchIcon className="element-icon-size" />
@@ -511,23 +482,82 @@ function Page() {
                 className="input-field"
                 placeholder="Input xl..."
               />
-              <button className="btn btn-ghost btn-xl">
-                Go
-              </button>
+              <button className="btn btn-ghost btn-xl">Go</button>
             </label>
+          </div>
+        </div>
+      </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Cards</p>
+        <div className="space-y-3">
+          <p className="title mt-6">Variants</p>
+          <div className="card bg-card flex items-center justify-center max-w-60 min-h-60">
+            Hello World
+          </div>
+          <div className="card card-x bg-card">
+            <button className="btn btn-ghost">Btn 1</button>
+            <button className="btn btn-ghost">Btn 2</button>
+            <button className="btn btn-ghost">Btn 3</button>
+          </div>
+          <div className="card card-x card-fix-menu bg-card">
+            <button className="btn btn-ghost">Btn 1</button>
+            <button className="btn btn-ghost">Btn 2</button>
+            <button className="btn btn-ghost">Btn 3</button>
+          </div>
+          <div className="card card-y bg-card max-w-60">
+            <button className="btn btn-ghost btn-row">
+              <span>Btn 1</span>
+              <ArrowRightIcon />
+            </button>
+            <button className="btn btn-ghost btn-row">
+              <span>Btn 2</span>
+              <ArrowRightIcon />
+            </button>
+            <button className="btn btn-ghost btn-row">
+              <span>Btn 3</span>
+              <ArrowRightIcon />
+            </button>
+          </div>
+        </div>
+        <div className="space-y-3">
+          <p className="title mt-6">Sizes</p>
+          <div className="card card-x card-fix-menu bg-card card-xs">
+            <button className="btn btn-ghost btn-xs">Btn 1</button>
+            <button className="btn btn-ghost btn-xs">Btn 2</button>
+            <button className="btn btn-ghost btn-xs">Btn 3</button>
+          </div>
+          <div className="card card-x card-fix-menu bg-card card-sm">
+            <button className="btn btn-ghost btn-sm">Btn 1</button>
+            <button className="btn btn-ghost btn-sm">Btn 2</button>
+            <button className="btn btn-ghost btn-sm">Btn 3</button>
+          </div>
+          <div className="card card-x card-fix-menu bg-card">
+            <button className="btn btn-ghost">Btn 1</button>
+            <button className="btn btn-ghost">Btn 2</button>
+            <button className="btn btn-ghost">Btn 3</button>
+          </div>
+          <div className="card card-x card-fix-menu bg-card card-lg">
+            <button className="btn btn-ghost btn-lg">Btn 1</button>
+            <button className="btn btn-ghost btn-lg">Btn 2</button>
+            <button className="btn btn-ghost btn-lg">Btn 3</button>
+          </div>
+          <div className="card card-x card-fix-menu bg-card card-xl">
+            <button className="btn btn-ghost btn-xl">Btn 1</button>
+            <button className="btn btn-ghost btn-xl">Btn 2</button>
+            <button className="btn btn-ghost btn-xl">Btn 3</button>
           </div>
         </div>
       </div>
 
       <div className="wrapper mt-40">
-        <p className="heading text-primary">React  <ChevronDownIcon className="inline size-12" /></p>
+        <p className="heading text-primary">
+          React <ChevronDownIcon className="inline size-12" />
+        </p>
       </div>
       <div className="wrapper my-20">
         <div>
           <p className="heading">AccessNavigation</p>
-          <AccessNavigation
-            direction="x"
-            className="join join-border mt-6">
+          <AccessNavigation direction="x" className="join join-border mt-6">
             <button className="btn btn-soft">One</button>
             <button className="btn btn-soft">Two</button>
             <button className="btn btn-soft">Three</button>
@@ -537,7 +567,12 @@ function Page() {
 
         <p className="heading mt-20">Accordion</p>
         <p className="title mt-6">Multiple mode</p>
-        <Accordion direction="y" multiple accordionState={accordionItems} onAccordionChange={(newItems) => setAccordionItems(newItems)}>
+        <Accordion
+          direction="y"
+          multiple
+          accordionState={accordionItems}
+          onAccordionChange={(newItems) => setAccordionItems(newItems)}
+        >
           <Accordion.Item itemName="1">
             <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 1</span>
@@ -546,9 +581,10 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
@@ -561,9 +597,10 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
@@ -576,16 +613,21 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
         <p className="title mt-6">Single mode</p>
-        <Accordion direction="y" accordionState={accordionItem} onAccordionChange={(newItems) => setAccordionItem(newItems)}>
+        <Accordion
+          direction="y"
+          accordionState={accordionItem}
+          onAccordionChange={(newItems) => setAccordionItem(newItems)}
+        >
           <Accordion.Item itemName="1">
             <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 1</span>
@@ -594,9 +636,10 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
@@ -609,9 +652,10 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
@@ -624,9 +668,10 @@ function Page() {
             <Accordion.Body className="accordion-body">
               <Accordion.Content className="accordion-content">
                 <div className="card bg-background-thin">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos fugit accusamus
-                  unde, repellendus dolores, fuga nam commodi sapiente omnis voluptatum error
-                  earum culpa asperiores eaque ea enim possimus vero esse!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                  fugit accusamus unde, repellendus dolores, fuga nam commodi
+                  sapiente omnis voluptatum error earum culpa asperiores eaque
+                  ea enim possimus vero esse!
                 </div>
               </Accordion.Content>
             </Accordion.Body>
@@ -636,16 +681,15 @@ function Page() {
         <p className="heading mt-20">Breadcrumbs</p>
         <Breadcrumbs
           separator={<ChevronRightIcon className="element-icon-size" />}
-          className="breadcrumbs element-xs mt-3">
+          className="breadcrumbs element-xs mt-3"
+        >
           <Breadcrumbs.Item className="breadcrumbs-item">
             <button className="btn link">Home</button>
           </Breadcrumbs.Item>
           <Breadcrumbs.Item className="breadcrumbs-item">
             <button className="btn link">Articles</button>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item
-            className="breadcrumbs-item"
-            isLastItem>
+          <Breadcrumbs.Item className="breadcrumbs-item" isLastItem>
             <button className="btn btn-fill">How to gain money?</button>
           </Breadcrumbs.Item>
         </Breadcrumbs>
@@ -658,7 +702,12 @@ function Page() {
 
         <p className="heading mt-20">Clipboard</p>
         <label htmlFor="copy" className="input input-soft mt-6">
-          <input type="text" className="input-field" defaultValue={"Kadoui-react"} readOnly />
+          <input
+            type="text"
+            className="input-field"
+            defaultValue={"Kadoui-react"}
+            readOnly
+          />
           <Clipboard
             text="Kadoui-react"
             className="btn btn-ghost element-sm"
@@ -672,7 +721,10 @@ function Page() {
         <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
           <span className="absolute inset-center">Context menu!</span>
 
-          <ContextMenu.Body direction="y" className="context-menu-body bg-background-thick">
+          <ContextMenu.Body
+            direction="y"
+            className="context-menu-body bg-background-thick"
+          >
             <ContextMenu.Item className="btn btn-ghost">
               <TrashIcon className="element-icon-size" />
               <span>DELETE</span>
@@ -690,69 +742,101 @@ function Page() {
 
         <p className="heading mt-20">Drawer</p>
         <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-6">Open left drawer</Drawer.Toggle>
+          <Drawer.Toggle className="btn btn-soft mt-6">
+            Open left drawer
+          </Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
             <Drawer.Body className="drawer-body">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
-                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="Search..."
+                  data-drawer="focus"
+                />
               </label>
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                porro vero delectus eum qui laboriosam, dolore veritatis
+                eligendi amet voluptatibus incidunt temporibus dolores fuga
+                adipisci eius saepe quod aspernatur iure.
               </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
         <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">Open top drawer</Drawer.Toggle>
+          <Drawer.Toggle className="btn btn-soft mt-3">
+            Open top drawer
+          </Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
             <Drawer.Body className="drawer-body" position="top">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
-                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="Search..."
+                  data-drawer="focus"
+                />
               </label>
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                porro vero delectus eum qui laboriosam, dolore veritatis
+                eligendi amet voluptatibus incidunt temporibus dolores fuga
+                adipisci eius saepe quod aspernatur iure.
               </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
         <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">Open right drawer</Drawer.Toggle>
+          <Drawer.Toggle className="btn btn-soft mt-3">
+            Open right drawer
+          </Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
             <Drawer.Body className="drawer-body" position="right">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
-                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="Search..."
+                  data-drawer="focus"
+                />
               </label>
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                porro vero delectus eum qui laboriosam, dolore veritatis
+                eligendi amet voluptatibus incidunt temporibus dolores fuga
+                adipisci eius saepe quod aspernatur iure.
               </p>
             </Drawer.Body>
           </Drawer.Portal>
         </Drawer>
         <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">Open bottom drawer</Drawer.Toggle>
+          <Drawer.Toggle className="btn btn-soft mt-3">
+            Open bottom drawer
+          </Drawer.Toggle>
 
           <Drawer.Portal className="drawer-portal">
             <Drawer.Body className="drawer-body" position="bottom">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
-                <input type="text" className="input-field" placeholder="Search..." data-drawer="focus" />
+                <input
+                  type="text"
+                  className="input-field"
+                  placeholder="Search..."
+                  data-drawer="focus"
+                />
               </label>
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro vero
-                delectus eum qui laboriosam, dolore veritatis eligendi amet voluptatibus
-                incidunt temporibus dolores fuga adipisci eius saepe quod aspernatur iure.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                porro vero delectus eum qui laboriosam, dolore veritatis
+                eligendi amet voluptatibus incidunt temporibus dolores fuga
+                adipisci eius saepe quod aspernatur iure.
               </p>
             </Drawer.Body>
           </Drawer.Portal>
@@ -767,20 +851,155 @@ function Page() {
               <Modal.Header className="modal-header">
                 <label className="input input-outline element-w-full">
                   <SearchIcon className="element-icon-size" />
-                  <input type="text" className="input-field" placeholder="Search..." data-modal="focus" />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-modal="focus"
+                  />
                 </label>
               </Modal.Header>
               <Modal.Content className="modal-content max-w-xl">
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui maxime non eius eos veritatis libero, animi pariatur illo inventore aliquid consectetur expedita a aut enim quasi excepturi reiciendis ipsam. Asperiores modi magni, accusamus reprehenderit animi ex ad voluptatem doloribus maiores autem! Vel nam nesciunt, numquam recusandae voluptate illum quis quibusdam quaerat provident, dolorum qui sed modi possimus id dolore ipsa dignissimos animi expedita, ipsum repellat fugiat sit. Velit quo libero nisi, nemo sunt nobis, illo similique qui adipisci consequatur repellat eius illum facilis ratione in, corrupti magnam nam ut itaque fugiat. Molestiae atque veritatis incidunt deserunt unde quia inventore deleniti placeat architecto, perspiciatis, dolore, laborum et quaerat! Nobis eligendi deleniti accusantium cupiditate! Ea quam iste voluptatibus error harum ullam eaque odit iusto necessitatibus veniam at facere repudiandae tempore repellendus voluptatem impedit corporis quidem, porro adipisci, aperiam ab accusamus aliquid, vitae doloribus? Laborum, voluptatibus ipsam saepe optio temporibus nobis. Sequi officiis maiores aut ut unde reprehenderit praesentium dolorem voluptatem exercitationem ab expedita, fugit quidem debitis at qui cupiditate omnis perferendis in ullam quis quia hic quibusdam molestias? Voluptates fuga animi atque eligendi dolore dolorem laudantium sit, sint laboriosam ut enim. Ab illo rerum molestias voluptas a dolorum. Dolorum alias nobis voluptas sunt repudiandae, perferendis eaque vel aliquam fuga iste, ipsum perspiciatis! Eum tempora modi quos dolore, recusandae architecto at laudantium vitae praesentium ullam neque incidunt quaerat sequi est fugiat ea voluptates vero, aliquid error rem hic. Aliquid facere, debitis officia ipsum culpa alias inventore optio odio vero unde minima? Eveniet placeat delectus, architecto ipsum fuga quia voluptatum. Vero, dolorum, officiis ipsam illo nam quo enim commodi quia soluta similique excepturi explicabo, odio neque aliquam ut. Nulla nihil, eveniet autem dicta, necessitatibus provident quos consequatur saepe, excepturi optio perferendis debitis ipsum. Eveniet, molestiae! Sit, culpa officia est quasi natus labore ea sed illo, iusto dignissimos obcaecati cum consectetur magnam ipsa odio beatae a possimus. Reprehenderit, nostrum adipisci velit nihil tenetur minus repudiandae ullam tempora doloremque possimus, error, itaque aliquam dolor accusamus? Facere, delectus error perferendis, similique eos recusandae doloremque illum excepturi dicta quibusdam quaerat consectetur eius consequuntur quos adipisci quia, assumenda enim sit! Officiis, ipsam sit. Modi eligendi totam impedit doloremque facilis animi qui doloribus aut dolor? Natus eos nam harum sint, repellat repellendus numquam suscipit! Dicta, facere! Vero doloribus ex at repellat deleniti a enim consectetur fugit error qui rerum, voluptas nihil consequatur facilis corporis, aspernatur delectus sunt eos dolorum. Earum blanditiis enim architecto exercitationem ipsa, quis quaerat dicta accusamus nostrum sequi ea. Facere nemo quod nam. Atque voluptate labore pariatur, recusandae nobis reprehenderit quam. Quo enim commodi natus officia rem deserunt! Ab, odit cupiditate? Sapiente, voluptatem amet. Harum, tempora. Commodi iste adipisci repudiandae similique, porro fuga vitae odio minus nisi officiis iusto? Nesciunt tempora ab iure doloribus possimus quam dignissimos, numquam quibusdam fugit impedit molestias illum asperiores deleniti inventore explicabo quis a alias dolores voluptate odit distinctio commodi! Aperiam nemo eveniet ipsa, temporibus vel perferendis quia dolor, officia quaerat accusantium cumque maiores placeat quas ratione consequuntur rem nulla ducimus. Error accusantium expedita aperiam nemo iste, magnam ratione, inventore commodi dolores quae mollitia suscipit consequuntur deleniti temporibus repudiandae assumenda rem officiis earum. Illo possimus dolorem rem beatae nihil obcaecati reiciendis nam non, odio accusantium explicabo aperiam hic porro soluta et adipisci cumque, culpa ex accusamus distinctio numquam iusto ratione enim fugiat! Aliquam quas voluptas iusto cumque ipsum odit tempore impedit omnis, nam doloribus debitis numquam similique sit porro quam inventore perspiciatis sed eos. Itaque nisi, magni repellendus fugiat consectetur minus deserunt error pariatur quam enim nostrum incidunt rerum nobis veritatis cumque, labore natus esse soluta perferendis neque quo est laboriosam quis! Quis alias optio magnam autem? Nam ab error porro ipsum nostrum tempore quod corrupti blanditiis quaerat a. Delectus aperiam impedit dolores expedita vero necessitatibus reiciendis, quia consequuntur a amet. Accusamus tempore incidunt explicabo saepe iste corrupti ipsam dignissimos aut, natus eligendi quod in soluta nulla maxime sapiente totam maiores porro illum repellat deserunt eaque? Totam itaque eaque laborum voluptatum est nostrum, accusantium deleniti ab praesentium iusto tempore ullam odio nihil delectus consequuntur nisi quod aliquid tempora perspiciatis ad fuga! Culpa neque, rerum esse ratione tempore suscipit eos exercitationem eaque magnam ipsa deserunt quaerat? Nemo dolorem perspiciatis consequatur! Maxime nisi quod omnis nulla eum repudiandae tempora? Alias esse inventore dicta molestias, numquam eum repellat suscipit ratione? Debitis asperiores blanditiis ducimus deleniti natus recusandae temporibus ipsa voluptatibus doloribus maxime ea inventore eligendi, quam corporis. Voluptatibus necessitatibus, blanditiis eaque cumque molestias asperiores tenetur in ullam laboriosam voluptates fugiat voluptas officiis rem reprehenderit doloremque magnam natus ratione numquam aliquam suscipit ea doloribus fuga eligendi? Sunt labore laborum earum tempora quas optio aliquam dolor? Neque, pariatur reprehenderit blanditiis at dolorem optio maxime dignissimos corporis quia alias illo sapiente tempora quod ipsa exercitationem. Fuga officia at ipsum! Facilis esse aliquid non. Non atque amet ut deleniti earum asperiores in quis aut reiciendis totam nihil nisi minus voluptate ullam incidunt voluptates vero ex eveniet tempore quas voluptatibus, quisquam dolorem repudiandae. Sint alias perspiciatis temporibus sunt hic optio harum porro, ex ipsam soluta accusantium iste tempora maxime cupiditate provident esse animi, incidunt dolor nam suscipit consequuntur quos obcaecati? Ab magni amet consectetur a inventore sapiente saepe assumenda iusto animi mollitia sed adipisci natus, accusamus velit? At doloremque veniam, perspiciatis quo impedit totam saepe laudantium, laboriosam officiis animi quam distinctio sed sit earum modi iste veritatis architecto. Sequi molestias perspiciatis consectetur ab, omnis magnam quae voluptas. Atque sapiente illo, blanditiis quis delectus doloribus commodi sequi culpa quae possimus iste veniam iusto repellendus excepturi explicabo reprehenderit unde placeat perspiciatis animi voluptatibus eaque exercitationem repellat. Commodi quae obcaecati rem, voluptates nihil est voluptas perferendis odit, assumenda laudantium sunt repellendus esse incidunt delectus numquam? Unde, commodi. Quam, illum. Quis maiores ipsa in adipisci odit iure incidunt fuga aliquam delectus, quia ducimus tenetur ullam hic, qui, repellendus inventore eligendi eum placeat! Numquam non dolor at exercitationem, deserunt ullam in officia quibusdam iure eius laudantium doloremque minima perferendis culpa velit tempora delectus! Minus, fugit recusandae omnis rem provident dolorum rerum aliquid id sequi ea!
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+                  maxime non eius eos veritatis libero, animi pariatur illo
+                  inventore aliquid consectetur expedita a aut enim quasi
+                  excepturi reiciendis ipsam. Asperiores modi magni, accusamus
+                  reprehenderit animi ex ad voluptatem doloribus maiores autem!
+                  Vel nam nesciunt, numquam recusandae voluptate illum quis
+                  quibusdam quaerat provident, dolorum qui sed modi possimus id
+                  dolore ipsa dignissimos animi expedita, ipsum repellat fugiat
+                  sit. Velit quo libero nisi, nemo sunt nobis, illo similique
+                  qui adipisci consequatur repellat eius illum facilis ratione
+                  in, corrupti magnam nam ut itaque fugiat. Molestiae atque
+                  veritatis incidunt deserunt unde quia inventore deleniti
+                  placeat architecto, perspiciatis, dolore, laborum et quaerat!
+                  Nobis eligendi deleniti accusantium cupiditate! Ea quam iste
+                  voluptatibus error harum ullam eaque odit iusto necessitatibus
+                  veniam at facere repudiandae tempore repellendus voluptatem
+                  impedit corporis quidem, porro adipisci, aperiam ab accusamus
+                  aliquid, vitae doloribus? Laborum, voluptatibus ipsam saepe
+                  optio temporibus nobis. Sequi officiis maiores aut ut unde
+                  reprehenderit praesentium dolorem voluptatem exercitationem ab
+                  expedita, fugit quidem debitis at qui cupiditate omnis
+                  perferendis in ullam quis quia hic quibusdam molestias?
+                  Voluptates fuga animi atque eligendi dolore dolorem laudantium
+                  sit, sint laboriosam ut enim. Ab illo rerum molestias voluptas
+                  a dolorum. Dolorum alias nobis voluptas sunt repudiandae,
+                  perferendis eaque vel aliquam fuga iste, ipsum perspiciatis!
+                  Eum tempora modi quos dolore, recusandae architecto at
+                  laudantium vitae praesentium ullam neque incidunt quaerat
+                  sequi est fugiat ea voluptates vero, aliquid error rem hic.
+                  Aliquid facere, debitis officia ipsum culpa alias inventore
+                  optio odio vero unde minima? Eveniet placeat delectus,
+                  architecto ipsum fuga quia voluptatum. Vero, dolorum, officiis
+                  ipsam illo nam quo enim commodi quia soluta similique
+                  excepturi explicabo, odio neque aliquam ut. Nulla nihil,
+                  eveniet autem dicta, necessitatibus provident quos consequatur
+                  saepe, excepturi optio perferendis debitis ipsum. Eveniet,
+                  molestiae! Sit, culpa officia est quasi natus labore ea sed
+                  illo, iusto dignissimos obcaecati cum consectetur magnam ipsa
+                  odio beatae a possimus. Reprehenderit, nostrum adipisci velit
+                  nihil tenetur minus repudiandae ullam tempora doloremque
+                  possimus, error, itaque aliquam dolor accusamus? Facere,
+                  delectus error perferendis, similique eos recusandae
+                  doloremque illum excepturi dicta quibusdam quaerat consectetur
+                  eius consequuntur quos adipisci quia, assumenda enim sit!
+                  Officiis, ipsam sit. Modi eligendi totam impedit doloremque
+                  facilis animi qui doloribus aut dolor? Natus eos nam harum
+                  sint, repellat repellendus numquam suscipit! Dicta, facere!
+                  Vero doloribus ex at repellat deleniti a enim consectetur
+                  fugit error qui rerum, voluptas nihil consequatur facilis
+                  corporis, aspernatur delectus sunt eos dolorum. Earum
+                  blanditiis enim architecto exercitationem ipsa, quis quaerat
+                  dicta accusamus nostrum sequi ea. Facere nemo quod nam. Atque
+                  voluptate labore pariatur, recusandae nobis reprehenderit
+                  quam. Quo enim commodi natus officia rem deserunt! Ab, odit
+                  cupiditate? Sapiente, voluptatem amet. Harum, tempora. Commodi
+                  iste adipisci repudiandae similique, porro fuga vitae odio
+                  minus nisi officiis iusto? Nesciunt tempora ab iure doloribus
+                  possimus quam dignissimos, numquam quibusdam fugit impedit
+                  molestias illum asperiores deleniti inventore explicabo quis a
+                  alias dolores voluptate odit distinctio commodi! Aperiam nemo
+                  eveniet ipsa, temporibus vel perferendis quia dolor, officia
+                  quaerat accusantium cumque maiores placeat quas ratione
+                  consequuntur rem nulla ducimus. Error accusantium expedita
+                  aperiam nemo iste, magnam ratione, inventore commodi dolores
+                  quae mollitia suscipit consequuntur deleniti temporibus
+                  repudiandae assumenda rem officiis earum. Illo possimus
+                  dolorem rem beatae nihil obcaecati reiciendis nam non, odio
+                  accusantium explicabo aperiam hic porro soluta et adipisci
+                  cumque, culpa ex accusamus distinctio numquam iusto ratione
+                  enim fugiat! Aliquam quas voluptas iusto cumque ipsum odit
+                  tempore impedit omnis, nam doloribus debitis numquam similique
+                  sit porro quam inventore perspiciatis sed eos. Itaque nisi,
+                  magni repellendus fugiat consectetur minus deserunt error
+                  pariatur quam enim nostrum incidunt rerum nobis veritatis
+                  cumque, labore natus esse soluta perferendis neque quo est
+                  laboriosam quis! Quis alias optio magnam autem? Nam ab error
+                  porro ipsum nostrum tempore quod corrupti blanditiis quaerat
+                  a. Delectus aperiam impedit dolores expedita vero
+                  necessitatibus reiciendis, quia consequuntur a amet. Accusamus
+                  tempore incidunt explicabo saepe iste corrupti ipsam
+                  dignissimos aut, natus eligendi quod in soluta nulla maxime
+                  sapiente totam maiores porro illum repellat deserunt eaque?
+                  Totam itaque eaque laborum voluptatum est nostrum, accusantium
+                  deleniti ab praesentium iusto tempore ullam odio nihil
+                  delectus consequuntur nisi quod aliquid tempora perspiciatis
+                  ad fuga! Culpa neque, rerum esse ratione tempore suscipit eos
+                  exercitationem eaque magnam ipsa deserunt quaerat? Nemo
+                  dolorem perspiciatis consequatur! Maxime nisi quod omnis nulla
+                  eum repudiandae tempora? Alias esse inventore dicta molestias,
+                  numquam eum repellat suscipit ratione? Debitis asperiores
+                  blanditiis ducimus deleniti natus recusandae temporibus ipsa
+                  voluptatibus doloribus maxime ea inventore eligendi, quam
+                  corporis. Voluptatibus necessitatibus, blanditiis eaque cumque
+                  molestias asperiores tenetur in ullam laboriosam voluptates
+                  fugiat voluptas officiis rem reprehenderit doloremque magnam
+                  natus ratione numquam aliquam suscipit ea doloribus fuga
+                  eligendi? Sunt labore laborum earum tempora quas optio aliquam
+                  dolor? Neque, pariatur reprehenderit blanditiis at dolorem
+                  optio maxime dignissimos corporis quia alias illo sapiente
+                  tempora quod ipsa exercitationem. Fuga officia at ipsum!
+                  Facilis esse aliquid non. Non atque amet ut deleniti earum
+                  asperiores in quis aut reiciendis totam nihil nisi minus
+                  voluptate ullam incidunt voluptates vero ex eveniet tempore
+                  quas voluptatibus, quisquam dolorem repudiandae. Sint alias
+                  perspiciatis temporibus sunt hic optio harum porro, ex ipsam
+                  soluta accusantium iste tempora maxime cupiditate provident
+                  esse animi, incidunt dolor nam suscipit consequuntur quos
+                  obcaecati? Ab magni amet consectetur a inventore sapiente
+                  saepe assumenda iusto animi mollitia sed adipisci natus,
+                  accusamus velit? At doloremque veniam, perspiciatis quo
+                  impedit totam saepe laudantium, laboriosam officiis animi quam
+                  distinctio sed sit earum modi iste veritatis architecto. Sequi
+                  molestias perspiciatis consectetur ab, omnis magnam quae
+                  voluptas. Atque sapiente illo, blanditiis quis delectus
+                  doloribus commodi sequi culpa quae possimus iste veniam iusto
+                  repellendus excepturi explicabo reprehenderit unde placeat
+                  perspiciatis animi voluptatibus eaque exercitationem repellat.
+                  Commodi quae obcaecati rem, voluptates nihil est voluptas
+                  perferendis odit, assumenda laudantium sunt repellendus esse
+                  incidunt delectus numquam? Unde, commodi. Quam, illum. Quis
+                  maiores ipsa in adipisci odit iure incidunt fuga aliquam
+                  delectus, quia ducimus tenetur ullam hic, qui, repellendus
+                  inventore eligendi eum placeat! Numquam non dolor at
+                  exercitationem, deserunt ullam in officia quibusdam iure eius
+                  laudantium doloremque minima perferendis culpa velit tempora
+                  delectus! Minus, fugit recusandae omnis rem provident dolorum
+                  rerum aliquid id sequi ea!
                 </p>
               </Modal.Content>
               <Modal.Header className="modal-footer">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
-                <Modal.Toggle className="btn btn-soft palette-error">No</Modal.Toggle>
-                <Modal.Toggle className="btn btn-fill palette-success">Yes</Modal.Toggle>
+                <Modal.Toggle className="btn btn-soft palette-error">
+                  No
+                </Modal.Toggle>
+                <Modal.Toggle className="btn btn-fill palette-success">
+                  Yes
+                </Modal.Toggle>
               </Modal.Header>
             </Modal.Body>
           </Modal.Portal>
@@ -805,7 +1024,10 @@ function Page() {
               <ChevronLeftIcon className="element-icon-size" />
             </PaginationWithState.PrevBtn>
 
-            <PaginationWithState.Counts enableNextClick className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+            <PaginationWithState.Counts
+              enableNextClick
+              className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill"
+            />
 
             <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
               <ChevronRightIcon className="element-icon-size" />
@@ -831,7 +1053,11 @@ function Page() {
 
         <p className="heading mt-20">Pagination with pages</p>
         <p className="mt-6">With state:</p>
-        <PaginationWithState pages={PAGES_WITH_STATE} page={pageWithPage} setPage={setPageWithPage}>
+        <PaginationWithState
+          pages={PAGES_WITH_STATE}
+          page={pageWithPage}
+          setPage={setPageWithPage}
+        >
           <div className="max-w-96">
             <PaginationWithState.Pages />
 
@@ -840,7 +1066,10 @@ function Page() {
                 <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithState.PrevBtn>
 
-              <PaginationWithState.Counts enableNextClick className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+              <PaginationWithState.Counts
+                enableNextClick
+                className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill"
+              />
 
               <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
                 <ChevronRightIcon className="element-icon-size" />
@@ -874,19 +1103,20 @@ function Page() {
             <div className="pagination mt-3 mb-9">
               <PaginationWithSearchParams.Counts
                 className="btn shrink-0 relative element-square-size data-[skipped=false]:data-[state=false]:btn-ghost data-[state=true]:btn-soft data-[skipped=true]:btn-fill"
-                ProgressElem={(
+                ProgressElem={
                   <div className="w-32 h-2 rounded-full overflow-hidden bg-background-thin group">
                     <div className="w-0 group-data-[state=true]:w-1/2 group-data-[skipped=true]:w-full h-full bg-foreground"></div>
                   </div>
-                )}
+                }
               >
                 {(count) => (
                   <>
                     <span className="font-bold">{count}</span>
-                    <span className="absolute w-max top-full left-1/2 -translate-x-1/2 text-foreground">{PAGES_WITH_SEARCHPARAMS[count - 1].name}</span>
+                    <span className="absolute w-max top-full left-1/2 -translate-x-1/2 text-foreground">
+                      {PAGES_WITH_SEARCHPARAMS[count - 1].name}
+                    </span>
                   </>
                 )}
-
               </PaginationWithSearchParams.Counts>
             </div>
 
@@ -899,39 +1129,30 @@ function Page() {
           <PasswordInput.Field className="input-field" />
           <PasswordInput.Toggle
             className="btn btn-ghost element-sm"
-            visibleChildren={<EyeIcon className="element-icon-size" />}>
+            visibleChildren={<EyeIcon className="element-icon-size" />}
+          >
             <EyeClosedIcon className="element-icon-size" />
           </PasswordInput.Toggle>
         </PasswordInput>
 
         <p className="heading mt-20">Popover</p>
-        <Popover
-          mode="hover"
-          direction="y"
-          className="popover mt-6"
-        >
+        <Popover mode="hover" direction="y" className="popover mt-6">
           <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
           <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
-        <Popover
-          mode="both"
-          direction="y"
-          className="popover mt-3"
-        >
-          <Popover.Toggle className="btn btn-soft">Hover and click me</Popover.Toggle>
+        <Popover mode="both" direction="y" className="popover mt-3">
+          <Popover.Toggle className="btn btn-soft">
+            Hover and click me
+          </Popover.Toggle>
 
           <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
-        <Popover
-          mode="click"
-          direction="y"
-          className="popover mt-3"
-        >
+        <Popover mode="click" direction="y" className="popover mt-3">
           <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
             Click me
           </Popover.Toggle>
@@ -953,120 +1174,135 @@ function Page() {
               </Popover.Body>
             </Popover>
           </Popover.Body>
-
         </Popover>
 
         <p className="heading mt-20">Portal</p>
         <p className="mt-6">Portal are a large text on the end of page</p>
         <Portal>
           <p className="wrapper my-20">
-            PORTAL: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis quasi
-            mollitia veniam consequuntur dicta! Harum, eos consectetur iste rem minus omnis
-            aut est officiis quos in quae nisi? Dignissimos deleniti dolorem consequuntur,
-            itaque, possimus molestiae ex, quasi facilis similique commodi vitae
-            perspiciatis beatae iure est ullam quos ab maiores ratione hic iste quis
-            reiciendis accusantium reprehenderit. Aliquid delectus iusto voluptatibus
-            voluptatum architecto velit modi distinctio nihil assumenda veniam? Ipsum
-            possimus amet corporis quos sint corrupti enim temporibus deleniti similique. Id
-            ut fuga doloribus. Consequatur quia fugiat libero obcaecati facilis? Asperiores
-            aperiam facilis omnis eius rem aliquam nam? Nostrum earum dolorem, expedita quam
-            repudiandae consequuntur, ipsam quas laudantium quaerat ex eaque molestiae
-            labore. Autem quam aspernatur recusandae perferendis, explicabo reprehenderit
-            officia molestias excepturi blanditiis placeat ratione architecto esse vitae
-            labore quae possimus voluptates repudiandae. Explicabo cumque sunt aliquid eaque
-            autem reiciendis praesentium reprehenderit ab commodi dolores ipsam nisi,
-            accusantium adipisci animi eius fugit dolor necessitatibus totam nostrum in
-            harum dignissimos inventore. Labore voluptas doloribus quibusdam praesentium?
-            Assumenda obcaecati minus quod iusto dignissimos ipsam consequatur, totam
-            dolorem maiores magnam molestias fugiat doloribus ea mollitia, numquam optio
-            quisquam nobis voluptate quibusdam! Repellendus distinctio id autem rerum magnam
-            neque voluptas sapiente consequatur? Velit sint nisi libero? Fugiat minima
-            perspiciatis rem atque aspernatur quis vitae incidunt, temporibus qui est
-            dolorum explicabo et. Sint atque rem suscipit fuga eum saepe. Officia, tempora
-            minus. Corporis dolorum voluptatum dignissimos eveniet error sit exercitationem
-            aliquid reprehenderit perspiciatis unde, deserunt recusandae nisi consequatur
-            architecto saepe iusto totam dolorem ex odit at. Ipsa obcaecati quod odit
-            explicabo nulla commodi nobis sapiente! Illum esse, nisi nihil voluptatibus amet
-            accusantium explicabo est debitis, placeat beatae adipisci dolorum fugiat rem
-            vel recusandae temporibus nemo! Quidem, labore. Fuga quae unde dolores animi,
-            molestias voluptatum, eligendi aperiam corporis nulla autem dignissimos, itaque
-            quis? Fugiat asperiores iusto quidem expedita eum modi laborum rerum sint
-            obcaecati, provident natus ratione a alias ipsum architecto, sit ducimus nobis.
-            Voluptas, velit nesciunt rem consequatur commodi, error architecto illo
-            necessitatibus dolorum rerum officiis modi, vitae ea laboriosam. Commodi
-            delectus quas ducimus, totam earum deleniti laboriosam pariatur enim provident
-            quasi tempore impedit eveniet aspernatur ad quisquam. Illum, dicta omnis. Animi
-            distinctio quod autem numquam laboriosam. Rerum enim accusamus voluptatibus
-            corporis, nihil molestias in, exercitationem assumenda ea incidunt dolorem
-            dignissimos excepturi iure quis doloremque et nesciunt aspernatur temporibus
-            nobis minus eius cum natus pariatur sequi. Aliquam soluta dolorem ullam
-            voluptatem praesentium sequi commodi distinctio, id porro ipsum possimus ratione
-            fugit est rerum dolores cupiditate rem perspiciatis voluptatum asperiores libero
-            modi eveniet doloribus. Enim repudiandae animi quos ea minima perferendis optio
-            temporibus ad voluptates earum incidunt sit quam odio quisquam, ipsum doloribus
-            quia blanditiis iste modi debitis nisi! Sit repellat recusandae, impedit
-            repellendus itaque modi quae minus, odit optio eligendi ut voluptatum dicta
-            tenetur et adipisci sapiente pariatur. Ab vero eos optio illum nam veritatis,
-            saepe fugiat beatae sit placeat recusandae delectus veniam iusto, odit illo
-            aliquid eveniet numquam excepturi eligendi repellat? Officia nihil ipsam ad ab,
-            possimus doloribus, repudiandae consequuntur ipsum magnam provident beatae,
-            quisquam accusamus? Magnam, ipsa quam mollitia atque similique, iure veniam non
-            fugiat voluptatem porro quidem dolores asperiores. Quo, saepe eius fugiat
-            deserunt accusantium optio reprehenderit voluptate nulla aliquid sequi
-            cupiditate porro temporibus facilis dolor officia, qui deleniti? Similique
-            necessitatibus numquam natus suscipit corrupti, quaerat ducimus tempore
-            consequatur hic asperiores voluptatibus delectus voluptate nihil. Maiores sed
-            aliquid laborum, tempore, qui ducimus quos, assumenda omnis facere dicta illo
-            saepe cupiditate alias provident quaerat nemo! Fuga, porro assumenda enim, harum
-            doloremque ullam autem nihil id, optio excepturi officiis dolorem? Consectetur
-            nobis porro quidem veniam necessitatibus nemo iusto perspiciatis maiores.
-            Perferendis cumque reiciendis incidunt eligendi distinctio voluptatibus soluta,
-            cupiditate repudiandae consectetur asperiores, optio quos esse vel vitae dicta
-            iure nam alias voluptatum repellat, porro consequatur nihil. Repellat ipsam
-            laudantium natus adipisci nihil magni quibusdam odio sit delectus a neque beatae
-            deserunt, sint at eum architecto cumque expedita! Tempore accusantium nostrum
-            repellendus corporis, mollitia, nesciunt deserunt dolores at repellat aliquam
-            illo neque nulla modi dignissimos sit placeat officiis impedit itaque quidem
-            corrupti maxime quod. Accusamus, quae? Reiciendis maxime earum, sunt aliquid
-            quia recusandae fugiat fugit officia odio obcaecati ipsa, provident est quasi
-            cum deleniti, quam quae facilis? Error quam nobis, inventore atque sunt porro.
-            Pariatur incidunt minima nesciunt nulla quos nam veniam debitis est consequatur
-            aliquid ea quaerat quia beatae, cum eligendi consequuntur dignissimos voluptatum
-            commodi molestias amet natus odio impedit eum asperiores. Incidunt, rerum quasi
-            cumque unde nesciunt temporibus facere vitae molestias nulla et alias, ea
-            voluptatem amet odio veniam id expedita nostrum voluptates eligendi, repudiandae
-            architecto saepe laborum! Voluptatibus debitis maiores consequatur repellendus
-            vel quis, necessitatibus velit dolor, ipsam, quae at laborum odio inventore
-            sequi totam earum distinctio quaerat perferendis. Odit error accusantium
-            blanditiis quia harum nulla in consectetur, maxime cumque officiis corporis
-            labore, quas nostrum, voluptas similique et mollitia ad placeat! Voluptate cum
-            nobis libero ab tempore id at, corporis ad? Eum cumque vero magnam? Possimus
-            minus temporibus ducimus reprehenderit perferendis? At, doloribus in, sunt
-            similique praesentium, cupiditate minima id necessitatibus dolor ratione eius et
-            eveniet voluptates iusto sed? Animi accusantium eum cum consequuntur,
-            dignissimos alias fugit repellendus, corrupti, quibusdam beatae similique
-            praesentium vel recusandae reiciendis ut accusamus sunt quo pariatur nihil et
-            dolorem incidunt aspernatur error illum? Iure sapiente dolore eum magnam cumque
-            neque temporibus ipsam ducimus ex doloremque, perspiciatis et incidunt illum
-            fugit quaerat facilis veritatis tempore aut quisquam exercitationem rem libero!
-            Temporibus minus id dolorum, alias perferendis quis sint voluptates corrupti
-            ullam commodi. Laborum saepe architecto cupiditate adipisci velit cumque neque
-            fugit ut, fuga reprehenderit! Dolor dolorum est quisquam alias distinctio amet
-            dolores, sit minima! Reiciendis sit tempora cumque dolore debitis iure dolorem
-            fugit itaque officia ducimus, harum velit ipsum veritatis nam nesciunt quos odit
-            quia, qui repudiandae nulla! Explicabo quis rem, quae perferendis ex odit
-            ratione, minima autem dolorem magnam incidunt ipsum corporis numquam eos
-            officiis alias temporibus quibusdam et dolore sunt. Molestias perferendis quidem
-            delectus rerum eos quas? Eos fuga quam qui at nostrum reiciendis voluptatibus
-            praesentium sit! Fugit vitae error ratione animi nobis repellat, aliquam
-            suscipit.
+            PORTAL: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Perspiciatis quasi mollitia veniam consequuntur dicta! Harum, eos
+            consectetur iste rem minus omnis aut est officiis quos in quae nisi?
+            Dignissimos deleniti dolorem consequuntur, itaque, possimus
+            molestiae ex, quasi facilis similique commodi vitae perspiciatis
+            beatae iure est ullam quos ab maiores ratione hic iste quis
+            reiciendis accusantium reprehenderit. Aliquid delectus iusto
+            voluptatibus voluptatum architecto velit modi distinctio nihil
+            assumenda veniam? Ipsum possimus amet corporis quos sint corrupti
+            enim temporibus deleniti similique. Id ut fuga doloribus.
+            Consequatur quia fugiat libero obcaecati facilis? Asperiores aperiam
+            facilis omnis eius rem aliquam nam? Nostrum earum dolorem, expedita
+            quam repudiandae consequuntur, ipsam quas laudantium quaerat ex
+            eaque molestiae labore. Autem quam aspernatur recusandae
+            perferendis, explicabo reprehenderit officia molestias excepturi
+            blanditiis placeat ratione architecto esse vitae labore quae
+            possimus voluptates repudiandae. Explicabo cumque sunt aliquid eaque
+            autem reiciendis praesentium reprehenderit ab commodi dolores ipsam
+            nisi, accusantium adipisci animi eius fugit dolor necessitatibus
+            totam nostrum in harum dignissimos inventore. Labore voluptas
+            doloribus quibusdam praesentium? Assumenda obcaecati minus quod
+            iusto dignissimos ipsam consequatur, totam dolorem maiores magnam
+            molestias fugiat doloribus ea mollitia, numquam optio quisquam nobis
+            voluptate quibusdam! Repellendus distinctio id autem rerum magnam
+            neque voluptas sapiente consequatur? Velit sint nisi libero? Fugiat
+            minima perspiciatis rem atque aspernatur quis vitae incidunt,
+            temporibus qui est dolorum explicabo et. Sint atque rem suscipit
+            fuga eum saepe. Officia, tempora minus. Corporis dolorum voluptatum
+            dignissimos eveniet error sit exercitationem aliquid reprehenderit
+            perspiciatis unde, deserunt recusandae nisi consequatur architecto
+            saepe iusto totam dolorem ex odit at. Ipsa obcaecati quod odit
+            explicabo nulla commodi nobis sapiente! Illum esse, nisi nihil
+            voluptatibus amet accusantium explicabo est debitis, placeat beatae
+            adipisci dolorum fugiat rem vel recusandae temporibus nemo! Quidem,
+            labore. Fuga quae unde dolores animi, molestias voluptatum, eligendi
+            aperiam corporis nulla autem dignissimos, itaque quis? Fugiat
+            asperiores iusto quidem expedita eum modi laborum rerum sint
+            obcaecati, provident natus ratione a alias ipsum architecto, sit
+            ducimus nobis. Voluptas, velit nesciunt rem consequatur commodi,
+            error architecto illo necessitatibus dolorum rerum officiis modi,
+            vitae ea laboriosam. Commodi delectus quas ducimus, totam earum
+            deleniti laboriosam pariatur enim provident quasi tempore impedit
+            eveniet aspernatur ad quisquam. Illum, dicta omnis. Animi distinctio
+            quod autem numquam laboriosam. Rerum enim accusamus voluptatibus
+            corporis, nihil molestias in, exercitationem assumenda ea incidunt
+            dolorem dignissimos excepturi iure quis doloremque et nesciunt
+            aspernatur temporibus nobis minus eius cum natus pariatur sequi.
+            Aliquam soluta dolorem ullam voluptatem praesentium sequi commodi
+            distinctio, id porro ipsum possimus ratione fugit est rerum dolores
+            cupiditate rem perspiciatis voluptatum asperiores libero modi
+            eveniet doloribus. Enim repudiandae animi quos ea minima perferendis
+            optio temporibus ad voluptates earum incidunt sit quam odio
+            quisquam, ipsum doloribus quia blanditiis iste modi debitis nisi!
+            Sit repellat recusandae, impedit repellendus itaque modi quae minus,
+            odit optio eligendi ut voluptatum dicta tenetur et adipisci sapiente
+            pariatur. Ab vero eos optio illum nam veritatis, saepe fugiat beatae
+            sit placeat recusandae delectus veniam iusto, odit illo aliquid
+            eveniet numquam excepturi eligendi repellat? Officia nihil ipsam ad
+            ab, possimus doloribus, repudiandae consequuntur ipsum magnam
+            provident beatae, quisquam accusamus? Magnam, ipsa quam mollitia
+            atque similique, iure veniam non fugiat voluptatem porro quidem
+            dolores asperiores. Quo, saepe eius fugiat deserunt accusantium
+            optio reprehenderit voluptate nulla aliquid sequi cupiditate porro
+            temporibus facilis dolor officia, qui deleniti? Similique
+            necessitatibus numquam natus suscipit corrupti, quaerat ducimus
+            tempore consequatur hic asperiores voluptatibus delectus voluptate
+            nihil. Maiores sed aliquid laborum, tempore, qui ducimus quos,
+            assumenda omnis facere dicta illo saepe cupiditate alias provident
+            quaerat nemo! Fuga, porro assumenda enim, harum doloremque ullam
+            autem nihil id, optio excepturi officiis dolorem? Consectetur nobis
+            porro quidem veniam necessitatibus nemo iusto perspiciatis maiores.
+            Perferendis cumque reiciendis incidunt eligendi distinctio
+            voluptatibus soluta, cupiditate repudiandae consectetur asperiores,
+            optio quos esse vel vitae dicta iure nam alias voluptatum repellat,
+            porro consequatur nihil. Repellat ipsam laudantium natus adipisci
+            nihil magni quibusdam odio sit delectus a neque beatae deserunt,
+            sint at eum architecto cumque expedita! Tempore accusantium nostrum
+            repellendus corporis, mollitia, nesciunt deserunt dolores at
+            repellat aliquam illo neque nulla modi dignissimos sit placeat
+            officiis impedit itaque quidem corrupti maxime quod. Accusamus,
+            quae? Reiciendis maxime earum, sunt aliquid quia recusandae fugiat
+            fugit officia odio obcaecati ipsa, provident est quasi cum deleniti,
+            quam quae facilis? Error quam nobis, inventore atque sunt porro.
+            Pariatur incidunt minima nesciunt nulla quos nam veniam debitis est
+            consequatur aliquid ea quaerat quia beatae, cum eligendi
+            consequuntur dignissimos voluptatum commodi molestias amet natus
+            odio impedit eum asperiores. Incidunt, rerum quasi cumque unde
+            nesciunt temporibus facere vitae molestias nulla et alias, ea
+            voluptatem amet odio veniam id expedita nostrum voluptates eligendi,
+            repudiandae architecto saepe laborum! Voluptatibus debitis maiores
+            consequatur repellendus vel quis, necessitatibus velit dolor, ipsam,
+            quae at laborum odio inventore sequi totam earum distinctio quaerat
+            perferendis. Odit error accusantium blanditiis quia harum nulla in
+            consectetur, maxime cumque officiis corporis labore, quas nostrum,
+            voluptas similique et mollitia ad placeat! Voluptate cum nobis
+            libero ab tempore id at, corporis ad? Eum cumque vero magnam?
+            Possimus minus temporibus ducimus reprehenderit perferendis? At,
+            doloribus in, sunt similique praesentium, cupiditate minima id
+            necessitatibus dolor ratione eius et eveniet voluptates iusto sed?
+            Animi accusantium eum cum consequuntur, dignissimos alias fugit
+            repellendus, corrupti, quibusdam beatae similique praesentium vel
+            recusandae reiciendis ut accusamus sunt quo pariatur nihil et
+            dolorem incidunt aspernatur error illum? Iure sapiente dolore eum
+            magnam cumque neque temporibus ipsam ducimus ex doloremque,
+            perspiciatis et incidunt illum fugit quaerat facilis veritatis
+            tempore aut quisquam exercitationem rem libero! Temporibus minus id
+            dolorum, alias perferendis quis sint voluptates corrupti ullam
+            commodi. Laborum saepe architecto cupiditate adipisci velit cumque
+            neque fugit ut, fuga reprehenderit! Dolor dolorum est quisquam alias
+            distinctio amet dolores, sit minima! Reiciendis sit tempora cumque
+            dolore debitis iure dolorem fugit itaque officia ducimus, harum
+            velit ipsum veritatis nam nesciunt quos odit quia, qui repudiandae
+            nulla! Explicabo quis rem, quae perferendis ex odit ratione, minima
+            autem dolorem magnam incidunt ipsum corporis numquam eos officiis
+            alias temporibus quibusdam et dolore sunt. Molestias perferendis
+            quidem delectus rerum eos quas? Eos fuga quam qui at nostrum
+            reiciendis voluptatibus praesentium sit! Fugit vitae error ratione
+            animi nobis repellat, aliquam suscipit.
           </p>
         </Portal>
 
         <p className="heading mt-20">Progress</p>
-        <Progress
-          className="progress mt-6"
-          value={45}>
+        <Progress className="progress mt-6" value={45}>
           <Progress.Bar className="progress-bar" />
         </Progress>
 
@@ -1092,7 +1328,13 @@ function Page() {
         <p className="heading mt-20">SelectBox</p>
         <div className="mt-6">
           <p className="title">Single select mode:</p>
-          <SelectBox direction="y" className="mt-3" options={SELECT_BOX_OPTIONS} optionValue={singleSelectBoxValue} setOptionValue={singleSetSelectBoxValue}>
+          <SelectBox
+            direction="y"
+            className="mt-3"
+            options={SELECT_BOX_OPTIONS}
+            optionValue={singleSelectBoxValue}
+            setOptionValue={singleSetSelectBoxValue}
+          >
             <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
@@ -1104,15 +1346,20 @@ function Page() {
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
-                <SelectBox.Options
-                  className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill"
-                />
+                <SelectBox.Options className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
               </SelectBox.List>
             </SelectBox.Input>
           </SelectBox>
 
           <p className="title mt-6">Multi select mode:</p>
-          <SelectBox direction="y" className="mt-3" multiSelect options={SELECT_BOX_OPTIONS} optionValue={multiSelectBoxValue} setOptionValue={setMultiSelectBoxValue}>
+          <SelectBox
+            direction="y"
+            className="mt-3"
+            multiSelect
+            options={SELECT_BOX_OPTIONS}
+            optionValue={multiSelectBoxValue}
+            setOptionValue={setMultiSelectBoxValue}
+          >
             <SelectBox.Input className="select-box-input input input-soft group">
               <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
@@ -1124,9 +1371,7 @@ function Page() {
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
-                <SelectBox.Options
-                  className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill"
-                />
+                <SelectBox.Options className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
               </SelectBox.List>
             </SelectBox.Input>
           </SelectBox>
@@ -1145,36 +1390,50 @@ function Page() {
               <Sheet.Content className="sheet-content">
                 <label className="input input-outline">
                   <SearchIcon className="element-icon-size" />
-                  <input type="text" className="input-field" placeholder="Search..." data-sheet="focus" />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-sheet="focus"
+                  />
                 </label>
                 <p className="mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo
-                  numquam sed dolorem nesciunt repellat deleniti quisquam laudantium? Quas
-                  ullam magni voluptate esse animi vero dicta maxime mollitia amet dolor.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae explicabo numquam sed dolorem nesciunt repellat
+                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
+                  animi vero dicta maxime mollitia amet dolor.
                 </p>
               </Sheet.Content>
             </Sheet.Body>
           </Sheet.Portal>
         </Sheet>
         <p className="heading mt-20">ShowMore</p>
-        <ShowMore
-          className="max-w-96 mt-6"
-          maxLines={3}>
+        <ShowMore className="max-w-96 mt-6" maxLines={3}>
           <ShowMore.Content>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium
-            exercitationem repellendus debitis, dignissimos non quis! Fugit ducimus adipisci
-            minus quas est expedita, voluptatibus minima ad facere quis, dolor ipsum
-            debitis!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium exercitationem repellendus debitis, dignissimos non
+            quis! Fugit ducimus adipisci minus quas est expedita, voluptatibus
+            minima ad facere quis, dolor ipsum debitis!
           </ShowMore.Content>
 
           <ShowMore.Fade className="show-more-fade" />
 
-          <ShowMore.Toggle className="btn btn-soft mt-1.5">Show more</ShowMore.Toggle>
+          <ShowMore.Toggle className="btn btn-soft mt-1.5">
+            Show more
+          </ShowMore.Toggle>
         </ShowMore>
 
         <p className="heading mt-20">Spoiler</p>
         <p className="mt-6">
-          <Spoiler className="spoiler">Lorem ipsum dolor sit <Spoiler.Blur className="spoiler-blur">amet consectetur adipisicing</Spoiler.Blur> elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae harum iusto, libero labore! Ea quo dolore accusantium veniam illo vel quae nihil iure aliquid.</Spoiler>
+          <Spoiler className="spoiler">
+            Lorem ipsum dolor sit{" "}
+            <Spoiler.Blur className="spoiler-blur">
+              amet consectetur adipisicing
+            </Spoiler.Blur>{" "}
+            elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae
+            harum iusto, libero labore! Ea quo dolore accusantium veniam illo
+            vel quae nihil iure aliquid.
+          </Spoiler>
         </p>
 
         <p className="heading mt-20">Submit</p>
@@ -1182,10 +1441,13 @@ function Page() {
           className="mt-6"
           action={async () => {
             await new Promise((resolve) => setTimeout(resolve, 1000));
-          }}>
+          }}
+        >
           <Submit className="btn btn-soft">
             <span>Press the from</span>
-            <Submit.Loader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+            <Submit.Loader
+              loader={<LoaderIcon className="element-icon-size animate-spin" />}
+            >
               <SendHorizonalIcon className="element-icon-size" />
             </Submit.Loader>
           </Submit>
@@ -1193,10 +1455,7 @@ function Page() {
 
         <p className="heading mt-20">Swap</p>
         <div className="mt-6">
-          <Swap
-            keys={SWAP_KEYS}
-            activeKey={swapKey}
-            setActiveKey={setSwapKey}>
+          <Swap keys={SWAP_KEYS} activeKey={swapKey} setActiveKey={setSwapKey}>
             <Swap.Btn
               className="btn btn-soft"
               btnKey={SWAP_KEYS[0] as string}
@@ -1215,23 +1474,24 @@ function Page() {
         </div>
 
         <p className="heading mt-20">Tabs</p>
-        <Tabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}>
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
           <Tabs.List className="join join-border mt-6" direction="x">
             <Tabs.Tab
               value="1"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            >
               Tab 1
             </Tabs.Tab>
             <Tabs.Tab
               value="2"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            >
               Tab 2
             </Tabs.Tab>
             <Tabs.Tab
               value="3"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            >
               Tab 3
             </Tabs.Tab>
           </Tabs.List>
@@ -1239,50 +1499,54 @@ function Page() {
           <Tabs.Panel
             className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"1"}
-            value="1">
-            Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
-            quisquam nihil?
+            value="1"
+          >
+            Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
+            accusantium sunt repudiandae repellendus perspiciatis cumque unde
+            commodi reprehenderit distinctio nostrum quisquam nihil?
           </Tabs.Panel>
 
           <Tabs.Panel
             className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"2"}
-            value="2">
-            Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            quisquam nihil?
+            value="2"
+          >
+            Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
+            accusantium sunt repudiandae quisquam nihil?
           </Tabs.Panel>
 
           <Tabs.Panel
             className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
             key={"3"}
-            value="3">
-            Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
-            animi nisi, magni quis dolore cum molestias ipsam accusantium sunt repudiandae
-            repellendus perspiciatis cumque unde commodi reprehenderit distinctio nostrum
-            quisquam nihil?
+            value="3"
+          >
+            Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
+            accusantium sunt repudiandae repellendus perspiciatis cumque unde
+            commodi reprehenderit distinctio nostrum quisquam nihil?
             <br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat ut corporis
-            sequi expedita deserunt aliquid iste facere, nisi ipsa iure ad nostrum animi.
-            Adipisci placeat eos laborum error magnam officiis necessitatibus illo commodi
-            a, aperiam tempora alias voluptatum eveniet, atque quas dolores, facilis
-            architecto quisquam ipsum dolore officia debitis facere! Dicta iste consectetur,
-            illo amet obcaecati aut error, ipsam optio at earum odio laudantium
-            voluptatibus? Nemo, nisi debitis et, nam voluptas tempora ipsa ipsum culpa nobis
-            perferendis ipsam cumque blanditiis quos corrupti, rerum eos? Sapiente fugiat
-            voluptatibus laborum culpa at. Quidem, suscipit perferendis. Illum doloribus in
-            cumque fuga laboriosam dignissimos!
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat ut
+            corporis sequi expedita deserunt aliquid iste facere, nisi ipsa iure
+            ad nostrum animi. Adipisci placeat eos laborum error magnam officiis
+            necessitatibus illo commodi a, aperiam tempora alias voluptatum
+            eveniet, atque quas dolores, facilis architecto quisquam ipsum
+            dolore officia debitis facere! Dicta iste consectetur, illo amet
+            obcaecati aut error, ipsam optio at earum odio laudantium
+            voluptatibus? Nemo, nisi debitis et, nam voluptas tempora ipsa ipsum
+            culpa nobis perferendis ipsam cumque blanditiis quos corrupti, rerum
+            eos? Sapiente fugiat voluptatibus laborum culpa at. Quidem, suscipit
+            perferendis. Illum doloribus in cumque fuga laboriosam dignissimos!
           </Tabs.Panel>
         </Tabs>
 
         <p className="heading mt-20">LinkLoader</p>
-        <Link
-          className="btn btn-soft mt-6"
-          href={"/test"}>
+        <Link className="btn btn-soft mt-6" href={"/test"}>
           <span>Test page</span>
-          <LinkLoader loader={<LoaderIcon className="element-icon-size animate-spin" />}>
+          <LinkLoader
+            loader={<LoaderIcon className="element-icon-size animate-spin" />}
+          >
             <ArrowRightIcon className="element-icon-size" />
           </LinkLoader>
         </Link>
@@ -1294,20 +1558,24 @@ function Page() {
           direction="x"
           className="flex items-center gap-3 mt-3"
           choiceState={filterChoice}
-          onChoiceChange={setFilterChoice}>
+          onChoiceChange={setFilterChoice}
+        >
           <Choice.Toggle
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="1">
+            choiceName="1"
+          >
             Filter 1
           </Choice.Toggle>
           <Choice.Toggle
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="2">
+            choiceName="2"
+          >
             Filter 2
           </Choice.Toggle>
           <Choice.Toggle
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            choiceName="3">
+            choiceName="3"
+          >
             Filter 3
           </Choice.Toggle>
         </Choice>
@@ -1318,30 +1586,33 @@ function Page() {
           direction="x"
           className="flex items-center gap-3 mt-3"
           choiceState={singleChoice}
-          onChoiceChange={setSingleChoice}>
+          onChoiceChange={setSingleChoice}
+        >
           <Choice.Toggle
             className="choice element-xs choice-radio"
-            choiceName="1">
+            choiceName="1"
+          >
             <span className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-sm choice-radio"
-            choiceName="2">
+            choiceName="2"
+          >
             <span className="choice-radio-thumb" />
           </Choice.Toggle>
-          <Choice.Toggle
-            className="choice choice-radio"
-            choiceName="3">
+          <Choice.Toggle className="choice choice-radio" choiceName="3">
             <span className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-lg choice-radio"
-            choiceName="4">
+            choiceName="4"
+          >
             <span className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-xl choice-radio"
-            choiceName="5">
+            choiceName="5"
+          >
             <span className="choice-radio-thumb" />
           </Choice.Toggle>
         </Choice>
@@ -1357,35 +1628,37 @@ function Page() {
         >
           <Choice.Toggle
             className="choice element-xs choice-checkbox"
-            choiceName="1">
+            choiceName="1"
+          >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon className="element-icon-size" />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-sm choice-checkbox"
-            choiceName="2">
+            choiceName="2"
+          >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon className="element-icon-size" />
             </Choice.Thumb>
           </Choice.Toggle>
-          <Choice.Toggle
-            className="choice choice-checkbox"
-            choiceName="3">
+          <Choice.Toggle className="choice choice-checkbox" choiceName="3">
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon className="element-icon-size" />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-lg choice-checkbox"
-            choiceName="4">
+            choiceName="4"
+          >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon className="element-icon-size" />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-xl choice-checkbox rounded-xl"
-            choiceName="5">
+            choiceName="5"
+          >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon className="element-icon-size" />
             </Choice.Thumb>
@@ -1403,27 +1676,29 @@ function Page() {
         >
           <Choice.Toggle
             className="choice element-xs choice-switch"
-            choiceName="1">
+            choiceName="1"
+          >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-sm choice-switch"
-            choiceName="2">
+            choiceName="2"
+          >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
-          <Choice.Toggle
-            className="choice choice-switch"
-            choiceName="3">
+          <Choice.Toggle className="choice choice-switch" choiceName="3">
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-lg choice-switch"
-            choiceName="4">
+            choiceName="4"
+          >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
             className="choice element-xl choice-switch placeholder:text-palette/50"
-            choiceName="5">
+            choiceName="5"
+          >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
         </Choice>

@@ -2,9 +2,9 @@
   "name": "kadoui",
   "license": "MIT",
   "scripts": {
-    "build:r": "pnpm --filter @kadoui/react build",
-    "publish:r": "pnpm --filter @kadoui/react publish",
-    "publish:t": "pnpm --filter @kadoui/tailwindcss publish",
+    "build:react": "pnpm --filter @kadoui/react build",
+    "publish:react": "pnpm --filter @kadoui/react publish",
+    "publish:tailwind": "pnpm --filter @kadoui/tailwindcss publish",
     "dev:next": "pnpm --filter next-playground dev",
     "dev:vanilla": "pnpm --filter vanilla-playground dev"
   },
