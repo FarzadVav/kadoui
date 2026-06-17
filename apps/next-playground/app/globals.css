@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import "@kadoui/tailwindcss";
+@import "tailwindcss";
 
 :root {
   --background: #efefef;
@@ -37,6 +37,23 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
+
+  --shadow-*: initial;
+  --shadow-xs: 0 0 5px 0 #efefef25;
+  --shadow-sm: 0 0 10px 0 #efefef25;
+  --shadow-md: 0 0 20px 0 #efefef25;
+  --shadow-lg: 0 0 35px 0 #efefef25;
+  --shadow-xl: 0 0 60px 0 #efefef25;
+  --shadow-xs-b: 0 2.5px 5px 0 #efefef25;
+  --shadow-sm-b: 0 5px 10px 0 #efefef25;
+  --shadow-md-b: 0 10px 20px 0 #efefef25;
+  --shadow-lg-b: 0 17.5px 35px 0 #efefef25;
+  --shadow-xl-b: 0 30px 60px 0 #efefef25;
+  --shadow-xs-t: 0 -2.5px 5px 0 #efefef25;
+  --shadow-sm-t: 0 -5px 10px 0 #efefef25;
+  --shadow-md-t: 0 -10px 20px 0 #efefef25;
+  --shadow-lg-t: 0 -17.5px 35px 0 #efefef25;
+  --shadow-xl-t: 0 -30px 60px 0 #efefef25;
 }
 
 /* Dark mode */

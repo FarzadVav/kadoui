@@ -548,6 +548,35 @@ function Page() {
           </div>
         </div>
       </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Shadow</p>
+        <div className="space-y-6">
+          <p className="title mt-6">Center</p>
+          <div className="card w-32 aspect-square bg-card hover:shadow-xs" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-sm" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-md" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-lg" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-xl" />
+        </div>
+        <div className="space-y-6">
+          <p className="title mt-6">Top</p>
+          <div className="card w-32 aspect-square bg-card hover:shadow-xs-t" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-sm-t" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-md-t" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-lg-t" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-xl-t" />
+        </div>
+        <div className="space-y-6">
+          <p className="title mt-6">Bittom</p>
+          <div className="card w-32 aspect-square bg-card hover:shadow-xs-b" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-sm-b" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-md-b" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-lg-b" />
+          <div className="card w-32 aspect-square bg-card hover:shadow-xl-b" />
+        </div>
+      </div>
+
+      {/* --- */}
 
       <div className="wrapper mt-40">
         <p className="heading text-primary">
