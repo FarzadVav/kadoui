@@ -10,14 +10,14 @@
 - Add DatePicker component.
 - Add TimePicker component.
 - Add searchParams adaptor to all components.
-- Fix commented bugs in BeautyPlus and Magma.
+- Fix commented bugs in BeautyPlus and Shops.
 - Remove Next useSearchParams from searchParams.
 - Remove Dispatch types and add Void function type.
 - Fix transition bugs (like AccessNavigation focusTrap).
 - Remove ThemeScript and handle theme simple and directly.
 - Develop Pagination to a full-featured component and Remove Tabs component.
-- Write obviously styles to React components directly (like positions and offsets).
-- Add screen safe aria data-set to components (like when SelectBox opened out of the screen).
+- Write obviously styles to React components directly (like positions, offsets).
+- Add screen safe aria data-set to components (like when SelectBox or Popover opened out of the screen).
 
 ### Later
 
@@ -42,7 +42,7 @@
 ### Now
 
 - Remove positions and offsets.
-- Fix commented bugs in BeautyPlus and Magma.
+- Fix commented bugs in BeautyPlus and Shops.
 - Remove global palette and size and add those directly to components.
 - Fix transition config (for compatibilty with components like AccessNavigation).
 - Add layout styles with variable customization (wrapper, element spacing, typography, etc.).

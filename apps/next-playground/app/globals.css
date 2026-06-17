@@ -6,17 +6,17 @@
   --foreground: #151515;
   --card: #afafaf;
   --card-foreground: #202020;
-  --primary: #ff5e00;
+  --primary: #9100b6;
   --primary-foreground: #ffffff;
-  --secondary: #ab00c2;
+  --secondary: #e800b2;
   --secondary-foreground: #ffffff;
   --error: #ff0000;
   --error-foreground: #ffffff;
-  --success: #00b600;
+  --success: #00e030;
   --success-foreground: #ffffff;
-  --warning: #ffd900;
+  --warning: #ffae00;
   --warning-foreground: #ffffff;
-  --info: #0000dd;
+  --info: #3a3aff;
   --info-foreground: #ffffff;
 }
 
@@ -63,7 +63,7 @@
 [data-theme="dark"] {
   --background: #151515;
   --foreground: #efefef;
-  --card: #505050;
+  --card: #2d4b50;
   --card-foreground: #dfdfdf;
 }
 
