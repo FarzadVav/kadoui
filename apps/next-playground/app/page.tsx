@@ -584,6 +584,59 @@ function Page() {
           <div className="card w-32 aspect-square bg-card hover:shadow-xl-b" />
         </div>
       </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Joins</p>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Basic</p>
+          <div className="join">
+            <label className="input input-ghost-outline">
+              <SearchIcon />
+              <input type="text" className="input-field" />
+            </label>
+            <button className="btn btn-soft">Search</button>
+          </div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Border</p>
+          <div className="join join-border">
+            <button className="btn btn-ghost">One</button>
+            <button className="btn btn-ghost">Two</button>
+            <button className="btn btn-ghost">Three</button>
+            <button className="btn btn-ghost">Three</button>
+            <button className="btn btn-ghost">Four</button>
+          </div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">No Border</p>
+          <div className="join join-no-border">
+            <button className="btn btn-soft-outline">
+              <TrashIcon className="text-error" />
+            </button>
+            <button className="btn btn-soft-outline">
+              <SearchIcon />
+            </button>
+            <label className="input input-ghost-outline">
+              <input type="text" className="input-field" />
+            </label>
+            <button className="btn btn-soft-outline">Search</button>
+          </div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Fix Border</p>
+          <div className="join join-fix-border">
+            <button className="btn btn-soft-outline">
+              <TrashIcon className="text-error" />
+            </button>
+            <button className="btn btn-soft-outline">
+              <SearchIcon />
+            </button>
+            <label className="input input-ghost-outline">
+              <input type="text" className="input-field" />
+            </label>
+            <button className="btn btn-soft-outline">Search</button>
+          </div>
+        </div>
+      </div>
 
       {/* --- */}
 

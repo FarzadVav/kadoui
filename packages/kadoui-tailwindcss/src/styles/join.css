@@ -2,18 +2,14 @@
   @apply flex items-center ltr:*:not-first:rounded-l-none ltr:*:not-last:rounded-r-none rtl:*:not-first:rounded-r-none rtl:*:not-last:rounded-l-none;
 }
 
-/*
-  Notes:
-  - Consider border color may not be suitable for your use, you should change it
-*/
 @utility join-border {
-  @apply ltr:*:not-last:border-r rtl:*:not-last:border-l;
+  @apply *:not-first:border-s-0 *:not-last:border-e;
+}
 
-  * {
-    border-color: color-mix(in oklab, var(--color-palette) 50%, var(--color-brush))
-  }
+@utility join-no-border {
+  @apply *:first:border-e-0 *:last:border-s-0 *:not-first:not-last:border-x-0;
 }
 
 @utility join-fix-border {
-  @apply ltr:*:not-first:border-l-0 rtl:*:not-first:border-r-0;
+  @apply *:not-first:border-s-0;
 }
