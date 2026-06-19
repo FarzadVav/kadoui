@@ -4,7 +4,7 @@
 @utility separate-t {
   --separate-palette: var(--color-foreground);
 
-  border-top: var(--separate-border-width, 1px) solid var(--separate-palette);
+  border-top-width: var(--separate-border-width, 1px);
   padding-top: var(--separate-spacing, calc(var(--spacing) * 5));
   margin-top: var(--separate-spacing, calc(var(--spacing) * 5));
 }
@@ -12,7 +12,7 @@
 @utility separate-r {
   --separate-palette: var(--color-foreground);
 
-  border-right: var(--separate-border-width, 1px) solid var(--separate-palette);
+  border-right-width: var(--separate-border-width, 1px);
   padding-right: var(--separate-spacing, calc(var(--spacing) * 5));
   margin-right: var(--separate-spacing, calc(var(--spacing) * 5));
 }
@@ -20,15 +20,15 @@
 @utility separate-b {
   --separate-palette: var(--color-foreground);
 
-  border-buttom: var(--separate-border-width, 1px) solid var(--separate-palette);
-  padding-buttom: var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-buttom: var(--separate-spacing, calc(var(--spacing) * 5));
+  border-bottom-width: var(--separate-border-width, 1px);
+  padding-bottom: var(--separate-spacing, calc(var(--spacing) * 5));
+  margin-bottom: var(--separate-spacing, calc(var(--spacing) * 5));
 }
 
 @utility separate-l {
   --separate-palette: var(--color-foreground);
 
-  border-left: var(--separate-border-width, 1px) solid var(--separate-palette);
+  border-left-width: var(--separate-border-width, 1px);
   padding-left: var(--separate-spacing, calc(var(--spacing) * 5));
   margin-left: var(--separate-spacing, calc(var(--spacing) * 5));
 }
@@ -36,8 +36,8 @@
 @utility separate-y {
   --separate-palette: var(--color-foreground);
 
-  border-top: var(--separate-border-width, 1px) solid var(--separate-palette);
-  border-bottom: var(--separate-border-width, 1px) solid var(--separate-palette);
+  border-top-width: var(--separate-border-width, 1px);
+  border-bottom-width: var(--separate-border-width, 1px);
   padding-top: var(--separate-spacing, calc(var(--spacing) * 5)) 0;
   margin-top: var(--separate-spacing, calc(var(--spacing) * 5)) 0;
 }
@@ -45,55 +45,13 @@
 @utility separate-x {
   --separate-palette: var(--color-foreground);
 
-  border-left: var(--separate-border-width, 1px) solid var(--separate-palette);
-  border-right: var(--separate-border-width, 1px) solid var(--separate-palette);
+  border-left-width: var(--separate-border-width, 1px);
+  border-right-width: var(--separate-border-width, 1px);
   padding-top: 0 var(--separate-spacing, calc(var(--spacing) * 5));
   margin-top: 0 var(--separate-spacing, calc(var(--spacing) * 5));
 }
 /*
   End Variants
-*/
-
-/*
-  Start Colors
-*/
-@utility separate-background {
-  --separate-palette: var(--color-background);
-}
-
-@utility separate-foreground {
-  --separate-palette: var(--color-foreground);
-}
-
-@utility separate-card {
-  --separate-palette: var(--color-card);
-}
-
-@utility separate-primary {
-  --separate-palette: var(--color-primary);
-}
-
-@utility separate-secondary {
-  --separate-palette: var(--color-secondary);
-}
-
-@utility separate-error {
-  --separate-palette: var(--color-error);
-}
-
-@utility separate-success {
-  --separate-palette: var(--color-success);
-}
-
-@utility separate-warning {
-  --separate-palette: var(--color-warning);
-}
-
-@utility separate-info {
-  --separate-palette: var(--color-info);
-}
-/*
-  End Colors
 */
 
 /*

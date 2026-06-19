@@ -7,7 +7,7 @@
   }
 
   body {
-    @apply bg-background text-foreground outline-foreground border-foreground;
+    @apply bg-background text-foreground outline-foreground border-foreground border-solid;
   }
 
   * {

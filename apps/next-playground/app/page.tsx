@@ -637,6 +637,44 @@ function Page() {
           </div>
         </div>
       </div>
+      <div className="wrapper mt-20">
+        <p className="heading">Separates</p>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Xs</p>
+          <div className="bg-card separate-t separate-xs">Separate top</div>
+          <div className="bg-card separate-r separate-xs">Separate right</div>
+          <div className="bg-card separate-b separate-xs">Separate bottom</div>
+          <div className="bg-card separate-l separate-xs">Separate left</div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Sm</p>
+          <div className="bg-card separate-t separate-sm">Separate top</div>
+          <div className="bg-card separate-r separate-sm">Separate right</div>
+          <div className="bg-card separate-b separate-sm">Separate bottom</div>
+          <div className="bg-card separate-l separate-sm">Separate left</div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Md</p>
+          <div className="bg-card separate-t">Separate top</div>
+          <div className="bg-card separate-r">Separate right</div>
+          <div className="bg-card separate-b">Separate bottom</div>
+          <div className="bg-card separate-l">Separate left</div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Lg</p>
+          <div className="bg-card separate-t separate-lg">Separate top</div>
+          <div className="bg-card separate-r separate-lg">Separate right</div>
+          <div className="bg-card separate-b separate-lg">Separate bottom</div>
+          <div className="bg-card separate-l separate-lg">Separate left</div>
+        </div>
+        <div className="mt-6 space-y-3">
+          <p className="title mt-6">Xl</p>
+          <div className="bg-card separate-t separate-xl border-dashed border-error">Separate top</div>
+          <div className="bg-card separate-r separate-xl border-double border-success">Separate right</div>
+          <div className="bg-card separate-b separate-xl border-dotted border-primary">Separate bottom</div>
+          <div className="bg-card separate-l separate-xl border-double border-secondary">Separate left</div>
+        </div>
+      </div>
 
       {/* --- */}
 
