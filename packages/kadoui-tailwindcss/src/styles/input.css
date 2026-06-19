@@ -9,6 +9,7 @@
 @utility input {
   --input-palette: var(--color-foreground);
   --input-brush: var(--color-background);
+  --input-placeholder: var(--input-palette);
 
   @apply flex cursor-text relative transition-all outline-solid outline-1 outline-transparent has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[input:disabled]:*:cursor-not-allowed not-has-[input:disabled]:has-[[type=file]]:cursor-pointer;
 
@@ -59,7 +60,7 @@
   @apply bg-transparent w-full not-[[type=file]]:h-full max-w-full not-disabled:[[type=file]]:cursor-pointer;
 
   &::placeholder {
-    color: color-mix(in oklab, var(--input-palette) 50%, transparent);
+    color: color-mix(in oklab, var(--input-placeholder) 50%, transparent);
   }
 
   &:where(select) {
@@ -72,7 +73,7 @@
 
   &:not(:focus-within) {
     &:hover {
-      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+      outline-color: color-mix(in oklab, var(--input-palette) 50%, transparent);
     }
   }
 }
@@ -82,11 +83,11 @@
 
   color: var(--input-palette);
   border: 1px solid var(--input-palette);
-  background-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+  background-color: color-mix(in oklab, var(--input-palette) 10%, transparent);
 
   &:not(:focus-within) {
     &:hover {
-      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+      outline-color: color-mix(in oklab, var(--input-palette) 50%, transparent);
     }
   }
 }
@@ -99,14 +100,31 @@
 
   &:not(:focus-within) {
     &:hover {
-      outline-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+      outline-color: color-mix(in oklab, var(--input-palette) 50%, transparent);
     }
   }
 }
 
 @utility input-soft {
+  @apply outline-offset-2;
+
   color: var(--input-palette);
-  background-color: color-mix(in oklab, var(--input-palette) 25%, transparent);
+  background-color: color-mix(in oklab, var(--input-palette) 10%, transparent);
+
+  &:not(:focus-within) {
+    &:hover {
+      outline-color: color-mix(in oklab, var(--input-palette) 50%, transparent);
+    }
+  }
+}
+
+@utility input-fill {
+  --input-placeholder: var(--input-brush);
+
+  @apply outline-offset-2;
+
+  background-color: var(--input-palette);
+  color: var(--input-brush);
 
   &:not(:focus-within) {
     &:hover {

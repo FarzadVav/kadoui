@@ -334,6 +334,15 @@ function Page() {
               />
               <button className="btn btn-ghost">Go</button>
             </label>
+            <label className="input input-fill">
+              <SearchIcon className="element-icon-size" />
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Input Soft-Outline..."
+              />
+              <button className="btn btn-ghost btn-background">Go</button>
+            </label>
           </div>
         </div>
         <div>
