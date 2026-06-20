@@ -23,8 +23,8 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
 
-          <Affix className="affix btn btn-fill bottom-3 right-3" viewportOffset={1}>
-            <ChevronUpIcon className="element-icon-size" />
+          <Affix className="btn btn-fill btn-square bottom-3 right-3" viewportOffset={1}>
+            <ChevronUpIcon />
           </Affix>
         </ThemeProvider>
       </body>
