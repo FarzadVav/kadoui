@@ -12,6 +12,8 @@ export function BreadcrumbsRoot({
 }: BreadcrumbsRootPropsT) {
   const styles: CSSProperties = {
     display: "flex",
+    alignItems: "center",
+    gap: 3,
     ...style,
   };
 

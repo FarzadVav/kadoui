@@ -874,16 +874,16 @@ function Page() {
 
         <p className="heading mt-20">Breadcrumbs</p>
         <Breadcrumbs
-          className="breadcrumbs element-xs mt-3"
-          separator={<ChevronRightIcon className="element-icon-size" />}
+          className="mt-3 btn-xs"
+          separator={<ChevronRightIcon className="size-3" />}
         >
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn link">Home</button>
+          <Breadcrumbs.Item>
+            <button className="btn btn-ghost btn-link">Home</button>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="breadcrumbs-item">
-            <button className="btn link">Articles</button>
+          <Breadcrumbs.Item>
+            <button className="btn btn-ghost btn-link">Articles</button>
           </Breadcrumbs.Item>
-          <Breadcrumbs.Item className="breadcrumbs-item" isLastItem>
+          <Breadcrumbs.Item isLastItem>
             <button className="btn btn-fill">How to gain money?</button>
           </Breadcrumbs.Item>
         </Breadcrumbs>
