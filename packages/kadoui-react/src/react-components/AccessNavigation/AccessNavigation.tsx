@@ -12,12 +12,13 @@ import {
 
 import { selectAccessibleChildren } from "../../utils-exports";
 
-type Direction = "y" | "x";
+type DirectionT = "y" | "x";
 
 export type AccessNavigationPropsT = ComponentPropsWithoutRef<"div"> & {
-  autoFocusFirst?: boolean;
-  direction: Direction;
   loop?: boolean;
+  focusTrap?: any;
+  direction: DirectionT;
+  autoFocusFirst?: boolean;
   ref?: Ref<HTMLDivElement>;
 };
 
@@ -41,8 +42,8 @@ function shouldIgnoreArrowNavigation(target: EventTarget | null) {
 
   return Boolean(
     target.closest(
-      'input, textarea, select, [contenteditable="true"], [role="textbox"], [data-arrow-nav-ignore]'
-    )
+      'input, textarea, select, [contenteditable="true"], [role="textbox"], [data-arrow-nav-ignore]',
+    ),
   );
 }
 
@@ -56,9 +57,10 @@ function getDirection(dir?: string): "ltr" | "rtl" {
 export function AccessNavigation({
   ref,
   dir,
-  autoFocusFirst,
+  focusTrap,
   direction,
   loop = true,
+  autoFocusFirst,
   onKeyDown,
   ...p
 }: AccessNavigationPropsT) {
@@ -69,7 +71,7 @@ export function AccessNavigation({
       internalRef.current = node;
       assignRef(ref, node);
     },
-    [ref]
+    [ref],
   );
 
   useEffect(() => {
@@ -86,7 +88,7 @@ export function AccessNavigation({
     }, 0);
 
     return () => window.clearTimeout(id);
-  }, [autoFocusFirst]);
+  }, [autoFocusFirst, focusTrap]);
 
   const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
     if (shouldIgnoreArrowNavigation(ev.target)) return;
@@ -98,7 +100,7 @@ export function AccessNavigation({
 
     const currentDir = getDirection(dir);
     const currentIndex = items.findIndex(
-      (item) => item === document.activeElement
+      (item) => item === document.activeElement,
     );
 
     const nextKey =

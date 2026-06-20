@@ -4,7 +4,7 @@ import { ContextMenuItem } from "./ContextMenuItem";
 
 export const ContextMenu = Object.assign(ContextMenuRoot, {
   Body: ContextMenuBody,
-  Item: ContextMenuItem
+  Item: ContextMenuItem,
 });
 
 export * from "./contextMenuTypes";

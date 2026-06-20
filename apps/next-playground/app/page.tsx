@@ -913,13 +913,10 @@ function Page() {
         </label>
 
         <p className="heading mt-20">ContextMenu</p>
-        <ContextMenu className="context-menu border-4 border-dashed border-foreground mt-6 h-[33vh]">
-          <span className="absolute inset-center">Context menu!</span>
+        <ContextMenu className="border-4 border-dashed border-foreground mt-6 h-[33vh]">
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Context menu!</span>
 
-          <ContextMenu.Body
-            direction="y"
-            className="context-menu-body bg-background-thick"
-          >
+          <ContextMenu.Body direction="y" className="card card-y glass">
             <ContextMenu.Item className="btn btn-ghost">
               <TrashIcon className="element-icon-size" />
               <span>DELETE</span>

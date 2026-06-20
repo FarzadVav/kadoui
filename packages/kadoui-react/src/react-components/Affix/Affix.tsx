@@ -15,11 +15,13 @@ export const Affix = ({
   const styles: CSSProperties = {
     zIndex: 40,
     position: "fixed",
-    ...(isVisible ? {} : {
-      opacity: 0,
-      visibility: "hidden",
-      pointerEvents: "none",
-    }),
+    ...(isVisible
+      ? {}
+      : {
+          opacity: 0,
+          visibility: "hidden",
+          pointerEvents: "none",
+        }),
     ...style,
   };
 

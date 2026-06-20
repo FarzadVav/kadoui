@@ -1,21 +1,41 @@
 "use client";
 
-import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-import type { ContextMenuContextT, ContextMenuRootPropsT } from "./contextMenuTypes";
+import type {
+  ContextMenuContextT,
+  ContextMenuRootPropsT,
+} from "./contextMenuTypes";
 
-export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) {
-  const [position, setPosition] = useState<ContextMenuContextT["position"]>(undefined);
+export function ContextMenuRoot({
+  style,
+  onContextMenu,
+  ...p
+}: ContextMenuRootPropsT) {
+  const [position, setPosition] =
+    useState<ContextMenuContextT["position"]>(undefined);
   const [isOpen, setOpen] = useState(false);
 
   const contentRef = useRef<HTMLDivElement>(null);
 
+  const styles: CSSProperties = {
+    position: "relative",
+    ...style,
+  };
+
   const closeHandler = () => {
     setOpen(false);
     setPosition(undefined);
-  }
+  };
 
   const handleClickOutside = useCallback((ev: globalThis.MouseEvent) => {
     if (!contentRef.current?.contains(ev.target as Node)) {
@@ -38,7 +58,7 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
     } else {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
-    };
+    }
 
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -50,20 +70,19 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-    }
+    };
   }, [isOpen]);
 
-
-  const handleContextMenu = (ev: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
-    if (!contentRef.current) return;
-
+  const handleContextMenu = (
+    ev: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
+  ) => {
     ev.preventDefault();
 
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const menuWidth = contentRef.current.scrollWidth;
-    const menuHeight = contentRef.current.scrollHeight;
+    const menuWidth = contentRef.current?.scrollWidth || 0;
+    const menuHeight = contentRef.current?.scrollHeight || 0;
 
     let x = ev.clientX;
     let y = ev.clientY;
@@ -80,19 +99,18 @@ export function ContextMenuRoot({ onContextMenu, ...p }: ContextMenuRootPropsT) 
     if (!isOpen) {
       setOpen(true);
     }
-  }
-
+  };
 
   return (
     <ContextMenuContext value={{ contentRef, isOpen, closeHandler, position }}>
       <div
-        onContextMenu={ev => {
+        style={styles}
+        onContextMenu={(ev) => {
           onContextMenu?.(ev);
           handleContextMenu(ev);
-          
         }}
         {...p}
       />
     </ContextMenuContext>
-  )
+  );
 }

@@ -66,6 +66,10 @@
 @utility range-slider {
   @apply bg-primary rounded-full appearance-none cursor-grab active:cursor-grabbing;
 }
+
+@utility glass {
+  @apply bg-card/50 backdrop-blur-md;
+}
 /*
   Start Utilities
 */

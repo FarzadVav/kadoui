@@ -1,28 +1,44 @@
 "use client";
 
-import { use } from "react";
+import { CSSProperties, use } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { ContextMenuContext } from "./ContextMenuContext";
 import type { ContextMenuBodyPropsT } from "./contextMenuTypes";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export function ContextMenuBody({ onContextMenu, ...p }: ContextMenuBodyPropsT) {
+export function ContextMenuBody({
+  style,
+  onContextMenu,
+  ...p
+}: ContextMenuBodyPropsT) {
   const { contentRef, position, isOpen } = use(ContextMenuContext);
 
+  const styles: CSSProperties = {
+    zIndex: 10,
+    top: position?.y,
+    left: position?.x,
+    position: "fixed",
+    ...style,
+  };
+
   return (
-    <AccessNavigation
-      ref={contentRef}
-      data-state={isOpen}
-      onContextMenu={(ev) => {
-        ev.stopPropagation();
-        ev.preventDefault();
-        onContextMenu?.(ev);
-      }}
-      style={{
-        top: position?.y,
-        left: position?.x,
-      }}
-      {...p}
-    />
+    <AnimatePresence>
+      {isOpen ? (
+        <AccessNavigation
+          style={styles}
+          autoFocusFirst
+          ref={contentRef}
+          data-state={isOpen}
+          focusTrap={position}
+          onContextMenu={(ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+            onContextMenu?.(ev);
+          }}
+          {...p}
+        />
+      ) : null}
+    </AnimatePresence>
   );
 }
