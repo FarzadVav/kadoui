@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #efefef;
+  --background: #ffffff;
   --foreground: #151515;
-  --card: #afafaf;
+  --card: #f5f5f5;
   --card-foreground: #202020;
   --primary: #9100b6;
   --primary-foreground: #ffffff;
@@ -63,7 +63,7 @@
 [data-theme="dark"] {
   --background: #151515;
   --foreground: #efefef;
-  --card: #2d4b50;
+  --card: #202020;
   --card-foreground: #dfdfdf;
 }
 

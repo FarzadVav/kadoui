@@ -37,7 +37,7 @@ export function DrawerRoot({ children }: DrawerRootPropsT) {
     const removeOverStyles = () => {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
-    }
+    };
 
     if (isOpen) {
       document.body.style.overflow = "hidden";

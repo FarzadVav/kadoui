@@ -1,7 +1,0 @@
-/* @utility drawer-portal {
-  @apply fixed inset-0 z-50 bg-foreground/50;
-}
-
-@utility drawer-body {
-  @apply absolute bg-background p-(--element-spacing) overflow-y-auto;
-} */

@@ -6,7 +6,7 @@ import { DrawerToggle } from "./DrawerToggle";
 export const Drawer = Object.assign(DrawerRoot, {
   Toggle: DrawerToggle,
   Portal: DrawerPortal,
-  Body: DrawerBody
+  Body: DrawerBody,
 });
 
 export * from "./drawerTypes";
