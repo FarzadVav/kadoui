@@ -27,13 +27,13 @@
 @utility card-y {
   @apply flex flex-col;
 
-  row-gap: var(--card-spacing);
+  row-gap: var(--card-spacing, calc(var(--spacing) * 3));
 }
 
 @utility card-x {
   @apply flex;
 
-  column-gap: var(--card-spacing);
+  column-gap: var(--card-spacing, calc(var(--spacing) * 3));
 }
 /*
   End Variants

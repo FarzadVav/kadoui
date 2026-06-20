@@ -1,15 +1,31 @@
-@utility join {
-  @apply flex items-center ltr:*:not-first:rounded-l-none ltr:*:not-last:rounded-r-none rtl:*:not-first:rounded-r-none rtl:*:not-last:rounded-l-none;
+@utility join-x {
+  @apply flex *:not-first:rounded-s-none *:not-last:rounded-e-none;
 }
 
-@utility join-border {
+@utility join-x-border {
   @apply *:not-first:border-s-0 *:not-last:border-e;
 }
 
-@utility join-no-border {
+@utility join-x-no-border {
   @apply *:first:border-e-0 *:last:border-s-0 *:not-first:not-last:border-x-0;
 }
 
-@utility join-fix-border {
+@utility join-x-fix-border {
   @apply *:not-first:border-s-0;
+}
+
+@utility join-y {
+  @apply flex flex-col *:not-first:rounded-t-none *:not-last:rounded-b-none;
+}
+
+@utility join-y-border {
+  @apply *:not-first:border-t-0 *:not-last:border-b;
+}
+
+@utility join-y-no-border {
+  @apply *:first:border-b-0 *:last:border-t-0 *:not-first:not-last:border-y-0;
+}
+
+@utility join-y-fix-border {
+  @apply *:not-first:border-t-0;
 }

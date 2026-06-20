@@ -586,54 +586,94 @@ function Page() {
       </div>
       <div className="wrapper mt-20">
         <p className="heading">Joins</p>
-        <div className="mt-6 space-y-3">
-          <p className="title mt-6">Basic</p>
-          <div className="join">
-            <label className="input input-ghost-outline">
-              <SearchIcon />
-              <input type="text" className="input-field" />
-            </label>
-            <button className="btn btn-soft">Search</button>
+        <div className="space-y-6 mt-6">
+          <div className="space-y-3">
+            <p className="title">X Joins</p>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Basic</p>
+              <div className="join-x">
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input type="text" className="input-field" />
+                </label>
+                <button className="btn btn-soft">Search</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Border</p>
+              <div className="join-x join-x-border">
+                <button className="btn btn-ghost">One</button>
+                <button className="btn btn-ghost">Two</button>
+                <button className="btn btn-ghost">Three</button>
+                <button className="btn btn-ghost">Three</button>
+                <button className="btn btn-ghost">Four</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">No Border</p>
+              <div className="join-x join-x-no-border">
+                <button className="btn btn-soft-outline">
+                  <TrashIcon className="text-error" />
+                </button>
+                <button className="btn btn-soft-outline">
+                  <SearchIcon />
+                </button>
+                <label className="input input-ghost-outline">
+                  <input type="text" className="input-field" />
+                </label>
+                <button className="btn btn-soft-outline">Search</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Fix Border</p>
+              <div className="join-x join-x-fix-border">
+                <button className="btn btn-soft-outline">
+                  <TrashIcon className="text-error" />
+                </button>
+                <button className="btn btn-soft-outline">
+                  <SearchIcon />
+                </button>
+                <label className="input input-ghost-outline">
+                  <input type="text" className="input-field" />
+                </label>
+                <button className="btn btn-soft-outline">Search</button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="mt-6 space-y-3">
-          <p className="title mt-6">Border</p>
-          <div className="join join-border">
-            <button className="btn btn-ghost">One</button>
-            <button className="btn btn-ghost">Two</button>
-            <button className="btn btn-ghost">Three</button>
-            <button className="btn btn-ghost">Three</button>
-            <button className="btn btn-ghost">Four</button>
-          </div>
-        </div>
-        <div className="mt-6 space-y-3">
-          <p className="title mt-6">No Border</p>
-          <div className="join join-no-border">
-            <button className="btn btn-soft-outline">
-              <TrashIcon className="text-error" />
-            </button>
-            <button className="btn btn-soft-outline">
-              <SearchIcon />
-            </button>
-            <label className="input input-ghost-outline">
-              <input type="text" className="input-field" />
-            </label>
-            <button className="btn btn-soft-outline">Search</button>
-          </div>
-        </div>
-        <div className="mt-6 space-y-3">
-          <p className="title mt-6">Fix Border</p>
-          <div className="join join-fix-border">
-            <button className="btn btn-soft-outline">
-              <TrashIcon className="text-error" />
-            </button>
-            <button className="btn btn-soft-outline">
-              <SearchIcon />
-            </button>
-            <label className="input input-ghost-outline">
-              <input type="text" className="input-field" />
-            </label>
-            <button className="btn btn-soft-outline">Search</button>
+          <div className="space-y-3">
+            <p className="title">Y Joins</p>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Basic</p>
+              <div className="join-y">
+                <button className="btn btn-soft">Search</button>
+                <button className="btn btn-soft">Search</button>
+                <button className="btn btn-soft">Search</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Border</p>
+              <div className="join-y join-y-border">
+                <button className="btn btn-soft">Search</button>
+                <button className="btn btn-soft">Search</button>
+                <button className="btn btn-soft">Search</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">No Border</p>
+              <div className="join-y join-y-no-border">
+                <button className="btn btn-soft-outline">Search</button>
+                <button className="btn btn-soft-outline">Search</button>
+                <button className="btn btn-soft-outline">Search</button>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <p className="title mt-6">Fix Border</p>
+              <div className="join-y join-y-fix-border">
+                <button className="btn btn-soft-outline">Search</button>
+                <button className="btn btn-soft-outline">Search</button>
+                <button className="btn btn-soft-outline">Search</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -669,10 +709,18 @@ function Page() {
         </div>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Xl</p>
-          <div className="bg-card separate-t separate-xl border-dashed border-error">Separate top</div>
-          <div className="bg-card separate-r separate-xl border-double border-success">Separate right</div>
-          <div className="bg-card separate-b separate-xl border-dotted border-primary">Separate bottom</div>
-          <div className="bg-card separate-l separate-xl border-double border-secondary">Separate left</div>
+          <div className="bg-card separate-t separate-xl border-dashed border-error">
+            Separate top
+          </div>
+          <div className="bg-card separate-r separate-xl border-double border-success">
+            Separate right
+          </div>
+          <div className="bg-card separate-b separate-xl border-dotted border-primary">
+            Separate bottom
+          </div>
+          <div className="bg-card separate-l separate-xl border-double border-secondary">
+            Separate left
+          </div>
         </div>
       </div>
 
@@ -684,14 +732,31 @@ function Page() {
         </p>
       </div>
       <div className="wrapper my-20">
-        <div>
-          <p className="heading">AccessNavigation</p>
-          <AccessNavigation direction="x" className="join join-border mt-6">
-            <button className="btn btn-soft">One</button>
-            <button className="btn btn-soft">Two</button>
-            <button className="btn btn-soft">Three</button>
-            <button className="btn btn-soft">Four</button>
-          </AccessNavigation>
+        <div className="space-y-6">
+          <div className="space-y-3">
+            <p className="heading">X AccessNavigation</p>
+            <AccessNavigation
+              direction="x"
+              className="join-x join-x-border mt-3"
+            >
+              <button className="acn btn btn-soft">One</button>
+              <button className="acn btn btn-soft">Two</button>
+              <button className="acn btn btn-soft">Three</button>
+              <button className="acn btn btn-soft">Four</button>
+            </AccessNavigation>
+          </div>
+          <div className="space-y-3">
+            <p className="heading">Y AccessNavigation</p>
+            <AccessNavigation
+              direction="y"
+              className="card card-y bg-card mt-3"
+            >
+              <button className="acn btn btn-soft btn-row">One</button>
+              <button className="acn btn btn-soft btn-row">Two</button>
+              <button className="acn btn btn-soft btn-row">Three</button>
+              <button className="acn btn btn-soft btn-row">Four</button>
+            </AccessNavigation>
+          </div>
         </div>
 
         <p className="heading mt-20">Accordion</p>
@@ -1604,7 +1669,7 @@ function Page() {
 
         <p className="heading mt-20">Tabs</p>
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
-          <Tabs.List className="join join-border mt-6" direction="x">
+          <Tabs.List className="join-x join-x-border mt-6" direction="x">
             <Tabs.Tab
               value="1"
               className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"

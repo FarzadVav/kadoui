@@ -46,16 +46,19 @@ npm install react react-dom
 ### Optional Dependencies
 
 For animations, we use `framer-motion`:
+
 ```bash
 npm install framer-motion
 ```
 
 For icons, we recommend `lucide-react`:
+
 ```bash
 npm install lucide-react
 ```
 
 For styling, we recommend `@kadoui/css`:
+
 ```bash
 npm install @kadoui/css
 ```
@@ -92,6 +95,7 @@ function App() {
 Add keyboard navigation (arrow keys) to your UI elements.
 
 **Props:**
+
 - `direction: "x" | "y"` - Navigation direction
 - `focusTrap?: boolean` - Auto-focus first element on mount
 - `dir?: "ltr" | "rtl"` - Text direction (defaults to document direction)
@@ -101,11 +105,11 @@ Add keyboard navigation (arrow keys) to your UI elements.
 ```tsx
 import { AccessNavigation } from "@kadoui/react";
 
-<AccessNavigation direction="x" className="join">
+<AccessNavigation direction="x" className="join-x">
   <button className="btn">One</button>
   <button className="btn">Two</button>
   <button className="btn">Three</button>
-</AccessNavigation>
+</AccessNavigation>;
 ```
 
 **Vertical Navigation:**
@@ -125,6 +129,7 @@ import { AccessNavigation } from "@kadoui/react";
 A collapsible content component.
 
 **Components:**
+
 - `Accordion` (Root) - Wrapper component
 - `Accordion.Toggle` - Button to toggle accordion
 - `Accordion.Body` - Collapsible content
@@ -145,10 +150,11 @@ import { ChevronDownIcon } from "lucide-react";
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
   </Accordion.Body>
-</Accordion>
+</Accordion>;
 ```
 
 **API:**
+
 - `Accordion` - Accepts `PropsWithChildren`
 - `Accordion.Toggle` - Accepts `ComponentProps<"button"> & { icon?: ReactNode }`
 - `Accordion.Body` - Accepts `HTMLMotionProps<"div">`
@@ -160,6 +166,7 @@ import { ChevronDownIcon } from "lucide-react";
 A button that appears when scrolling down, typically used for "scroll to top" functionality.
 
 **Props:**
+
 - `AffixPropsT` - Extends `ComponentProps<"button">`
 
 **Example:**
@@ -170,7 +177,7 @@ import { ArrowUpIcon } from "lucide-react";
 
 <Affix className="btn btn-fill fixed bottom-4 right-4">
   <ArrowUpIcon />
-</Affix>
+</Affix>;
 ```
 
 The component automatically shows/hides based on scroll position and scrolls to top when clicked.
@@ -182,10 +189,12 @@ The component automatically shows/hides based on scroll position and scrolls to 
 Display navigation hierarchy.
 
 **Components:**
+
 - `Breadcrumbs` (Root) - Requires `separator: ReactNode` prop
 - `Breadcrumbs.Item` - Individual breadcrumb item
 
 **Props:**
+
 - `Breadcrumbs` - `ComponentProps<"nav"> & { separator: ReactNode }`
 - `Breadcrumbs.Item` - `ComponentProps<"div"> & { isLastItem?: boolean }`
 
@@ -205,7 +214,7 @@ import { ChevronRightIcon } from "lucide-react";
   <Breadcrumbs.Item isLastItem className="breadcrumbs-item">
     <button className="btn btn-fill">Current Page</button>
   </Breadcrumbs.Item>
-</Breadcrumbs>
+</Breadcrumbs>;
 ```
 
 ---
@@ -215,6 +224,7 @@ import { ChevronRightIcon } from "lucide-react";
 A horizontal scrolling carousel with fade effects and navigation buttons.
 
 **Components:**
+
 - `Carousel` (Root) - Accepts `mouseScroll?: "auto" | "swipe"`
 - `Carousel.Container` - Scrollable container (children must have `carousel-children` class)
 - `Carousel.LeftFade` - Left fade overlay
@@ -223,6 +233,7 @@ A horizontal scrolling carousel with fade effects and navigation buttons.
 - `Carousel.NextBtn` - Next button
 
 **Props:**
+
 - `Carousel` - `ComponentProps<"div"> & { mouseScroll?: "auto" | "swipe" }`
 - `mouseScroll="auto"` - Smooth scrolling with mouse drag
 - `mouseScroll="swipe"` - Snap to items on swipe
@@ -253,7 +264,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
       <ArrowRightIcon />
     </Carousel.NextBtn>
   </div>
-</Carousel>
+</Carousel>;
 ```
 
 **Important:** Children inside `Carousel.Container` must have the `carousel-children` class for proper width calculation.
@@ -265,11 +276,13 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 A flexible component for radio buttons, checkboxes, filters, and switches.
 
 **Components:**
+
 - `Choice` (Root) - Manages choice state
 - `Choice.Trigger` - Individual choice trigger
 - `Choice.Navigation` - Optional keyboard navigation wrapper
 
 **Props:**
+
 - `Choice` - `ComponentProps<"div"> & ChoiceContextT`
   - `multiple?: boolean` - Enable multiple selection
   - `activeChoice: string | string[] | null` - Current selection
@@ -293,7 +306,7 @@ const [choice, setChoice] = useState<string | null>("1");
       Option 2
     </Choice.Trigger>
   </Choice.Navigation>
-</Choice>
+</Choice>;
 ```
 
 **Multiple Selection (Checkbox/Filter):**
@@ -310,16 +323,16 @@ const [filters, setFilters] = useState<string[]>([]);
       Filter 2
     </Choice.Trigger>
   </Choice.Navigation>
-</Choice>
+</Choice>;
 ```
 
 **Required One (Prevent Empty Selection):**
 
 ```tsx
-<Choice 
-  multiple 
-  requiredOne 
-  activeChoice={filters} 
+<Choice
+  multiple
+  requiredOne
+  activeChoice={filters}
   setActiveChoice={setFilters}
 >
   {/* At least one item must always be selected */}
@@ -333,6 +346,7 @@ const [filters, setFilters] = useState<string[]>([]);
 Render children only on the client side (useful for SSR).
 
 **Props:**
+
 - `ClientOnlyPropsT` - `PropsWithChildren`
 
 **Example:**
@@ -353,6 +367,7 @@ import { ClientOnly } from "@kadoui/react";
 Copy text to clipboard with visual feedback.
 
 **Props:**
+
 - `ClipboardPropsT` - `ComponentProps<"button"> & { text: string; timeout?: number; copiedChildren?: ReactNode }`
   - `text: string` - Text to copy
   - `timeout?: number` - Timeout for copied state (default: 3000ms)
@@ -371,7 +386,7 @@ import { CopyIcon, CopyCheckIcon } from "lucide-react";
   timeout={2000}
 >
   <CopyIcon />
-</Clipboard>
+</Clipboard>;
 ```
 
 ---
@@ -381,6 +396,7 @@ import { CopyIcon, CopyCheckIcon } from "lucide-react";
 Right-click context menu.
 
 **Components:**
+
 - `ContextMenu` (Root) - Wrapper (responds to right-click)
 - `ContextMenu.Body` - Menu content
 - `ContextMenu.Item` - Menu item
@@ -407,10 +423,11 @@ import { TrashIcon, RefreshCwIcon } from "lucide-react";
       </ContextMenu.Item>
     </ContextMenu.Navigation>
   </ContextMenu.Body>
-</ContextMenu>
+</ContextMenu>;
 ```
 
 **API:**
+
 - `ContextMenu` - `ComponentProps<"div">`
 - `ContextMenu.Body` - `ComponentProps<"div">`
 - `ContextMenu.Item` - `ComponentProps<"button">`
@@ -423,12 +440,14 @@ import { TrashIcon, RefreshCwIcon } from "lucide-react";
 Slide-out panel from any edge.
 
 **Components:**
+
 - `Drawer` (Root)
 - `Drawer.Toggle` - Button to open drawer
 - `Drawer.Portal` - Portal wrapper (required)
 - `Drawer.Body` - Drawer content
 
 **Props:**
+
 - `Drawer` - `PropsWithChildren`
 - `Drawer.Body` - `HTMLMotionProps<"div"> & { position?: "top" | "right" | "bottom" | "left" }`
 
@@ -445,10 +464,11 @@ import { Drawer } from "@kadoui/react";
       <p>Drawer content</p>
     </Drawer.Body>
   </Drawer.Portal>
-</Drawer>
+</Drawer>;
 ```
 
 **Positions:**
+
 - `position="left"` (default in LTR)
 - `position="right"` (default in RTL)
 - `position="top"`
@@ -470,6 +490,7 @@ Add `data-drawer="focus"` to any focusable element to auto-focus when drawer ope
 Centered modal dialog.
 
 **Components:**
+
 - `Modal` (Root) - Accepts `defaultOpen?: boolean`
 - `Modal.Toggle` - Button to toggle modal
 - `Modal.Portal` - Portal wrapper (required)
@@ -487,15 +508,13 @@ import { Modal } from "@kadoui/react";
 
   <Modal.Portal className="modal-portal">
     <Modal.Body className="modal-body">
-      <Modal.Header className="modal-header">
-        Modal Title
-      </Modal.Header>
+      <Modal.Header className="modal-header">Modal Title</Modal.Header>
       <Modal.Content className="modal-content">
         <p>Modal content goes here</p>
       </Modal.Content>
     </Modal.Body>
   </Modal.Portal>
-</Modal>
+</Modal>;
 ```
 
 **Focus Management:**
@@ -508,6 +527,7 @@ Add `data-modal="focus"` to auto-focus when modal opens:
 ```
 
 **API:**
+
 - `Modal` - `PropsWithChildren & { defaultOpen?: boolean }`
 - `Modal.Toggle` - `ComponentProps<"button">`
 - `Modal.Portal` - `HTMLMotionProps<"div">`
@@ -522,11 +542,13 @@ Add `data-modal="focus"` to auto-focus when modal opens:
 Input component for OTP codes with auto-advance and paste support.
 
 **Components:**
+
 - `Otp` (Root) - Accepts `autoFocus?: boolean`
 - `Otp.Inputs` - Renders multiple inputs
 - `Otp.HiddenInput` - Hidden input for form submission
 
 **Props:**
+
 - `Otp` - `Omit<AccessNavigationPropsT, "direction"> & { autoFocus?: boolean }`
 - `Otp.Inputs` - `ComponentProps<"input"> & { length: number; onLastChange?: (otp: string) => void }`
 - `Otp.HiddenInput` - `ComponentProps<"input">`
@@ -543,10 +565,11 @@ import { Otp } from "@kadoui/react";
     onLastChange={(otp) => console.log("OTP:", otp)}
   />
   <Otp.HiddenInput name="otp" />
-</Otp>
+</Otp>;
 ```
 
 **Features:**
+
 - Auto-advances to next input on typing
 - Supports paste (pastes across all inputs)
 - Backspace navigates to previous input
@@ -559,10 +582,12 @@ import { Otp } from "@kadoui/react";
 Pagination component with two variants: state-based and URL search params-based.
 
 **Variants:**
+
 - `PaginationWithState` - Uses React state
 - `PaginationWithSearchParams` - Uses URL search params (Next.js)
 
 **Components:**
+
 - `PaginationWithState` / `PaginationWithSearchParams` (Root)
 - `.Pages` - Renders page content (when using `pages` prop)
 - `.Counts` - Page number buttons
@@ -570,6 +595,7 @@ Pagination component with two variants: state-based and URL search params-based.
 - `.NextBtn` - Next button
 
 **Props:**
+
 - Root: `PaginationPropsT` - `ComponentProps<"div"> & (PaginationWithLengthT | PaginationWithPagesT)`
   - `pagesLength: number` OR `pages: PaginationPagesT[]`
   - `PaginationWithState` also requires: `page: number; setPage: Dispatch<SetStateAction<number>>`
@@ -593,7 +619,7 @@ const [page, setPage] = useState(1);
       <ChevronRightIcon />
     </PaginationWithState.NextBtn>
   </div>
-</PaginationWithState>
+</PaginationWithState>;
 ```
 
 **With Search Params (Next.js):**
@@ -614,7 +640,7 @@ import { Suspense } from "react";
       </PaginationWithSearchParams.NextBtn>
     </div>
   </PaginationWithSearchParams>
-</Suspense>
+</Suspense>;
 ```
 
 **With Custom Pages:**
@@ -623,18 +649,18 @@ import { Suspense } from "react";
 const pages = [
   {
     name: "Page 1",
-    component: <div>Page 1 Content</div>
+    component: <div>Page 1 Content</div>,
   },
   {
     name: "Page 2",
-    component: <div>Page 2 Content</div>
-  }
+    component: <div>Page 2 Content</div>,
+  },
 ];
 
 <PaginationWithState pages={pages} page={page} setPage={setPage}>
   <PaginationWithState.Pages />
   {/* Navigation buttons */}
-</PaginationWithState>
+</PaginationWithState>;
 ```
 
 ---
@@ -644,6 +670,7 @@ const pages = [
 Password input with visibility toggle.
 
 **Components:**
+
 - `PasswordInput` (Root)
 - `PasswordInput.Field` - Input field
 - `PasswordInput.Toggle` - Visibility toggle button
@@ -662,10 +689,11 @@ import { EyeIcon, EyeClosedIcon } from "lucide-react";
   >
     <EyeClosedIcon />
   </PasswordInput.Toggle>
-</PasswordInput>
+</PasswordInput>;
 ```
 
 **API:**
+
 - `PasswordInput` - `ComponentProps<"label">`
 - `PasswordInput.Field` - `ComponentProps<"input">`
 - `PasswordInput.Toggle` - `ComponentProps<"button"> & { visibleChildren: ReactNode }`
@@ -677,12 +705,14 @@ import { EyeIcon, EyeClosedIcon } from "lucide-react";
 Popover component with multiple trigger modes.
 
 **Components:**
+
 - `Popover` (Root) - Accepts `mode?: "click" | "hover" | "both"`
 - `Popover.Toggle` - Trigger button
 - `Popover.Body` - Popover content
 - `Popover.Navigation` - Optional keyboard navigation
 
 **Props:**
+
 - `Popover` - `ComponentProps<"div"> & { mode?: "click" | "hover" | "both" }`
 - `Popover.Body` - `ComponentProps<"div"> & { preventClose?: boolean }`
 
@@ -693,10 +723,8 @@ import { Popover } from "@kadoui/react";
 
 <Popover mode="click" className="popover">
   <Popover.Toggle className="btn">Click me</Popover.Toggle>
-  <Popover.Body className="popover-body card">
-    Popover content
-  </Popover.Body>
-</Popover>
+  <Popover.Body className="popover-body card">Popover content</Popover.Body>
+</Popover>;
 ```
 
 **Hover Mode:**
@@ -704,9 +732,7 @@ import { Popover } from "@kadoui/react";
 ```tsx
 <Popover mode="hover" className="popover">
   <Popover.Toggle className="btn">Hover me</Popover.Toggle>
-  <Popover.Body className="popover-body card">
-    Popover content
-  </Popover.Body>
+  <Popover.Body className="popover-body card">Popover content</Popover.Body>
 </Popover>
 ```
 
@@ -715,9 +741,7 @@ import { Popover } from "@kadoui/react";
 ```tsx
 <Popover mode="both" className="popover">
   <Popover.Toggle className="btn">Hover or click</Popover.Toggle>
-  <Popover.Body className="popover-body card">
-    Popover content
-  </Popover.Body>
+  <Popover.Body className="popover-body card">Popover content</Popover.Body>
 </Popover>
 ```
 
@@ -756,6 +780,7 @@ import { Popover } from "@kadoui/react";
 Render children into a different DOM node.
 
 **Props:**
+
 - `PortalPropsT` - `PropsWithChildren & { container?: Element }`
 
 **Example:**
@@ -765,7 +790,7 @@ import { Portal } from "@kadoui/react";
 
 <Portal container={document.getElementById("portal-root")}>
   <p>This renders in a different DOM node</p>
-</Portal>
+</Portal>;
 ```
 
 **Default Behavior:**
@@ -778,10 +803,12 @@ If no `container` is provided, children are rendered into `document.body`.
 Progress bar component.
 
 **Components:**
+
 - `Progress` (Root) - Requires `value: number; maxValue?: number`
 - `Progress.Bar` - Progress bar element
 
 **Props:**
+
 - `Progress` - `ComponentProps<"div"> & { value: number; maxValue?: number }`
 - `Progress.Bar` - `HTMLMotionProps<"div"> & { duration?: number }`
 
@@ -792,7 +819,7 @@ import { Progress } from "@kadoui/react";
 
 <Progress className="progress" value={45} maxValue={100}>
   <Progress.Bar className="progress-bar" duration={2} />
-</Progress>
+</Progress>;
 ```
 
 **With Custom Content:**
@@ -812,6 +839,7 @@ import { Progress } from "@kadoui/react";
 Generate QR codes from text/URLs.
 
 **Props:**
+
 - `QrCodePropsT` - `ComponentProps<"canvas"> & { value: string; options?: QRCodeRenderersOptions }`
 
 **Example:**
@@ -823,7 +851,7 @@ import { QrCode } from "@kadoui/react";
   className="w-96 rounded-lg"
   value="https://github.com/FarzadVav"
   options={{ width: 384, margin: 2 }}
-/>
+/>;
 ```
 
 **Options:**
@@ -836,10 +864,12 @@ See [qrcode library options](https://www.npmjs.com/package/qrcode#options) for a
 Star rating component with hover effects.
 
 **Components:**
+
 - `Rating` (Root)
 - `Rating.Items` - Rating items
 
 **Props:**
+
 - `Rating` - `ComponentProps<"div">`
 - `Rating.Items` - `ComponentProps<"button"> & { count: number; value: number; onValueChange: (value: number) => void; element: ReactNode; activeElement: ReactNode }`
 
@@ -861,7 +891,7 @@ const [rating, setRating] = useState(3);
     element={<StarIcon className="size-9" />}
     activeElement={<StarIcon className="fill-foreground size-9" />}
   />
-</Rating>
+</Rating>;
 ```
 
 ---
@@ -871,6 +901,7 @@ const [rating, setRating] = useState(3);
 Advanced select component with search and multi-select support.
 
 **Components:**
+
 - `SelectBox` (Root) - Requires `options: SelectBoxOptionT[]` and selection state
 - `SelectBox.Input` - Input wrapper
 - `SelectBox.Field` - Display field
@@ -880,6 +911,7 @@ Advanced select component with search and multi-select support.
 - `SelectBox.Options` - Option buttons
 
 **Types:**
+
 ```tsx
 type SelectBoxOptionT = { name: string; value: string };
 ```
@@ -894,14 +926,14 @@ import { useState } from "react";
 const options: SelectBoxOptionT[] = [
   { name: "one", value: "One" },
   { name: "two", value: "Two" },
-  { name: "three", value: "Three" }
+  { name: "three", value: "Three" },
 ];
 
 const [selected, setSelected] = useState<SelectBoxOptionT | null>(null);
 
-<SelectBox 
-  options={options} 
-  optionValue={selected} 
+<SelectBox
+  options={options}
+  optionValue={selected}
   setOptionValue={setSelected}
 >
   <SelectBox.Input className="select-box-input input">
@@ -915,7 +947,7 @@ const [selected, setSelected] = useState<SelectBoxOptionT | null>(null);
       <SelectBox.Options className="select-box-option btn" />
     </SelectBox.List>
   </SelectBox.Input>
-</SelectBox>
+</SelectBox>;
 ```
 
 **Multi Select:**
@@ -923,17 +955,18 @@ const [selected, setSelected] = useState<SelectBoxOptionT | null>(null);
 ```tsx
 const [selected, setSelected] = useState<SelectBoxOptionT[]>([]);
 
-<SelectBox 
+<SelectBox
   multiSelect
-  options={options} 
-  optionValue={selected} 
+  options={options}
+  optionValue={selected}
   setOptionValue={setSelected}
 >
   {/* Same structure as single select */}
-</SelectBox>
+</SelectBox>;
 ```
 
 **API:**
+
 - `SelectBox` - `ComponentPropsWithoutRef<"div"> & MergedSelectMode & { options: SelectBoxOptionT[] }`
 - `SelectBox.Field` - `ComponentProps<"input">`
 - `SelectBox.SearchField` - `ComponentProps<"input">`
@@ -946,6 +979,7 @@ const [selected, setSelected] = useState<SelectBoxOptionT[]>([]);
 Bottom sheet component (mobile-friendly drawer from bottom).
 
 **Components:**
+
 - `Sheet` (Root)
 - `Sheet.Toggle` - Toggle button
 - `Sheet.Portal` - Portal wrapper
@@ -972,10 +1006,11 @@ import { Sheet } from "@kadoui/react";
       </Sheet.Content>
     </Sheet.Body>
   </Sheet.Portal>
-</Sheet>
+</Sheet>;
 ```
 
 **Features:**
+
 - Drag to close (drag down)
 - Auto-focus support with `data-sheet="focus"`
 - Smooth animations
@@ -987,6 +1022,7 @@ import { Sheet } from "@kadoui/react";
 Truncate text with "show more" functionality.
 
 **Components:**
+
 - `ShowMore` (Root) - Requires `maxLines: number; defaultExpanded?: boolean`
 - `ShowMore.Content` - Content to truncate
 - `ShowMore.Fade` - Fade overlay (shown when collapsed)
@@ -1003,10 +1039,11 @@ import { ShowMore } from "@kadoui/react";
   </ShowMore.Content>
   <ShowMore.Fade className="show-more-fade" />
   <ShowMore.Toggle className="btn">Show more</ShowMore.Toggle>
-</ShowMore>
+</ShowMore>;
 ```
 
 **API:**
+
 - `ShowMore` - `ComponentProps<"div"> & { maxLines: number; defaultExpanded?: boolean }`
 - `ShowMore.Content` - `ComponentProps<"div">`
 - `ShowMore.Fade` - `ComponentProps<"div">`
@@ -1019,6 +1056,7 @@ import { ShowMore } from "@kadoui/react";
 Click to reveal hidden text (useful for spoiler warnings).
 
 **Components:**
+
 - `Spoiler` (Root)
 - `Spoiler.Blur` - Blurred/hidden content
 
@@ -1035,10 +1073,11 @@ import { Spoiler } from "@kadoui/react";
     </Spoiler.Blur>
   </Spoiler>{" "}
   elit.
-</p>
+</p>;
 ```
 
 **API:**
+
 - `Spoiler` - `ComponentProps<"span">`
 - `Spoiler.Blur` - `ComponentProps<"span">`
 
@@ -1049,6 +1088,7 @@ import { Spoiler } from "@kadoui/react";
 Form submit button with loading state.
 
 **Components:**
+
 - `Submit` (Root) - Must be inside a `<form>` with `action`
 - `Submit.Loader` - Loading indicator
 
@@ -1058,24 +1098,28 @@ Form submit button with loading state.
 import { Submit } from "@kadoui/react";
 import { SendHorizonalIcon, LoaderIcon } from "lucide-react";
 
-<form action={async () => {
-  await new Promise(resolve => setTimeout(resolve, 1000));
-}}>
+<form
+  action={async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }}
+>
   <Submit className="btn">
     <span>Submit</span>
     <Submit.Loader loader={<LoaderIcon className="animate-spin" />}>
       <SendHorizonalIcon />
     </Submit.Loader>
   </Submit>
-</form>
+</form>;
 ```
 
 **Features:**
+
 - Automatically disabled during form submission
 - Uses React Server Actions (`useFormStatus`)
 - Shows loader during pending state
 
 **API:**
+
 - `Submit` - `ComponentProps<"button"> & { loader?: ReactNode }`
 - `Submit.Loader` - `PropsWithChildren & { loader: ReactNode }`
 
@@ -1086,6 +1130,7 @@ import { SendHorizonalIcon, LoaderIcon } from "lucide-react";
 Cycle through different states/content.
 
 **Components:**
+
 - `Swap` (Root) - Requires `keys: string[]; activeKey: string; setActiveKey: Dispatch<SetStateAction<string>>`
 - `Swap.Btn` - Button that cycles through keys
 
@@ -1108,10 +1153,11 @@ const [swapKey, setSwapKey] = useState(SWAP_KEYS[0]);
   <Swap.Btn className="btn" btnKey={SWAP_KEYS[2]}>
     {SWAP_KEYS[2]}
   </Swap.Btn>
-</Swap>
+</Swap>;
 ```
 
 **Behavior:**
+
 - Only the button matching `activeKey` is rendered
 - Clicking cycles to the next key in the array
 - Wraps around (last → first)
@@ -1123,6 +1169,7 @@ const [swapKey, setSwapKey] = useState(SWAP_KEYS[0]);
 Tabbed interface component.
 
 **Components:**
+
 - `Tabs` (Root) - Requires `activeTab: string; setActiveTab: Dispatch<SetStateAction<string>>`
 - `Tabs.List` - Tab list container
 - `Tabs.Tab` - Individual tab button
@@ -1152,7 +1199,7 @@ const [activeTab, setActiveTab] = useState("1");
   <Tabs.Panel value="2" className="tabs-panel">
     Content for Tab 2
   </Tabs.Panel>
-</Tabs>
+</Tabs>;
 ```
 
 **With AccessNavigation:**
@@ -1162,16 +1209,21 @@ import { AccessNavigation } from "@kadoui/react";
 
 <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
   <AccessNavigation direction="x">
-    <Tabs.List className="join">
-      <Tabs.Tab value="1" className="btn">Tab 1</Tabs.Tab>
-      <Tabs.Tab value="2" className="btn">Tab 2</Tabs.Tab>
+    <Tabs.List className="join-x">
+      <Tabs.Tab value="1" className="btn">
+        Tab 1
+      </Tabs.Tab>
+      <Tabs.Tab value="2" className="btn">
+        Tab 2
+      </Tabs.Tab>
     </Tabs.List>
   </AccessNavigation>
   {/* Panels */}
-</Tabs>
+</Tabs>;
 ```
 
 **API:**
+
 - `Tabs` - `PropsWithChildren & { activeTab: string; setActiveTab: Dispatch<SetStateAction<string>> }`
 - `Tabs.List` - `AccessNavigationPropsT`
 - `Tabs.Tab` - `ComponentProps<"button"> & { value: string }`
@@ -1184,6 +1236,7 @@ import { AccessNavigation } from "@kadoui/react";
 Theme management with dark/light/system modes.
 
 **Components & Hooks:**
+
 - `ThemeProvider` - Context provider (wrap your app)
 - `ThemeScript` - SSR script (add to `<head>`)
 - `useTheme` - Hook to access theme
@@ -1197,7 +1250,7 @@ import { ThemeScript } from "@kadoui/react";
 
 <head>
   <ThemeScript />
-</head>
+</head>;
 ```
 
 2. Wrap your app with `ThemeProvider`:
@@ -1206,11 +1259,7 @@ import { ThemeScript } from "@kadoui/react";
 import { ThemeProvider } from "@kadoui/react";
 
 function App() {
-  return (
-    <ThemeProvider>
-      {/* Your app */}
-    </ThemeProvider>
-  );
+  return <ThemeProvider>{/* Your app */}</ThemeProvider>;
 }
 ```
 
@@ -1233,6 +1282,7 @@ function ThemeToggle() {
 ```
 
 **Types:**
+
 ```tsx
 type ThemeT = "dark" | "light" | "system";
 ```
@@ -1246,6 +1296,7 @@ type ThemeT = "dark" | "light" | "system";
 Show loading state during Next.js Link navigation.
 
 **Import:**
+
 ```tsx
 import { LinkLoader } from "@kadoui/react/next";
 ```
@@ -1262,7 +1313,7 @@ import { ArrowRightIcon, LoaderIcon } from "lucide-react";
   <LinkLoader loader={<LoaderIcon className="animate-spin" />}>
     <ArrowRightIcon />
   </LinkLoader>
-</Link>
+</Link>;
 ```
 
 ---
@@ -1276,6 +1327,7 @@ import { cn, getBrowserScrollbarWidth } from "@kadoui/react/utils";
 ```
 
 **Available Utilities:**
+
 - `cn` - Class name utility (clsx + tailwind-merge)
 - `getBrowserScrollbarWidth` - Get browser scrollbar width
 - Form utilities (see source for details)
@@ -1287,10 +1339,10 @@ import { cn, getBrowserScrollbarWidth } from "@kadoui/react/utils";
 All components are fully typed. Import types as needed:
 
 ```tsx
-import type { 
+import type {
   SelectBoxOptionT,
   ModalRootPropsT,
-  AccordionContextT 
+  AccordionContextT,
 } from "@kadoui/react";
 ```
 

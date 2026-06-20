@@ -388,11 +388,7 @@ Centered container with max-width:
 Styled link with hover underline:
 
 ```html
-<a
-  href="#"
-  class="link"
-  >Link text</a
->
+<a href="#" class="link">Link text</a>
 ```
 
 #### Highlight
@@ -475,11 +471,7 @@ Buttons automatically handle:
 **Example:**
 
 ```html
-<button
-  class="btn btn-fill"
-  disabled>
-  Disabled
-</button>
+<button class="btn btn-fill" disabled>Disabled</button>
 ```
 
 #### Button Sizes
@@ -510,7 +502,9 @@ Buttons automatically handle:
 
 ```html
 <!-- Active state -->
-<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">Toggle</button>
+<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">
+  Toggle
+</button>
 ```
 
 ---
@@ -523,10 +517,7 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Enter text" />
+  <input type="text" class="input-field" placeholder="Enter text" />
 </label>
 ```
 
@@ -540,18 +531,12 @@ Inputs are built using `<label>` elements for better accessibility.
 ```html
 <!-- Outlined input -->
 <label class="input input-outline">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Outlined" />
+  <input type="text" class="input-field" placeholder="Outlined" />
 </label>
 
 <!-- Soft input -->
 <label class="input input-soft">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Soft" />
+  <input type="text" class="input-field" placeholder="Soft" />
 </label>
 ```
 
@@ -560,10 +545,7 @@ Inputs are built using `<label>` elements for better accessibility.
 ```html
 <label class="input input-outline">
   <SearchIcon class="element-icon-size" />
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Search" />
+  <input type="text" class="input-field" placeholder="Search" />
 </label>
 ```
 
@@ -571,24 +553,15 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline element-xs">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="XS" />
+  <input type="text" class="input-field" placeholder="XS" />
 </label>
 
 <label class="input input-outline element-sm">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="SM" />
+  <input type="text" class="input-field" placeholder="SM" />
 </label>
 
 <label class="input input-outline">
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Default" />
+  <input type="text" class="input-field" placeholder="Default" />
 </label>
 ```
 
@@ -596,9 +569,7 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline">
-  <textarea
-    class="input-field"
-    placeholder="Message"></textarea>
+  <textarea class="input-field" placeholder="Message"></textarea>
 </label>
 ```
 
@@ -606,9 +577,7 @@ Inputs are built using `<label>` elements for better accessibility.
 
 ```html
 <label class="input input-outline">
-  <input
-    type="file"
-    class="input-field" />
+  <input type="file" class="input-field" />
 </label>
 ```
 
@@ -756,7 +725,7 @@ Join elements together seamlessly.
 #### Base Join
 
 ```html
-<div class="join">
+<div class="join-x">
   <button class="btn">One</button>
   <button class="btn">Two</button>
   <button class="btn">Three</button>
@@ -766,7 +735,7 @@ Join elements together seamlessly.
 #### Join with Border
 
 ```html
-<div class="join join-border">
+<div class="join-x join-x-border">
   <button class="btn btn-outline">One</button>
   <button class="btn btn-outline">Two</button>
   <button class="btn btn-outline">Three</button>
@@ -778,7 +747,7 @@ Join elements together seamlessly.
 Removes double borders:
 
 ```html
-<div class="join join-border join-fix-border">
+<div class="join-x join-x-border join-x-fix-border">
   <button class="btn btn-outline">One</button>
   <button class="btn btn-outline">Two</button>
 </div>
@@ -975,16 +944,11 @@ Position elements relative to their container.
 ```html
 <div class="select-box-input input input-outline">
   <ChevronDownIcon />
-  <input
-    type="text"
-    class="input-field"
-    placeholder="Select..." />
+  <input type="text" class="input-field" placeholder="Select..." />
   <div class="select-box-list card card-y">
     <div class="input input-outline">
       <SearchIcon />
-      <input
-        type="text"
-        class="input-field" />
+      <input type="text" class="input-field" />
     </div>
     <button class="select-box-option btn">Option 1</button>
     <button class="select-box-option btn">Option 2</button>
@@ -1060,11 +1024,7 @@ Use `data-state` attribute:
 
 ```html
 <div class="progress">
-  <div
-    class="progress-bar"
-    style="width: 45%">
-    45%
-  </div>
+  <div class="progress-bar" style="width: 45%">45%</div>
 </div>
 ```
 
@@ -1107,18 +1067,10 @@ Use `data-state` attribute:
 ```html
 <nav class="breadcrumbs">
   <div class="breadcrumbs-item">
-    <a
-      href="#"
-      class="btn link"
-      >Home</a
-    >
+    <a href="#" class="btn link">Home</a>
   </div>
   <div class="breadcrumbs-item">
-    <a
-      href="#"
-      class="btn link"
-      >Articles</a
-    >
+    <a href="#" class="btn link">Articles</a>
   </div>
   <div class="breadcrumbs-item">
     <span class="btn btn-fill">Current</span>
@@ -1132,15 +1084,9 @@ Use `data-state` attribute:
 
 ```html
 <div class="otp">
-  <input
-    type="text"
-    class="input input-outline input-square" />
-  <input
-    type="text"
-    class="input input-outline input-square" />
-  <input
-    type="text"
-    class="input input-outline input-square" />
+  <input type="text" class="input input-outline input-square" />
+  <input type="text" class="input input-outline input-square" />
+  <input type="text" class="input input-outline input-square" />
 </div>
 ```
 
@@ -1344,7 +1290,9 @@ Use `data-state` for component states:
 
 ```html
 <!-- ✅ Good -->
-<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">Toggle</button>
+<button class="btn data-[state=true]:btn-fill data-[state=false]:btn-soft">
+  Toggle
+</button>
 ```
 
 ---

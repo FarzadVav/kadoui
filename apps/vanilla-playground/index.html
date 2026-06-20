@@ -2,29 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/vite.svg" />
-    <link
-      rel="stylesheet"
-      href="src/style.css" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
 
     <title>Kadoui TailwindCSS Playground</title>
   </head>
 
   <body>
     <header
-      class="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b border-background-thin z-40">
+      class="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b border-background-thin z-40"
+    >
       <div class="wrapper flex items-center justify-between h-full">
         <span class="title">Kadoui Playground</span>
-        <button
-          id="theme-toggle-btn"
-          class="btn btn-fill">
+        <button id="theme-toggle-btn" class="btn btn-fill">
           Theme: System
         </button>
       </div>
@@ -35,80 +27,47 @@
       <button class="btn link">Link</button>
 
       <p class="mt-6">
-        Lorem ipsum dolor sit <span class="highlight">This is a highlight</span> nemo,
-        esse.
+        Lorem ipsum dolor sit
+        <span class="highlight">This is a highlight</span> nemo, esse.
       </p>
 
-      <input
-        class="range-slider mt-6"
-        type="range" />
+      <input class="range-slider mt-6" type="range" />
     </div>
 
     <p class="wrapper heading mt-12">Button</p>
     <div class="wrapper mt-6">
       <p>Variants</p>
       <div class="flex items-center gap-3 mt-3">
-        <button
-          data-kadoui="element"
-          class="btn btn-fill">
-          Fill
-        </button>
-        <button
-          data-kadoui="element"
-          class="btn btn-outline">
-          Outline
-        </button>
-        <button
-          data-kadoui="element"
-          class="btn btn-soft">
-          Soft
-        </button>
-        <button
-          data-kadoui="element"
-          class="btn btn-ghost">
-          Ghost
-        </button>
+        <button data-kadoui="element" class="btn btn-fill">Fill</button>
+        <button data-kadoui="element" class="btn btn-outline">Outline</button>
+        <button data-kadoui="element" class="btn btn-soft">Soft</button>
+        <button data-kadoui="element" class="btn btn-ghost">Ghost</button>
       </div>
 
       <p class="mt-6">Sizes</p>
       <div class="flex items-center gap-3 mt-3">
-        <button
-          class="btn btn-fill element-xs"
-          data-kadoui="element">
+        <button class="btn btn-fill element-xs" data-kadoui="element">
           Xsmall
         </button>
-        <button
-          class="btn btn-fill element-sm"
-          data-kadoui="element">
+        <button class="btn btn-fill element-sm" data-kadoui="element">
           Small
         </button>
-        <button
-          class="btn btn-fill"
-          data-kadoui="element">
-          Medium
-        </button>
-        <button
-          class="btn btn-fill element-lg"
-          data-kadoui="element">
+        <button class="btn btn-fill" data-kadoui="element">Medium</button>
+        <button class="btn btn-fill element-lg" data-kadoui="element">
           Large
         </button>
-        <button
-          class="btn btn-fill element-xl"
-          data-kadoui="element">
+        <button class="btn btn-fill element-xl" data-kadoui="element">
           XLarge
         </button>
         <button
           class="btn btn-fill element-square-size element-xl"
-          data-kadoui="element">
+          data-kadoui="element"
+        >
           SQ
         </button>
-        <button
-          class="btn btn-fill"
-          data-kadoui="element">
+        <button class="btn btn-fill" data-kadoui="element">
           <span>With icon</span>
-          <i
-            class="element-icon-size"
-            data-lucide="sparkles"></i>
+          <i class="element-icon-size" data-lucide="sparkles"></i>
         </button>
       </div>
     </div>
@@ -118,34 +77,28 @@
       <p>Variants</p>
       <div class="mt-3">
         <label class="input">
-          <input
-            placeholder="Ghost input..."
-            class="input-field"
-            type="text" />
+          <input placeholder="Ghost input..." class="input-field" type="text" />
         </label>
 
         <label class="input input-outline mt-3">
           <input
             placeholder="Outline input..."
             class="input-field"
-            type="text" />
+            type="text"
+          />
         </label>
 
         <label class="input input-soft mt-3">
-          <input
-            placeholder="Soft input..."
-            class="input-field"
-            type="text" />
+          <input placeholder="Soft input..." class="input-field" type="text" />
         </label>
 
         <label class="input input-outline mt-3">
-          <i
-            class="element-icon-size"
-            data-lucide="search"></i>
+          <i class="element-icon-size" data-lucide="search"></i>
           <input
             placeholder="Outline input..."
             class="input-field"
-            type="text" />
+            type="text"
+          />
           <button class="btn btn-ghost element-xs">Enter</button>
         </label>
       </div>
@@ -156,54 +109,55 @@
           <input
             placeholder="Xsmall input..."
             class="input-field"
-            type="text" />
+            type="text"
+          />
         </label>
 
         <label class="input input-outline element-sm mt-3">
-          <input
-            placeholder="Small input..."
-            class="input-field"
-            type="text" />
+          <input placeholder="Small input..." class="input-field" type="text" />
         </label>
 
         <label class="input input-outline mt-3">
           <input
             placeholder="Medium input..."
             class="input-field"
-            type="text" />
+            type="text"
+          />
         </label>
 
         <label class="input input-outline element-lg mt-3">
-          <input
-            placeholder="Large input..."
-            class="input-field"
-            type="text" />
+          <input placeholder="Large input..." class="input-field" type="text" />
         </label>
 
         <label class="input input-outline element-xl mt-3">
           <input
             placeholder="XLarge input..."
             class="input-field"
-            type="text" />
+            type="text"
+          />
         </label>
 
         <div class="otp mt-3">
           <input
             class="input input-outline element-square-size"
             placeholder="SQ"
-            type="text" />
+            type="text"
+          />
           <input
             class="input input-outline element-square-size"
             placeholder="SQ"
-            type="text" />
+            type="text"
+          />
           <input
             class="input input-outline element-square-size"
             placeholder="SQ"
-            type="text" />
+            type="text"
+          />
           <input
             class="input input-outline element-square-size"
             placeholder="SQ"
-            type="text" />
+            type="text"
+          />
         </div>
       </div>
     </div>
@@ -217,9 +171,7 @@
         <span class="badge badge-outline">Outline badge</span>
         <span class="badge badge-soft">Soft badge</span>
         <span class="badge badge-soft">
-          <i
-            class="element-icon-size"
-            data-lucide="sparkles"></i>
+          <i class="element-icon-size" data-lucide="sparkles"></i>
           <span>With icon</span>
         </span>
       </div>
@@ -240,9 +192,10 @@
       <p>Variants</p>
       <div class="mt-3">
         <div class="card bg-background-thin">
-          Basic card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          Basic card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
 
         <ul class="card card-menu card-y bg-background-thin mt-3">
@@ -273,33 +226,38 @@
       <p class="mt-6">Sizes</p>
       <div class="mt-3">
         <div class="card element-xs bg-background-thin">
-          XSmall card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          XSmall card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
 
         <div class="card element-sm bg-background-thin mt-3">
-          Small card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          Small card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
 
         <div class="card bg-background-thin mt-3">
-          Medium card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          Medium card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
 
         <div class="card element-lg bg-background-thin mt-3">
-          Large card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          Large card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
 
         <div class="card element-xl bg-background-thin mt-3">
-          XLarge card: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          repellendus corrupti nemo et soluta inventore esse impedit molestias error aut
-          at nulla officiis magni voluptatem delectus cum quaerat odit adipisci.
+          XLarge card: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sunt, repellendus corrupti nemo et soluta inventore esse impedit
+          molestias error aut at nulla officiis magni voluptatem delectus cum
+          quaerat odit adipisci.
         </div>
       </div>
     </div>
@@ -343,62 +301,52 @@
       <p>Sizes</p>
       <div class="mt-3">
         <div class="alert element-xs">
-          <i
-            class="element-icon-size"
-            data-lucide="info"></i>
+          <i class="element-icon-size" data-lucide="info"></i>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
-            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
-            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
-            Eligendi!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+            quis labore nemo eius tempore molestiae rerum voluptatem quibusdam
+            expedita pariatur mollitia laboriosam hic exercitationem velit natus
+            numquam, id ex. Eligendi!
           </p>
         </div>
 
         <div class="alert element-sm mt-3">
-          <i
-            class="element-icon-size"
-            data-lucide="info"></i>
+          <i class="element-icon-size" data-lucide="info"></i>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
-            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
-            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
-            Eligendi!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+            quis labore nemo eius tempore molestiae rerum voluptatem quibusdam
+            expedita pariatur mollitia laboriosam hic exercitationem velit natus
+            numquam, id ex. Eligendi!
           </p>
         </div>
 
         <div class="alert mt-3">
-          <i
-            class="element-icon-size"
-            data-lucide="info"></i>
+          <i class="element-icon-size" data-lucide="info"></i>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
-            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
-            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
-            Eligendi!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+            quis labore nemo eius tempore molestiae rerum voluptatem quibusdam
+            expedita pariatur mollitia laboriosam hic exercitationem velit natus
+            numquam, id ex. Eligendi!
           </p>
         </div>
 
         <div class="alert element-lg mt-3">
-          <i
-            class="element-icon-size"
-            data-lucide="info"></i>
+          <i class="element-icon-size" data-lucide="info"></i>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
-            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
-            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
-            Eligendi!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+            quis labore nemo eius tempore molestiae rerum voluptatem quibusdam
+            expedita pariatur mollitia laboriosam hic exercitationem velit natus
+            numquam, id ex. Eligendi!
           </p>
         </div>
 
         <div class="alert element-xl mt-3">
-          <i
-            class="element-icon-size"
-            data-lucide="info"></i>
+          <i class="element-icon-size" data-lucide="info"></i>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quis
-            labore nemo eius tempore molestiae rerum voluptatem quibusdam expedita
-            pariatur mollitia laboriosam hic exercitationem velit natus numquam, id ex.
-            Eligendi!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+            quis labore nemo eius tempore molestiae rerum voluptatem quibusdam
+            expedita pariatur mollitia laboriosam hic exercitationem velit natus
+            numquam, id ex. Eligendi!
           </p>
         </div>
       </div>
@@ -407,19 +355,19 @@
     <p class="wrapper heading mt-12">Join</p>
     <div class="wrapper mt-6">
       <p>Variants</p>
-      <div class="join mt-3">
+      <div class="join-x mt-3">
         <button class="btn btn-soft">Item 1</button>
         <button class="btn btn-soft">Item 2</button>
         <button class="btn btn-soft">Item 3</button>
       </div>
 
-      <div class="join join-border mt-3">
+      <div class="join-x join-x-border mt-3">
         <button class="btn btn-soft">Inner border 1</button>
         <button class="btn btn-soft">Inner border 2</button>
         <button class="btn btn-soft">Inner border 3</button>
       </div>
 
-      <div class="join join-fix-border mt-3">
+      <div class="join-x join-x-fix-border mt-3">
         <button class="btn btn-outline">Fix inner border 1</button>
         <button class="btn btn-outline">Fix inner border 2</button>
         <button class="btn btn-outline">Fix inner border 3</button>
@@ -430,37 +378,67 @@
     <div class="wrapper mt-6">
       <div class="card bg-background-thin h-[33vh] relative">
         <span class="badge badge-fill absolute top-center">Top center</span>
-        <span class="badge badge-fill absolute left-1/4 top-boundary">Top boundry</span>
+        <span class="badge badge-fill absolute left-1/4 top-boundary"
+          >Top boundry</span
+        >
         <span class="badge badge-fill absolute right-0 top-out">Top out</span>
 
         <span class="badge badge-fill absolute right-center">Right center</span>
-        <span class="badge badge-fill absolute right-boundary">Right boundry</span>
-        <span class="badge badge-fill absolute bottom-0 right-out">Right out</span>
+        <span class="badge badge-fill absolute right-boundary"
+          >Right boundry</span
+        >
+        <span class="badge badge-fill absolute bottom-0 right-out"
+          >Right out</span
+        >
 
-        <span class="badge badge-fill absolute bottom-center">Bottom center</span>
-        <span class="badge badge-fill absolute bottom-boundary">Bottom boundry</span>
-        <span class="badge badge-fill absolute right-0 bottom-out">Bottom out</span>
+        <span class="badge badge-fill absolute bottom-center"
+          >Bottom center</span
+        >
+        <span class="badge badge-fill absolute bottom-boundary"
+          >Bottom boundry</span
+        >
+        <span class="badge badge-fill absolute right-0 bottom-out"
+          >Bottom out</span
+        >
 
-        <span class="badge badge-fill absolute bottom-0 left-center">Left center</span>
-        <span class="badge badge-fill absolute left-boundary">Left boundry</span>
-        <span class="badge badge-fill absolute bottom-0 left-out">Left out</span>
+        <span class="badge badge-fill absolute bottom-0 left-center"
+          >Left center</span
+        >
+        <span class="badge badge-fill absolute left-boundary"
+          >Left boundry</span
+        >
+        <span class="badge badge-fill absolute bottom-0 left-out"
+          >Left out</span
+        >
 
         <span class="badge badge-fill absolute inset-center">Inset center</span>
       </div>
 
       <div class="card bg-background-thin h-[33vh] relative mt-24">
-        <span class="badge badge-fill absolute position-t">Top (position-t)</span>
-        <span class="badge badge-fill absolute position-tr">Top right (position-tr)</span>
-        <span class="badge badge-fill absolute position-r">Right (position-r)</span>
+        <span class="badge badge-fill absolute position-t"
+          >Top (position-t)</span
+        >
+        <span class="badge badge-fill absolute position-tr"
+          >Top right (position-tr)</span
+        >
+        <span class="badge badge-fill absolute position-r"
+          >Right (position-r)</span
+        >
         <span class="badge badge-fill absolute position-br"
           >Bottom right (position-br)</span
         >
-        <span class="badge badge-fill absolute position-b">Bottom (position-b)</span>
+        <span class="badge badge-fill absolute position-b"
+          >Bottom (position-b)</span
+        >
         <span class="badge badge-fill absolute position-bl"
           >Bottom left (position-bl)</span
         >
-        <span class="badge badge-fill absolute position-l">Left (position-l)</span>
-        <span class="badge badge-fill absolute position-tl">Top left (position-tl)</span>
+        <span class="badge badge-fill absolute position-l"
+          >Left (position-l)</span
+        >
+        <span class="badge badge-fill absolute position-tl"
+          >Top left (position-tl)</span
+        >
       </div>
     </div>
 
@@ -470,15 +448,23 @@
       <div class="flex items-start flex-col mt-3">
         <span class="separate-t border-background-thin">Separate top</span>
 
-        <span class="separate-r border-background-thin mt-3">Separate right</span>
+        <span class="separate-r border-background-thin mt-3"
+          >Separate right</span
+        >
 
-        <span class="separate-b border-background-thin mt-3">Separate bottom</span>
+        <span class="separate-b border-background-thin mt-3"
+          >Separate bottom</span
+        >
 
-        <span class="separate-l border-background-thin mt-3">Separate left</span>
+        <span class="separate-l border-background-thin mt-3"
+          >Separate left</span
+        >
 
         <span class="separate-y border-background-thin">Separate vertical</span>
 
-        <span class="separate-x border-background-thin mt-3">Separate horizontal</span>
+        <span class="separate-x border-background-thin mt-3"
+          >Separate horizontal</span
+        >
       </div>
 
       <p class="title mt-6">Sizes</p>
@@ -486,9 +472,13 @@
         <span class="separate-t border-background-thin element-xs"
           >XSmall separate-t</span
         >
-        <span class="separate-t border-background-thin element-sm">Small separate-t</span>
+        <span class="separate-t border-background-thin element-sm"
+          >Small separate-t</span
+        >
         <span class="separate-t border-background-thin">Meduim separate-t</span>
-        <span class="separate-t border-background-thin element-lg">Large separate-t</span>
+        <span class="separate-t border-background-thin element-lg"
+          >Large separate-t</span
+        >
         <span class="separate-t border-background-thin element-xl"
           >XLarge separate-t</span
         >
@@ -501,8 +491,6 @@
     <script>
       lucide.createIcons();
     </script>
-    <script
-      type="module"
-      src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

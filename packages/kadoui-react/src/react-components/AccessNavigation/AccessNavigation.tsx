@@ -1,93 +1,178 @@
 "use client";
 
-import { ComponentPropsWithoutRef, KeyboardEvent, RefObject, useEffect, useRef } from "react";
+import {
+  ComponentPropsWithoutRef,
+  KeyboardEvent,
+  Ref,
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react";
 
 import { selectAccessibleChildren } from "../../utils-exports";
 
+type Direction = "y" | "x";
+
 export type AccessNavigationPropsT = ComponentPropsWithoutRef<"div"> & {
-  direction: "y" | "x";
-  focusTrap?: any;
-  ref?: RefObject<HTMLDivElement | null>;
+  autoFocusFirst?: boolean;
+  direction: Direction;
+  loop?: boolean;
+  ref?: Ref<HTMLDivElement>;
 };
+
+function assignRef<T>(ref: Ref<T> | undefined, value: T | null) {
+  if (!ref) return;
+
+  if (typeof ref === "function") {
+    ref(value);
+    return;
+  }
+
+  try {
+    (ref as RefObject<T | null>).current = value;
+  } catch {
+    // readonly ref; ignore
+  }
+}
+
+function shouldIgnoreArrowNavigation(target: EventTarget | null) {
+  if (!(target instanceof HTMLElement)) return false;
+
+  return Boolean(
+    target.closest(
+      'input, textarea, select, [contenteditable="true"], [role="textbox"], [data-arrow-nav-ignore]'
+    )
+  );
+}
+
+function getDirection(dir?: string): "ltr" | "rtl" {
+  const resolvedDir =
+    dir || document.documentElement.getAttribute("dir") || "ltr";
+
+  return resolvedDir === "rtl" ? "rtl" : "ltr";
+}
 
 export function AccessNavigation({
   ref,
-  focusTrap,
-  direction,
   dir,
+  autoFocusFirst,
+  direction,
+  loop = true,
   onKeyDown,
   ...p
 }: AccessNavigationPropsT) {
-  const accessNavigationRef = ref || useRef<HTMLDivElement>(null);
+  const internalRef = useRef<HTMLDivElement | null>(null);
+
+  const composedRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      internalRef.current = node;
+      assignRef(ref, node);
+    },
+    [ref]
+  );
 
   useEffect(() => {
-    if (focusTrap) {
-      setTimeout(() => {
-        if (!accessNavigationRef.current) return;
+    if (!autoFocusFirst) return;
 
-        const focusableChildren = selectAccessibleChildren(accessNavigationRef.current);
-        focusableChildren[0]?.focus();
-      }, 150);
-    }
-  }, [focusTrap]);
+    const id = window.setTimeout(() => {
+      const root = internalRef.current;
+      if (!root) return;
+
+      const items = selectAccessibleChildren(root);
+      const firstItem = items[0];
+
+      firstItem?.focus({ preventScroll: true });
+    }, 0);
+
+    return () => window.clearTimeout(id);
+  }, [autoFocusFirst]);
 
   const handleKeyDown = (ev: KeyboardEvent<HTMLDivElement>) => {
-    const focusableChildren = selectAccessibleChildren(ev.currentTarget);
+    if (shouldIgnoreArrowNavigation(ev.target)) return;
 
-    console.log(focusableChildren);
+    const root = ev.currentTarget;
+    const items = selectAccessibleChildren(root);
 
-    if (focusableChildren.length < 2) {
-      return;
-    }
+    if (items.length < 2) return;
 
-    const currentDir: "ltr" | "rtl" = (dir ||
-      document.documentElement.getAttribute("dir") ||
-      "ltr") as "ltr" | "rtl";
-
-    const currentIndex = focusableChildren.findIndex(
-      (item) => item === document.activeElement,
+    const currentDir = getDirection(dir);
+    const currentIndex = items.findIndex(
+      (item) => item === document.activeElement
     );
 
-    if (
-      ev.key ===
-      (direction === "y"
+    const nextKey =
+      direction === "y"
         ? "ArrowDown"
         : currentDir === "ltr"
           ? "ArrowRight"
-          : "ArrowLeft")
-    ) {
-      ev.preventDefault();
-      ev.stopPropagation();
+          : "ArrowLeft";
 
-      const nextIndex =
-        currentIndex === -1 || currentIndex === focusableChildren.length - 1
-          ? 0
-          : currentIndex + 1;
-      focusableChildren[nextIndex]?.focus();
+    const prevKey =
+      direction === "y"
+        ? "ArrowUp"
+        : currentDir === "ltr"
+          ? "ArrowLeft"
+          : "ArrowRight";
+
+    let nextIndex: number | null = null;
+
+    if (ev.key === nextKey) {
+      if (currentIndex === -1) {
+        nextIndex = 0;
+      } else if (currentIndex === items.length - 1) {
+        nextIndex = loop ? 0 : currentIndex;
+      } else {
+        nextIndex = currentIndex + 1;
+      }
     }
 
-    if (
-      ev.key ===
-      (direction === "y" ? "ArrowUp" : currentDir === "ltr" ? "ArrowLeft" : "ArrowRight")
-    ) {
-      ev.preventDefault();
-      ev.stopPropagation();
-
-      const prevIndex =
-        currentIndex <= 0 ? focusableChildren.length - 1 : currentIndex - 1;
-      focusableChildren[prevIndex]?.focus();
+    if (ev.key === prevKey) {
+      if (currentIndex === -1) {
+        nextIndex = items.length - 1;
+      } else if (currentIndex === 0) {
+        nextIndex = loop ? items.length - 1 : currentIndex;
+      } else {
+        nextIndex = currentIndex - 1;
+      }
     }
+
+    if (ev.key === "Home") {
+      nextIndex = 0;
+    }
+
+    if (ev.key === "End") {
+      nextIndex = items.length - 1;
+    }
+
+    if (nextIndex === null) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+
+    const currentItem = items[currentIndex];
+    const nextItem = items[nextIndex];
+
+    if (!nextItem) return;
+
+    // Roving tabindex
+    currentItem?.setAttribute("tabindex", "-1");
+    nextItem.setAttribute("tabindex", "0");
+
+    nextItem.focus();
   };
 
   return (
     <div
+      {...p}
       dir={dir}
-      ref={accessNavigationRef}
+      ref={composedRef}
       onKeyDown={(ev) => {
         onKeyDown?.(ev);
+        if (ev.defaultPrevented) return;
+
         handleKeyDown(ev);
       }}
-      {...p}
     />
   );
 }

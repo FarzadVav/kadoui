@@ -9,9 +9,10 @@
 - Complete utilities.
 - Add DatePicker component.
 - Add TimePicker component.
+- Separate Next.js requirements.
 - Add searchParams adaptor to all components.
 - Fix commented bugs in BeautyPlus and Shops.
-- Remove Next useSearchParams from searchParams.
+- Remove Next.js useSearchParams from searchParams.
 - Remove Dispatch types and add Void function type.
 - Fix transition bugs (like AccessNavigation focusTrap).
 - Remove ThemeScript and handle theme simple and directly.
@@ -41,9 +42,7 @@
 
 ### Now
 
-- Remove positions and offsets.
 - Fix commented bugs in BeautyPlus and Shops.
-- Remove global palette and size and add those directly to components.
 - Fix transition config (for compatibilty with components like AccessNavigation).
 - Add layout styles with variable customization (wrapper, element spacing, typography, etc.).
 

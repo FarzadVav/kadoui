@@ -16,36 +16,32 @@ export const getBrowserScrollbarWith = () => {
 }
 
 export const selectAccessibleChildren = (scope: HTMLElement) => {
-  const FOCUSABLE_SELECTOR = `
-    a[href]:not([tabindex="-1"]),
-    button:not([disabled]):not([tabindex="-1"]),
-    input:not([type="hidden"]):not([disabled]):not([tabindex="-1"]),
-    select:not([disabled]):not([tabindex="-1"]),
-    textarea:not([disabled]):not([tabindex="-1"])
-  `;
-
   const candidates = Array.from(
-    scope.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
+    scope.querySelectorAll<HTMLElement>(".acn")
   );
 
   return candidates.filter((el) => {
-    if (el.closest('[data-access-navigation="false"]')) return false;
+    if ("disabled" in el && (el as HTMLButtonElement).disabled) return false;
 
-    if ('disabled' in el && (el as any).disabled) return false;
-    if (el.closest('fieldset[disabled]')) return false;
+    if (el.getAttribute("aria-disabled") === "true") return false;
+    if (el.closest(`[aria-disabled="true"]`)) return false;
+
+    if (el.closest("fieldset[disabled]")) return false;
 
     if (el.hidden) return false;
-    if (el.closest('[hidden]')) return false;
+    if (el.closest("[hidden]")) return false;
+    if (el.closest("[inert]")) return false;
+    if (el.closest(`[aria-hidden="true"]`)) return false;
+    if (el.closest("details:not([open])")) return false;
 
     const style = window.getComputedStyle(el);
 
-    if (style.display === 'none') return false;
-    if (style.visibility === 'hidden') return false;
-    if (style.pointerEvents === 'none') return false;
-
-    if (el.offsetParent === null && style.position !== 'fixed') {
+    if (style.display === "none") return false;
+    if (style.visibility === "hidden" || style.visibility === "collapse") {
       return false;
     }
+
+    if (el.getClientRects().length === 0) return false;
 
     return true;
   });
