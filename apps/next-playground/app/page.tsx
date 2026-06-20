@@ -874,8 +874,8 @@ function Page() {
 
         <p className="heading mt-20">Breadcrumbs</p>
         <Breadcrumbs
-          separator={<ChevronRightIcon className="element-icon-size" />}
           className="breadcrumbs element-xs mt-3"
+          separator={<ChevronRightIcon className="element-icon-size" />}
         >
           <Breadcrumbs.Item className="breadcrumbs-item">
             <button className="btn link">Home</button>
