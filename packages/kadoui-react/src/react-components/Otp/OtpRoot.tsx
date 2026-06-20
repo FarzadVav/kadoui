@@ -1,13 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
 import { OtpContext } from "./OtpContext";
 import type { OtpRootPropsT } from "./otpTypes";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
+export function OtpRoot({ autoFocus, style, ...p }: OtpRootPropsT) {
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
+
+  const styles: CSSProperties = {
+    gap: 8,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    ...style,
+  };
 
   useEffect(() => {
     if (autoFocus) {
@@ -21,11 +29,7 @@ export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
 
   return (
     <OtpContext value={{ inputs, getInputsValue }}>
-      <AccessNavigation
-        dir="ltr"
-        direction="x"
-        {...p}
-      />
+      <AccessNavigation style={styles} dir="ltr" direction="x" {...p} />
     </OtpContext>
   );
 }

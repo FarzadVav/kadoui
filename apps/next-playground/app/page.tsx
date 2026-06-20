@@ -1252,7 +1252,7 @@ function Page() {
         </Modal>
 
         <p className="heading mt-20">OTP</p>
-        <Otp className="otp mt-6">
+        <Otp className="mt-6">
           <Otp.Inputs
             length={6}
             onLastChange={(otp) => alert(otp)}
