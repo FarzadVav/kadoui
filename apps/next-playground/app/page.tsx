@@ -762,8 +762,8 @@ function Page() {
         <p className="heading mt-20">Accordion</p>
         <p className="title mt-6">Multiple mode</p>
         <Accordion
-          direction="y"
           multiple
+          direction="y"
           accordionState={accordionItems}
           onAccordionChange={(newItems) => setAccordionItems(newItems)}
         >
@@ -772,9 +772,9 @@ function Page() {
               <span>Open accordion 1</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
@@ -788,9 +788,9 @@ function Page() {
               <span>Open accordion 2</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
@@ -804,9 +804,9 @@ function Page() {
               <span>Open accordion 3</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
@@ -827,9 +827,9 @@ function Page() {
               <span>Open accordion 1</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
@@ -843,9 +843,9 @@ function Page() {
               <span>Open accordion 2</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
@@ -859,9 +859,9 @@ function Page() {
               <span>Open accordion 3</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </Accordion.Toggle>
-            <Accordion.Body className="accordion-body">
-              <Accordion.Content className="accordion-content">
-                <div className="card bg-background-thin">
+            <Accordion.Body>
+              <Accordion.Content>
+                <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
