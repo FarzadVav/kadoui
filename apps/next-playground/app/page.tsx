@@ -914,7 +914,9 @@ function Page() {
 
         <p className="heading mt-20">ContextMenu</p>
         <ContextMenu className="border-4 border-dashed border-foreground mt-6 h-[33vh]">
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Context menu!</span>
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            Context menu!
+          </span>
 
           <ContextMenu.Body direction="y" className="card card-y glass">
             <ContextMenu.Item className="btn btn-ghost">
@@ -938,15 +940,15 @@ function Page() {
             Open left drawer
           </Drawer.Toggle>
 
-          <Drawer.Portal className="drawer-portal">
-            <Drawer.Body className="drawer-body">
+          <Drawer.Portal>
+            <Drawer.Body>
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
                 <input
                   type="text"
+                  data-drawer="focus"
                   className="input-field"
                   placeholder="Search..."
-                  data-drawer="focus"
                 />
               </label>
               <p className="mt-3">
@@ -963,8 +965,8 @@ function Page() {
             Open top drawer
           </Drawer.Toggle>
 
-          <Drawer.Portal className="drawer-portal">
-            <Drawer.Body className="drawer-body" position="top">
+          <Drawer.Portal>
+            <Drawer.Body position="top">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
                 <input
@@ -988,8 +990,8 @@ function Page() {
             Open right drawer
           </Drawer.Toggle>
 
-          <Drawer.Portal className="drawer-portal">
-            <Drawer.Body className="drawer-body" position="right">
+          <Drawer.Portal>
+            <Drawer.Body position="right">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
                 <input
@@ -1013,8 +1015,8 @@ function Page() {
             Open bottom drawer
           </Drawer.Toggle>
 
-          <Drawer.Portal className="drawer-portal">
-            <Drawer.Body className="drawer-body" position="bottom">
+          <Drawer.Portal>
+            <Drawer.Body position="bottom">
               <label htmlFor="drawer-input" className="input input-outline">
                 <SearchIcon className="element-icon-size" />
                 <input
