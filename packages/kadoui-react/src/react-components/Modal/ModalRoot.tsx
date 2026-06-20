@@ -9,6 +9,7 @@ import { getBrowserScrollbarWith } from "../../utils-exports";
 
 export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
   const pathname = usePathname();
+
   const [isOpen, setOpen] = useState(defaultOpen);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
     const removeOverStyles = () => {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
-    }
+    };
 
     if (isOpen) {
       document.body.style.overflow = "hidden";

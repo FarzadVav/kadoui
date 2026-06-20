@@ -1,5 +1,5 @@
 import type { HTMLMotionProps } from "framer-motion";
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { ComponentProps, PropsWithChildren, RefObject } from "react";
 
 export type ModalContextT = {
   isOpen: boolean;
@@ -12,7 +12,9 @@ export type ModalRootPropsT = PropsWithChildren & {
 
 export type ModalContentPropsT = ComponentProps<"div">;
 
-export type ModalHeaderPropsT = ComponentProps<"div">;
+export type ModalHeaderPropsT = ComponentProps<"header">;
+
+export type ModalFooterPropsT = ComponentProps<"footer">;
 
 export type ModalTogglePropsT = Omit<ComponentProps<"button">, "type">;
 

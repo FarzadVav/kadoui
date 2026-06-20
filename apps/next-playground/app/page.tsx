@@ -942,7 +942,10 @@ function Page() {
 
           <Drawer.Portal>
             <Drawer.Body>
-              <label htmlFor="drawer-input" className="input input-outline">
+              <label
+                htmlFor="drawer-input"
+                className="input input-ghost-outline"
+              >
                 <SearchIcon className="element-icon-size" />
                 <input
                   type="text"
@@ -967,7 +970,10 @@ function Page() {
 
           <Drawer.Portal>
             <Drawer.Body position="top">
-              <label htmlFor="drawer-input" className="input input-outline">
+              <label
+                htmlFor="drawer-input"
+                className="input input-ghost-outline"
+              >
                 <SearchIcon className="element-icon-size" />
                 <input
                   type="text"
@@ -992,7 +998,10 @@ function Page() {
 
           <Drawer.Portal>
             <Drawer.Body position="right">
-              <label htmlFor="drawer-input" className="input input-outline">
+              <label
+                htmlFor="drawer-input"
+                className="input input-ghost-outline"
+              >
                 <SearchIcon className="element-icon-size" />
                 <input
                   type="text"
@@ -1017,7 +1026,10 @@ function Page() {
 
           <Drawer.Portal>
             <Drawer.Body position="bottom">
-              <label htmlFor="drawer-input" className="input input-outline">
+              <label
+                htmlFor="drawer-input"
+                className="input input-ghost-outline"
+              >
                 <SearchIcon className="element-icon-size" />
                 <input
                   type="text"
@@ -1038,22 +1050,62 @@ function Page() {
 
         <p className="heading mt-20">Modal</p>
         <Modal>
-          <Modal.Toggle className="btn btn-soft mt-6">Open modal</Modal.Toggle>
+          <Modal.Toggle className="btn btn-soft mt-6">
+            Open Short Content Modal
+          </Modal.Toggle>
 
-          <Modal.Portal className="modal-portal justify-center">
-            <Modal.Body className="modal-body justify-center">
-              <Modal.Header className="modal-header">
-                <label className="input input-outline element-w-full">
+          <Modal.Portal>
+            <Modal.Body>
+              <Modal.Header>
+                <label className="input input-ghost-outline input-full">
                   <SearchIcon className="element-icon-size" />
                   <input
                     type="text"
+                    data-modal="focus"
                     className="input-field"
                     placeholder="Search..."
-                    data-modal="focus"
                   />
                 </label>
               </Modal.Header>
-              <Modal.Content className="modal-content max-w-xl">
+              <Modal.Content>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Provident, quos veniam! Placeat similique molestiae ex?
+                </p>
+              </Modal.Content>
+              <Modal.Footer>
+                <p className="font-bold justify-center mr-auto">
+                  Do you trust she?
+                </p>
+                <Modal.Toggle className="btn btn-soft palette-error">
+                  No
+                </Modal.Toggle>
+                <Modal.Toggle className="btn btn-fill palette-success">
+                  Yes
+                </Modal.Toggle>
+              </Modal.Footer>
+            </Modal.Body>
+          </Modal.Portal>
+        </Modal>
+        <Modal>
+          <Modal.Toggle className="btn btn-soft mt-6">
+            Open Long Content Modal
+          </Modal.Toggle>
+
+          <Modal.Portal>
+            <Modal.Body>
+              <Modal.Header>
+                <label className="input input-ghost-outline input-full">
+                  <SearchIcon className="element-icon-size" />
+                  <input
+                    type="text"
+                    data-modal="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+              </Modal.Header>
+              <Modal.Content>
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
                   maxime non eius eos veritatis libero, animi pariatur illo
@@ -1184,7 +1236,7 @@ function Page() {
                   rerum aliquid id sequi ea!
                 </p>
               </Modal.Content>
-              <Modal.Header className="modal-footer">
+              <Modal.Footer>
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
@@ -1194,7 +1246,7 @@ function Page() {
                 <Modal.Toggle className="btn btn-fill palette-success">
                   Yes
                 </Modal.Toggle>
-              </Modal.Header>
+              </Modal.Footer>
             </Modal.Body>
           </Modal.Portal>
         </Modal>
@@ -1204,7 +1256,7 @@ function Page() {
           <Otp.Inputs
             length={6}
             onLastChange={(otp) => alert(otp)}
-            className="input input-outline element-square-size"
+            className="input input-ghost-outline element-square-size"
           />
 
           <Otp.HiddenInput />
@@ -1319,7 +1371,7 @@ function Page() {
         </Suspense>
 
         <p className="heading mt-20">PasswordInput</p>
-        <PasswordInput className="input input-outline mt-3">
+        <PasswordInput className="input input-ghost-outline mt-3">
           <PasswordInput.Field className="input-field" />
           <PasswordInput.Toggle
             className="btn btn-ghost element-sm"
@@ -1536,7 +1588,7 @@ function Page() {
                 placeholder="Select an option..."
               />
               <SelectBox.List className="select-box-list offset bg-background-thin">
-                <SelectBox.SearchInput className="input input-outline">
+                <SelectBox.SearchInput className="input input-ghost-outline">
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
@@ -1561,7 +1613,7 @@ function Page() {
                 placeholder="Select an option..."
               />
               <SelectBox.List className="select-box-list offset bg-background-thin">
-                <SelectBox.SearchInput className="input input-outline">
+                <SelectBox.SearchInput className="input input-ghost-outline">
                   <SearchIcon className="element-icon-size" />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
@@ -1582,7 +1634,7 @@ function Page() {
               </Sheet.Header>
 
               <Sheet.Content className="sheet-content">
-                <label className="input input-outline">
+                <label className="input input-ghost-outline">
                   <SearchIcon className="element-icon-size" />
                   <input
                     type="text"

@@ -2,23 +2,23 @@
 
 import { CSSProperties } from "react";
 
-import type { ModalHeaderPropsT } from "./modalTypes";
+import type { ModalFooterPropsT } from "./modalTypes";
 
-export function ModalHeader({ onClick, style, ...p }: ModalHeaderPropsT) {
+export function ModalFooter({ onClick, style, ...p }: ModalFooterPropsT) {
   const styles: CSSProperties = {
     gap: 3,
     padding: 10,
     flexShrink: 0,
     display: "flex",
     alignItems: "center",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     backgroundColor: "var(--color-card)",
     ...style,
   };
 
   return (
-    <header
+    <footer
       style={styles}
       onClick={(ev) => {
         onClick?.(ev);

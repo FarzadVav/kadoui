@@ -15,7 +15,8 @@ export function DrawerPortal({ onClick, style, ...p }: DrawerPortalPropsT) {
     inset: 0,
     zIndex: 50,
     position: "fixed",
-    backgroundColor: "color-mix(in oklab, var(--color-background) 50%, transparent)",
+    backgroundColor:
+      "color-mix(in oklab, var(--color-background) 50%, transparent)",
     ...style,
   };
 
