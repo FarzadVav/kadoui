@@ -6,28 +6,33 @@ import { useClipboard } from "@mantine/hooks";
 import type { ClipboardPropsT } from "./clipboardTypes";
 
 export function Clipboard({
-  copiedChildren,
-  onClick,
-  children,
   text,
   title,
-  "aria-label": ariaLabel,
+  onCopy,
+  onClick,
+  children,
+  copiedChildren,
   timeout = 3_000,
+  "aria-label": ariaLabel,
   ...p
 }: ClipboardPropsT) {
   const { copy, copied } = useClipboard({ timeout });
 
-  const handleClick = (ev: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+  const handleClick = (
+    ev: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
+  ) => {
     onClick?.(ev);
     copy(text.trim());
+    onCopy?.();
   };
 
   return (
     <button
-      aria-label={ariaLabel || text}
       title={title || text}
       onClick={handleClick}
-      {...p}>
+      aria-label={ariaLabel || text}
+      {...p}
+    >
       {copiedChildren && copied ? copiedChildren : children}
     </button>
   );

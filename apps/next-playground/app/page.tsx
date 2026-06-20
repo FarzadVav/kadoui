@@ -897,17 +897,18 @@ function Page() {
         <p className="heading mt-20">Clipboard</p>
         <label htmlFor="copy" className="input input-soft mt-6">
           <input
+            readOnly
             type="text"
             className="input-field"
             defaultValue={"Kadoui-react"}
-            readOnly
           />
           <Clipboard
             text="Kadoui-react"
-            className="btn btn-ghost element-sm"
-            copiedChildren={<CopyCheckIcon className="element-icon-size" />}
+            copiedChildren={<CopyCheckIcon />}
+            className="btn btn-ghost btn-square"
+            onCopy={() => alert("Copied to clipboard!")}
           >
-            <CopyIcon className="element-icon-size" />
+            <CopyIcon />
           </Clipboard>
         </label>
 
