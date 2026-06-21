@@ -1,4 +1,11 @@
-import type { ComponentProps, ComponentType, Dispatch, JSX, ReactElement, ReactNode, SetStateAction } from "react";
+import type {
+  ComponentProps,
+  Dispatch,
+  JSX,
+  PropsWithChildren,
+  ReactNode,
+  SetStateAction,
+} from "react";
 
 export type PaginationPagesT = {
   name: string;
@@ -17,7 +24,7 @@ type PaginationWithPagesT = {
 
 type MergedPaginationT = PaginationWithLengthT | PaginationWithPagesT;
 
-export type PaginationPropsT = ComponentProps<"div"> & MergedPaginationT;
+export type PaginationPropsT = PropsWithChildren & MergedPaginationT;
 
 export type PaginationContextT = {
   pages?: PaginationPagesT[];
@@ -35,12 +42,17 @@ export type PaginationStateRootPropsT = PaginationPropsT & {
 
 export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
   pageKey?: string;
+  sectionId?: string;
 };
 
-export type PaginationCountsPropsT = Omit<ComponentProps<"button">, "children"> & {
+export type PaginationCountsPropsT = Omit<
+  ComponentProps<"button">,
+  "children"
+> & {
   children?: (count: number) => ReactNode;
   ProgressElem?: JSX.Element;
-  enableNextClick?: boolean;
+  disableNextClick?: boolean;
+  disablePrevClick?: boolean;
 };
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {

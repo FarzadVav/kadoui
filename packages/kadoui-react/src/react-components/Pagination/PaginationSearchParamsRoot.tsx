@@ -10,7 +10,8 @@ export function PaginationSearchParamsRoot({
   pages,
   pagesLength,
   pageKey,
-  ...p
+  sectionId,
+  children,
 }: PaginationSearchParamsRootPropsT) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,7 +26,7 @@ export function PaginationSearchParamsRoot({
   const pushRouter = (page: number) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set(pageKey || "page", page.toString());
-    router.push("?" + params.toString());
+    router.push("?" + params.toString() + (sectionId ? `#${sectionId}` : ""));
   };
 
   const setPage: Dispatch<SetStateAction<number>> = (page) => {
@@ -55,8 +56,9 @@ export function PaginationSearchParamsRoot({
         pagesLength: correctPagesLength,
         nextPage,
         prevPage,
-      }}>
-      <div {...p} />
+      }}
+    >
+      {children}
     </PaginationContext.Provider>
   );
 }

@@ -3,10 +3,17 @@
 import { PaginationContext } from "./PaginationContext";
 import type { PaginationStateRootPropsT } from "./PaginationTypes";
 
-export function PaginationStateRoot({ page, setPage, pages, pagesLength, ...p }: PaginationStateRootPropsT) {
+export function PaginationStateRoot({
+  page,
+  setPage,
+  pages,
+  pagesLength,
+  children
+}: PaginationStateRootPropsT) {
   const correctPagesLength = (pages?.length || pagesLength) as number;
 
-  const nextPage = () => setPage((prev) => (prev < correctPagesLength ? prev + 1 : prev));
+  const nextPage = () =>
+    setPage((prev) => (prev < correctPagesLength ? prev + 1 : prev));
 
   const prevPage = () => setPage((prev) => (prev > 1 ? prev - 1 : prev));
 
@@ -19,8 +26,9 @@ export function PaginationStateRoot({ page, setPage, pages, pagesLength, ...p }:
         pagesLength: correctPagesLength,
         nextPage,
         prevPage,
-      }}>
-      <div {...p} />
+      }}
+    >
+      {children}
     </PaginationContext.Provider>
   );
 }

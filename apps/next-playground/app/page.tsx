@@ -46,7 +46,6 @@ import {
   Spoiler,
   Submit,
   Swap,
-  Tabs,
   Choice,
   useTheme,
 } from "@kadoui/react";
@@ -1262,93 +1261,131 @@ function Page() {
           <Otp.HiddenInput />
         </Otp>
 
-        <p className="heading mt-20">Pagination</p>
+        <p id="pagination-with-search-params" className="heading pt-20">
+          Pagination
+        </p>
         <p className="mt-6">With state:</p>
+        <p className="mt-3">Page is {page}</p>
         <PaginationWithState pagesLength={6} page={page} setPage={setPage}>
-          <div className="pagination mt-3">
-            <PaginationWithState.PrevBtn className="btn btn-soft element-square-size">
+          <div className="flex items-center gap-3 mt-3">
+            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
               <ChevronLeftIcon className="element-icon-size" />
             </PaginationWithState.PrevBtn>
 
-            <PaginationWithState.Counts
-              enableNextClick
-              className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill"
-            />
+            <PaginationWithState.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-            <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
+            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
               <ChevronRightIcon className="element-icon-size" />
             </PaginationWithState.NextBtn>
           </div>
         </PaginationWithState>
         <p className="mt-6">With search params:</p>
+        <p className="mt-3">
+          Page is {location.search.split("?page=")[1] || 1}
+        </p>
         <Suspense>
-          <PaginationWithSearchParams pagesLength={6}>
-            <div className="pagination mt-3">
-              <PaginationWithSearchParams.PrevBtn className="btn btn-soft element-square-size">
+          <PaginationWithSearchParams
+            pagesLength={6}
+            sectionId="pagination-with-search-params"
+          >
+            <div className="flex items-center gap-3 mt-3">
+              <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
                 <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithSearchParams.PrevBtn>
 
-              <PaginationWithSearchParams.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+              <PaginationWithSearchParams.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-              <PaginationWithSearchParams.NextBtn className="btn btn-soft element-square-size">
+              <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
                 <ChevronRightIcon className="element-icon-size" />
               </PaginationWithSearchParams.NextBtn>
             </div>
           </PaginationWithSearchParams>
         </Suspense>
 
-        <p className="heading mt-20">Pagination with pages</p>
+        <p id="page-pagination-with-search-params" className="heading mt-20">
+          Pagination with pages
+        </p>
         <p className="mt-6">With state:</p>
         <PaginationWithState
-          pages={PAGES_WITH_STATE}
           page={pageWithPage}
+          pages={PAGES_WITH_STATE}
           setPage={setPageWithPage}
         >
-          <div className="max-w-96">
+          <div className="w-lg">
             <PaginationWithState.Pages />
 
-            <div className="pagination mt-3">
-              <PaginationWithState.PrevBtn className="btn btn-soft element-square-size">
+            <div className="flex items-center gap-3 mt-3">
+              <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
                 <ChevronLeftIcon className="element-icon-size" />
               </PaginationWithState.PrevBtn>
 
-              <PaginationWithState.Counts
-                enableNextClick
-                className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill"
-              />
+              <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
+                {(pagePaginationWithSateNumber) =>
+                  `Page Number ${pagePaginationWithSateNumber}`
+                }
+              </PaginationWithState.Counts>
 
-              <PaginationWithState.NextBtn className="btn btn-soft element-square-size">
+              <PaginationWithState.NextBtn className="btn btn-soft btn-square">
                 <ChevronRightIcon className="element-icon-size" />
               </PaginationWithState.NextBtn>
             </div>
           </div>
         </PaginationWithState>
+        <p className="mt-6">Like tabs:</p>
+        <PaginationWithState
+          page={pageWithPage}
+          pages={PAGES_WITH_STATE}
+          setPage={setPageWithPage}
+        >
+          <div className="join-x join-x-no-border mt-3">
+            <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost-outline data-[state=true]:btn-soft-outline rounded-b-none border-b-0!">
+              {(tabNumber) => `Tab ${tabNumber}`}
+            </PaginationWithState.Counts>
+          </div>
+          <div className="card bg-card rounded-tl-none">
+            <PaginationWithState.Pages />
+          </div>
+        </PaginationWithState>
         <p className="mt-6">With search params:</p>
         <Suspense>
-          <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
-            <div className="max-w-96">
+          <PaginationWithSearchParams
+            pageKey="page-2"
+            pages={PAGES_WITH_SEARCHPARAMS}
+            sectionId="page-pagination-with-search-params"
+          >
+            <div>
               <PaginationWithSearchParams.Pages />
 
-              <div className="pagination mt-3">
-                <PaginationWithSearchParams.PrevBtn className="btn btn-soft element-square-size">
+              <div className="flex items-center gap-3 mt-3">
+                <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
                   <ChevronLeftIcon className="element-icon-size" />
                 </PaginationWithSearchParams.PrevBtn>
 
-                <PaginationWithSearchParams.Counts className="btn element-square-size data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+                <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
+                  {(pagePaginationWithSateNumber) =>
+                    `Page Number ${pagePaginationWithSateNumber}`
+                  }
+                </PaginationWithState.Counts>
 
-                <PaginationWithSearchParams.NextBtn className="btn btn-soft element-square-size">
+                <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
                   <ChevronRightIcon className="element-icon-size" />
                 </PaginationWithSearchParams.NextBtn>
               </div>
             </div>
           </PaginationWithSearchParams>
         </Suspense>
-        <p className="mt-6">With proggres bar:</p>
+        <p id="pagination-with-progress" className="pt-6">
+          With proggres bar:
+        </p>
         <Suspense>
-          <PaginationWithSearchParams pages={PAGES_WITH_SEARCHPARAMS}>
-            <div className="pagination mt-3 mb-9">
+          <PaginationWithSearchParams
+            pageKey="page-3"
+            pages={PAGES_WITH_SEARCHPARAMS}
+            sectionId="pagination-with-progress"
+          >
+            <div className="flex items-center gap-3 mt-3 mb-9">
               <PaginationWithSearchParams.Counts
-                className="btn shrink-0 relative element-square-size data-[skipped=false]:data-[state=false]:btn-ghost data-[state=true]:btn-soft data-[skipped=true]:btn-fill"
+                className="btn shrink-0 relative btn-square data-[skipped=false]:data-[state=false]:btn-ghost data-[state=true]:btn-soft data-[skipped=true]:btn-fill"
                 ProgressElem={
                   <div className="w-32 h-2 rounded-full overflow-hidden bg-background-thin group">
                     <div className="w-0 group-data-[state=true]:w-1/2 group-data-[skipped=true]:w-full h-full bg-foreground"></div>
@@ -1718,74 +1755,6 @@ function Page() {
             />
           </Swap>
         </div>
-
-        <p className="heading mt-20">Tabs</p>
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
-          <Tabs.List className="join-x join-x-border mt-6" direction="x">
-            <Tabs.Tab
-              value="1"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            >
-              Tab 1
-            </Tabs.Tab>
-            <Tabs.Tab
-              value="2"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            >
-              Tab 2
-            </Tabs.Tab>
-            <Tabs.Tab
-              value="3"
-              className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
-            >
-              Tab 3
-            </Tabs.Tab>
-          </Tabs.List>
-
-          <Tabs.Panel
-            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
-            key={"1"}
-            value="1"
-          >
-            Tab 1: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
-            accusantium sunt repudiandae repellendus perspiciatis cumque unde
-            commodi reprehenderit distinctio nostrum quisquam nihil?
-          </Tabs.Panel>
-
-          <Tabs.Panel
-            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
-            key={"2"}
-            value="2"
-          >
-            Tab 2: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
-            accusantium sunt repudiandae quisquam nihil?
-          </Tabs.Panel>
-
-          <Tabs.Panel
-            className="tabs-panel card element-lg bg-background-thick mt-(--element-spacing)"
-            key={"3"}
-            value="3"
-          >
-            Tab 3: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptates, animi nisi, magni quis dolore cum molestias ipsam
-            accusantium sunt repudiandae repellendus perspiciatis cumque unde
-            commodi reprehenderit distinctio nostrum quisquam nihil?
-            <br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat ut
-            corporis sequi expedita deserunt aliquid iste facere, nisi ipsa iure
-            ad nostrum animi. Adipisci placeat eos laborum error magnam officiis
-            necessitatibus illo commodi a, aperiam tempora alias voluptatum
-            eveniet, atque quas dolores, facilis architecto quisquam ipsum
-            dolore officia debitis facere! Dicta iste consectetur, illo amet
-            obcaecati aut error, ipsam optio at earum odio laudantium
-            voluptatibus? Nemo, nisi debitis et, nam voluptas tempora ipsa ipsum
-            culpa nobis perferendis ipsam cumque blanditiis quos corrupti, rerum
-            eos? Sapiente fugiat voluptatibus laborum culpa at. Quidem, suscipit
-            perferendis. Illum doloribus in cumque fuga laboriosam dignissimos!
-          </Tabs.Panel>
-        </Tabs>
 
         <p className="heading mt-20">LinkLoader</p>
         <Link className="btn btn-soft mt-6" href={"/test"}>

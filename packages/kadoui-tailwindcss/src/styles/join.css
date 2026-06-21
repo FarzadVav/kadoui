@@ -1,31 +1,31 @@
 @utility join-x {
-  @apply flex *:not-first:rounded-s-none *:not-last:rounded-e-none;
+  @apply flex *:not-first:rounded-s-none! *:not-last:rounded-e-none!;
 }
 
 @utility join-x-border {
-  @apply *:not-first:border-s-0 *:not-last:border-e;
+  @apply *:not-first:border-s-0! *:not-last:border-e!;
 }
 
 @utility join-x-no-border {
-  @apply *:first:border-e-0 *:last:border-s-0 *:not-first:not-last:border-x-0;
+  @apply *:first:border-e-0! *:last:border-s-0! *:not-first:not-last:border-x-0!;
 }
 
 @utility join-x-fix-border {
-  @apply *:not-first:border-s-0;
+  @apply *:not-first:border-s-0!;
 }
 
 @utility join-y {
-  @apply flex flex-col *:not-first:rounded-t-none *:not-last:rounded-b-none;
+  @apply flex flex-col *:not-first:rounded-t-none! *:not-last:rounded-b-none!;
 }
 
 @utility join-y-border {
-  @apply *:not-first:border-t-0 *:not-last:border-b;
+  @apply *:not-first:border-t-0! *:not-last:border-b!;
 }
 
 @utility join-y-no-border {
-  @apply *:first:border-b-0 *:last:border-t-0 *:not-first:not-last:border-y-0;
+  @apply *:first:border-b-0! *:last:border-t-0! *:not-first:not-last:border-y-0!;
 }
 
 @utility join-y-fix-border {
-  @apply *:not-first:border-t-0;
+  @apply *:not-first:border-t-0!;
 }

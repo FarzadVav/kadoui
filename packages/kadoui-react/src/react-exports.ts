@@ -20,7 +20,6 @@ export * from "./react-components/Sheet/Sheet";
 export * from "./react-components/ShowMore/ShowMore";
 export * from "./react-components/Spoiler/Spoiler";
 export * from "./react-components/Swap/Swap";
-export * from "./react-components/Tabs/Tabs";
 export * from "./react-components/Choice/Choice";
 export * from "./react-components/Submit/Submit";
 export * from "./react-components/Theme/Theme";
