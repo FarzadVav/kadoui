@@ -9,12 +9,11 @@
 - Complete utilities.
 - Add DatePicker component.
 - Add TimePicker component.
-- Separate Next.js requirements.
+- Remove or separate Next.js requirements.
 - Add searchParams adaptor to all components.
 - Fix commented bugs in BeautyPlus and Shops.
-- Remove Next.js useSearchParams from searchParams.
 - Remove Dispatch types and add Void function type.
-- Fix transition bugs (like AccessNavigation focusTrap).
+- Check transition bugs (like AccessNavigation focusTrap).
 - Remove ThemeScript and handle theme simple and directly.
 - Develop Pagination to a full-featured component and Remove Tabs component.
 - Write obviously styles to React components directly (like positions, offsets).
@@ -43,7 +42,6 @@
 ### Now
 
 - Fix commented bugs in BeautyPlus and Shops.
-- Fix transition config (for compatibilty with components like AccessNavigation).
 - Add layout styles with variable customization (wrapper, element spacing, typography, etc.).
 
 ### Later

@@ -190,15 +190,15 @@ function Page() {
         <nav className="wrapper flex items-center justify-between h-full">
           <h1 className="title">KadoUI React + TailwindCSS</h1>
 
-          <Popover mode="click" direction="y" className="popover">
+          <Popover mode="click" direction="y">
             <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
               Theme:{" "}
               {theme || (
-                <LoaderIcon className="element-icon-size animate-spin" />
+                <LoaderIcon className="animate-spin" />
               )}
             </Popover.Toggle>
 
-            <Popover.Body className="popover-body position-b card card-menu card-y bg-background-thin">
+            <Popover.Body className="card card-menu card-y glass" position="bottom-center">
               <button
                 className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`}
                 onClick={() => setTheme("light")}
@@ -1484,37 +1484,37 @@ function Page() {
         </PasswordInput>
 
         <p className="heading mt-20">Popover</p>
-        <Popover mode="hover" direction="y" className="popover mt-6">
+        <Popover mode="hover" direction="y" className="mt-6">
           <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
-          <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
+          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
-        <Popover mode="both" direction="y" className="popover mt-3">
+        <Popover mode="both" direction="y" className="mt-3">
           <Popover.Toggle className="btn btn-soft">
             Hover and click me
           </Popover.Toggle>
 
-          <Popover.Body className="popover-body position-b card card-menu max-w-[200%] bg-background-thin">
+          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
-        <Popover mode="click" direction="y" className="popover mt-3">
-          <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+        <Popover mode="click" direction="y" className="mt-3">
+          <Popover.Toggle className="btn acn data-[state=false]:btn-soft data-[state=true]:btn-fill">
             Click me
           </Popover.Toggle>
 
-          <Popover.Body className="popover-body position-b card card-menu bg-background-thin">
-            <button className="btn btn-ghost">Like</button>
-            <button className="btn btn-ghost">Ignore</button>
-            <button className="btn btn-ghost">Download</button>
+          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
+            <button className="btn btn-ghost acn">Like</button>
+            <button className="btn btn-ghost acn">Ignore</button>
+            <button className="btn btn-ghost acn">Download</button>
             <Popover direction="y" className="popover">
               <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
                 <ChevronRightIcon className="element-icon-size" />
               </Popover.Toggle>
-              <Popover.Body className="popover-body position-r card card-menu bg-background-thin">
+              <Popover.Body className="popover-body position-r card card-menu bg-background-thin" position="right-center">
                 <button className="btn btn-ghost">Link</button>
                 <button className="btn btn-ghost">Instagram</button>
                 <button className="btn btn-ghost">Telegram</button>

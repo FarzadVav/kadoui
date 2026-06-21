@@ -15,7 +15,25 @@ export type PopoverRootPropsT = AccessNavigationPropsT & {
 };
 
 export type PopoverBodyPropsT = ComponentProps<"div"> & {
+  offset?: number;
   preventClose?: boolean;
+  position:
+    | "top-left-out"
+    | "top-left-in"
+    | "top-center"
+    | "top-right-in"
+    | "top-right-out"
+    | "right-top"
+    | "right-center"
+    | "right-bottom-in"
+    | "right-bottom-out"
+    | "bottom-right"
+    | "bottom-center"
+    | "bottom-left-in"
+    | "bottom-left-out"
+    | "left-bottom"
+    | "left-center"
+    | "left-top";
 };
 
 export type PopoverTogglePropsT = Omit<ComponentProps<"button">, "type">;

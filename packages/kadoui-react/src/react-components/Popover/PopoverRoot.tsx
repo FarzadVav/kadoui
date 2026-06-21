@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 
 import { PopoverContext } from "./PopoverContext";
 import type { PopoverRootPropsT } from "./popoverTypes";
@@ -12,6 +12,7 @@ export function PopoverRoot({
   mode = "click",
   onMouseEnter,
   onMouseLeave,
+  style,
   ...p
 }: PopoverRootPropsT) {
   const pathname = usePathname();
@@ -20,6 +21,13 @@ export function PopoverRoot({
 
   const toggleRef = useRef<HTMLButtonElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+
+  const styles: CSSProperties = {
+    maxWidth: "100%",
+    width: "max-content",
+    position: "relative",
+    ...style,
+  };
 
   useEffect(() => {
     const closeHandler = () => {
@@ -59,6 +67,7 @@ export function PopoverRoot({
   return (
     <PopoverContext value={{ isOpen, setOpen, toggleRef, bodyRef, mode }}>
       <AccessNavigation
+        style={styles}
         onMouseEnter={(ev) => {
           onMouseEnter?.(ev);
           if (["hover", "both"].includes(mode)) {
