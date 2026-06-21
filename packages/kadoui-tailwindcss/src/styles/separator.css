@@ -1,54 +1,48 @@
 /*
   Start Variants
 */
-@utility separate-t {
+@utility separate {
   --separate-palette: var(--color-foreground);
+  --separate-border-width: 1px;
+  --separate-spacing: calc(var(--spacing) * 5);
+}
 
-  border-top-width: var(--separate-border-width, 1px);
-  padding-top: var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-top: var(--separate-spacing, calc(var(--spacing) * 5));
+@utility separate-t {
+  border-top-width: var(--separate-border-width);
+  padding-top: var(--separate-spacing);
+  margin-top: var(--separate-spacing);
 }
 
 @utility separate-r {
-  --separate-palette: var(--color-foreground);
-
-  border-right-width: var(--separate-border-width, 1px);
-  padding-right: var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-right: var(--separate-spacing, calc(var(--spacing) * 5));
+  border-right-width: var(--separate-border-width);
+  padding-right: var(--separate-spacing);
+  margin-right: var(--separate-spacing);
 }
 
 @utility separate-b {
-  --separate-palette: var(--color-foreground);
-
-  border-bottom-width: var(--separate-border-width, 1px);
-  padding-bottom: var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-bottom: var(--separate-spacing, calc(var(--spacing) * 5));
+  border-bottom-width: var(--separate-border-width);
+  padding-bottom: var(--separate-spacing);
+  margin-bottom: var(--separate-spacing);
 }
 
 @utility separate-l {
-  --separate-palette: var(--color-foreground);
-
-  border-left-width: var(--separate-border-width, 1px);
-  padding-left: var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-left: var(--separate-spacing, calc(var(--spacing) * 5));
+  border-left-width: var(--separate-border-width);
+  padding-left: var(--separate-spacing);
+  margin-left: var(--separate-spacing);
 }
 
 @utility separate-y {
-  --separate-palette: var(--color-foreground);
-
-  border-top-width: var(--separate-border-width, 1px);
-  border-bottom-width: var(--separate-border-width, 1px);
-  padding-top: var(--separate-spacing, calc(var(--spacing) * 5)) 0;
-  margin-top: var(--separate-spacing, calc(var(--spacing) * 5)) 0;
+  border-top-width: var(--separate-border-width);
+  border-bottom-width: var(--separate-border-width);
+  padding-top: var(--separate-spacing) 0;
+  margin-top: var(--separate-spacing) 0;
 }
 
 @utility separate-x {
-  --separate-palette: var(--color-foreground);
-
-  border-left-width: var(--separate-border-width, 1px);
-  border-right-width: var(--separate-border-width, 1px);
-  padding-top: 0 var(--separate-spacing, calc(var(--spacing) * 5));
-  margin-top: 0 var(--separate-spacing, calc(var(--spacing) * 5));
+  border-left-width: var(--separate-border-width);
+  border-right-width: var(--separate-border-width);
+  padding-top: 0 var(--separate-spacing);
+  margin-top: 0 var(--separate-spacing);
 }
 /*
   End Variants

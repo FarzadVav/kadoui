@@ -10,16 +10,22 @@
   --input-palette: var(--color-foreground);
   --input-brush: var(--color-background);
   --input-placeholder: var(--input-palette);
+  --input-width: 100%;
+  --input-height: calc(var(--spacing) * 10);
+  --input-spacing: calc(var(--spacing) * 3);
+  --input-text: var(--text-base);
+  --input-leading: var(--text-base--line-height);
+  --input-rounded: var(--radius-lg);
 
   @apply flex cursor-text relative transition-all outline-solid outline-1 outline-transparent has-[input:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[input:disabled]:*:cursor-not-allowed not-has-[input:disabled]:has-[[type=file]]:cursor-pointer;
 
-  width: var(--input-width, 100%);
-  height: var(--input-height, calc(var(--spacing) * 10));
-  padding: 0 var(--input-spacing, calc(var(--spacing) * 3));
-  gap: var(--input-spacing, calc(var(--spacing) * 3));
-  font-size: var(--input-text, var(--text-base));
-  line-height: var(--input-leading, var(--text-base--line-height));
-  border-radius: var(--input-rounded, var(--radius-lg));
+  width: var(--input-width);
+  height: var(--input-height);
+  padding: 0 var(--input-spacing);
+  gap: var(--input-spacing);
+  font-size: var(--input-text);
+  line-height: var(--input-leading);
+  border-radius: var(--input-rounded);
 
   &:focus-within {
     outline-color: var(--input-palette);
@@ -32,21 +38,21 @@
   &:has(textarea) {
     @apply h-[25dvh];
 
-    padding: var(--input-spacing, calc(var(--spacing) * 3));
+    padding: var(--input-spacing);
   }
 
   & > svg {
-    width: calc(var(--input-height) / 2);
-    height: calc(var(--input-height) / 2);
+    width: calc(var(--input-height) * 0.5);
+    height: calc(var(--input-height) * 0.5);
     flex-shrink: 0;
   }
 
   &:has(*:is(.btn:last-child)) {
-    padding-inline-end: calc((var(--btn-height, calc(var(--spacing) * 10)) * 0.125));
+    padding-inline-end: calc(var(--input-height) * 0.125);
   }
 
   &:has(*:is(.btn:first-child)) {
-    padding-inline-start: calc((var(--btn-height, calc(var(--spacing) * 10)) * 0.125));
+    padding-inline-start: calc(var(--input-height) * 0.125);
   }
 }
 /*
@@ -197,8 +203,9 @@
   --input-leading: var(--text-xs--line-height);
   --input-rounded: var(--radius-sm);
 
-  &.input-rounded, .input-rounded * {
-    --input-rounded: calc(infinity * 1px);
+  &.input-rounded,
+  .input-rounded * {
+    --input-rounded: calc(infinity* 1px);
   }
 }
 
@@ -209,8 +216,9 @@
   --input-leading: var(--text-sm--line-height);
   --input-rounded: var(--radius-md);
 
-  &.input-rounded, .input-rounded * {
-    --input-rounded: calc(infinity * 1px);
+  &.input-rounded,
+  .input-rounded * {
+    --input-rounded: calc(infinity* 1px);
   }
 }
 
@@ -221,8 +229,9 @@
   --input-leading: var(--text-base--line-height);
   --input-rounded: var(--radius-lg);
 
-  &.input-rounded, .input-rounded * {
-    --input-rounded: calc(infinity * 1px);
+  &.input-rounded,
+  .input-rounded * {
+    --input-rounded: calc(infinity* 1px);
   }
 }
 
@@ -233,8 +242,9 @@
   --input-leading: var(--text-lg--line-height);
   --input-rounded: var(--radius-xl);
 
-  &.input-rounded, .input-rounded * {
-    --input-rounded: calc(infinity * 1px);
+  &.input-rounded,
+  .input-rounded * {
+    --input-rounded: calc(infinity* 1px);
   }
 }
 
@@ -245,13 +255,17 @@
   --input-leading: var(--text-xl--line-height);
   --input-rounded: var(--radius-2xl);
 
-  &.input-rounded, .input-rounded * {
-    --input-rounded: calc(infinity * 1px);
+  &.input-rounded,
+  .input-rounded * {
+    --input-rounded: calc(infinity* 1px);
   }
 }
 
 @utility input-square {
-  --input-width: min(var(--input-height, calc(var(--spacing) * 10)), var(--input-height, calc(var(--spacing) * 10)));
+  --input-width: min(
+    var(--input-height, calc(var(--spacing) * 10)),
+    var(--input-height, calc(var(--spacing) * 10))
+  );
   --input-spacing: 0;
 
   @apply **:text-center **:justify-center **:items-center;
@@ -262,7 +276,7 @@
 }
 
 @utility input-rounded {
-  --input-rounded: calc(infinity * 1px);
+  --input-rounded: calc(infinity* 1px);
 }
 /*
   End Sizes

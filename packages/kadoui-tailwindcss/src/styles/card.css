@@ -2,10 +2,15 @@
   Start Main
 */
 @utility card {
-  width: var(--card-width, auto);
-  max-width: var(--card-max-width, 100%);
-  padding: var(--card-spacing, calc(var(--spacing) * 3));
-  border-radius: var(--card-rounded, var(--radius-lg));
+  --card-width: auto;
+  --card-max-width: 100%;
+  --card-spacing: calc(var(--spacing) * 3);
+  --card-rounded: var(--radius-lg);
+
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  padding: var(--card-spacing);
+  border-radius: var(--card-rounded);
 }
 /*
   End Main
@@ -27,13 +32,13 @@
 @utility card-y {
   @apply flex flex-col;
 
-  row-gap: var(--card-spacing, calc(var(--spacing) * 3));
+  row-gap: var(--card-spacing);
 }
 
 @utility card-x {
   @apply flex;
 
-  column-gap: var(--card-spacing, calc(var(--spacing) * 3));
+  column-gap: var(--card-spacing);
 }
 /*
   End Variants

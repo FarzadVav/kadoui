@@ -304,7 +304,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input Ghost..."
               />
-              <button className="btn btn-ghost">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline">
               <SearchIcon className="element-icon-size" />
@@ -313,7 +315,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input Ghost-Outline..."
               />
-              <button className="btn btn-ghost">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-soft">
               <SearchIcon className="element-icon-size" />
@@ -322,7 +326,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input Soft..."
               />
-              <button className="btn btn-ghost">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-soft-outline">
               <SearchIcon className="element-icon-size" />
@@ -331,7 +337,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input Soft-Outline..."
               />
-              <button className="btn btn-ghost">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-fill">
               <SearchIcon className="element-icon-size" />
@@ -340,7 +348,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input Soft-Outline..."
               />
-              <button className="btn btn-ghost btn-background">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square btn-background">
+                Go
+              </button>
             </label>
           </div>
         </div>
@@ -348,87 +358,105 @@ function Page() {
           <p className="title mt-6">Colors</p>
           <div className="space-y-3 mt-3">
             <label className="input input-ghost-outline">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input foreground..."
               />
-              <button className="btn btn-ghost">Go</button>
+              <button className="btn btn-ghost  btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <div className="p-3 bg-foreground">
               <label className="input input-ghost-outline input-background">
-                <SearchIcon className="element-icon-size" />
+                <SearchIcon />
                 <input
                   type="text"
                   className="input-field"
                   placeholder="Input background..."
                 />
-                <button className="btn btn-ghost btn-background">Go</button>
+                <button className="btn btn-ghost btn-background btn-in-input btn-square">
+                  Go
+                </button>
               </label>
             </div>
             <label className="input input-ghost-outline input-card">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input card..."
               />
-              <button className="btn btn-ghost btn-card">Go</button>
+              <button className="btn btn-ghost btn-card btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-primary">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input primary..."
               />
-              <button className="btn btn-ghost btn-primary">Go</button>
+              <button className="btn btn-ghost btn-primary btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-secondary">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input secondary..."
               />
-              <button className="btn btn-ghost btn-secondary">Go</button>
+              <button className="btn btn-ghost btn-secondary btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-error">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input error..."
               />
-              <button className="btn btn-ghost btn-error">Go</button>
+              <button className="btn btn-ghost btn-error btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-success">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input success..."
               />
-              <button className="btn btn-ghost btn-success">Go</button>
+              <button className="btn btn-ghost btn-success btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-warning">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input warning..."
               />
-              <button className="btn btn-ghost btn-warning">Go</button>
+              <button className="btn btn-ghost btn-warning btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-info">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
                 placeholder="Input info..."
               />
-              <button className="btn btn-ghost btn-info">Go</button>
+              <button className="btn btn-ghost btn-info btn-in-input btn-square">
+                Go
+              </button>
             </label>
           </div>
         </div>
@@ -442,7 +470,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input xs..."
               />
-              <button className="btn btn-ghost btn-xs">Go</button>
+              <button className="btn btn-ghost btn-square btn-xs btn-in-input">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-sm">
               <SearchIcon className="element-icon-size" />
@@ -451,7 +481,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input sm..."
               />
-              <button className="btn btn-ghost btn-sm">Go</button>
+              <button className="btn btn-ghost btn-sm btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline">
               <SearchIcon className="element-icon-size" />
@@ -460,7 +492,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input md..."
               />
-              <button className="btn btn-ghost btn-md">Go</button>
+              <button className="btn btn-ghost btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-rounded">
               <SearchIcon className="element-icon-size" />
@@ -469,7 +503,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input rounded..."
               />
-              <button className="btn btn-ghost btn-md btn-rounded">Go</button>
+              <button className="btn btn-ghost btn-rounded btn-in-input btn-square">
+                G
+              </button>
             </label>
             <label className="input input-ghost-outline input-square">
               <input type="text" placeholder="SQ" className="input-field" />
@@ -481,7 +517,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input lg..."
               />
-              <button className="btn btn-ghost btn-lg">Go</button>
+              <button className="btn btn-ghost btn-lg btn-in-input btn-square">
+                Go
+              </button>
             </label>
             <label className="input input-ghost-outline input-xl">
               <SearchIcon className="element-icon-size" />
@@ -490,7 +528,9 @@ function Page() {
                 className="input-field"
                 placeholder="Input xl..."
               />
-              <button className="btn btn-ghost btn-xl">Go</button>
+              <button className="btn btn-ghost btn-xl btn-in-input btn-square">
+                Go
+              </button>
             </label>
           </div>
         </div>
@@ -680,44 +720,68 @@ function Page() {
         <p className="heading">Separates</p>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Xs</p>
-          <div className="bg-card separate-t separate-xs">Separate top</div>
-          <div className="bg-card separate-r separate-xs">Separate right</div>
-          <div className="bg-card separate-b separate-xs">Separate bottom</div>
-          <div className="bg-card separate-l separate-xs">Separate left</div>
+          <div className="bg-card separate separate-t separate-xs">
+            Separate top
+          </div>
+          <div className="bg-card separate separate-r separate-xs">
+            Separate right
+          </div>
+          <div className="bg-card separate separate-b separate-xs">
+            Separate bottom
+          </div>
+          <div className="bg-card separate separate-l separate-xs">
+            Separate left
+          </div>
         </div>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Sm</p>
-          <div className="bg-card separate-t separate-sm">Separate top</div>
-          <div className="bg-card separate-r separate-sm">Separate right</div>
-          <div className="bg-card separate-b separate-sm">Separate bottom</div>
-          <div className="bg-card separate-l separate-sm">Separate left</div>
+          <div className="bg-card separate separate-t separate-sm">
+            Separate top
+          </div>
+          <div className="bg-card separate separate-r separate-sm">
+            Separate right
+          </div>
+          <div className="bg-card separate separate-b separate-sm">
+            Separate bottom
+          </div>
+          <div className="bg-card separate separate-l separate-sm">
+            Separate left
+          </div>
         </div>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Md</p>
-          <div className="bg-card separate-t">Separate top</div>
-          <div className="bg-card separate-r">Separate right</div>
-          <div className="bg-card separate-b">Separate bottom</div>
-          <div className="bg-card separate-l">Separate left</div>
+          <div className="bg-card separate separate-t">Separate top</div>
+          <div className="bg-card separate separate-r">Separate right</div>
+          <div className="bg-card separate separate-b">Separate bottom</div>
+          <div className="bg-card separate separate-l">Separate left</div>
         </div>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Lg</p>
-          <div className="bg-card separate-t separate-lg">Separate top</div>
-          <div className="bg-card separate-r separate-lg">Separate right</div>
-          <div className="bg-card separate-b separate-lg">Separate bottom</div>
-          <div className="bg-card separate-l separate-lg">Separate left</div>
+          <div className="bg-card separate separate-t separate-lg">
+            Separate top
+          </div>
+          <div className="bg-card separate separate-r separate-lg">
+            Separate right
+          </div>
+          <div className="bg-card separate separate-b separate-lg">
+            Separate bottom
+          </div>
+          <div className="bg-card separate separate-l separate-lg">
+            Separate left
+          </div>
         </div>
         <div className="mt-6 space-y-3">
           <p className="title mt-6">Xl</p>
-          <div className="bg-card separate-t separate-xl border-dashed border-error">
+          <div className="bg-card separate separate-t separate-xl border-dashed border-error">
             Separate top
           </div>
-          <div className="bg-card separate-r separate-xl border-double border-success">
+          <div className="bg-card separate separate-r separate-xl border-double border-success">
             Separate right
           </div>
-          <div className="bg-card separate-b separate-xl border-dotted border-primary">
+          <div className="bg-card separate separate-b separate-xl border-dotted border-primary">
             Separate bottom
           </div>
-          <div className="bg-card separate-l separate-xl border-double border-secondary">
+          <div className="bg-card separate separate-l separate-xl border-double border-secondary">
             Separate left
           </div>
         </div>
@@ -1408,13 +1472,14 @@ function Page() {
         </Suspense>
 
         <p className="heading mt-20">PasswordInput</p>
-        <PasswordInput className="input input-ghost-outline mt-3">
+        <PasswordInput className="input input-ghost-outline input-xl mt-3">
+          <span>Password:</span>
           <PasswordInput.Field className="input-field" />
           <PasswordInput.Toggle
-            className="btn btn-ghost element-sm"
-            visibleChildren={<EyeIcon className="element-icon-size" />}
+            className="btn btn-ghost btn-square btn-xl btn-in-input"
+            visibleChildren={<EyeIcon />}
           >
-            <EyeClosedIcon className="element-icon-size" />
+            <EyeClosedIcon />
           </PasswordInput.Toggle>
         </PasswordInput>
 

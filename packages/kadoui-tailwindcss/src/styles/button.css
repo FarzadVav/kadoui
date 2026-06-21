@@ -4,29 +4,31 @@
 @utility btn {
   --btn-palette: var(--color-foreground);
   --btn-brush: var(--color-background);
+  --btn-width: max-content;
+  --btn-height: calc(var(--spacing) * 10);
+  --btn-spacing: calc(var(--spacing) * 3);
+  --btn-text: var(--text-base);
+  --btn-leading: var(--text-base--line-height);
+  --btn-rounded: var(--radius-lg);
 
   @apply max-w-full flex items-center justify-center transition-all outline-solid outline-1 outline-transparent disabled:opacity-50 disabled:cursor-not-allowed active:opacity-50;
 
-  width: var(--btn-width, max-content);
-  height: var(--btn-height, calc(var(--spacing) * 10));
-  padding: 0 var(--btn-spacing, calc(var(--spacing) * 3));
-  gap: calc(var(--btn-spacing, calc(var(--spacing) * 3)) * 0.5);
-  font-size: var(--btn-text, var(--text-base));
-  line-height: var(--btn-leading, var(--text-base--line-height));
-  border-radius: var(--btn-rounded, var(--radius-lg));
+  width: var(--btn-width);
+  height: var(--btn-height);
+  padding: 0 var(--btn-spacing);
+  gap: calc(var(--btn-spacing) * 0.75);
+  font-size: var(--btn-text);
+  line-height: var(--btn-leading);
+  border-radius: var(--btn-rounded);
 
   &:focus-visible {
     outline-color: var(--btn-palette);
   }
 
   & > svg {
-    width: calc(var(--btn-height) / 2);
-    height: calc(var(--btn-height) / 2);
+    width: calc(var(--btn-height) * 0.5);
+    height: calc(var(--btn-height) * 0.5);
     flex-shrink: 0;
-  }
-
-  :where(*:is(.input)) & {
-    height: calc(var(--btn-height, calc(var(--spacing) * 10)) * 0.75);
   }
 }
 /*
@@ -47,7 +49,8 @@
   }
 
   &:is(.btn-link) {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--btn-brush);
     }
   }
@@ -62,7 +65,8 @@
   }
 
   &:is(.btn-link) {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--btn-palette);
     }
   }
@@ -76,7 +80,8 @@
   }
 
   &:is(.btn-link) {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--btn-palette);
     }
   }
@@ -94,7 +99,8 @@
   }
 
   &:is(.btn-link) {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--btn-palette);
     }
   }
@@ -111,7 +117,8 @@
   }
 
   &:is(.btn-link) {
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       text-decoration-color: var(--btn-palette);
     }
   }
@@ -189,8 +196,9 @@
   --btn-leading: var(--text-xs--line-height);
   --btn-rounded: var(--radius-sm);
 
-  &.btn-rounded, .btn-rounded * {
-    --btn-rounded: calc(infinity * 1px);
+  &.btn-rounded,
+  .btn-rounded * {
+    --btn-rounded: calc(infinity* 1px);
   }
 }
 
@@ -201,8 +209,9 @@
   --btn-leading: var(--text-sm--line-height);
   --btn-rounded: var(--radius-md);
 
-  &.btn-rounded, .btn-rounded * {
-    --btn-rounded: calc(infinity * 1px);
+  &.btn-rounded,
+  .btn-rounded * {
+    --btn-rounded: calc(infinity* 1px);
   }
 }
 
@@ -213,8 +222,9 @@
   --btn-leading: var(--text-base--line-height);
   --btn-rounded: var(--radius-lg);
 
-  &.btn-rounded, .btn-rounded * {
-    --btn-rounded: calc(infinity * 1px);
+  &.btn-rounded,
+  .btn-rounded * {
+    --btn-rounded: calc(infinity* 1px);
   }
 }
 
@@ -225,8 +235,9 @@
   --btn-leading: var(--text-lg--line-height);
   --btn-rounded: var(--radius-xl);
 
-  &.btn-rounded, .btn-rounded * {
-    --btn-rounded: calc(infinity * 1px);
+  &.btn-rounded,
+  .btn-rounded * {
+    --btn-rounded: calc(infinity* 1px);
   }
 }
 
@@ -237,13 +248,17 @@
   --btn-leading: var(--text-xl--line-height);
   --btn-rounded: var(--radius-2xl);
 
-  &.btn-rounded, .btn-rounded * {
-    --btn-rounded: calc(infinity * 1px);
+  &.btn-rounded,
+  .btn-rounded * {
+    --btn-rounded: calc(infinity* 1px);
   }
 }
 
 @utility btn-square {
-  --btn-width: min(var(--btn-height, calc(var(--spacing) * 10)), var(--btn-height, calc(var(--spacing) * 10)));
+  --btn-width: min(
+    var(--btn-height, calc(var(--spacing) * 10)),
+    var(--btn-height, calc(var(--spacing) * 10))
+  );
   --btn-spacing: 0;
 
   @apply text-center justify-center items-center;
@@ -254,7 +269,13 @@
 }
 
 @utility btn-rounded {
-  --btn-rounded: calc(infinity * 1px);
+  --btn-rounded: calc(infinity* 1px);
+}
+
+@utility btn-in-input {
+  :where(:is(.input)) & {
+    --btn-height: calc(var(--input-height, calc(var(--spacing) * 10)) * 0.75);
+  }
 }
 /*
   End Sizes
