@@ -1650,8 +1650,8 @@ function Page() {
         </Portal>
 
         <p className="heading mt-20">Progress</p>
-        <Progress className="progress mt-6" value={45}>
-          <Progress.Bar className="progress-bar" />
+        <Progress className="rounded-full mt-6 text-xs" value={75}>
+          <Progress.Bar className="flex items-center justify-center" />
         </Progress>
 
         <p className="heading mt-20">QrCode</p>
