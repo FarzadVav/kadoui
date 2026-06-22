@@ -1,10 +1,4 @@
-/* @utility sheet-portal {
-  @apply fixed inset-0 z-50 bg-foreground/50;
-}
-
-@utility sheet-body {
-  @apply absolute bottom-0 h-[75%] w-full flex flex-col overflow-hidden bg-background touch-none;
-}
+/*
 
 @utility sheet-header {
   @apply p-(--element-spacing) flex items-center justify-center;

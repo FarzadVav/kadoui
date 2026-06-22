@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { useMotionValue, useAnimate } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useDragControls, useMotionValue } from "framer-motion";
 
 import { SheetContext } from "./SheetContext";
 import type { SheetRootPropsT } from "./sheetTypes";
@@ -12,9 +12,15 @@ export function SheetRoot({ children }: SheetRootPropsT) {
   const pathname = usePathname();
 
   const y = useMotionValue(0);
-  const [scope, animate] = useAnimate();
+  const dragControls = useDragControls();
 
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      y.set(0);
+    }
+  }, [isOpen, y]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -56,21 +62,20 @@ export function SheetRoot({ children }: SheetRootPropsT) {
     return () => removeOverStyles();
   }, [isOpen]);
 
-  const closeHandler = async () => {
-    animate(scope.current, {
-      opacity: [1, 0],
-    });
-
-    const yStart = typeof y.get() === "number" ? y.get() : 0;
-    await animate("#sheet", {
-      y: [yStart, "100%"],
-    });
-
+  const closeHandler = () => {
     setOpen(false);
   };
 
   return (
-    <SheetContext value={{ isOpen, setOpen, closeHandler, scope, y }}>
+    <SheetContext
+      value={{
+        y,
+        isOpen,
+        setOpen,
+        closeHandler,
+        dragControls,
+      }}
+    >
       {children}
     </SheetContext>
   );

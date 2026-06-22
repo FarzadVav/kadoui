@@ -20,6 +20,7 @@ import {
   SendHorizonalIcon,
   StarIcon,
   TrashIcon,
+  XIcon,
 } from "lucide-react";
 import {
   AccessNavigation,
@@ -1744,32 +1745,167 @@ function Page() {
         <Sheet>
           <Sheet.Toggle className="btn btn-soft mt-6">Open sheet</Sheet.Toggle>
 
-          <Sheet.Portal className="sheet-portal">
-            <Sheet.Body className="sheet-body">
-              <Sheet.Header className="sheet-header">
-                <Sheet.Handlebar className="sheet-handlebar" />
-              </Sheet.Header>
+          <Sheet.Portal>
+            <Sheet.Body>
+              <Sheet.Indicator className="flex items-center gap-3 justify-between border-b border-foreground/10">
+                <p>This is your sheet</p>
+                <Sheet.Toggle className="btn btn-ghost btn-square">
+                  <XIcon />
+                </Sheet.Toggle>
+              </Sheet.Indicator>
 
-              <Sheet.Content className="sheet-content">
+              <Sheet.Content>
                 <label className="input input-ghost-outline">
-                  <SearchIcon className="element-icon-size" />
+                  <SearchIcon />
                   <input
                     type="text"
+                    data-sheet="focus"
                     className="input-field"
                     placeholder="Search..."
-                    data-sheet="focus"
                   />
                 </label>
-                <p className="mt-3">
+                <p className="mt-3 opacity-50">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Molestiae explicabo numquam sed dolorem nesciunt repellat
                   deleniti quisquam laudantium? Quas ullam magni voluptate esse
                   animi vero dicta maxime mollitia amet dolor.
                 </p>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae explicabo numquam sed dolorem nesciunt repellat
+                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
+                  animi vero dicta maxime mollitia amet dolor. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Veniam nihil
+                  necessitatibus minus quod sapiente doloribus architecto saepe
+                  animi expedita, repellendus earum corporis cum repudiandae
+                  nesciunt adipisci aliquid dicta! Veniam, nihil qui harum ut
+                  minus at necessitatibus temporibus animi voluptas quidem
+                  officiis, dolorem dicta reiciendis aliquam tenetur amet enim
+                  earum fugiat! Non illo quisquam odio unde minus, animi
+                  praesentium alias inventore quaerat voluptas quibusdam dolores
+                  laboriosam iure magnam eum blanditiis illum labore fuga
+                  cumque. Expedita ratione aliquam, a similique deserunt
+                  provident sunt suscipit molestiae, ea eveniet magnam sequi
+                  quibusdam molestias? Veniam itaque debitis, eligendi ea quod
+                  voluptatibus numquam. Consectetur at error perspiciatis fugit
+                  repudiandae neque voluptas iusto vitae labore temporibus
+                  quidem, nemo laudantium pariatur minima odit maiores sed.
+                  Reprehenderit eum excepturi dolores alias obcaecati similique
+                  laudantium animi, eius labore repellat nostrum, voluptatibus,
+                  explicabo fugit? Tempora perferendis autem amet dignissimos,
+                  architecto aspernatur, ut porro nihil quaerat cum, quae
+                  explicabo vitae. Distinctio blanditiis eius asperiores
+                  numquam? Ullam, modi temporibus, dolores ad illum error earum
+                  ea quae saepe optio, nisi veniam mollitia vero ipsum molestiae
+                  eos tenetur placeat! Magni molestias in necessitatibus
+                  asperiores soluta ducimus non modi numquam officiis! Nemo
+                  magni fugit quia? Quia odit nesciunt facere fugit, ipsam
+                  quaerat? Inventore, velit fuga. Nisi assumenda quas eos dicta
+                  tempore recusandae fugiat, blanditiis repudiandae ipsam
+                  perspiciatis voluptatibus fuga voluptatem sint rem possimus
+                  perferendis nam deserunt corporis earum eaque deleniti odit
+                  totam. Cupiditate mollitia non ipsa, iusto reiciendis quisquam
+                  maiores in nesciunt nam molestias nihil quibusdam fugiat vel
+                  voluptatem laborum, quod laboriosam quo pariatur aspernatur
+                  aliquid.
+                </p>
               </Sheet.Content>
+
+              <Sheet.Indicator className="flex items-center gap-3 justify-between border-t border-foreground/10">
+                <p>Are you enjoying the sheet?</p>
+                <Sheet.Toggle className="btn btn-ghost ms-auto">
+                  No
+                </Sheet.Toggle>
+                <Sheet.Toggle className="btn btn-soft btn-success">
+                  Yes
+                </Sheet.Toggle>
+              </Sheet.Indicator>
             </Sheet.Body>
           </Sheet.Portal>
         </Sheet>
+
+        <Sheet>
+          <Sheet.Toggle className="btn btn-soft mt-6">Open sheet with offset</Sheet.Toggle>
+
+          <Sheet.Portal>
+            <Sheet.Body offset={20}>
+              <Sheet.Indicator className="flex items-center gap-3 justify-between border-b border-foreground/10 rounded-t-3xl">
+                <p>This is your sheet</p>
+                <Sheet.Toggle className="btn btn-ghost btn-square btn-rounded">
+                  <XIcon />
+                </Sheet.Toggle>
+              </Sheet.Indicator>
+
+              <Sheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    data-sheet="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+                <p className="mt-3 opacity-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae explicabo numquam sed dolorem nesciunt repellat
+                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
+                  animi vero dicta maxime mollitia amet dolor.
+                </p>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae explicabo numquam sed dolorem nesciunt repellat
+                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
+                  animi vero dicta maxime mollitia amet dolor. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Veniam nihil
+                  necessitatibus minus quod sapiente doloribus architecto saepe
+                  animi expedita, repellendus earum corporis cum repudiandae
+                  nesciunt adipisci aliquid dicta! Veniam, nihil qui harum ut
+                  minus at necessitatibus temporibus animi voluptas quidem
+                  officiis, dolorem dicta reiciendis aliquam tenetur amet enim
+                  earum fugiat! Non illo quisquam odio unde minus, animi
+                  praesentium alias inventore quaerat voluptas quibusdam dolores
+                  laboriosam iure magnam eum blanditiis illum labore fuga
+                  cumque. Expedita ratione aliquam, a similique deserunt
+                  provident sunt suscipit molestiae, ea eveniet magnam sequi
+                  quibusdam molestias? Veniam itaque debitis, eligendi ea quod
+                  voluptatibus numquam. Consectetur at error perspiciatis fugit
+                  repudiandae neque voluptas iusto vitae labore temporibus
+                  quidem, nemo laudantium pariatur minima odit maiores sed.
+                  Reprehenderit eum excepturi dolores alias obcaecati similique
+                  laudantium animi, eius labore repellat nostrum, voluptatibus,
+                  explicabo fugit? Tempora perferendis autem amet dignissimos,
+                  architecto aspernatur, ut porro nihil quaerat cum, quae
+                  explicabo vitae. Distinctio blanditiis eius asperiores
+                  numquam? Ullam, modi temporibus, dolores ad illum error earum
+                  ea quae saepe optio, nisi veniam mollitia vero ipsum molestiae
+                  eos tenetur placeat! Magni molestias in necessitatibus
+                  asperiores soluta ducimus non modi numquam officiis! Nemo
+                  magni fugit quia? Quia odit nesciunt facere fugit, ipsam
+                  quaerat? Inventore, velit fuga. Nisi assumenda quas eos dicta
+                  tempore recusandae fugiat, blanditiis repudiandae ipsam
+                  perspiciatis voluptatibus fuga voluptatem sint rem possimus
+                  perferendis nam deserunt corporis earum eaque deleniti odit
+                  totam. Cupiditate mollitia non ipsa, iusto reiciendis quisquam
+                  maiores in nesciunt nam molestias nihil quibusdam fugiat vel
+                  voluptatem laborum, quod laboriosam quo pariatur aspernatur
+                  aliquid.
+                </p>
+              </Sheet.Content>
+
+              <Sheet.Indicator className="flex items-center gap-3 justify-between border-t border-foreground/10 rounded-b-3xl">
+                <p>Are you enjoying the sheet?</p>
+                <Sheet.Toggle className="btn btn-ghost btn-rounded ms-auto">
+                  No
+                </Sheet.Toggle>
+                <Sheet.Toggle className="btn btn-soft btn-success btn-rounded">
+                  Yes
+                </Sheet.Toggle>
+              </Sheet.Indicator>
+            </Sheet.Body>
+          </Sheet.Portal>
+        </Sheet>
+
         <p className="heading mt-20">ShowMore</p>
         <ShowMore className="max-w-96 mt-6" maxLines={3}>
           <ShowMore.Content>

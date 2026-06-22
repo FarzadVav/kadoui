@@ -1,15 +1,25 @@
 "use client";
 
 import { use } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionStyle } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";
 import { SheetContext } from "./SheetContext";
 import { ClientOnly } from "../ClientOnly/ClientOnly";
 import type { SheetPortalPropsT } from "./sheetTypes";
+import { FRAMER_MOTION_DURATION } from "../../configs";
 
-export function SheetPortal(p: SheetPortalPropsT) {
-  const { isOpen, closeHandler: handleClose, scope } = use(SheetContext);
+export function SheetPortal({ style, ...p }: SheetPortalPropsT) {
+  const { isOpen, setOpen } = use(SheetContext);
+
+  const styles: MotionStyle = {
+    inset: 0,
+    zIndex: 50,
+    position: "fixed",
+    backgroundColor:
+      "color-mix(in oklab, var(--color-background) 75%, transparent)",
+    ...style,
+  };
 
   return (
     <ClientOnly>
@@ -17,16 +27,20 @@ export function SheetPortal(p: SheetPortalPropsT) {
         <AnimatePresence>
           {isOpen ? (
             <motion.div
-              ref={scope}
-              onClick={handleClose}
+              style={styles}
+              onClick={() => setOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              exit={{ opacity: 0, transition: { when: "afterChildren" } }}
+              transition={{
+                ease: "easeInOut",
+                duration: FRAMER_MOTION_DURATION,
+              }}
               {...p}
             />
           ) : null}
         </AnimatePresence>
       </Portal>
     </ClientOnly>
-  )
+  );
 }
