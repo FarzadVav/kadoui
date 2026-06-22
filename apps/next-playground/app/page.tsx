@@ -159,6 +159,9 @@ const SELECT_BOX_OPTIONS: SelectBoxOptionT[] = [
   { name: "one", value: "One" },
   { name: "two", value: "Two" },
   { name: "three", value: "Three" },
+  { name: "four", value: "Four" },
+  { name: "five", value: "Five" },
+  { name: "six", value: "Six" },
 ];
 
 const SWAP_KEYS = ["one", "two", "three"];
@@ -177,7 +180,6 @@ function Page() {
     SelectBoxOptionT[]
   >([]);
   const [swapKey, setSwapKey] = useState(SWAP_KEYS[0] as string);
-  const [activeTab, setActiveTab] = useState("1");
 
   const [filterChoice, setFilterChoice] = useState<string[]>([]);
   const [singleChoice, setSingleChoice] = useState<string | null>("1");
@@ -1500,8 +1502,8 @@ function Page() {
           </Popover.Toggle>
 
           <Popover.Body
-            className="card card-menu bg-card"
             position="bottom-left-in"
+            className="card card-menu bg-card"
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
@@ -1512,13 +1514,13 @@ function Page() {
           </Popover.Toggle>
 
           <Popover.Body
-            className="card card-menu card-y bg-card"
             position="bottom-left-in"
+            className="card card-menu card-y bg-card"
           >
             <button className="btn btn-ghost btn-row acn">Like</button>
             <button className="btn btn-ghost btn-row acn">Ignore</button>
             <button className="btn btn-ghost btn-row acn">Download</button>
-            <Popover direction="y" className="popover">
+            <Popover direction="y">
               <Popover.Toggle className="btn acn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
                 <ChevronRightIcon className="element-icon-size" />
@@ -1696,43 +1698,43 @@ function Page() {
             optionValue={singleSelectBoxValue}
             setOptionValue={singleSetSelectBoxValue}
           >
-            <SelectBox.Input className="select-box-input input input-soft group">
-              <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <SelectBox.Input className="input input-soft group">
+              <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="select-box-list offset bg-background-thin">
+              <SelectBox.List className="card card-y bg-card *:shrink-0">
                 <SelectBox.SearchInput className="input input-ghost-outline">
-                  <SearchIcon className="element-icon-size" />
+                  <SearchIcon />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
-                <SelectBox.Options className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
+                <SelectBox.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
               </SelectBox.List>
             </SelectBox.Input>
           </SelectBox>
 
           <p className="title mt-6">Multi select mode:</p>
           <SelectBox
+            multiSelect
             direction="y"
             className="mt-3"
-            multiSelect
             options={SELECT_BOX_OPTIONS}
             optionValue={multiSelectBoxValue}
             setOptionValue={setMultiSelectBoxValue}
           >
-            <SelectBox.Input className="select-box-input input input-soft group">
-              <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
+            <SelectBox.Input className="input input-soft group">
+              <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
               <SelectBox.Field
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBox.List className="select-box-list offset bg-background-thin">
+              <SelectBox.List className="card card-y bg-card *:shrink-0">
                 <SelectBox.SearchInput className="input input-ghost-outline">
-                  <SearchIcon className="element-icon-size" />
+                  <SearchIcon />
                   <SelectBox.SearchField className="input-field" />
                 </SelectBox.SearchInput>
-                <SelectBox.Options className="select-box-option data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
+                <SelectBox.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
               </SelectBox.List>
             </SelectBox.Input>
           </SelectBox>

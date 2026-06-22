@@ -6,14 +6,24 @@ import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import type { SelectBoxContextT, SelectBoxRootPropsT } from "./selectBoxTypes";
 
-export function SelectBoxRoot({ multiSelect, optionValue, setOptionValue, options, ref, ...p }: SelectBoxRootPropsT) {
+export function SelectBoxRoot({
+  multiSelect,
+  optionValue,
+  setOptionValue,
+  options,
+  ref,
+  ...p
+}: SelectBoxRootPropsT) {
   const [inputFocused, setInputFocused] = useState(false);
   const [inputSearch, setInputSearch] = useState("");
   const selectBoxRootRef = ref || useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (selectBoxRootRef.current && !selectBoxRootRef.current.contains(event.target as Node)) {
+      if (
+        selectBoxRootRef.current &&
+        !selectBoxRootRef.current.contains(event.target as Node)
+      ) {
         setInputFocused(false);
       }
     };
@@ -30,7 +40,7 @@ export function SelectBoxRoot({ multiSelect, optionValue, setOptionValue, option
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.removeEventListener("click", handleClickOutside);
-    }
+    };
   }, []);
 
   const contextValue = {

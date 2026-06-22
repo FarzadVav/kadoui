@@ -11,7 +11,7 @@ export default function SelectBoxSearchField(p: SelectBoxSearchFieldPropsT) {
   return (
     <input
       value={inputSearch}
-      onChange={ev => setInputSearch(ev.target.value)}
+      onChange={(ev) => setInputSearch(ev.target.value)}
       {...p}
     />
   );

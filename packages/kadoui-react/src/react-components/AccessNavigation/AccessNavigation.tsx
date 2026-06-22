@@ -42,7 +42,7 @@ function shouldIgnoreArrowNavigation(target: EventTarget | null) {
 
   return Boolean(
     target.closest(
-      'input, textarea, select, [contenteditable="true"], [role="textbox"], [data-arrow-nav-ignore]',
+      `input, textarea, select, [contenteditable="true"], [role="textbox"], [data-arrow-nav-ignore]`,
     ),
   );
 }

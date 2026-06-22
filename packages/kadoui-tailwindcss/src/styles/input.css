@@ -36,7 +36,7 @@
   }
 
   &:has(textarea) {
-    @apply h-[25dvh];
+    @apply h-[33dvh];
 
     padding: var(--input-spacing);
   }

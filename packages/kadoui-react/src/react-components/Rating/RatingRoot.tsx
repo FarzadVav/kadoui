@@ -1,18 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 
 import { RatingContext } from "./RatingContext";
 import type { RatingContextT, RatingRootPropsT } from "./ratingTypes";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export const RatingRoot = (p: RatingRootPropsT) => {
+export const RatingRoot = ({ style, ...p }: RatingRootPropsT) => {
   const [hoverValue, setHoverValue] =
     useState<RatingContextT["hoverValue"]>(null);
 
+  const styles: CSSProperties = {
+    width: "max-content",
+    maxWidth: "100%",
+    height: "max-content",
+    maxHeight: "100%",
+    ...style,
+  };
+
   return (
     <RatingContext value={{ hoverValue, setHoverValue }}>
-      <AccessNavigation onMouseLeave={() => setHoverValue(null)} {...p} />
+      <AccessNavigation
+        style={styles}
+        onMouseLeave={() => setHoverValue(null)}
+        {...p}
+      />
     </RatingContext>
   );
 };

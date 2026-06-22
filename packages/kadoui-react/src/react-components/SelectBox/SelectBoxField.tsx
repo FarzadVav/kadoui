@@ -12,7 +12,11 @@ export default function SelectBoxField(p: SelectBoxFieldPropsT) {
     <input
       readOnly
       onFocus={() => setInputFocused(true)}
-      defaultValue={multiSelect ? optionValue.map(val => val.name).join(", ") : optionValue?.name}
+      defaultValue={
+        multiSelect
+          ? optionValue.map((val) => val.name).join(", ")
+          : optionValue?.name
+      }
       {...p}
     />
   );

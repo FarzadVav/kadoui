@@ -2,11 +2,25 @@
 
 import { use } from "react";
 
+import { cn } from "../../utils-exports";
 import { SelectBoxContext } from "./SelectBoxContext";
-import type { SelectBoxOptionT, SelectBoxOptionsPropsT } from "./selectBoxTypes";
+import type {
+  SelectBoxOptionT,
+  SelectBoxOptionsPropsT,
+} from "./selectBoxTypes";
 
-export default function SelectBoxOptions(p: SelectBoxOptionsPropsT) {
-  const { multiSelect, options, optionValue, setOptionValue, setInputFocused, inputSearch } = use(SelectBoxContext);
+export default function SelectBoxOptions({
+  className,
+  ...p
+}: SelectBoxOptionsPropsT) {
+  const {
+    multiSelect,
+    options,
+    optionValue,
+    setOptionValue,
+    setInputFocused,
+    inputSearch,
+  } = use(SelectBoxContext);
 
   const filteredOptions: SelectBoxOptionT[] = [];
   const otherOptions: SelectBoxOptionT[] = [];
@@ -31,10 +45,13 @@ export default function SelectBoxOptions(p: SelectBoxOptionsPropsT) {
           key={item.value}
           disabled={isOther}
           data-state={isSelected}
+          className={cn("acn", className)}
           onClick={() => {
             if (multiSelect) {
               if (isSelected) {
-                setOptionValue(optionValue.filter((v) => v.value !== item.value));
+                setOptionValue(
+                  optionValue.filter((v) => v.value !== item.value),
+                );
               } else {
                 setOptionValue([...optionValue, item]);
               }
@@ -47,7 +64,8 @@ export default function SelectBoxOptions(p: SelectBoxOptionsPropsT) {
               }
             }
           }}
-          {...p}>
+          {...p}
+        >
           {item.name}
         </button>
       );
