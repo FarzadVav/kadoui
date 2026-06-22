@@ -3,8 +3,8 @@
 import { CSSProperties, use } from "react";
 
 import { PopoverContext } from "./PopoverContext";
-import { getPopoverPositionStyles } from "./popoverPositionStyles";
 import type { PopoverBodyPropsT } from "./popoverTypes";
+import { getPopoverPositionStyles } from "./popoverPositionStyles";
 
 export function PopoverBody({
   offset,

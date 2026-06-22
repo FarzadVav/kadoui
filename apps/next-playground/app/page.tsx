@@ -1505,20 +1505,20 @@ function Page() {
             Click me
           </Popover.Toggle>
 
-          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
-            <button className="btn btn-ghost acn">Like</button>
-            <button className="btn btn-ghost acn">Ignore</button>
-            <button className="btn btn-ghost acn">Download</button>
+          <Popover.Body className="card card-menu card-y bg-card" position="bottom-left-in">
+            <button className="btn btn-ghost btn-row acn">Like</button>
+            <button className="btn btn-ghost btn-row acn">Ignore</button>
+            <button className="btn btn-ghost btn-row acn">Download</button>
             <Popover direction="y" className="popover">
-              <Popover.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
+              <Popover.Toggle className="btn acn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
                 <ChevronRightIcon className="element-icon-size" />
               </Popover.Toggle>
-              <Popover.Body className="popover-body position-r card card-menu bg-background-thin" position="right-center">
-                <button className="btn btn-ghost">Link</button>
-                <button className="btn btn-ghost">Instagram</button>
-                <button className="btn btn-ghost">Telegram</button>
-                <button className="btn btn-ghost">X</button>
+              <Popover.Body className="card card-menu card-y bg-card" position="right-center" offset={16}>
+                <button className="btn btn-ghost btn-row acn">Link</button>
+                <button className="btn btn-ghost btn-row acn">Instagram</button>
+                <button className="btn btn-ghost btn-row acn">Telegram</button>
+                <button className="btn btn-ghost btn-row acn">X</button>
               </Popover.Body>
             </Popover>
           </Popover.Body>
