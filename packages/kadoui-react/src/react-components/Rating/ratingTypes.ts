@@ -1,11 +1,13 @@
 import type { ComponentProps, Dispatch, ReactNode, SetStateAction } from "react";
 
+import { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
+
 export type RatingContextT = {
   hoverValue: number | null;
   setHoverValue: Dispatch<SetStateAction<number | null>>;
 };
 
-export type RatingRootPropsT = ComponentProps<"div">;
+export type RatingRootPropsT = AccessNavigationPropsT;
 
 export type RatingItemsPropsT = ComponentProps<"button"> & {
   count: number;

@@ -192,13 +192,13 @@ function Page() {
 
           <Popover mode="click" direction="y">
             <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-              Theme:{" "}
-              {theme || (
-                <LoaderIcon className="animate-spin" />
-              )}
+              Theme: {theme || <LoaderIcon className="animate-spin" />}
             </Popover.Toggle>
 
-            <Popover.Body className="card card-menu card-y glass" position="bottom-center">
+            <Popover.Body
+              className="card card-menu card-y glass"
+              position="bottom-center"
+            >
               <button
                 className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`}
                 onClick={() => setTheme("light")}
@@ -1487,7 +1487,10 @@ function Page() {
         <Popover mode="hover" direction="y" className="mt-6">
           <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
-          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
+          <Popover.Body
+            className="card card-menu bg-card"
+            position="bottom-left-in"
+          >
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
@@ -1496,7 +1499,10 @@ function Page() {
             Hover and click me
           </Popover.Toggle>
 
-          <Popover.Body className="card card-menu bg-card" position="bottom-left-in">
+          <Popover.Body
+            className="card card-menu bg-card"
+            position="bottom-left-in"
+          >
             Lorem ipsum dolor sit amet, consectetur adipisicing.
           </Popover.Body>
         </Popover>
@@ -1505,7 +1511,10 @@ function Page() {
             Click me
           </Popover.Toggle>
 
-          <Popover.Body className="card card-menu card-y bg-card" position="bottom-left-in">
+          <Popover.Body
+            className="card card-menu card-y bg-card"
+            position="bottom-left-in"
+          >
             <button className="btn btn-ghost btn-row acn">Like</button>
             <button className="btn btn-ghost btn-row acn">Ignore</button>
             <button className="btn btn-ghost btn-row acn">Download</button>
@@ -1514,7 +1523,11 @@ function Page() {
                 <span>Share via</span>
                 <ChevronRightIcon className="element-icon-size" />
               </Popover.Toggle>
-              <Popover.Body className="card card-menu card-y bg-card" position="right-center" offset={16}>
+              <Popover.Body
+                className="card card-menu card-y bg-card"
+                position="right-center"
+                offset={16}
+              >
                 <button className="btn btn-ghost btn-row acn">Link</button>
                 <button className="btn btn-ghost btn-row acn">Instagram</button>
                 <button className="btn btn-ghost btn-row acn">Telegram</button>
@@ -1656,20 +1669,20 @@ function Page() {
 
         <p className="heading mt-20">QrCode</p>
         <QrCode
+          options={{ width: 384 }}
           className="mt-6 w-96 rounded-lg"
           value="https://github.com/FarzadVav"
-          options={{ width: 384 }}
         />
 
         <p className="heading mt-20">Rating</p>
-        <Rating className="rating mt-3">
+        <Rating className="flex items-center mt-6" direction="x">
           <Rating.Items
             count={5}
             value={rating}
-            className="rating-items"
             onValueChange={setRating}
             element={<StarIcon className="size-9" />}
             activeElement={<StarIcon className="fill-foreground size-9" />}
+            className="transition-all px-1 not-active:hover:-translate-y-1 active:scale-90 focus-visible:animate-bounce focus-visible:outline-none"
           />
         </Rating>
 

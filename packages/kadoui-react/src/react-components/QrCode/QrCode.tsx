@@ -15,10 +15,5 @@ export function QrCode({ value, options = {}, ...p }: QrCodePropsT) {
     });
   }, [value, options]);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      {...p}
-    />
-  );
+  return <canvas ref={canvasRef} {...p} />;
 }
