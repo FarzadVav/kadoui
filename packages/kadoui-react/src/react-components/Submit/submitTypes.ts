@@ -1,13 +1,5 @@
-import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
-export type SubmitContextT = {
-  pending: boolean;
-};
-
-export type SubmitRootPropsT = ComponentProps<"button"> & {
-  loader?: ReactNode;
-};
-
-export type SubmitLoaderPropsT = PropsWithChildren & {
-  loader: ReactNode;
+export type SubmitPropsT = Omit<ComponentProps<"button">, "children"> & {
+  children?: (isPending: boolean) => ReactNode;
 };

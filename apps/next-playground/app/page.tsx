@@ -2340,12 +2340,10 @@ function Page() {
         <p className="mt-6">
           <Spoiler>
             Lorem ipsum dolor sit{" "}
-            <Spoiler.Blur>
-              amet consectetur adipisicing
-            </Spoiler.Blur>{" "}
-            elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae
-            harum iusto, libero labore! Ea quo dolore accusantium veniam illo
-            vel quae nihil iure aliquid.
+            <Spoiler.Blur>amet consectetur adipisicing</Spoiler.Blur> elit.
+            Officiis nemo incidunt tenetur assumenda consequuntur beatae harum
+            iusto, libero labore! Ea quo dolore accusantium veniam illo vel quae
+            nihil iure aliquid.
           </Spoiler>
         </p>
 
@@ -2353,16 +2351,20 @@ function Page() {
         <form
           className="mt-6"
           action={async () => {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 2000));
           }}
         >
           <Submit className="btn btn-soft">
-            <span>Press the from</span>
-            <Submit.Loader
-              loader={<LoaderIcon className="element-icon-size animate-spin" />}
-            >
-              <SendHorizonalIcon />
-            </Submit.Loader>
+            {(isPending) => (
+              <>
+                <span>Send Message</span>
+                {isPending ? (
+                  <LoaderIcon className="animate-spin" />
+                ) : (
+                  <SendHorizonalIcon />
+                )}
+              </>
+            )}
           </Submit>
         </form>
 
