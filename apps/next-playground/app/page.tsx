@@ -1693,7 +1693,7 @@ function Page() {
 
           <Modal.Portal>
             <Modal.Body>
-              <Modal.Header>
+              <Modal.Indicator className="rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1703,14 +1703,14 @@ function Page() {
                     placeholder="Search..."
                   />
                 </label>
-              </Modal.Header>
+              </Modal.Indicator>
               <Modal.Content>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Provident, quos veniam! Placeat similique molestiae ex?
                 </p>
               </Modal.Content>
-              <Modal.Footer>
+              <Modal.Indicator className="flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
@@ -1720,7 +1720,7 @@ function Page() {
                 <Modal.Toggle className="btn btn-fill palette-success">
                   Yes
                 </Modal.Toggle>
-              </Modal.Footer>
+              </Modal.Indicator>
             </Modal.Body>
           </Modal.Portal>
         </Modal>
@@ -1731,7 +1731,7 @@ function Page() {
 
           <Modal.Portal>
             <Modal.Body>
-              <Modal.Header>
+              <Modal.Indicator className="rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1741,7 +1741,7 @@ function Page() {
                     placeholder="Search..."
                   />
                 </label>
-              </Modal.Header>
+              </Modal.Indicator>
               <Modal.Content>
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
@@ -1873,7 +1873,7 @@ function Page() {
                   rerum aliquid id sequi ea!
                 </p>
               </Modal.Content>
-              <Modal.Footer>
+              <Modal.Indicator className="flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
@@ -1883,7 +1883,7 @@ function Page() {
                 <Modal.Toggle className="btn btn-fill palette-success">
                   Yes
                 </Modal.Toggle>
-              </Modal.Footer>
+              </Modal.Indicator>
             </Modal.Body>
           </Modal.Portal>
         </Modal>

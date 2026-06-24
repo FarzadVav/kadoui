@@ -12,9 +12,7 @@ export type ModalRootPropsT = PropsWithChildren & {
 
 export type ModalContentPropsT = ComponentProps<"div">;
 
-export type ModalHeaderPropsT = ComponentProps<"header">;
-
-export type ModalFooterPropsT = ComponentProps<"footer">;
+export type ModalIndicatorPropsT = ComponentProps<"div">;
 
 export type ModalTogglePropsT = Omit<ComponentProps<"button">, "type">;
 

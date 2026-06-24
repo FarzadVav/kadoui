@@ -20,6 +20,7 @@ export function ModalBody({ style, ...p }: ModalBodyPropsT) {
     alignItems: "stretch",
     flexDirection: "column",
     justifyContent: "center",
+    ...style,
   };
 
   useEffect(() => {

@@ -1,18 +1,16 @@
 import { ModalRoot } from "./ModalRoot";
 import { ModalBody } from "./ModalBody";
-import { ModalHeader } from "./ModalHeader";
 import { ModalPortal } from "./ModalPortal";
 import { ModalToggle } from "./ModalToggle";
-import { ModalFooter } from "./ModalFooter";
 import { ModalContent } from "./ModalContent";
+import { ModalIndicator } from "./ModalIndicator";
 
 export const Modal = Object.assign(ModalRoot, {
   Toggle: ModalToggle,
   Portal: ModalPortal,
   Body: ModalBody,
-  Header: ModalHeader,
+  Indicator: ModalIndicator,
   Content: ModalContent,
-  Footer: ModalFooter,
 });
 
 export * from "./modalTypes";
