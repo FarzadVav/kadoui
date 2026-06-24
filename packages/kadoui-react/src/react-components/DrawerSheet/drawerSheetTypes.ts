@@ -1,8 +1,8 @@
 import type { ComponentProps, PropsWithChildren } from "react";
 import type { DragControls, MotionValue, HTMLMotionProps } from "framer-motion";
 
-export const DRAWER_SHEET_DISMISS_OFFSET_RATIO = 0.25;
 export const DRAWER_SHEET_DISMISS_VELOCITY = 500;
+export const DRAWER_SHEET_DISMISS_OFFSET_RATIO = 0.25;
 
 export type DrawerSheetPositionT = "top" | "right" | "bottom" | "left";
 

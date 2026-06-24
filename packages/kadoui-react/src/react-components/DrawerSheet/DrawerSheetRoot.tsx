@@ -1,12 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useDragControls, useMotionValue } from "framer-motion";
 
 import { DrawerSheetContext } from "./DrawerSheetContext";
-import type { DrawerSheetRootPropsT } from "./drawerSheetTypes";
 import { getBrowserScrollbarWith } from "../../utils-exports";
+import type { DrawerSheetRootPropsT } from "./drawerSheetTypes";
 
 export function DrawerSheetRoot({ children }: DrawerSheetRootPropsT) {
   const pathname = usePathname();

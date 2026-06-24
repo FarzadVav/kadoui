@@ -3,6 +3,7 @@
 import { use, useEffect, useRef, useState } from "react";
 import { motion, MotionStyle, PanInfo } from "framer-motion";
 
+import { FRAMER_MOTION_DURATION } from "../../configs";
 import {
   DrawerSheetBodyContext,
   DrawerSheetContext,
@@ -15,7 +16,6 @@ import {
   DRAWER_SHEET_DISMISS_OFFSET_RATIO,
   DRAWER_SHEET_DISMISS_VELOCITY,
 } from "./drawerSheetTypes";
-import { FRAMER_MOTION_DURATION } from "../../configs";
 
 function getSizeStyles(
   position: DrawerSheetPositionT,

@@ -1,16 +1,20 @@
 "use client";
 
-import { use } from "react";
+import { CSSProperties, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 import type { ShowMoreFadePropsT } from "./showMoreTypes";
 
-export function ShowMoreFade(p: ShowMoreFadePropsT) {
+export function ShowMoreFade({ style, ...p }: ShowMoreFadePropsT) {
   const { shouldShowMore, isShowMore } = use(ShowMoreContext);
 
-  return (
-    shouldShowMore && !isShowMore ? (
-      <div {...p} />
-    ) : null
-  )
+  const styles: CSSProperties = {
+    inset: 0,
+    position: "absolute",
+    background:
+      "linear-gradient(to top, var(--color-background) 30%, transparent)",
+    ...style,
+  };
+
+  return shouldShowMore && !isShowMore ? <div style={styles} {...p} /> : null;
 }

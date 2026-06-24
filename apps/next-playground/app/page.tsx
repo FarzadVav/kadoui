@@ -2313,18 +2313,26 @@ function Page() {
         </div>
 
         <p className="heading mt-20">ShowMore</p>
-        <ShowMore className="max-w-96 mt-6" maxLines={3}>
+        <ShowMore className="max-w-96 mt-6" maxLines={4}>
           <ShowMore.Content>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Accusantium exercitationem repellendus debitis, dignissimos non
             quis! Fugit ducimus adipisci minus quas est expedita, voluptatibus
             minima ad facere quis, dolor ipsum debitis!
+            <br />
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad soluta
+            ex esse!
+            <br />
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, nobis
+            minima iure consequuntur totam dolor exercitationem libero numquam.
+            Exercitationem necessitatibus voluptatem, repudiandae nihil neque
+            iusto?
           </ShowMore.Content>
 
           <ShowMore.Fade className="show-more-fade" />
 
-          <ShowMore.Toggle className="btn btn-soft mt-1.5">
-            Show more
+          <ShowMore.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill mt-1.5">
+            {(isShowMore) => (isShowMore ? "Show less" : "Show more")}
           </ShowMore.Toggle>
         </ShowMore>
 

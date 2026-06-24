@@ -6,7 +6,7 @@ import { ShowMoreContent } from "./ShowMoreContent";
 export const ShowMore = Object.assign(ShowMoreRoot, {
   Content: ShowMoreContent,
   Toggle: ShowMoreToggle,
-  Fade: ShowMoreFade
+  Fade: ShowMoreFade,
 });
 
 export * from "./showMoreTypes";

@@ -1,31 +1,28 @@
 "use client";
 
-import { use } from "react";
+import { type CSSProperties, use } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 import type { ShowMoreContentPropsT } from "./showMoreTypes";
 
-export function ShowMoreContent({ children, style, ...p }: ShowMoreContentPropsT) {
-  const { contentRef, shouldShowMore, isShowMore, maxHeight } = use(ShowMoreContext);
+export function ShowMoreContent({ style, ...p }: ShowMoreContentPropsT) {
+  const { contentRef, shouldShowMore, isShowMore, clampedHeight, fullHeight } =
+    use(ShowMoreContext);
 
-  return (
-    <div
-      ref={contentRef}
-      style={{
-        overflow: "hidden",
-        transition: "all 150ms ease",
-        height: shouldShowMore
-          ? isShowMore
-            ? contentRef.current?.scrollHeight
-              ? `${contentRef.current.scrollHeight}px`
-              : "auto"
-            : maxHeight
-          : "auto",
-        ...style
-      }}
-      {...p}
-    >
-      {children}
-    </div>
-  )
+  const styles: CSSProperties = {
+    overflow: "hidden",
+    transition: shouldShowMore ? "height 150ms ease" : undefined,
+    height: shouldShowMore
+      ? isShowMore
+        ? fullHeight > 0
+          ? `${fullHeight}px`
+          : "auto"
+        : clampedHeight > 0
+          ? `${clampedHeight}px`
+          : "auto"
+      : "auto",
+    ...style,
+  };
+
+  return <div ref={contentRef} style={styles} {...p} />;
 }

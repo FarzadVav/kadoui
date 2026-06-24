@@ -3,12 +3,12 @@
 import { use } from "react";
 import { CSSProperties } from "react";
 
+import type { DrawerSheetContentPropsT } from "./drawerSheetTypes";
+import { useDrawerSheetScrollTouchAction } from "./useDrawerSheetScrollTouchAction";
 import {
   DrawerSheetBodyContext,
   DrawerSheetContext,
 } from "./DrawerSheetContext";
-import type { DrawerSheetContentPropsT } from "./drawerSheetTypes";
-import { useDrawerSheetScrollTouchAction } from "./useDrawerSheetScrollTouchAction";
 
 export function DrawerSheetContent({
   style,
@@ -18,8 +18,11 @@ export function DrawerSheetContent({
 }: DrawerSheetContentPropsT) {
   const { dragControls } = use(DrawerSheetContext);
   const { position, gesture } = use(DrawerSheetBodyContext);
-  const { ref, canStartDrag, onScroll: updateTouchAction } =
-    useDrawerSheetScrollTouchAction(position, gesture);
+  const {
+    ref,
+    canStartDrag,
+    onScroll: updateTouchAction,
+  } = useDrawerSheetScrollTouchAction(position, gesture);
 
   const styles: CSSProperties = {
     flex: 1,

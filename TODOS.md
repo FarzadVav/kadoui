@@ -4,11 +4,12 @@
 
 ### Now
 
-- Check Sheet.
 - Add SearchInput.
+- Obviously styles.
 - Complete utilities.
 - Add DatePicker component.
 - Add TimePicker component.
+- Add controlled state to all components.
 - Remove or separate Next.js requirements.
 - Add searchParams adaptor to all components.
 - Fix commented bugs in BeautyPlus and Shops.
@@ -31,7 +32,6 @@
 - Add Uploader component (with drop zone).
 - Add Slider component (with multiple triggers).
 - Add HashLink component (with active & not-active state).
-- Extend Drawer to a full-featured component and Remove Sheet component.
 - Add ActionInput component (e.g for add product features and variants).
 - Add more shapes like circular, circle, semi-circle, etc. to Progress component.
 

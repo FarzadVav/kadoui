@@ -1,32 +1,74 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
+import { measureShowMoreHeights } from "./showMoreMeasure";
 import type { ShowMoreRootPropsT } from "./showMoreTypes";
 
-export function ShowMoreRoot({ maxLines, defaultExpanded = false, style, ...p }: ShowMoreRootPropsT) {
+export function ShowMoreRoot({
+  maxLines,
+  defaultExpanded = false,
+  style,
+  ...p
+}: ShowMoreRootPropsT) {
   const [shouldShowMore, setShouldShowMore] = useState(false);
   const [isShowMore, setIsShowMore] = useState(defaultExpanded);
-  const [maxHeight, setMaxHeight] = useState(0);
+  const [clampedHeight, setClampedHeight] = useState(0);
+  const [fullHeight, setFullHeight] = useState(0);
 
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (contentRef.current) {
-      const element = contentRef.current;
-      const lineHeight = Number.parseInt(window.getComputedStyle(element).lineHeight);
-      const maxHeight = lineHeight * maxLines;
-      const actualHeight = element.scrollHeight;
+  const styles: CSSProperties = {
+    position: "relative",
+    ...style,
+  };
 
-      setMaxHeight(maxHeight);
-      setShouldShowMore(actualHeight > maxHeight);
-    }
-  }, [maxLines])
+  const measure = useCallback(() => {
+    const element = contentRef.current;
+    if (!element) return;
+
+    const heights = measureShowMoreHeights(element, maxLines);
+    if (!heights) return;
+
+    const { fullHeight: measuredFullHeight, clampedHeight: measuredClampedHeight } =
+      heights;
+
+    setClampedHeight(measuredClampedHeight);
+    setFullHeight(measuredFullHeight);
+    setShouldShowMore(measuredFullHeight > measuredClampedHeight + 1);
+  }, [maxLines]);
+
+  useLayoutEffect(() => {
+    measure();
+
+    const element = contentRef.current;
+    if (!element) return;
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [measure]);
 
   return (
-    <ShowMoreContext value={{ contentRef, isShowMore, setIsShowMore, maxHeight, shouldShowMore }}>
-      <div style={{ position: "relative", ...style }} {...p}></div>
+    <ShowMoreContext
+      value={{
+        contentRef,
+        isShowMore,
+        setIsShowMore,
+        clampedHeight,
+        fullHeight,
+        shouldShowMore,
+      }}
+    >
+      <div style={styles} {...p} />
     </ShowMoreContext>
-  )
+  );
 }
