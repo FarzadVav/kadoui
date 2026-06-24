@@ -4,13 +4,13 @@ import { use } from "react";
 import { AnimatePresence, motion, MotionStyle } from "framer-motion";
 
 import { Portal } from "../Portal/Portal";
-import { SheetContext } from "./SheetContext";
+import { DrawerSheetContext } from "./DrawerSheetContext";
 import { ClientOnly } from "../ClientOnly/ClientOnly";
-import type { SheetPortalPropsT } from "./sheetTypes";
+import type { DrawerSheetPortalPropsT } from "./drawerSheetTypes";
 import { FRAMER_MOTION_DURATION } from "../../configs";
 
-export function SheetPortal({ style, ...p }: SheetPortalPropsT) {
-  const { isOpen, setOpen } = use(SheetContext);
+export function DrawerSheetPortal({ style, ...p }: DrawerSheetPortalPropsT) {
+  const { isOpen, setOpen } = use(DrawerSheetContext);
 
   const styles: MotionStyle = {
     inset: 0,

@@ -4,13 +4,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDragControls, useMotionValue } from "framer-motion";
 
-import { SheetContext } from "./SheetContext";
-import type { SheetRootPropsT } from "./sheetTypes";
+import { DrawerSheetContext } from "./DrawerSheetContext";
+import type { DrawerSheetRootPropsT } from "./drawerSheetTypes";
 import { getBrowserScrollbarWith } from "../../utils-exports";
 
-export function SheetRoot({ children }: SheetRootPropsT) {
+export function DrawerSheetRoot({ children }: DrawerSheetRootPropsT) {
   const pathname = usePathname();
 
+  const x = useMotionValue(0);
   const y = useMotionValue(0);
   const dragControls = useDragControls();
 
@@ -18,9 +19,10 @@ export function SheetRoot({ children }: SheetRootPropsT) {
 
   useEffect(() => {
     if (isOpen) {
+      x.set(0);
       y.set(0);
     }
-  }, [isOpen, y]);
+  }, [isOpen, x, y]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -47,12 +49,10 @@ export function SheetRoot({ children }: SheetRootPropsT) {
 
     const removeOverStyles = () => {
       bodyElem.style.overflow = "unset";
-      bodyElem.style.overflow = "unset";
       bodyElem.style.paddingRight = "0px";
     };
 
     if (isOpen) {
-      bodyElem.style.overflow = "hidden";
       bodyElem.style.overflow = "hidden";
       bodyElem.style.paddingRight = `${scrollbarWidth}px`;
     } else {
@@ -67,8 +67,9 @@ export function SheetRoot({ children }: SheetRootPropsT) {
   };
 
   return (
-    <SheetContext
+    <DrawerSheetContext
       value={{
+        x,
         y,
         isOpen,
         setOpen,
@@ -77,6 +78,6 @@ export function SheetRoot({ children }: SheetRootPropsT) {
       }}
     >
       {children}
-    </SheetContext>
+    </DrawerSheetContext>
   );
 }

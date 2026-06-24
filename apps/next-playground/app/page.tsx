@@ -29,7 +29,7 @@ import {
   ClientOnly,
   Clipboard,
   ContextMenu,
-  Drawer,
+  DrawerSheet,
   Modal,
   Otp,
   PaginationWithSearchParams,
@@ -42,7 +42,6 @@ import {
   Rating,
   SelectBox,
   SelectBoxOptionT,
-  Sheet,
   ShowMore,
   Spoiler,
   Submit,
@@ -301,7 +300,7 @@ function Page() {
           <p className="title mt-6">Variants</p>
           <div className="space-y-3 mt-3">
             <label className="input input-ghost">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -312,7 +311,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-ghost-outline">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -323,7 +322,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-soft">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -334,7 +333,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-soft-outline">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -345,7 +344,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-fill">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -467,7 +466,7 @@ function Page() {
           <p className="title mt-6">Sizes</p>
           <div className="space-y-3 mt-3">
             <label className="input input-ghost-outline input-xs">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -478,7 +477,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-ghost-outline input-sm">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -489,7 +488,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-ghost-outline">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -500,7 +499,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-ghost-outline input-rounded">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -514,7 +513,7 @@ function Page() {
               <input type="text" placeholder="SQ" className="input-field" />
             </label>
             <label className="input input-ghost-outline input-lg">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -525,7 +524,7 @@ function Page() {
               </button>
             </label>
             <label className="input input-ghost-outline input-xl">
-              <SearchIcon className="element-icon-size" />
+              <SearchIcon />
               <input
                 type="text"
                 className="input-field"
@@ -986,133 +985,705 @@ function Page() {
 
           <ContextMenu.Body direction="y" className="card card-y glass">
             <ContextMenu.Item className="btn btn-ghost">
-              <TrashIcon className="element-icon-size" />
+              <TrashIcon />
               <span>DELETE</span>
             </ContextMenu.Item>
             <ContextMenu.Item className="btn btn-ghost">
-              <RefreshCwIcon className="element-icon-size" />
+              <RefreshCwIcon />
               <span>RELOAD</span>
             </ContextMenu.Item>
             <ContextMenu.Item className="btn btn-ghost">
-              <FlagIcon className="element-icon-size" />
+              <FlagIcon />
               <span>IGNORE IT</span>
             </ContextMenu.Item>
           </ContextMenu.Body>
         </ContextMenu>
 
-        <p className="heading mt-20">Drawer</p>
-        <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-6">
-            Open left drawer
-          </Drawer.Toggle>
+        <p className="heading mt-20">DrawerSheet</p>
 
-          <Drawer.Portal>
-            <Drawer.Body>
-              <label
-                htmlFor="drawer-input"
-                className="input input-ghost-outline"
-              >
-                <SearchIcon className="element-icon-size" />
-                <input
-                  type="text"
-                  data-drawer="focus"
-                  className="input-field"
-                  placeholder="Search..."
-                />
-              </label>
-              <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                porro vero delectus eum qui laboriosam, dolore veritatis
-                eligendi amet voluptatibus incidunt temporibus dolores fuga
-                adipisci eius saepe quod aspernatur iure.
-              </p>
-            </Drawer.Body>
-          </Drawer.Portal>
-        </Drawer>
-        <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">
-            Open top drawer
-          </Drawer.Toggle>
+        <p className="mt-6 font-medium">Bottom</p>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Bottom
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at bottom
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Bottom with gesture
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at bottom with gesture
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    data-drawer-sheet="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+                <p className="mt-3 opacity-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <p className="mt-3">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Cupiditate voluptate corporis assumenda ratione consequatur
+                  quaerat nihil obcaecati explicabo unde excepturi provident
+                  enim sint sed labore animi nostrum, sit, dolorum eum numquam,
+                  vel adipisci porro. Placeat quisquam impedit amet praesentium
+                  minus suscipit soluta nam sapiente quis nihil pariatur, dicta
+                  vel mollitia asperiores sit tempora dolore consequuntur
+                  distinctio expedita ut recusandae quas labore error.
+                  Obcaecati, debitis eveniet quidem at sint dolor fugiat ullam a
+                  temporibus minus amet, quibusdam dolore iusto rerum. Neque
+                  esse vitae ad ex voluptatem iure deserunt eos, vel quisquam
+                  rerum porro beatae, quis eius et voluptas consequatur cumque
+                  sint commodi. Impedit dolorum temporibus odit, incidunt
+                  perspiciatis repudiandae. Libero impedit ea explicabo animi
+                  aperiam? Id quam natus itaque iusto, consectetur unde illum
+                  rerum recusandae ipsa omnis deleniti ipsam consequuntur ad
+                  assumenda laudantium provident nulla, magnam veniam quaerat!
+                  Rerum nostrum odio, aliquam est laboriosam molestiae quos,
+                  eius quam perferendis earum ex quidem architecto optio
+                  officiis velit? Sit ipsum nihil tempora perferendis voluptatem
+                  omnis obcaecati, nobis sunt autem minus, repellendus, facere
+                  velit non dolorem? Aut accusamus voluptatibus excepturi
+                  possimus explicabo ad sed repudiandae dignissimos, sint quos
+                  officiis cum, eum quae quidem, nesciunt reiciendis beatae.
+                  Officiis quos voluptates neque aspernatur, tempore possimus
+                  eum nostrum ad totam cumque adipisci eaque dignissimos quis
+                  ratione ipsa sint recusandae. Nostrum nam maxime aut quis modi
+                  quasi, enim, tenetur repudiandae itaque corrupti consequuntur
+                  quisquam. Quam accusamus porro dolorem, eos aliquid sapiente?
+                  Quidem, facilis laudantium! Nulla voluptatem architecto,
+                  praesentium unde explicabo cum molestiae tempore error
+                  voluptate ex enim non distinctio quisquam iure incidunt quos
+                  fuga saepe autem quaerat commodi itaque? Dolores voluptatum
+                  voluptate, tempora commodi dicta eaque quod veritatis rem
+                  necessitatibus totam recusandae consequuntur! Maxime numquam
+                  amet sint molestiae aliquid eligendi fuga est autem,
+                  temporibus quas voluptatibus exercitationem voluptatum veniam
+                  ea consectetur ex ipsa animi tenetur neque dolorem
+                  dignissimos? Nobis iure doloribus officia perspiciatis unde
+                  possimus! Facilis ullam animi iusto nesciunt odit temporibus.
+                  Recusandae quibusdam odio atque quasi laudantium! Aliquam nemo
+                  asperiores sint optio perferendis ullam, nulla laborum iusto.
+                  Provident aut ea rem maiores ratione laborum placeat,
+                  necessitatibus optio quod vero sequi deserunt odio amet dicta
+                  quae. Perspiciatis ducimus, deleniti ratione ipsa
+                  necessitatibus quod quos in reprehenderit eum alias nulla
+                  temporibus iure maiores, fuga quis? Corrupti excepturi
+                  asperiores, eligendi velit magni blanditiis amet officiis
+                  optio inventore id officia itaque, autem dolorum eaque facilis
+                  suscipit assumenda quisquam? In aliquam rerum earum. Ullam
+                  praesentium culpa sed veritatis necessitatibus molestias
+                  doloremque dignissimos ut, ducimus exercitationem unde eos
+                  velit hic nihil assumenda quod, vero magnam officia!
+                  Repellendus accusantium ipsum iure non praesentium
+                  exercitationem labore ex velit voluptas at assumenda inventore
+                  deserunt a amet, ducimus eius provident aut quasi quibusdam
+                  facilis ullam neque sit. Consequatur vero, dolores enim
+                  provident dignissimos voluptatem fugiat delectus est velit
+                  saepe natus aperiam deserunt laboriosam commodi voluptas
+                  minima doloribus molestias ad ut debitis asperiores. Totam
+                  nisi commodi optio veniam illum culpa ullam aliquam doloremque
+                  sit repudiandae, rerum, facilis alias? Corporis quasi
+                  cupiditate dolores quibusdam dicta quaerat ipsum assumenda
+                  illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
+                  veritatis possimus obcaecati?
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Bottom with offset
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body offset={20} gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+                DrawerSheet at bottom with offset
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
-          <Drawer.Portal>
-            <Drawer.Body position="top">
-              <label
-                htmlFor="drawer-input"
-                className="input input-ghost-outline"
-              >
-                <SearchIcon className="element-icon-size" />
-                <input
-                  type="text"
-                  className="input-field"
-                  placeholder="Search..."
-                  data-drawer="focus"
-                />
-              </label>
-              <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                porro vero delectus eum qui laboriosam, dolore veritatis
-                eligendi amet voluptatibus incidunt temporibus dolores fuga
-                adipisci eius saepe quod aspernatur iure.
-              </p>
-            </Drawer.Body>
-          </Drawer.Portal>
-        </Drawer>
-        <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">
-            Open right drawer
-          </Drawer.Toggle>
+        <p className="mt-6 font-medium">Top</p>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Top
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="top">
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at top
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Top with gesture
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="top" gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at top with gesture
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    data-drawer-sheet="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+                <p className="mt-3 opacity-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <p className="mt-3">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Cupiditate voluptate corporis assumenda ratione consequatur
+                  quaerat nihil obcaecati explicabo unde excepturi provident
+                  enim sint sed labore animi nostrum, sit, dolorum eum numquam,
+                  vel adipisci porro. Placeat quisquam impedit amet praesentium
+                  minus suscipit soluta nam sapiente quis nihil pariatur, dicta
+                  vel mollitia asperiores sit tempora dolore consequuntur
+                  distinctio expedita ut recusandae quas labore error.
+                  Obcaecati, debitis eveniet quidem at sint dolor fugiat ullam a
+                  temporibus minus amet, quibusdam dolore iusto rerum. Neque
+                  esse vitae ad ex voluptatem iure deserunt eos, vel quisquam
+                  rerum porro beatae, quis eius et voluptas consequatur cumque
+                  sint commodi. Impedit dolorum temporibus odit, incidunt
+                  perspiciatis repudiandae. Libero impedit ea explicabo animi
+                  aperiam? Id quam natus itaque iusto, consectetur unde illum
+                  rerum recusandae ipsa omnis deleniti ipsam consequuntur ad
+                  assumenda laudantium provident nulla, magnam veniam quaerat!
+                  Rerum nostrum odio, aliquam est laboriosam molestiae quos,
+                  eius quam perferendis earum ex quidem architecto optio
+                  officiis velit? Sit ipsum nihil tempora perferendis voluptatem
+                  omnis obcaecati, nobis sunt autem minus, repellendus, facere
+                  velit non dolorem? Aut accusamus voluptatibus excepturi
+                  possimus explicabo ad sed repudiandae dignissimos, sint quos
+                  officiis cum, eum quae quidem, nesciunt reiciendis beatae.
+                  Officiis quos voluptates neque aspernatur, tempore possimus
+                  eum nostrum ad totam cumque adipisci eaque dignissimos quis
+                  ratione ipsa sint recusandae. Nostrum nam maxime aut quis modi
+                  quasi, enim, tenetur repudiandae itaque corrupti consequuntur
+                  quisquam. Quam accusamus porro dolorem, eos aliquid sapiente?
+                  Quidem, facilis laudantium! Nulla voluptatem architecto,
+                  praesentium unde explicabo cum molestiae tempore error
+                  voluptate ex enim non distinctio quisquam iure incidunt quos
+                  fuga saepe autem quaerat commodi itaque? Dolores voluptatum
+                  voluptate, tempora commodi dicta eaque quod veritatis rem
+                  necessitatibus totam recusandae consequuntur! Maxime numquam
+                  amet sint molestiae aliquid eligendi fuga est autem,
+                  temporibus quas voluptatibus exercitationem voluptatum veniam
+                  ea consectetur ex ipsa animi tenetur neque dolorem
+                  dignissimos? Nobis iure doloribus officia perspiciatis unde
+                  possimus! Facilis ullam animi iusto nesciunt odit temporibus.
+                  Recusandae quibusdam odio atque quasi laudantium! Aliquam nemo
+                  asperiores sint optio perferendis ullam, nulla laborum iusto.
+                  Provident aut ea rem maiores ratione laborum placeat,
+                  necessitatibus optio quod vero sequi deserunt odio amet dicta
+                  quae. Perspiciatis ducimus, deleniti ratione ipsa
+                  necessitatibus quod quos in reprehenderit eum alias nulla
+                  temporibus iure maiores, fuga quis? Corrupti excepturi
+                  asperiores, eligendi velit magni blanditiis amet officiis
+                  optio inventore id officia itaque, autem dolorum eaque facilis
+                  suscipit assumenda quisquam? In aliquam rerum earum. Ullam
+                  praesentium culpa sed veritatis necessitatibus molestias
+                  doloremque dignissimos ut, ducimus exercitationem unde eos
+                  velit hic nihil assumenda quod, vero magnam officia!
+                  Repellendus accusantium ipsum iure non praesentium
+                  exercitationem labore ex velit voluptas at assumenda inventore
+                  deserunt a amet, ducimus eius provident aut quasi quibusdam
+                  facilis ullam neque sit. Consequatur vero, dolores enim
+                  provident dignissimos voluptatem fugiat delectus est velit
+                  saepe natus aperiam deserunt laboriosam commodi voluptas
+                  minima doloribus molestias ad ut debitis asperiores. Totam
+                  nisi commodi optio veniam illum culpa ullam aliquam doloremque
+                  sit repudiandae, rerum, facilis alias? Corporis quasi
+                  cupiditate dolores quibusdam dicta quaerat ipsum assumenda
+                  illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
+                  veritatis possimus obcaecati?
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Top with offset
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="top" offset={20} gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+                DrawerSheet at top with offset
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
-          <Drawer.Portal>
-            <Drawer.Body position="right">
-              <label
-                htmlFor="drawer-input"
-                className="input input-ghost-outline"
-              >
-                <SearchIcon className="element-icon-size" />
-                <input
-                  type="text"
-                  className="input-field"
-                  placeholder="Search..."
-                  data-drawer="focus"
-                />
-              </label>
-              <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                porro vero delectus eum qui laboriosam, dolore veritatis
-                eligendi amet voluptatibus incidunt temporibus dolores fuga
-                adipisci eius saepe quod aspernatur iure.
-              </p>
-            </Drawer.Body>
-          </Drawer.Portal>
-        </Drawer>
-        <Drawer>
-          <Drawer.Toggle className="btn btn-soft mt-3">
-            Open bottom drawer
-          </Drawer.Toggle>
+        <p className="mt-6 font-medium">Left</p>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Left
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="left">
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at left
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Left with gesture
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="left" gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at left with gesture
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    data-drawer-sheet="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+                <p className="mt-3 opacity-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <p className="mt-3">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Cupiditate voluptate corporis assumenda ratione consequatur
+                  quaerat nihil obcaecati explicabo unde excepturi provident
+                  enim sint sed labore animi nostrum, sit, dolorum eum numquam,
+                  vel adipisci porro. Placeat quisquam impedit amet praesentium
+                  minus suscipit soluta nam sapiente quis nihil pariatur, dicta
+                  vel mollitia asperiores sit tempora dolore consequuntur
+                  distinctio expedita ut recusandae quas labore error.
+                  Obcaecati, debitis eveniet quidem at sint dolor fugiat ullam a
+                  temporibus minus amet, quibusdam dolore iusto rerum. Neque
+                  esse vitae ad ex voluptatem iure deserunt eos, vel quisquam
+                  rerum porro beatae, quis eius et voluptas consequatur cumque
+                  sint commodi. Impedit dolorum temporibus odit, incidunt
+                  perspiciatis repudiandae. Libero impedit ea explicabo animi
+                  aperiam? Id quam natus itaque iusto, consectetur unde illum
+                  rerum recusandae ipsa omnis deleniti ipsam consequuntur ad
+                  assumenda laudantium provident nulla, magnam veniam quaerat!
+                  Rerum nostrum odio, aliquam est laboriosam molestiae quos,
+                  eius quam perferendis earum ex quidem architecto optio
+                  officiis velit? Sit ipsum nihil tempora perferendis voluptatem
+                  omnis obcaecati, nobis sunt autem minus, repellendus, facere
+                  velit non dolorem? Aut accusamus voluptatibus excepturi
+                  possimus explicabo ad sed repudiandae dignissimos, sint quos
+                  officiis cum, eum quae quidem, nesciunt reiciendis beatae.
+                  Officiis quos voluptates neque aspernatur, tempore possimus
+                  eum nostrum ad totam cumque adipisci eaque dignissimos quis
+                  ratione ipsa sint recusandae. Nostrum nam maxime aut quis modi
+                  quasi, enim, tenetur repudiandae itaque corrupti consequuntur
+                  quisquam. Quam accusamus porro dolorem, eos aliquid sapiente?
+                  Quidem, facilis laudantium! Nulla voluptatem architecto,
+                  praesentium unde explicabo cum molestiae tempore error
+                  voluptate ex enim non distinctio quisquam iure incidunt quos
+                  fuga saepe autem quaerat commodi itaque? Dolores voluptatum
+                  voluptate, tempora commodi dicta eaque quod veritatis rem
+                  necessitatibus totam recusandae consequuntur! Maxime numquam
+                  amet sint molestiae aliquid eligendi fuga est autem,
+                  temporibus quas voluptatibus exercitationem voluptatum veniam
+                  ea consectetur ex ipsa animi tenetur neque dolorem
+                  dignissimos? Nobis iure doloribus officia perspiciatis unde
+                  possimus! Facilis ullam animi iusto nesciunt odit temporibus.
+                  Recusandae quibusdam odio atque quasi laudantium! Aliquam nemo
+                  asperiores sint optio perferendis ullam, nulla laborum iusto.
+                  Provident aut ea rem maiores ratione laborum placeat,
+                  necessitatibus optio quod vero sequi deserunt odio amet dicta
+                  quae. Perspiciatis ducimus, deleniti ratione ipsa
+                  necessitatibus quod quos in reprehenderit eum alias nulla
+                  temporibus iure maiores, fuga quis? Corrupti excepturi
+                  asperiores, eligendi velit magni blanditiis amet officiis
+                  optio inventore id officia itaque, autem dolorum eaque facilis
+                  suscipit assumenda quisquam? In aliquam rerum earum. Ullam
+                  praesentium culpa sed veritatis necessitatibus molestias
+                  doloremque dignissimos ut, ducimus exercitationem unde eos
+                  velit hic nihil assumenda quod, vero magnam officia!
+                  Repellendus accusantium ipsum iure non praesentium
+                  exercitationem labore ex velit voluptas at assumenda inventore
+                  deserunt a amet, ducimus eius provident aut quasi quibusdam
+                  facilis ullam neque sit. Consequatur vero, dolores enim
+                  provident dignissimos voluptatem fugiat delectus est velit
+                  saepe natus aperiam deserunt laboriosam commodi voluptas
+                  minima doloribus molestias ad ut debitis asperiores. Totam
+                  nisi commodi optio veniam illum culpa ullam aliquam doloremque
+                  sit repudiandae, rerum, facilis alias? Corporis quasi
+                  cupiditate dolores quibusdam dicta quaerat ipsum assumenda
+                  illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
+                  veritatis possimus obcaecati?
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Left with offset
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="left" offset={20} gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+                DrawerSheet at left with offset
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
-          <Drawer.Portal>
-            <Drawer.Body position="bottom">
-              <label
-                htmlFor="drawer-input"
-                className="input input-ghost-outline"
-              >
-                <SearchIcon className="element-icon-size" />
-                <input
-                  type="text"
-                  className="input-field"
-                  placeholder="Search..."
-                  data-drawer="focus"
-                />
-              </label>
-              <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                porro vero delectus eum qui laboriosam, dolore veritatis
-                eligendi amet voluptatibus incidunt temporibus dolores fuga
-                adipisci eius saepe quod aspernatur iure.
-              </p>
-            </Drawer.Body>
-          </Drawer.Portal>
-        </Drawer>
+        <p className="mt-6 font-medium">Right</p>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Right
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="right">
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at right
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Right with gesture
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="right" gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+                DrawerSheet at right with gesture
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    data-drawer-sheet="focus"
+                    className="input-field"
+                    placeholder="Search..."
+                  />
+                </label>
+                <p className="mt-3 opacity-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <p className="mt-3">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Cupiditate voluptate corporis assumenda ratione consequatur
+                  quaerat nihil obcaecati explicabo unde excepturi provident
+                  enim sint sed labore animi nostrum, sit, dolorum eum numquam,
+                  vel adipisci porro. Placeat quisquam impedit amet praesentium
+                  minus suscipit soluta nam sapiente quis nihil pariatur, dicta
+                  vel mollitia asperiores sit tempora dolore consequuntur
+                  distinctio expedita ut recusandae quas labore error.
+                  Obcaecati, debitis eveniet quidem at sint dolor fugiat ullam a
+                  temporibus minus amet, quibusdam dolore iusto rerum. Neque
+                  esse vitae ad ex voluptatem iure deserunt eos, vel quisquam
+                  rerum porro beatae, quis eius et voluptas consequatur cumque
+                  sint commodi. Impedit dolorum temporibus odit, incidunt
+                  perspiciatis repudiandae. Libero impedit ea explicabo animi
+                  aperiam? Id quam natus itaque iusto, consectetur unde illum
+                  rerum recusandae ipsa omnis deleniti ipsam consequuntur ad
+                  assumenda laudantium provident nulla, magnam veniam quaerat!
+                  Rerum nostrum odio, aliquam est laboriosam molestiae quos,
+                  eius quam perferendis earum ex quidem architecto optio
+                  officiis velit? Sit ipsum nihil tempora perferendis voluptatem
+                  omnis obcaecati, nobis sunt autem minus, repellendus, facere
+                  velit non dolorem? Aut accusamus voluptatibus excepturi
+                  possimus explicabo ad sed repudiandae dignissimos, sint quos
+                  officiis cum, eum quae quidem, nesciunt reiciendis beatae.
+                  Officiis quos voluptates neque aspernatur, tempore possimus
+                  eum nostrum ad totam cumque adipisci eaque dignissimos quis
+                  ratione ipsa sint recusandae. Nostrum nam maxime aut quis modi
+                  quasi, enim, tenetur repudiandae itaque corrupti consequuntur
+                  quisquam. Quam accusamus porro dolorem, eos aliquid sapiente?
+                  Quidem, facilis laudantium! Nulla voluptatem architecto,
+                  praesentium unde explicabo cum molestiae tempore error
+                  voluptate ex enim non distinctio quisquam iure incidunt quos
+                  fuga saepe autem quaerat commodi itaque? Dolores voluptatum
+                  voluptate, tempora commodi dicta eaque quod veritatis rem
+                  necessitatibus totam recusandae consequuntur! Maxime numquam
+                  amet sint molestiae aliquid eligendi fuga est autem,
+                  temporibus quas voluptatibus exercitationem voluptatum veniam
+                  ea consectetur ex ipsa animi tenetur neque dolorem
+                  dignissimos? Nobis iure doloribus officia perspiciatis unde
+                  possimus! Facilis ullam animi iusto nesciunt odit temporibus.
+                  Recusandae quibusdam odio atque quasi laudantium! Aliquam nemo
+                  asperiores sint optio perferendis ullam, nulla laborum iusto.
+                  Provident aut ea rem maiores ratione laborum placeat,
+                  necessitatibus optio quod vero sequi deserunt odio amet dicta
+                  quae. Perspiciatis ducimus, deleniti ratione ipsa
+                  necessitatibus quod quos in reprehenderit eum alias nulla
+                  temporibus iure maiores, fuga quis? Corrupti excepturi
+                  asperiores, eligendi velit magni blanditiis amet officiis
+                  optio inventore id officia itaque, autem dolorum eaque facilis
+                  suscipit assumenda quisquam? In aliquam rerum earum. Ullam
+                  praesentium culpa sed veritatis necessitatibus molestias
+                  doloremque dignissimos ut, ducimus exercitationem unde eos
+                  velit hic nihil assumenda quod, vero magnam officia!
+                  Repellendus accusantium ipsum iure non praesentium
+                  exercitationem labore ex velit voluptas at assumenda inventore
+                  deserunt a amet, ducimus eius provident aut quasi quibusdam
+                  facilis ullam neque sit. Consequatur vero, dolores enim
+                  provident dignissimos voluptatem fugiat delectus est velit
+                  saepe natus aperiam deserunt laboriosam commodi voluptas
+                  minima doloribus molestias ad ut debitis asperiores. Totam
+                  nisi commodi optio veniam illum culpa ullam aliquam doloremque
+                  sit repudiandae, rerum, facilis alias? Corporis quasi
+                  cupiditate dolores quibusdam dicta quaerat ipsum assumenda
+                  illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
+                  veritatis possimus obcaecati?
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
+            Right with offset
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal>
+            <DrawerSheet.Body position="right" offset={20} gesture>
+              <DrawerSheet.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+                DrawerSheet at right with offset
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content>
+                <label className="input input-ghost-outline">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    className="input-field"
+                    placeholder="Search..."
+                    data-drawer-sheet="focus"
+                  />
+                </label>
+                <p className="mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
+                  OK By
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
+                  Close
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
         <p className="heading mt-20">Modal</p>
         <Modal>
@@ -1124,7 +1695,7 @@ function Page() {
             <Modal.Body>
               <Modal.Header>
                 <label className="input input-ghost-outline input-full">
-                  <SearchIcon className="element-icon-size" />
+                  <SearchIcon />
                   <input
                     type="text"
                     data-modal="focus"
@@ -1162,7 +1733,7 @@ function Page() {
             <Modal.Body>
               <Modal.Header>
                 <label className="input input-ghost-outline input-full">
-                  <SearchIcon className="element-icon-size" />
+                  <SearchIcon />
                   <input
                     type="text"
                     data-modal="focus"
@@ -1336,13 +1907,13 @@ function Page() {
         <PaginationWithState pagesLength={6} page={page} setPage={setPage}>
           <div className="flex items-center gap-3 mt-3">
             <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-              <ChevronLeftIcon className="element-icon-size" />
+              <ChevronLeftIcon />
             </PaginationWithState.PrevBtn>
 
             <PaginationWithState.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
             <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-              <ChevronRightIcon className="element-icon-size" />
+              <ChevronRightIcon />
             </PaginationWithState.NextBtn>
           </div>
         </PaginationWithState>
@@ -1357,13 +1928,13 @@ function Page() {
           >
             <div className="flex items-center gap-3 mt-3">
               <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-                <ChevronLeftIcon className="element-icon-size" />
+                <ChevronLeftIcon />
               </PaginationWithSearchParams.PrevBtn>
 
               <PaginationWithSearchParams.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
               <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-                <ChevronRightIcon className="element-icon-size" />
+                <ChevronRightIcon />
               </PaginationWithSearchParams.NextBtn>
             </div>
           </PaginationWithSearchParams>
@@ -1383,7 +1954,7 @@ function Page() {
 
             <div className="flex items-center gap-3 mt-3">
               <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
-                <ChevronLeftIcon className="element-icon-size" />
+                <ChevronLeftIcon />
               </PaginationWithState.PrevBtn>
 
               <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
@@ -1393,7 +1964,7 @@ function Page() {
               </PaginationWithState.Counts>
 
               <PaginationWithState.NextBtn className="btn btn-soft btn-square">
-                <ChevronRightIcon className="element-icon-size" />
+                <ChevronRightIcon />
               </PaginationWithState.NextBtn>
             </div>
           </div>
@@ -1425,7 +1996,7 @@ function Page() {
 
               <div className="flex items-center gap-3 mt-3">
                 <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
-                  <ChevronLeftIcon className="element-icon-size" />
+                  <ChevronLeftIcon />
                 </PaginationWithSearchParams.PrevBtn>
 
                 <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
@@ -1435,7 +2006,7 @@ function Page() {
                 </PaginationWithState.Counts>
 
                 <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
-                  <ChevronRightIcon className="element-icon-size" />
+                  <ChevronRightIcon />
                 </PaginationWithSearchParams.NextBtn>
               </div>
             </div>
@@ -1524,7 +2095,7 @@ function Page() {
             <Popover direction="y">
               <Popover.Toggle className="btn acn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
-                <ChevronRightIcon className="element-icon-size" />
+                <ChevronRightIcon />
               </Popover.Toggle>
               <Popover.Body
                 className="card card-menu card-y bg-card"
@@ -1741,171 +2312,6 @@ function Page() {
           </SelectBox>
         </div>
 
-        <p className="heading mt-20">Sheet</p>
-        <Sheet>
-          <Sheet.Toggle className="btn btn-soft mt-6">Open sheet</Sheet.Toggle>
-
-          <Sheet.Portal>
-            <Sheet.Body>
-              <Sheet.Indicator className="flex items-center gap-3 justify-between border-b border-foreground/10">
-                <p>This is your sheet</p>
-                <Sheet.Toggle className="btn btn-ghost btn-square">
-                  <XIcon />
-                </Sheet.Toggle>
-              </Sheet.Indicator>
-
-              <Sheet.Content>
-                <label className="input input-ghost-outline">
-                  <SearchIcon />
-                  <input
-                    type="text"
-                    data-sheet="focus"
-                    className="input-field"
-                    placeholder="Search..."
-                  />
-                </label>
-                <p className="mt-3 opacity-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae explicabo numquam sed dolorem nesciunt repellat
-                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
-                  animi vero dicta maxime mollitia amet dolor.
-                </p>
-                <p className="mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae explicabo numquam sed dolorem nesciunt repellat
-                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
-                  animi vero dicta maxime mollitia amet dolor. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Veniam nihil
-                  necessitatibus minus quod sapiente doloribus architecto saepe
-                  animi expedita, repellendus earum corporis cum repudiandae
-                  nesciunt adipisci aliquid dicta! Veniam, nihil qui harum ut
-                  minus at necessitatibus temporibus animi voluptas quidem
-                  officiis, dolorem dicta reiciendis aliquam tenetur amet enim
-                  earum fugiat! Non illo quisquam odio unde minus, animi
-                  praesentium alias inventore quaerat voluptas quibusdam dolores
-                  laboriosam iure magnam eum blanditiis illum labore fuga
-                  cumque. Expedita ratione aliquam, a similique deserunt
-                  provident sunt suscipit molestiae, ea eveniet magnam sequi
-                  quibusdam molestias? Veniam itaque debitis, eligendi ea quod
-                  voluptatibus numquam. Consectetur at error perspiciatis fugit
-                  repudiandae neque voluptas iusto vitae labore temporibus
-                  quidem, nemo laudantium pariatur minima odit maiores sed.
-                  Reprehenderit eum excepturi dolores alias obcaecati similique
-                  laudantium animi, eius labore repellat nostrum, voluptatibus,
-                  explicabo fugit? Tempora perferendis autem amet dignissimos,
-                  architecto aspernatur, ut porro nihil quaerat cum, quae
-                  explicabo vitae. Distinctio blanditiis eius asperiores
-                  numquam? Ullam, modi temporibus, dolores ad illum error earum
-                  ea quae saepe optio, nisi veniam mollitia vero ipsum molestiae
-                  eos tenetur placeat! Magni molestias in necessitatibus
-                  asperiores soluta ducimus non modi numquam officiis! Nemo
-                  magni fugit quia? Quia odit nesciunt facere fugit, ipsam
-                  quaerat? Inventore, velit fuga. Nisi assumenda quas eos dicta
-                  tempore recusandae fugiat, blanditiis repudiandae ipsam
-                  perspiciatis voluptatibus fuga voluptatem sint rem possimus
-                  perferendis nam deserunt corporis earum eaque deleniti odit
-                  totam. Cupiditate mollitia non ipsa, iusto reiciendis quisquam
-                  maiores in nesciunt nam molestias nihil quibusdam fugiat vel
-                  voluptatem laborum, quod laboriosam quo pariatur aspernatur
-                  aliquid.
-                </p>
-              </Sheet.Content>
-
-              <Sheet.Indicator className="flex items-center gap-3 justify-between border-t border-foreground/10">
-                <p>Are you enjoying the sheet?</p>
-                <Sheet.Toggle className="btn btn-ghost ms-auto">
-                  No
-                </Sheet.Toggle>
-                <Sheet.Toggle className="btn btn-soft btn-success">
-                  Yes
-                </Sheet.Toggle>
-              </Sheet.Indicator>
-            </Sheet.Body>
-          </Sheet.Portal>
-        </Sheet>
-
-        <Sheet>
-          <Sheet.Toggle className="btn btn-soft mt-6">Open sheet with offset</Sheet.Toggle>
-
-          <Sheet.Portal>
-            <Sheet.Body offset={20}>
-              <Sheet.Indicator className="flex items-center gap-3 justify-between border-b border-foreground/10 rounded-t-3xl">
-                <p>This is your sheet</p>
-                <Sheet.Toggle className="btn btn-ghost btn-square btn-rounded">
-                  <XIcon />
-                </Sheet.Toggle>
-              </Sheet.Indicator>
-
-              <Sheet.Content>
-                <label className="input input-ghost-outline">
-                  <SearchIcon />
-                  <input
-                    type="text"
-                    data-sheet="focus"
-                    className="input-field"
-                    placeholder="Search..."
-                  />
-                </label>
-                <p className="mt-3 opacity-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae explicabo numquam sed dolorem nesciunt repellat
-                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
-                  animi vero dicta maxime mollitia amet dolor.
-                </p>
-                <p className="mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae explicabo numquam sed dolorem nesciunt repellat
-                  deleniti quisquam laudantium? Quas ullam magni voluptate esse
-                  animi vero dicta maxime mollitia amet dolor. Lorem ipsum dolor
-                  sit amet, consectetur adipisicing elit. Veniam nihil
-                  necessitatibus minus quod sapiente doloribus architecto saepe
-                  animi expedita, repellendus earum corporis cum repudiandae
-                  nesciunt adipisci aliquid dicta! Veniam, nihil qui harum ut
-                  minus at necessitatibus temporibus animi voluptas quidem
-                  officiis, dolorem dicta reiciendis aliquam tenetur amet enim
-                  earum fugiat! Non illo quisquam odio unde minus, animi
-                  praesentium alias inventore quaerat voluptas quibusdam dolores
-                  laboriosam iure magnam eum blanditiis illum labore fuga
-                  cumque. Expedita ratione aliquam, a similique deserunt
-                  provident sunt suscipit molestiae, ea eveniet magnam sequi
-                  quibusdam molestias? Veniam itaque debitis, eligendi ea quod
-                  voluptatibus numquam. Consectetur at error perspiciatis fugit
-                  repudiandae neque voluptas iusto vitae labore temporibus
-                  quidem, nemo laudantium pariatur minima odit maiores sed.
-                  Reprehenderit eum excepturi dolores alias obcaecati similique
-                  laudantium animi, eius labore repellat nostrum, voluptatibus,
-                  explicabo fugit? Tempora perferendis autem amet dignissimos,
-                  architecto aspernatur, ut porro nihil quaerat cum, quae
-                  explicabo vitae. Distinctio blanditiis eius asperiores
-                  numquam? Ullam, modi temporibus, dolores ad illum error earum
-                  ea quae saepe optio, nisi veniam mollitia vero ipsum molestiae
-                  eos tenetur placeat! Magni molestias in necessitatibus
-                  asperiores soluta ducimus non modi numquam officiis! Nemo
-                  magni fugit quia? Quia odit nesciunt facere fugit, ipsam
-                  quaerat? Inventore, velit fuga. Nisi assumenda quas eos dicta
-                  tempore recusandae fugiat, blanditiis repudiandae ipsam
-                  perspiciatis voluptatibus fuga voluptatem sint rem possimus
-                  perferendis nam deserunt corporis earum eaque deleniti odit
-                  totam. Cupiditate mollitia non ipsa, iusto reiciendis quisquam
-                  maiores in nesciunt nam molestias nihil quibusdam fugiat vel
-                  voluptatem laborum, quod laboriosam quo pariatur aspernatur
-                  aliquid.
-                </p>
-              </Sheet.Content>
-
-              <Sheet.Indicator className="flex items-center gap-3 justify-between border-t border-foreground/10 rounded-b-3xl">
-                <p>Are you enjoying the sheet?</p>
-                <Sheet.Toggle className="btn btn-ghost btn-rounded ms-auto">
-                  No
-                </Sheet.Toggle>
-                <Sheet.Toggle className="btn btn-soft btn-success btn-rounded">
-                  Yes
-                </Sheet.Toggle>
-              </Sheet.Indicator>
-            </Sheet.Body>
-          </Sheet.Portal>
-        </Sheet>
-
         <p className="heading mt-20">ShowMore</p>
         <ShowMore className="max-w-96 mt-6" maxLines={3}>
           <ShowMore.Content>
@@ -1947,7 +2353,7 @@ function Page() {
             <Submit.Loader
               loader={<LoaderIcon className="element-icon-size animate-spin" />}
             >
-              <SendHorizonalIcon className="element-icon-size" />
+              <SendHorizonalIcon />
             </Submit.Loader>
           </Submit>
         </form>
@@ -1978,7 +2384,7 @@ function Page() {
           <LinkLoader
             loader={<LoaderIcon className="element-icon-size animate-spin" />}
           >
-            <ArrowRightIcon className="element-icon-size" />
+            <ArrowRightIcon />
           </LinkLoader>
         </Link>
 
@@ -2062,7 +2468,7 @@ function Page() {
             choiceName="1"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
-              <CheckIcon className="element-icon-size" />
+              <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
@@ -2070,12 +2476,12 @@ function Page() {
             choiceName="2"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
-              <CheckIcon className="element-icon-size" />
+              <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle className="choice choice-checkbox" choiceName="3">
             <Choice.Thumb className="choice-checkbox-thumb">
-              <CheckIcon className="element-icon-size" />
+              <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
@@ -2083,7 +2489,7 @@ function Page() {
             choiceName="4"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
-              <CheckIcon className="element-icon-size" />
+              <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
@@ -2091,7 +2497,7 @@ function Page() {
             choiceName="5"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
-              <CheckIcon className="element-icon-size" />
+              <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
         </Choice>

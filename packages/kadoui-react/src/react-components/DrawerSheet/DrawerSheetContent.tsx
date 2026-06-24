@@ -3,18 +3,23 @@
 import { use } from "react";
 import { CSSProperties } from "react";
 
-import { SheetContext } from "./SheetContext";
-import type { SheetContentPropsT } from "./sheetTypes";
-import { useSheetScrollTouchAction } from "./useSheetScrollTouchAction";
+import {
+  DrawerSheetBodyContext,
+  DrawerSheetContext,
+} from "./DrawerSheetContext";
+import type { DrawerSheetContentPropsT } from "./drawerSheetTypes";
+import { useDrawerSheetScrollTouchAction } from "./useDrawerSheetScrollTouchAction";
 
-export function SheetContent({
+export function DrawerSheetContent({
   style,
   onScroll,
   onPointerDown,
   ...p
-}: SheetContentPropsT) {
-  const { dragControls } = use(SheetContext);
-  const { ref, onScroll: updateTouchAction } = useSheetScrollTouchAction();
+}: DrawerSheetContentPropsT) {
+  const { dragControls } = use(DrawerSheetContext);
+  const { position, gesture } = use(DrawerSheetBodyContext);
+  const { ref, canStartDrag, onScroll: updateTouchAction } =
+    useDrawerSheetScrollTouchAction(position, gesture);
 
   const styles: CSSProperties = {
     flex: 1,
@@ -29,16 +34,14 @@ export function SheetContent({
   return (
     <div
       ref={ref}
-      data-sheet-content
+      data-drawer-sheet-content
       style={styles}
       onScroll={(ev) => {
         updateTouchAction(ev.currentTarget);
         onScroll?.(ev);
       }}
       onPointerDown={(ev) => {
-        const element = ev.currentTarget;
-
-        if (element.scrollTop <= 0) {
+        if (canStartDrag(ev.currentTarget)) {
           dragControls.start(ev);
         }
 
