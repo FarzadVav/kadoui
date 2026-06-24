@@ -1,7 +1,0 @@
-/* @utility spoiler {
-  @apply transition-all data-[state=false]:inline data-[state=false]:cursor-pointer data-[state=false]:rounded data-[state=false]:overflow-hidden data-[state=false]:px-1;
-}
-
-@utility spoiler-blur {
-  @apply transition-all data-[state=false]:select-none data-[state=false]:blur-[3px];
-} */

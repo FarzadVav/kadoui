@@ -1,17 +1,20 @@
 "use client";
 
-import { use } from "react";
+import { CSSProperties, use } from "react";
 
 import { SpoilerContext } from "./SpoilerContext";
 import type { SpoilerBlurPropsT } from "./spoilerTypes";
 
-export function SpoilerBlur(p: SpoilerBlurPropsT) {
+export function SpoilerBlur({ style, ...p }: SpoilerBlurPropsT) {
   const { isOpen } = use(SpoilerContext);
 
-  return (
-    <span
-      data-state={isOpen}
-      {...p}
-    />
-  )
+  const styles: CSSProperties = {
+    transition: "all 150ms ease",
+    ...(isOpen
+      ? {}
+      : { pointerEvents: "none", filter: "blur(3px)", scale: 0.9 }),
+    ...style,
+  };
+
+  return <span style={styles} data-state={isOpen} {...p} />;
 }

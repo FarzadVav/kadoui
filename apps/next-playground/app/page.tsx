@@ -2338,9 +2338,9 @@ function Page() {
 
         <p className="heading mt-20">Spoiler</p>
         <p className="mt-6">
-          <Spoiler className="spoiler">
+          <Spoiler>
             Lorem ipsum dolor sit{" "}
-            <Spoiler.Blur className="spoiler-blur">
+            <Spoiler.Blur>
               amet consectetur adipisicing
             </Spoiler.Blur>{" "}
             elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae
