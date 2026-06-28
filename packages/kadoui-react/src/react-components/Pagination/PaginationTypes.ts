@@ -30,14 +30,14 @@ export type PaginationContextT = {
   pages?: PaginationPagesT[];
   pagesLength: number;
   page: number;
-  setPage: Dispatch<SetStateAction<number>>;
+  setPage: (page: number) => void;
   nextPage: () => void;
   prevPage: () => void;
 };
 
 export type PaginationStateRootPropsT = PaginationPropsT & {
   page: number;
-  setPage: Dispatch<SetStateAction<number>>;
+  setPage: (page: number) => void;
 };
 
 export type PaginationSearchParamsRootPropsT = PaginationPropsT & {

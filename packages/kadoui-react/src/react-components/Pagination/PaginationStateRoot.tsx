@@ -13,9 +13,9 @@ export function PaginationStateRoot({
   const correctPagesLength = (pages?.length || pagesLength) as number;
 
   const nextPage = () =>
-    setPage((prev) => (prev < correctPagesLength ? prev + 1 : prev));
+    setPage(page < correctPagesLength ? page + 1 : page);
 
-  const prevPage = () => setPage((prev) => (prev > 1 ? prev - 1 : prev));
+  const prevPage = () => setPage(page > 1 ? page - 1 : page);
 
   return (
     <PaginationContext.Provider

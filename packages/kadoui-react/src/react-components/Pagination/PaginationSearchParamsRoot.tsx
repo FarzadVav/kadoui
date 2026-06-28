@@ -1,7 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import { PaginationContext } from "./PaginationContext";
 import type { PaginationSearchParamsRootPropsT } from "./PaginationTypes";
@@ -29,7 +29,7 @@ export function PaginationSearchParamsRoot({
     router.push("?" + params.toString() + (sectionId ? `#${sectionId}` : ""));
   };
 
-  const setPage: Dispatch<SetStateAction<number>> = (page) => {
+  const setPage: (page: number) => void = (page) => {
     if (page !== currentPage) {
       pushRouter(page as number);
     }

@@ -1,10 +1,10 @@
-import type { ComponentProps, Dispatch, ReactNode, SetStateAction } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 
 export type RatingContextT = {
   hoverValue: number | null;
-  setHoverValue: Dispatch<SetStateAction<number | null>>;
+  setHoverValue: (value: number | null) => void;
 };
 
 export type RatingRootPropsT = AccessNavigationPropsT;
