@@ -175,7 +175,7 @@ const SELECT_BOX_OPTIONS: SelectBoxOptionT[] = [
 const SWAP_KEYS = ["one", "two", "three"];
 
 function Page() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme, systemTheme } = useTheme();
 
   const [accordionItems, setAccordionItems] = useState<string[]>([]);
   const [accordionItem, setAccordionItem] = useState<string | null>(null);
@@ -202,7 +202,10 @@ function Page() {
 
           <PopoverWithState mode="click" direction="y">
             <PopoverWithState.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
-              Theme: {theme || <LoaderIcon className="animate-spin" />}
+              Theme:{" "}
+              {theme === "system"
+                ? `system (${resolvedTheme ?? systemTheme})`
+                : theme}
             </PopoverWithState.Toggle>
 
             <PopoverWithState.Body
@@ -226,6 +229,7 @@ function Page() {
                 onClick={() => setTheme("system")}
               >
                 System
+                {systemTheme ? ` (${systemTheme})` : null}
               </button>
             </PopoverWithState.Body>
           </PopoverWithState>

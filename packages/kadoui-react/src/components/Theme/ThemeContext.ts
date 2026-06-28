@@ -2,6 +2,11 @@
 
 import { createContext } from "react";
 
-import type { ThemeContextT } from "./themeTypes";
+import type { UseThemeReturnT } from "./themeTypes";
 
-export const ThemeContext = createContext<ThemeContextT>({} as ThemeContextT);
+export const ThemeContext = createContext<UseThemeReturnT | null>(null);
+
+export const defaultThemeContext: UseThemeReturnT = {
+  setTheme: () => {},
+  themes: [],
+};

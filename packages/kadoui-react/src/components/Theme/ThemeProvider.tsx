@@ -1,85 +1,229 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import {
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 
 import { ThemeContext } from "./ThemeContext";
-import type { ThemeProviderPropsT, ThemeT } from "./themeTypes";
+import { ThemeScript } from "./ThemeScript";
+import type { ThemeAttributeT, ThemeProviderPropsT } from "./themeTypes";
+import {
+  COLOR_SCHEMES,
+  DEFAULT_THEMES,
+  disableTransitionAnimations,
+  getStoredTheme,
+  getSystemTheme,
+  MEDIA_QUERY,
+  saveThemeToStorage,
+} from "./themeUtils";
 
-export function ThemeProvider({ children }: ThemeProviderPropsT) {
-  const [theme, setTheme] = useState<ThemeT | undefined>(undefined);
+export function ThemeProvider(props: ThemeProviderPropsT) {
+  const context = use(ThemeContext);
 
-  useLayoutEffect(() => {
-    try {
-      let localTheme = localStorage.getItem("kadoui-theme") || "";
+  if (context) {
+    return <>{props.children}</>;
+  }
 
-      if (!["light", "dark", "system"].includes(localTheme)) {
-        localTheme = "system";
-        localStorage.setItem("kadoui-theme", localTheme);
-      }
+  return <ThemeRoot {...props} />;
+}
 
-      setTheme(localTheme as ThemeT);
+function ThemeRoot({
+  forcedTheme,
+  disableTransitionOnChange = false,
+  enableSystem = true,
+  enableColorScheme = true,
+  storageKey = "kadoui-theme",
+  themes = DEFAULT_THEMES,
+  defaultTheme = enableSystem ? "system" : "light",
+  attribute = "data-theme",
+  value,
+  children,
+  nonce,
+  scriptProps,
+}: ThemeProviderPropsT) {
+  const [theme, setThemeState] = useState(
+    () => getStoredTheme(storageKey, defaultTheme)!,
+  );
+  const [resolvedTheme, setResolvedTheme] = useState(() =>
+    theme === "system" ? getSystemTheme() : theme,
+  );
+  const attrs = value ? Object.values(value) : themes;
 
-      const html = document.querySelector("html");
-
-      if (!html) {
+  const applyTheme = useCallback(
+    (nextTheme: string) => {
+      if (!nextTheme) {
         return;
       }
 
-      if (["light", "dark"].includes(localTheme)) {
-        html.setAttribute("data-theme", localTheme);
+      let resolved = nextTheme;
 
+      if (nextTheme === "system" && enableSystem) {
+        resolved = getSystemTheme();
+      }
+
+      const name = value?.[resolved] ?? resolved;
+      const enable = disableTransitionOnChange
+        ? disableTransitionAnimations(nonce)
+        : null;
+      const root = document.documentElement;
+
+      const handleAttribute = (attr: ThemeAttributeT) => {
+        if (attr === "class") {
+          root.classList.remove(...attrs);
+
+          if (name) {
+            root.classList.add(name);
+          }
+        } else if (attr.startsWith("data-")) {
+          if (name) {
+            root.setAttribute(attr, name);
+          } else {
+            root.removeAttribute(attr);
+          }
+        }
+      };
+
+      if (Array.isArray(attribute)) {
+        attribute.forEach(handleAttribute);
+      } else {
+        handleAttribute(attribute);
+      }
+
+      if (enableColorScheme) {
+        const fallback = COLOR_SCHEMES.includes(
+          defaultTheme as (typeof COLOR_SCHEMES)[number],
+        )
+          ? defaultTheme
+          : null;
+        const colorScheme = COLOR_SCHEMES.includes(
+          resolved as (typeof COLOR_SCHEMES)[number],
+        )
+          ? resolved
+          : fallback;
+
+        if (colorScheme) {
+          root.style.colorScheme = colorScheme;
+        }
+      }
+
+      enable?.();
+    },
+    [
+      attribute,
+      attrs,
+      defaultTheme,
+      disableTransitionOnChange,
+      enableColorScheme,
+      enableSystem,
+      nonce,
+      value,
+    ],
+  );
+
+  const setTheme = useCallback<Dispatch<SetStateAction<string>>>(
+    (nextValue) => {
+      if (typeof nextValue === "function") {
+        setThemeState((prevTheme) => {
+          const newTheme = nextValue(prevTheme);
+
+          saveThemeToStorage(storageKey, newTheme);
+
+          return newTheme;
+        });
+      } else {
+        setThemeState(nextValue);
+        saveThemeToStorage(storageKey, nextValue);
+      }
+    },
+    [storageKey],
+  );
+
+  const handleMediaQuery = useCallback(
+    (e: MediaQueryListEvent | MediaQueryList) => {
+      const resolved = getSystemTheme(e);
+
+      setResolvedTheme(resolved);
+
+      if (theme === "system" && enableSystem && !forcedTheme) {
+        applyTheme("system");
+      }
+    },
+    [applyTheme, enableSystem, forcedTheme, theme],
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia(MEDIA_QUERY);
+
+    media.addListener(handleMediaQuery);
+    handleMediaQuery(media);
+
+    return () => media.removeListener(handleMediaQuery);
+  }, [handleMediaQuery]);
+
+  useEffect(() => {
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key !== storageKey) {
         return;
       }
 
-      const themeHandler = (matches: boolean) => {
-        const theme = matches ? "dark" : "light";
-        html.setAttribute("data-theme", theme);
-      };
+      if (!e.newValue) {
+        setTheme(defaultTheme);
+      } else {
+        setThemeState(e.newValue);
+      }
+    };
 
-      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      const onSystemThemeChange = (ev: MediaQueryListEvent) =>
-        themeHandler(ev.matches);
+    window.addEventListener("storage", handleStorage);
 
-      darkModeQuery.addEventListener("change", onSystemThemeChange);
-      themeHandler(darkModeQuery.matches);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, [defaultTheme, setTheme, storageKey]);
 
-      return () => {
-        darkModeQuery.removeEventListener("change", onSystemThemeChange);
-      };
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
+  useEffect(() => {
+    applyTheme(forcedTheme ?? theme);
+  }, [applyTheme, forcedTheme, theme]);
 
-  const mediThemeHandler = (matches: MediaQueryListEvent["matches"]) => {
-    const html = document.querySelector("html")!;
-
-    const theme = matches ? "dark" : "light";
-    html.setAttribute("data-theme", theme);
-  };
-
-  const handleSetTheme = (theme: ThemeT) => {
-    const html = document.querySelector("html")!;
-
-    setTheme(theme);
-    localStorage.setItem("kadoui-theme", theme);
-
-    if (["light", "dark"].includes(theme)) {
-      html.setAttribute("data-theme", theme);
-
-      return;
-    }
-
-    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    darkModeQuery.addEventListener("change", (ev) =>
-      mediThemeHandler(ev.matches),
-    );
-
-    mediThemeHandler(darkModeQuery.matches);
-  };
+  const providerValue = useMemo(
+    () => ({
+      theme,
+      setTheme,
+      forcedTheme,
+      resolvedTheme: theme === "system" ? resolvedTheme : theme,
+      themes: enableSystem ? [...themes, "system"] : themes,
+      systemTheme: enableSystem
+        ? (resolvedTheme as "light" | "dark")
+        : undefined,
+    }),
+    [
+      enableSystem,
+      forcedTheme,
+      resolvedTheme,
+      setTheme,
+      theme,
+      themes,
+    ],
+  );
 
   return (
-    <ThemeContext value={{ theme, setTheme: handleSetTheme }}>
+    <ThemeContext value={providerValue}>
+      <ThemeScript
+        attribute={attribute}
+        defaultTheme={defaultTheme}
+        enableColorScheme={enableColorScheme}
+        enableSystem={enableSystem}
+        forcedTheme={forcedTheme}
+        nonce={nonce}
+        scriptProps={scriptProps}
+        storageKey={storageKey}
+        themes={themes}
+        value={value}
+      />
+
       {children}
     </ThemeContext>
   );
