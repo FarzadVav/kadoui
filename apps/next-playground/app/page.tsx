@@ -2371,20 +2371,12 @@ function Page() {
         <p className="heading mt-20">Swap</p>
         <div className="mt-6">
           <Swap keys={SWAP_KEYS} activeKey={swapKey} setActiveKey={setSwapKey}>
-            <Swap.Btn
-              className="btn btn-soft"
-              btnKey={SWAP_KEYS[0] as string}
-            />
+            {SWAP_KEYS.map((key) => (
+              <Swap.Btn key={key} className="btn btn-soft" btnKey={key}>
+                {(btnKey) => `Key ${btnKey}`}
+              </Swap.Btn>
+            ))}
 
-            <Swap.Btn
-              className="btn btn-soft"
-              btnKey={SWAP_KEYS[1] as string}
-            />
-
-            <Swap.Btn
-              className="btn btn-soft"
-              btnKey={SWAP_KEYS[2] as string}
-            />
           </Swap>
         </div>
 

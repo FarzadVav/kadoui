@@ -21,8 +21,9 @@ export function SwapBtn({ btnKey, onClick, children, ...p }: SwapBtnPropsT) {
           setActiveKey(nextActiveKey);
         }
       }}
-      {...p}>
-      {children || keys.find((item) => item === btnKey)}
+      {...p}
+    >
+      {children ? children(btnKey) : btnKey}
     </button>
   ) : null;
 }
