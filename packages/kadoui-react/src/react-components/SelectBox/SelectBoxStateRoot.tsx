@@ -4,16 +4,16 @@ import { useRef, useState, useEffect } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
-import type { SelectBoxContextT, SelectBoxRootPropsT } from "./selectBoxTypes";
+import type { SelectBoxContextT, SelectBoxStateRootPropsT } from "./selectBoxTypes";
 
-export function SelectBoxRoot({
+export function SelectBoxStateRoot({
   multiSelect,
   optionValue,
   setOptionValue,
   options,
   ref,
   ...p
-}: SelectBoxRootPropsT) {
+}: SelectBoxStateRootPropsT) {
   const [inputFocused, setInputFocused] = useState(false);
   const [inputSearch, setInputSearch] = useState("");
   const selectBoxRootRef = ref || useRef<HTMLDivElement>(null);
@@ -28,8 +28,8 @@ export function SelectBoxRoot({
       }
     };
 
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
         setInputFocused(false);
       }
     };

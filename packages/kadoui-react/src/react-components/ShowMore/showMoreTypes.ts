@@ -1,5 +1,7 @@
 import type { ComponentProps, ReactNode, RefObject } from "react";
 
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+
 export type ShowMoreContextT = {
   contentRef: RefObject<HTMLDivElement | null>;
   shouldShowMore: boolean;
@@ -9,10 +11,21 @@ export type ShowMoreContextT = {
   fullHeight: number;
 };
 
-export type ShowMoreRootPropsT = ComponentProps<"div"> & {
+type ShowMoreBasePropsT = ComponentProps<"div"> & {
   maxLines: number;
+};
+
+export type ShowMoreStateRootPropsT = ShowMoreBasePropsT & {
   defaultExpanded?: boolean;
 };
+
+export type ShowMoreSearchParamsRootPropsT = ShowMoreBasePropsT &
+  SearchParamsNavigationOptionsT & {
+    openKey?: string;
+  };
+
+/** @deprecated Use ShowMoreStateRootPropsT */
+export type ShowMoreRootPropsT = ShowMoreStateRootPropsT;
 
 export type ShowMoreContentPropsT = ComponentProps<"div">;
 

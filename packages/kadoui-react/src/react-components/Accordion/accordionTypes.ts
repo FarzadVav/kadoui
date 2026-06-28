@@ -2,6 +2,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
 
 import { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
 
 type MultipleModeT = {
   multiple: true;
@@ -19,7 +20,25 @@ type MergedModeT = SingleModeT | MultipleModeT;
 
 export type AccordionContextT = MergedModeT;
 
-export type AccordionRootPropsT = AccordionContextT & AccessNavigationPropsT;
+export type AccordionStateRootPropsT = AccordionContextT & AccessNavigationPropsT;
+
+export type AccordionSearchParamsRootBasePropsT = AccessNavigationPropsT &
+  SearchParamsNavigationOptionsT & {
+    accordionKey?: string;
+  };
+
+export type AccordionSearchParamsRootMultiplePropsT =
+  AccordionSearchParamsRootBasePropsT & {
+    multiple: true;
+  };
+
+export type AccordionSearchParamsRootSinglePropsT =
+  AccordionSearchParamsRootBasePropsT & {
+    multiple?: false;
+  };
+
+/** @deprecated Use AccordionStateRootPropsT */
+export type AccordionRootPropsT = AccordionStateRootPropsT;
 
 export type AccordionItemContextT = {
   itemName: string;

@@ -1,14 +1,14 @@
 "use client";
 
 import { SwapContext } from "./SwapContext";
-import type { SwapRootPropsT } from "./swapTypes";
+import type { SwapStateRootPropsT } from "./swapTypes";
 
-export function SwapRoot({
+export function SwapStateRoot({
   keys,
   activeKey,
   setActiveKey,
   children,
-}: SwapRootPropsT) {
+}: SwapStateRootPropsT) {
   return (
     <SwapContext value={{ keys, activeKey, setActiveKey }}>
       {children}

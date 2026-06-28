@@ -1,34 +1,15 @@
 "use client";
 
-import {
-  CSSProperties,
-  useCallback,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 
-import { ShowMoreContext } from "./ShowMoreContext";
 import { measureShowMoreHeights } from "./showMoreMeasure";
-import type { ShowMoreRootPropsT } from "./showMoreTypes";
 
-export function ShowMoreRoot({
-  maxLines,
-  defaultExpanded = false,
-  style,
-  ...p
-}: ShowMoreRootPropsT) {
+export function useShowMoreMeasure(maxLines: number) {
   const [shouldShowMore, setShouldShowMore] = useState(false);
-  const [isShowMore, setIsShowMore] = useState(defaultExpanded);
   const [clampedHeight, setClampedHeight] = useState(0);
   const [fullHeight, setFullHeight] = useState(0);
 
   const contentRef = useRef<HTMLDivElement>(null);
-
-  const styles: CSSProperties = {
-    position: "relative",
-    ...style,
-  };
 
   const measure = useCallback(() => {
     const element = contentRef.current;
@@ -37,8 +18,10 @@ export function ShowMoreRoot({
     const heights = measureShowMoreHeights(element, maxLines);
     if (!heights) return;
 
-    const { fullHeight: measuredFullHeight, clampedHeight: measuredClampedHeight } =
-      heights;
+    const {
+      fullHeight: measuredFullHeight,
+      clampedHeight: measuredClampedHeight,
+    } = heights;
 
     setClampedHeight(measuredClampedHeight);
     setFullHeight(measuredFullHeight);
@@ -57,18 +40,10 @@ export function ShowMoreRoot({
     return () => observer.disconnect();
   }, [measure]);
 
-  return (
-    <ShowMoreContext
-      value={{
-        contentRef,
-        isShowMore,
-        setIsShowMore,
-        clampedHeight,
-        fullHeight,
-        shouldShowMore,
-      }}
-    >
-      <div style={styles} {...p} />
-    </ShowMoreContext>
-  );
+  return {
+    contentRef,
+    shouldShowMore,
+    clampedHeight,
+    fullHeight,
+  };
 }

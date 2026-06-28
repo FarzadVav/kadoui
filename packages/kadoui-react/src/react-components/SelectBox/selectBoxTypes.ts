@@ -1,7 +1,8 @@
-import type { ComponentProps, RefObject } from "react";
+import type { ComponentProps, PropsWithChildren, RefObject } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 import type { PopoverBodyPropsT } from "../Popover/popoverTypes";
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
 
 export type SelectBoxOptionT = { name: string; value: string };
 
@@ -27,11 +28,31 @@ export type SelectBoxContextT = MergedSelectMode & {
   options: SelectBoxOptionT[];
 };
 
-export type SelectBoxRootPropsT = AccessNavigationPropsT &
+export type SelectBoxStateRootPropsT = AccessNavigationPropsT &
   MergedSelectMode & {
     ref?: RefObject<HTMLDivElement | null>;
     options: SelectBoxOptionT[];
   };
+
+export type SelectBoxSearchParamsRootBasePropsT = AccessNavigationPropsT &
+  SearchParamsNavigationOptionsT & {
+    options: SelectBoxOptionT[];
+    valueKey?: string;
+    ref?: RefObject<HTMLDivElement | null>;
+  };
+
+export type SelectBoxSearchParamsRootMultiplePropsT =
+  SelectBoxSearchParamsRootBasePropsT & {
+    multiSelect: true;
+  };
+
+export type SelectBoxSearchParamsRootSinglePropsT =
+  SelectBoxSearchParamsRootBasePropsT & {
+    multiSelect?: false;
+  };
+
+/** @deprecated Use SelectBoxStateRootPropsT */
+export type SelectBoxRootPropsT = SelectBoxStateRootPropsT;
 
 export type SelectBoxFieldPropsT = ComponentProps<"input">;
 

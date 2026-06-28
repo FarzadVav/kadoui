@@ -1,26 +1,29 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
 import { PopoverContext } from "./PopoverContext";
-import type { PopoverRootPropsT } from "./popoverTypes";
+import { useCloseOnPathnameChange } from "../shared/useCloseOnPathnameChange";
+import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
+import type { PopoverSearchParamsRootPropsT } from "./popoverTypes";
 import { selectAccessibleChildren } from "../../utils-exports";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export function PopoverRoot({
+export function PopoverSearchParamsRoot({
   mode = "click",
+  openKey = "popover",
+  scroll,
   onMouseEnter,
   onMouseLeave,
   style,
   ...p
-}: PopoverRootPropsT) {
-  const pathname = usePathname();
-
-  const [isOpen, setOpen] = useState(false);
+}: PopoverSearchParamsRootPropsT) {
+  const [isOpen, setOpen] = useSearchParamsBooleanState(openKey, { scroll });
 
   const toggleRef = useRef<HTMLButtonElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const setOpenRef = useRef(setOpen);
+  setOpenRef.current = setOpen;
 
   const styles: CSSProperties = {
     maxWidth: "100%",
@@ -29,19 +32,19 @@ export function PopoverRoot({
     ...style,
   };
 
+  useCloseOnPathnameChange(() => {
+    setOpenRef.current(false);
+  });
+
   useEffect(() => {
     const closeHandler = () => {
-      setOpen(false);
+      setOpenRef.current(false);
     };
 
     window.addEventListener("click", closeHandler);
 
     return () => window.removeEventListener("click", closeHandler);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {

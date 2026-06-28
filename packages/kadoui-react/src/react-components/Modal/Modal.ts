@@ -1,16 +1,27 @@
-import { ModalRoot } from "./ModalRoot";
 import { ModalBody } from "./ModalBody";
 import { ModalPortal } from "./ModalPortal";
 import { ModalToggle } from "./ModalToggle";
 import { ModalContent } from "./ModalContent";
 import { ModalIndicator } from "./ModalIndicator";
+import { ModalStateRoot } from "./ModalStateRoot";
+import { ModalSearchParamsRoot } from "./ModalSearchParamsRoot";
 
-export const Modal = Object.assign(ModalRoot, {
+const baseComponents = {
   Toggle: ModalToggle,
   Portal: ModalPortal,
   Body: ModalBody,
   Indicator: ModalIndicator,
   Content: ModalContent,
-});
+};
+
+export const ModalWithState = Object.assign(ModalStateRoot, baseComponents);
+
+export const ModalWithSearchParams = Object.assign(
+  ModalSearchParamsRoot,
+  baseComponents,
+);
+
+/** @deprecated Use ModalWithState */
+export const Modal = ModalWithState;
 
 export * from "./modalTypes";

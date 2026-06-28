@@ -1,21 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-import { ModalContext } from "./ModalContext";
-import type { ModalRootPropsT } from "./modalTypes";
 import { getBrowserScrollbarWith } from "../../utils-exports";
 
-export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
+export function useOverlayOpenEffects(
+  isOpen: boolean,
+  setOpen: (open: boolean) => void,
+) {
   const pathname = usePathname();
-
-  const [isOpen, setOpen] = useState(defaultOpen);
+  const pathnameRef = useRef(pathname);
+  const setOpenRef = useRef(setOpen);
+  setOpenRef.current = setOpen;
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenRef.current(false);
       }
     };
 
@@ -28,7 +30,12 @@ export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
+    if (pathnameRef.current === pathname) {
+      return;
+    }
+
+    pathnameRef.current = pathname;
+    setOpenRef.current(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -48,6 +55,4 @@ export function ModalRoot({ children, defaultOpen = false }: ModalRootPropsT) {
 
     return () => removeOverStyles();
   }, [isOpen]);
-
-  return <ModalContext value={{ isOpen, setOpen }}>{children}</ModalContext>;
 }

@@ -1,18 +1,29 @@
 import SelectBoxList from "./SelectBoxList";
 import SelectBoxField from "./SelectBoxField";
 import SelectBoxInput from "./SelectBoxInput";
-import { SelectBoxRoot } from "./SelectBoxRoot";
 import SelectBoxOptions from "./SelectBoxOptions";
 import SelectBoxSearchInput from "./SelectBoxSearchInput";
 import SelectBoxSearchField from "./SelectBoxSearchField";
+import { SelectBoxStateRoot } from "./SelectBoxStateRoot";
+import { SelectBoxSearchParamsRoot } from "./SelectBoxSearchParamsRoot";
 
-export const SelectBox = Object.assign(SelectBoxRoot, {
+const baseComponents = {
   Input: SelectBoxInput,
   Field: SelectBoxField,
   List: SelectBoxList,
   SearchInput: SelectBoxSearchInput,
   SearchField: SelectBoxSearchField,
   Options: SelectBoxOptions,
-});
+};
+
+export const SelectBoxWithState = Object.assign(SelectBoxStateRoot, baseComponents);
+
+export const SelectBoxWithSearchParams = Object.assign(
+  SelectBoxSearchParamsRoot,
+  baseComponents,
+);
+
+/** @deprecated Use SelectBoxWithState */
+export const SelectBox = SelectBoxWithState;
 
 export * from "./selectBoxTypes";

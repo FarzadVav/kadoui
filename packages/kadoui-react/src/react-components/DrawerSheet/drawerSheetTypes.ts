@@ -1,6 +1,8 @@
 import type { ComponentProps, PropsWithChildren } from "react";
 import type { DragControls, MotionValue, HTMLMotionProps } from "framer-motion";
 
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+
 export const DRAWER_SHEET_DISMISS_VELOCITY = 500;
 export const DRAWER_SHEET_DISMISS_OFFSET_RATIO = 0.25;
 
@@ -20,7 +22,15 @@ export type DrawerSheetBodyContextT = {
   gesture: boolean;
 };
 
-export type DrawerSheetRootPropsT = PropsWithChildren;
+export type DrawerSheetStateRootPropsT = PropsWithChildren;
+
+export type DrawerSheetSearchParamsRootPropsT = PropsWithChildren &
+  SearchParamsNavigationOptionsT & {
+    openKey?: string;
+  };
+
+/** @deprecated Use DrawerSheetStateRootPropsT */
+export type DrawerSheetRootPropsT = DrawerSheetStateRootPropsT;
 
 export type DrawerSheetBodyPropsT = HTMLMotionProps<"div"> & {
   position?: DrawerSheetPositionT;

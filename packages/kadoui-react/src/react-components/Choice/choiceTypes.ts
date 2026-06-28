@@ -1,6 +1,7 @@
 import type { ComponentProps } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
 
 type MultipleModeT = {
   multiple: true;
@@ -20,7 +21,26 @@ export type ChoiceContextT = MergedModeT & {
   requiredOne?: boolean;
 };
 
-export type ChoiceRootPropsT = AccessNavigationPropsT & ChoiceContextT;
+export type ChoiceStateRootPropsT = AccessNavigationPropsT & ChoiceContextT;
+
+export type ChoiceSearchParamsRootBasePropsT = AccessNavigationPropsT &
+  SearchParamsNavigationOptionsT & {
+    choiceKey?: string;
+    requiredOne?: boolean;
+  };
+
+export type ChoiceSearchParamsRootMultiplePropsT =
+  ChoiceSearchParamsRootBasePropsT & {
+    multiple: true;
+  };
+
+export type ChoiceSearchParamsRootSinglePropsT =
+  ChoiceSearchParamsRootBasePropsT & {
+    multiple?: false;
+  };
+
+/** @deprecated Use ChoiceStateRootPropsT */
+export type ChoiceRootPropsT = ChoiceStateRootPropsT;
 
 export type ChoiceTogglePropsT = Omit<ComponentProps<"button">, "type"> & {
   choiceName: string;

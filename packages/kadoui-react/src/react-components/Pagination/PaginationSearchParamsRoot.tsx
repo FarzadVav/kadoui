@@ -1,49 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { PaginationContext } from "./PaginationContext";
+import { useSearchParamsNavigation } from "../shared/useSearchParamsNavigation";
 import type { PaginationSearchParamsRootPropsT } from "./PaginationTypes";
 
 export function PaginationSearchParamsRoot({
   pages,
   pagesLength,
   pageKey,
-  sectionId,
+  scroll,
   children,
 }: PaginationSearchParamsRootPropsT) {
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const { pushParams } = useSearchParamsNavigation({ scroll });
   const [currentPage, setCurrentPage] = useState(1);
+  const currentPageRef = useRef(currentPage);
+  currentPageRef.current = currentPage;
 
+  const resolvedPageKey = pageKey || "page";
   const correctPagesLength = (pages?.length || pagesLength) as number;
 
   useEffect(() => {
-    setCurrentPage(+(searchParams.get(pageKey || "page") || "1"));
-  }, [pageKey, searchParams]);
+    setCurrentPage(+(searchParams.get(resolvedPageKey) || "1"));
+  }, [resolvedPageKey, searchParams]);
 
-  const pushRouter = (page: number) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set(pageKey || "page", page.toString());
-    router.push("?" + params.toString() + (sectionId ? `#${sectionId}` : ""));
-  };
+  const pushPage = useCallback(
+    (page: number) => {
+      pushParams((params) => {
+        params.set(resolvedPageKey, page.toString());
+      });
+    },
+    [pushParams, resolvedPageKey],
+  );
 
-  const setPage: (page: number) => void = (page) => {
-    if (page !== currentPage) {
-      pushRouter(page as number);
-    }
-  };
+  const setPage = useCallback(
+    (page: number) => {
+      if (page !== currentPageRef.current) {
+        pushPage(page);
+      }
+    },
+    [pushPage],
+  );
 
   const nextPage = () => {
-    if (currentPage < correctPagesLength) {
-      pushRouter(currentPage + 1);
+    if (currentPageRef.current < correctPagesLength) {
+      pushPage(currentPageRef.current + 1);
     }
   };
 
   const prevPage = () => {
-    if (currentPage > 1) {
-      pushRouter(currentPage - 1);
+    if (currentPageRef.current > 1) {
+      pushPage(currentPageRef.current - 1);
     }
   };
 

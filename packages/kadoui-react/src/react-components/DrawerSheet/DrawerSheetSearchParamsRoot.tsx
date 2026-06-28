@@ -1,21 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { useDragControls, useMotionValue } from "framer-motion";
 
 import { DrawerSheetContext } from "./DrawerSheetContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-import type { DrawerSheetRootPropsT } from "./drawerSheetTypes";
+import { useCloseOnPathnameChange } from "../shared/useCloseOnPathnameChange";
+import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
+import type { DrawerSheetSearchParamsRootPropsT } from "./drawerSheetTypes";
 
-export function DrawerSheetRoot({ children }: DrawerSheetRootPropsT) {
-  const pathname = usePathname();
+export function DrawerSheetSearchParamsRoot({
+  children,
+  openKey = "drawer",
+  scroll,
+}: DrawerSheetSearchParamsRootPropsT) {
+  const [isOpen, setOpen] = useSearchParamsBooleanState(openKey, { scroll });
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const dragControls = useDragControls();
 
-  const [isOpen, setOpen] = useState(false);
+  useCloseOnPathnameChange(() => {
+    setOpen(false);
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -25,8 +32,8 @@ export function DrawerSheetRoot({ children }: DrawerSheetRootPropsT) {
   }, [isOpen, x, y]);
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
         setOpen(false);
       }
     };
@@ -37,11 +44,7 @@ export function DrawerSheetRoot({ children }: DrawerSheetRootPropsT) {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
     };
-  }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  }, [setOpen]);
 
   useEffect(() => {
     const scrollbarWidth = getBrowserScrollbarWith();

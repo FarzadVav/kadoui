@@ -7,6 +7,8 @@ import type {
   SetStateAction,
 } from "react";
 
+import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+
 export type PaginationPagesT = {
   name: string;
   component: ReactNode;
@@ -40,10 +42,10 @@ export type PaginationStateRootPropsT = PaginationPropsT & {
   setPage: (page: number) => void;
 };
 
-export type PaginationSearchParamsRootPropsT = PaginationPropsT & {
-  pageKey?: string;
-  sectionId?: string;
-};
+export type PaginationSearchParamsRootPropsT = PaginationPropsT &
+  SearchParamsNavigationOptionsT & {
+    pageKey?: string;
+  };
 
 export type PaginationCountsPropsT = Omit<
   ComponentProps<"button">,
