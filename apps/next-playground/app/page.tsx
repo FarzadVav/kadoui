@@ -2399,25 +2399,25 @@ function Page() {
         <Choice
           multiple
           direction="x"
-          className="flex items-center gap-3 mt-3"
           choiceState={filterChoice}
           onChoiceChange={setFilterChoice}
+          className="flex items-center gap-3 mt-3"
         >
           <Choice.Toggle
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
             choiceName="1"
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 1
           </Choice.Toggle>
           <Choice.Toggle
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
             choiceName="2"
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 2
           </Choice.Toggle>
           <Choice.Toggle
-            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
             choiceName="3"
+            className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 3
           </Choice.Toggle>
@@ -2427,36 +2427,36 @@ function Page() {
         <Choice
           requiredOne
           direction="x"
-          className="flex items-center gap-3 mt-3"
           choiceState={singleChoice}
           onChoiceChange={setSingleChoice}
+          className="flex items-center gap-3 mt-3"
         >
           <Choice.Toggle
-            className="choice element-xs choice-radio"
             choiceName="1"
+            className="choice choice-xs choice-radio"
           >
-            <span className="choice-radio-thumb" />
+            <Choice.Thumb className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-sm choice-radio"
             choiceName="2"
+            className="choice choice-sm choice-radio"
           >
-            <span className="choice-radio-thumb" />
+            <Choice.Thumb className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle className="choice choice-radio" choiceName="3">
-            <span className="choice-radio-thumb" />
+            <Choice.Thumb className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-lg choice-radio"
             choiceName="4"
+            className="choice choice-lg choice-radio"
           >
-            <span className="choice-radio-thumb" />
+            <Choice.Thumb className="choice-radio-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-xl choice-radio"
             choiceName="5"
+            className="choice choice-xl choice-radio"
           >
-            <span className="choice-radio-thumb" />
+            <Choice.Thumb className="choice-radio-thumb" />
           </Choice.Toggle>
         </Choice>
 
@@ -2465,21 +2465,21 @@ function Page() {
           multiple
           requiredOne
           direction="x"
-          className="flex items-center gap-3 mt-3"
           choiceState={multipleChoice}
           onChoiceChange={setMultipleChoice}
+          className="flex items-center gap-3 mt-3"
         >
           <Choice.Toggle
-            className="choice element-xs choice-checkbox"
             choiceName="1"
+            className="choice choice-xs choice-checkbox"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-sm choice-checkbox"
             choiceName="2"
+            className="choice choice-sm choice-checkbox"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
@@ -2491,7 +2491,7 @@ function Page() {
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-lg choice-checkbox"
+            className="choice choice-lg choice-checkbox"
             choiceName="4"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
@@ -2499,7 +2499,7 @@ function Page() {
             </Choice.Thumb>
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-xl choice-checkbox rounded-xl"
+            className="choice choice-xl choice-checkbox"
             choiceName="5"
           >
             <Choice.Thumb className="choice-checkbox-thumb">
@@ -2518,13 +2518,13 @@ function Page() {
           className="flex items-center gap-3 mt-3"
         >
           <Choice.Toggle
-            className="choice element-xs choice-switch"
+            className="choice choice-xs choice-switch"
             choiceName="1"
           >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-sm choice-switch"
+            className="choice choice-sm choice-switch"
             choiceName="2"
           >
             <span className="choice-switch-thumb" />
@@ -2533,13 +2533,13 @@ function Page() {
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-lg choice-switch"
+            className="choice choice-lg choice-switch"
             choiceName="4"
           >
             <span className="choice-switch-thumb" />
           </Choice.Toggle>
           <Choice.Toggle
-            className="choice element-xl choice-switch placeholder:text-palette/50"
+            className="choice choice-xl choice-switch placeholder:text-palette/50"
             choiceName="5"
           >
             <span className="choice-switch-thumb" />

@@ -6,6 +6,7 @@
     "publish:react": "pnpm --filter @kadoui/react publish",
     "publish:tailwind": "pnpm --filter @kadoui/tailwindcss publish",
     "dev:next": "rm -rf apps/next-playground/.next/ && pnpm --filter next-playground dev",
+    "dev:next:r": "rm -rf apps/next-playground/.next/ && pnpm --filter next-playground dev:r",
     "dev:next:h": "rm -rf apps/next-playground/.next/ && pnpm --filter next-playground dev:h",
     "dev:vanilla": "pnpm --filter vanilla-playground dev"
   },

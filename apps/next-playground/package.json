@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:r": "rm -rf .next/ && next dev",
     "dev:h": "next dev -H 192.168.254.27",
     "build": "next build",
     "start": "next start",
