@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Suspense, useState } from "react";
-import { LinkLoader } from "@kadoui/react/next";
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
@@ -21,7 +20,6 @@ import {
   SendHorizonalIcon,
   StarIcon,
   TrashIcon,
-  XIcon,
 } from "lucide-react";
 import {
   AccessNavigation,
@@ -35,6 +33,7 @@ import {
   ContextMenu,
   DrawerSheetWithSearchParams,
   DrawerSheetWithState,
+  LinkLoader,
   ModalWithSearchParams,
   ModalWithState,
   Otp,
@@ -57,7 +56,7 @@ import {
   SwapWithSearchParams,
   SwapWithState,
   useTheme,
-} from "@kadoui/react";
+} from "../../../packages/kadoui-react/dist/components-exports";
 
 const PAGES_WITH_STATE = [
   {
@@ -950,10 +949,7 @@ function Page() {
           With search params:
         </p>
         <Suspense>
-          <AccordionWithSearchParams
-            direction="y"
-            accordionKey="accordion"
-          >
+          <AccordionWithSearchParams direction="y" accordionKey="accordion">
             <AccordionWithSearchParams.Item itemName="1">
               <AccordionWithSearchParams.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
                 <span>Search params accordion 1</span>
@@ -1737,9 +1733,7 @@ function Page() {
           With search params:
         </p>
         <Suspense>
-          <DrawerSheetWithSearchParams
-            openKey="drawer"
-          >
+          <DrawerSheetWithSearchParams openKey="drawer">
             <DrawerSheetWithSearchParams.Toggle className="btn btn-soft mt-3">
               Open drawer via search params
             </DrawerSheetWithSearchParams.Toggle>
@@ -1971,9 +1965,7 @@ function Page() {
           With search params:
         </p>
         <Suspense>
-          <ModalWithSearchParams
-            openKey="modal"
-          >
+          <ModalWithSearchParams openKey="modal">
             <ModalWithSearchParams.Toggle className="btn btn-soft mt-3">
               Open modal via search params
             </ModalWithSearchParams.Toggle>
@@ -2032,9 +2024,7 @@ function Page() {
           Page is {location.search.split("?page=")[1] || 1}
         </p>
         <Suspense>
-          <PaginationWithSearchParams
-            pagesLength={6}
-          >
+          <PaginationWithSearchParams pagesLength={6}>
             <div className="flex items-center gap-3 mt-3">
               <PaginationWithSearchParams.PrevBtn className="btn btn-soft btn-square">
                 <ChevronLeftIcon />
@@ -2166,7 +2156,9 @@ function Page() {
 
         <p className="heading mt-20">Popover</p>
         <PopoverWithState mode="hover" direction="y" className="mt-6">
-          <PopoverWithState.Toggle className="btn btn-soft">Hover me</PopoverWithState.Toggle>
+          <PopoverWithState.Toggle className="btn btn-soft">
+            Hover me
+          </PopoverWithState.Toggle>
 
           <PopoverWithState.Body
             className="card card-menu bg-card"
@@ -2532,8 +2524,8 @@ function Page() {
               quis! Fugit ducimus adipisci minus quas est expedita, voluptatibus
               minima ad facere quis, dolor ipsum debitis!
               <br />
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad soluta
-              ex esse!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
+              soluta ex esse!
               <br />
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic,
               nobis minima iure consequuntur totam dolor exercitationem libero
@@ -2583,9 +2575,17 @@ function Page() {
 
         <p className="heading mt-20">Swap</p>
         <div className="mt-6">
-          <SwapWithState keys={SWAP_KEYS} activeKey={swapKey} setActiveKey={setSwapKey}>
+          <SwapWithState
+            keys={SWAP_KEYS}
+            activeKey={swapKey}
+            setActiveKey={setSwapKey}
+          >
             {SWAP_KEYS.map((key) => (
-              <SwapWithState.Btn key={key} className="btn btn-soft" btnKey={key}>
+              <SwapWithState.Btn
+                key={key}
+                className="btn btn-soft"
+                btnKey={key}
+              >
                 {(btnKey) => `Key ${btnKey}`}
               </SwapWithState.Btn>
             ))}
@@ -2596,10 +2596,7 @@ function Page() {
           With search params:
         </p>
         <Suspense>
-          <SwapWithSearchParams
-            keys={SWAP_KEYS}
-            activeKeyKey="swap"
-          >
+          <SwapWithSearchParams keys={SWAP_KEYS} activeKeyKey="swap">
             {SWAP_KEYS.map((key) => (
               <SwapWithSearchParams.Btn
                 key={key}
@@ -2676,7 +2673,10 @@ function Page() {
           >
             <ChoiceWithState.Thumb className="choice-radio-thumb" />
           </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle className="choice choice-radio" choiceName="3">
+          <ChoiceWithState.Toggle
+            className="choice choice-radio"
+            choiceName="3"
+          >
             <ChoiceWithState.Thumb className="choice-radio-thumb" />
           </ChoiceWithState.Toggle>
           <ChoiceWithState.Toggle
@@ -2718,7 +2718,10 @@ function Page() {
               <CheckIcon />
             </ChoiceWithState.Thumb>
           </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle className="choice choice-checkbox" choiceName="3">
+          <ChoiceWithState.Toggle
+            className="choice choice-checkbox"
+            choiceName="3"
+          >
             <ChoiceWithState.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
             </ChoiceWithState.Thumb>
@@ -2761,7 +2764,10 @@ function Page() {
           >
             <span className="choice-switch-thumb" />
           </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle className="choice choice-switch" choiceName="3">
+          <ChoiceWithState.Toggle
+            className="choice choice-switch"
+            choiceName="3"
+          >
             <span className="choice-switch-thumb" />
           </ChoiceWithState.Toggle>
           <ChoiceWithState.Toggle

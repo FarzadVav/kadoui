@@ -13,8 +13,7 @@
     "build": "tsc"
   },
   "exports": {
-    ".": "./dist/react-exports.js",
-    "./next": "./dist/next-exports.js",
+    ".": "./dist/components-exports.js",
     "./utils": "./dist/utils-exports.js"
   },
   "keywords": [
