@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
+import { ReactNode } from "react";
 import { useLinkStatus } from "next/link";
-import { PropsWithChildren, ReactNode } from "react";
 
-export type LinkLoaderPropsT = PropsWithChildren & {
-  loader: ReactNode;
-}
+export type LinkLoaderPropsT = {
+  children: (isPending: boolean) => ReactNode;
+};
 
-export function LinkLoader({ loader, children }: LinkLoaderPropsT) {
+export function LinkLoader({ children }: LinkLoaderPropsT) {
   const { pending } = useLinkStatus();
 
-  return pending ? loader : children;
+  return children(pending);
 }

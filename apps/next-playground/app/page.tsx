@@ -5,6 +5,7 @@ import { Suspense, useState } from "react";
 import { LinkLoader } from "@kadoui/react/next";
 import {
   ArrowRightIcon,
+  ArrowUpRightIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
@@ -2376,17 +2377,20 @@ function Page() {
                 {(btnKey) => `Key ${btnKey}`}
               </Swap.Btn>
             ))}
-
           </Swap>
         </div>
 
         <p className="heading mt-20">LinkLoader</p>
         <Link className="btn btn-soft mt-6" href={"/test"}>
           <span>Test page</span>
-          <LinkLoader
-            loader={<LoaderIcon className="element-icon-size animate-spin" />}
-          >
-            <ArrowRightIcon />
+          <LinkLoader>
+            {(isPending) =>
+              isPending ? (
+                <LoaderIcon className="animate-spin" />
+              ) : (
+                <ArrowUpRightIcon />
+              )
+            }
           </LinkLoader>
         </Link>
 
