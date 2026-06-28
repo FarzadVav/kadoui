@@ -47,12 +47,11 @@ function ThemeRoot({
   nonce,
   scriptProps,
 }: ThemeProviderPropsT) {
-  const [theme, setThemeState] = useState(
-    () => getStoredTheme(storageKey, defaultTheme)!,
-  );
-  const [resolvedTheme, setResolvedTheme] = useState(() =>
-    theme === "system" ? getSystemTheme() : theme,
-  );
+  const [theme, setThemeState] = useState(defaultTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<
+    "light" | "dark" | undefined
+  >(undefined);
+  const [mounted, setMounted] = useState(false);
   const attrs = value ? Object.values(value) : themes;
 
   const applyTheme = useCallback(
@@ -158,13 +157,27 @@ function ThemeRoot({
   );
 
   useEffect(() => {
+    const stored = getStoredTheme(storageKey, defaultTheme)!;
+
+    setThemeState(stored);
+    setResolvedTheme(
+      stored === "system" ? getSystemTheme() : (stored as "light" | "dark"),
+    );
+    setMounted(true);
+  }, [defaultTheme, storageKey]);
+
+  useEffect(() => {
+    if (!mounted) {
+      return;
+    }
+
     const media = window.matchMedia(MEDIA_QUERY);
 
     media.addListener(handleMediaQuery);
     handleMediaQuery(media);
 
     return () => media.removeListener(handleMediaQuery);
-  }, [handleMediaQuery]);
+  }, [handleMediaQuery, mounted]);
 
   useEffect(() => {
     const handleStorage = (e: StorageEvent) => {
@@ -185,23 +198,34 @@ function ThemeRoot({
   }, [defaultTheme, setTheme, storageKey]);
 
   useEffect(() => {
+    if (!mounted) {
+      return;
+    }
+
     applyTheme(forcedTheme ?? theme);
-  }, [applyTheme, forcedTheme, theme]);
+  }, [applyTheme, forcedTheme, mounted, theme]);
 
   const providerValue = useMemo(
     () => ({
-      theme,
+      theme: mounted ? theme : undefined,
       setTheme,
       forcedTheme,
-      resolvedTheme: theme === "system" ? resolvedTheme : theme,
-      themes: enableSystem ? [...themes, "system"] : themes,
-      systemTheme: enableSystem
-        ? (resolvedTheme as "light" | "dark")
+      resolvedTheme: mounted
+        ? theme === "system"
+          ? resolvedTheme
+          : theme
         : undefined,
+      themes: enableSystem ? [...themes, "system"] : themes,
+      systemTheme:
+        mounted && enableSystem
+          ? (resolvedTheme as "light" | "dark")
+          : undefined,
+      mounted,
     }),
     [
       enableSystem,
       forcedTheme,
+      mounted,
       resolvedTheme,
       setTheme,
       theme,

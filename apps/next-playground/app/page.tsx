@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import {
   ArrowRightIcon,
@@ -175,7 +176,8 @@ const SELECT_BOX_OPTIONS: SelectBoxOptionT[] = [
 const SWAP_KEYS = ["one", "two", "three"];
 
 function Page() {
-  const { theme, setTheme, resolvedTheme, systemTheme } = useTheme();
+  const searchParams = useSearchParams();
+  const { theme, setTheme, resolvedTheme, systemTheme, mounted } = useTheme();
 
   const [accordionItems, setAccordionItems] = useState<string[]>([]);
   const [accordionItem, setAccordionItem] = useState<string | null>(null);
@@ -203,9 +205,15 @@ function Page() {
           <PopoverWithState mode="click" direction="y">
             <PopoverWithState.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
               Theme:{" "}
-              {theme === "system"
-                ? `system (${resolvedTheme ?? systemTheme})`
-                : theme}
+              {mounted ? (
+                theme === "system" ? (
+                  `system (${resolvedTheme ?? systemTheme})`
+                ) : (
+                  theme
+                )
+              ) : (
+                <LoaderIcon className="size-5 animate-spin" />
+              )}
             </PopoverWithState.Toggle>
 
             <PopoverWithState.Body
@@ -213,23 +221,26 @@ function Page() {
               position="bottom-center"
             >
               <button
-                className={`btn ${theme === "light" ? "btn-fill" : "btn-ghost"}`}
+                className={`btn ${mounted && theme === "light" ? "btn-fill" : "btn-ghost"}`}
+                disabled={!mounted}
                 onClick={() => setTheme("light")}
               >
                 Light
               </button>
               <button
-                className={`btn ${theme === "dark" ? "btn-fill" : "btn-ghost"}`}
+                className={`btn ${mounted && theme === "dark" ? "btn-fill" : "btn-ghost"}`}
+                disabled={!mounted}
                 onClick={() => setTheme("dark")}
               >
                 Dark
               </button>
               <button
-                className={`btn ${theme === "system" ? "btn-fill" : "btn-ghost"}`}
+                className={`btn ${mounted && theme === "system" ? "btn-fill" : "btn-ghost"}`}
+                disabled={!mounted}
                 onClick={() => setTheme("system")}
               >
                 System
-                {systemTheme ? ` (${systemTheme})` : null}
+                {mounted && systemTheme ? ` (${systemTheme})` : null}
               </button>
             </PopoverWithState.Body>
           </PopoverWithState>
@@ -975,9 +986,7 @@ function Page() {
               <AccordionWithSearchParams.Body>
                 <AccordionWithSearchParams.Content>
                   <div className="card bg-card">
-                    Current value:{" "}
-                    {location.search.split("accordion=")[1]?.split("&")[0] ||
-                      "none"}
+                    Current value: {searchParams.get("accordion") || "none"}
                   </div>
                 </AccordionWithSearchParams.Content>
               </AccordionWithSearchParams.Body>
@@ -2024,9 +2033,7 @@ function Page() {
           </div>
         </PaginationWithState>
         <p className="mt-6">With search params:</p>
-        <p className="mt-3">
-          Page is {location.search.split("?page=")[1] || 1}
-        </p>
+        <p className="mt-3">Page is {searchParams.get("page") || 1}</p>
         <Suspense>
           <PaginationWithSearchParams pagesLength={6}>
             <div className="flex items-center gap-3 mt-3">
@@ -2950,4 +2957,10 @@ function Page() {
   );
 }
 
-export default Page;
+export default function PlaygroundPage() {
+  return (
+    <Suspense>
+      <Page />
+    </Suspense>
+  );
+}

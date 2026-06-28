@@ -1,9 +1,7 @@
 import type {
   DetailedHTMLProps,
-  Dispatch,
   PropsWithChildren,
   ScriptHTMLAttributes,
-  SetStateAction,
 } from "react";
 
 export type ThemeT = "dark" | "light" | "system";
@@ -24,10 +22,11 @@ export type ThemeScriptPropsT = DetailedHTMLProps<
 export type UseThemeReturnT = {
   themes: string[];
   forcedTheme?: string;
-  setTheme: Dispatch<SetStateAction<string>>;
+  setTheme: (theme: string) => void;
   theme?: string;
   resolvedTheme?: string;
   systemTheme?: "dark" | "light";
+  mounted: boolean;
 };
 
 export type ThemeProviderPropsT = PropsWithChildren & {
@@ -44,6 +43,9 @@ export type ThemeProviderPropsT = PropsWithChildren & {
   scriptProps?: ThemeScriptPropsT;
 };
 
-export type ThemeScriptComponentPropsT = Omit<ThemeProviderPropsT, "children"> & {
+export type ThemeScriptComponentPropsT = Omit<
+  ThemeProviderPropsT,
+  "children"
+> & {
   defaultTheme: string;
 };

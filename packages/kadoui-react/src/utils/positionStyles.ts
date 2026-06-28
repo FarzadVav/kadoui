@@ -25,6 +25,27 @@ export type PositionT =
 
 const DEFAULT_OFFSET = 4;
 
+const EMPTY_DOM_RECT = {
+  x: 0,
+  y: 0,
+  width: 0,
+  height: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+} as DOMRect;
+
+const createDOMRect = (
+  x = 0,
+  y = 0,
+  width = 0,
+  height = 0,
+): DOMRect =>
+  typeof DOMRect !== "undefined"
+    ? new DOMRect(x, y, width, height)
+    : EMPTY_DOM_RECT;
+
 type ViewportShiftT = { x: number; y: number };
 
 type ViewportSafeAreaStateT = {
@@ -97,12 +118,12 @@ export const useViewportSafeArea = (
 ): CSSProperties => {
   const [state, setState] = useState<ViewportSafeAreaStateT>({
     shift: { x: 0, y: 0 },
-    baseRect: new DOMRect(),
+    baseRect: createDOMRect(),
   });
 
   useLayoutEffect(() => {
     if (!enabled) {
-      setState({ shift: { x: 0, y: 0 }, baseRect: new DOMRect() });
+      setState({ shift: { x: 0, y: 0 }, baseRect: createDOMRect() });
       return;
     }
 
@@ -114,7 +135,7 @@ export const useViewportSafeArea = (
     const update = () => {
       setState((prev) => {
         const current = el.getBoundingClientRect();
-        const baseRect = new DOMRect(
+        const baseRect = createDOMRect(
           current.x - prev.shift.x,
           current.y - prev.shift.y,
           current.width,

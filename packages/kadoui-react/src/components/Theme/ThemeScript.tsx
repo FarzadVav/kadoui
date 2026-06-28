@@ -17,6 +17,10 @@ export const ThemeScript = memo(function ThemeScript({
   nonce,
   scriptProps,
 }: ThemeScriptComponentPropsT) {
+  if (typeof window !== "undefined") {
+    return null;
+  }
+
   const scriptArgs = JSON.stringify([
     attribute,
     storageKey,
@@ -32,7 +36,7 @@ export const ThemeScript = memo(function ThemeScript({
     <script
       {...scriptProps}
       suppressHydrationWarning
-      nonce={typeof window === "undefined" ? nonce : ""}
+      nonce={nonce}
       dangerouslySetInnerHTML={{
         __html: `(${themeScript.toString()})(${scriptArgs})`,
       }}

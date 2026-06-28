@@ -52,6 +52,10 @@ export function disableTransitionAnimations(nonce?: string) {
 }
 
 export function getSystemTheme(e?: MediaQueryList | MediaQueryListEvent) {
+  if (!e && IS_SERVER) {
+    return "light";
+  }
+
   const media = e ?? window.matchMedia(MEDIA_QUERY);
 
   return media.matches ? "dark" : "light";
