@@ -47,6 +47,7 @@ import {
   Progress,
   QrCode,
   Rating,
+  Search,
   SelectBoxOptionT,
   SelectBoxWithSearchParams,
   SelectBoxWithState,
@@ -2391,6 +2392,32 @@ function Page() {
             className="transition-all px-1 not-active:hover:-translate-y-1 active:scale-90 focus-visible:animate-bounce focus-visible:outline-none"
           />
         </Rating>
+
+        <p className="heading mt-20">Search</p>
+        <Search className="input input-soft-outline mt-6">
+          <Search.ClearBtn className="btn btn-in-input btn-ghost btn-square btn-error">
+            <TrashIcon />
+          </Search.ClearBtn>
+          <Search.Field className="input-field" placeholder="Search..." />
+          <Search.SubmitBtn className="btn btn-in-input btn-ghost">
+            Search
+          </Search.SubmitBtn>
+        </Search>
+        <Search className="input input-soft-outline mt-6" searchKey="s">
+          <Search.ClearBtn
+            hiddenOnEmpty
+            className="btn btn-in-input btn-ghost btn-square btn-error"
+          >
+            <TrashIcon />
+          </Search.ClearBtn>
+          <Search.Field className="input-field" placeholder="Search..." />
+          <Search.SubmitBtn
+            hiddenOnEqual
+            className="btn btn-in-input btn-ghost"
+          >
+            Search
+          </Search.SubmitBtn>
+        </Search>
 
         <p className="heading mt-20">SelectBox</p>
         <div className="mt-6">

@@ -4,21 +4,16 @@
 
 ### Now
 
+- Fix Z-indexes.
 - Add SearchInput.
-- Obviously styles.
 - Complete utilities.
-- Add DatePicker component.
-- Add TimePicker component.
+- Fix long Pagination.
+- Fix obviously styles.
+- Add toggle for SelectBox.
+- Fix tailwindcss styles for react.
 - Add controlled state to all components.
-- Remove or separate Next.js requirements.
-- Add searchParams adaptor to all components.
 - Fix commented bugs in BeautyPlus and Shops.
-- Remove Dispatch types and add Void function type.
 - Check transition bugs (like AccessNavigation focusTrap).
-- Remove ThemeScript and handle theme simple and directly.
-- Develop Pagination to a full-featured component and Remove Tabs component.
-- Write obviously styles to React components directly (like positions, offsets).
-- Add screen safe aria data-set to components (like when SelectBox or Popover opened out of the screen).
 
 ### Later
 
@@ -28,6 +23,8 @@
 - Add Toast component.
 - Add Marquee component.
 - Add Segmented component.
+- Add DatePicker component.
+- Add TimePicker component.
 - Add Splitter component (x & y).
 - Add Uploader component (with drop zone).
 - Add Slider component (with multiple triggers).
@@ -41,6 +38,7 @@
 
 ### Now
 
+- Fix Z-indexes.
 - Fix commented bugs in BeautyPlus and Shops.
 - Add layout styles with variable customization (wrapper, element spacing, typography, etc.).
 
