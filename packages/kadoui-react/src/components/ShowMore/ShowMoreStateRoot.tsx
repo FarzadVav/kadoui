@@ -5,7 +5,7 @@ import { CSSProperties } from "react";
 import { ShowMoreContext } from "./ShowMoreContext";
 import { useShowMoreMeasure } from "./useShowMoreMeasure";
 import type { ShowMoreStateRootPropsT } from "./showMoreTypes";
-import { useControllableState } from "../shared/useControllableState";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function ShowMoreStateRoot({
   maxLines,

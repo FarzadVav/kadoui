@@ -7,7 +7,7 @@ import type {
   SetStateAction,
 } from "react";
 
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export type PaginationPagesT = {
   name: string;

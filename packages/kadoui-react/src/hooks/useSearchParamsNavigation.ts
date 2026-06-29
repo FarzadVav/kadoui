@@ -3,7 +3,7 @@
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import type { SearchParamsNavigationOptionsT } from "./searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../utils/types";
 
 export type SearchParamsMutatorT = (params: URLSearchParams) => void;
 

@@ -7,7 +7,7 @@ import { PopoverContext } from "./PopoverContext";
 import type { PopoverStateRootPropsT } from "./popoverTypes";
 import { selectAccessibleChildren } from "../../utils-exports";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
-import { useControllableState } from "../shared/useControllableState";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function PopoverStateRoot({
   mode = "click",

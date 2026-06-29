@@ -8,7 +8,6 @@
 - Complete utilities.
 - Fix obviously styles.
 - Fix tailwindcss styles for react.
-- Add controlled state to all components.
 - Fix commented bugs in BeautyPlus and Shops.
 - Check transition bugs (like AccessNavigation focusTrap).
 

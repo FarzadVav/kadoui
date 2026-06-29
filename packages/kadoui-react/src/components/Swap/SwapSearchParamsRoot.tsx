@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SwapContext } from "./SwapContext";
-import { useSearchParamsNavigation } from "../shared/useSearchParamsNavigation";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type { SwapSearchParamsRootPropsT } from "./swapTypes";
 
 export function SwapSearchParamsRoot({

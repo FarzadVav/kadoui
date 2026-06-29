@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { PaginationContext } from "./PaginationContext";
-import { useSearchParamsNavigation } from "../shared/useSearchParamsNavigation";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type { PaginationSearchParamsRootPropsT } from "./PaginationTypes";
 
 export function PaginationSearchParamsRoot({

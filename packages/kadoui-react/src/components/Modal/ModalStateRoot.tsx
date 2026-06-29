@@ -2,8 +2,8 @@
 
 import { ModalContext } from "./ModalContext";
 import type { ModalStateRootPropsT } from "./modalTypes";
-import { useControllableState } from "../shared/useControllableState";
-import { useOverlayOpenEffects } from "../shared/useOverlayOpenEffects";
+import { useControllableState } from "../../hooks/useControllableState";
+import { useOverlayOpenEffects } from "./useOverlayOpenEffects";
 
 export function ModalStateRoot({
   children,

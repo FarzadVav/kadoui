@@ -9,8 +9,8 @@ import {
   parseStringList,
   setNullableStringParam,
   setStringListParam,
-} from "../shared/searchParamsSerializers";
-import { useSearchParamsNavigation } from "../shared/useSearchParamsNavigation";
+} from "../../utils/searchParams";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type {
   ChoiceContextT,
   ChoiceSearchParamsRootMultiplePropsT,

@@ -3,7 +3,7 @@
 import { CSSProperties } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
-import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 import { useShowMoreMeasure } from "./useShowMoreMeasure";
 import type { ShowMoreSearchParamsRootPropsT } from "./showMoreTypes";
 

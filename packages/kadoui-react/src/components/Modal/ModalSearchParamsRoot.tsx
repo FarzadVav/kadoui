@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
-import { useOverlayOpenEffects } from "../shared/useOverlayOpenEffects";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
+import { useOverlayOpenEffects } from "./useOverlayOpenEffects";
 import { ModalContext } from "./ModalContext";
 import type { ModalSearchParamsRootPropsT } from "./modalTypes";
 

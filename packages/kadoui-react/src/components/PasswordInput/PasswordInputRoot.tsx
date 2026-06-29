@@ -2,7 +2,7 @@
 
 import { PasswordInputContext } from "./PasswordInputContext";
 import type { PasswordInputRootPropsT } from "./passwordInputTypes";
-import { useControllableState } from "../shared/useControllableState";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function PasswordInputRoot({
   isVisible: isVisibleProp,

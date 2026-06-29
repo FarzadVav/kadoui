@@ -2,7 +2,7 @@ import type { ComponentProps, PropsWithChildren, RefObject } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 import type { PopoverBodyPropsT } from "../Popover/popoverTypes";
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export type SelectBoxOptionT = { name: string; value: string };
 

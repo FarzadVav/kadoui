@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode, RefObject } from "react";
 
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export type ShowMoreContextT = {
   contentRef: RefObject<HTMLDivElement | null>;

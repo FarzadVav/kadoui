@@ -5,7 +5,7 @@ import { useRef, useEffect } from "react";
 import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import type { SelectBoxContextT, SelectBoxStateRootPropsT } from "./selectBoxTypes";
-import { useControllableState } from "../shared/useControllableState";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function SelectBoxStateRoot({
   multiSelect,

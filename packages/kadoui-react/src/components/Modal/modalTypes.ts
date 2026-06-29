@@ -1,7 +1,7 @@
 import type { HTMLMotionProps } from "framer-motion";
 import type { ComponentProps, PropsWithChildren, RefObject } from "react";
 
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export type ModalContextT = {
   isOpen: boolean;

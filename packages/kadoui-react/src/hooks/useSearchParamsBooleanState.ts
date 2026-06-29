@@ -2,11 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import {
-  parseBooleanParam,
-  setBooleanParam,
-} from "./searchParamsSerializers";
-import type { SearchParamsNavigationOptionsT } from "./searchParamsNavigationTypes";
+import { parseBooleanParam, setBooleanParam } from "../utils/searchParams";
+import type { SearchParamsNavigationOptionsT } from "../utils/types";
 import { useSearchParamsNavigation } from "./useSearchParamsNavigation";
 
 export function useSearchParamsBooleanState(

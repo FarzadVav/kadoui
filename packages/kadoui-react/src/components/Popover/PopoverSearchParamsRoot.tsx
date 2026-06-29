@@ -3,8 +3,8 @@
 import { CSSProperties, useEffect, useRef } from "react";
 
 import { PopoverContext } from "./PopoverContext";
-import { useCloseOnPathnameChange } from "../shared/useCloseOnPathnameChange";
-import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
+import { useCloseOnPathnameChange } from "../../hooks/useCloseOnPathnameChange";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 import type { PopoverSearchParamsRootPropsT } from "./popoverTypes";
 import { selectAccessibleChildren } from "../../utils-exports";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";

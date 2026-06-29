@@ -2,7 +2,7 @@ import type { ComponentProps, RefObject } from "react";
 
 import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 import type { PositionT } from "../../utils/positionStyles";
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export type PopoverContextT = {
   isOpen: boolean;

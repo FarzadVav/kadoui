@@ -2,7 +2,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import type { ComponentProps, PropsWithChildren, ReactNode } from "react";
 
 import { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 type MultipleModeT = {
   multiple: true;

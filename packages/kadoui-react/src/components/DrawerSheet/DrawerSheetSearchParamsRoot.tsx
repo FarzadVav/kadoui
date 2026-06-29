@@ -5,8 +5,8 @@ import { useDragControls, useMotionValue } from "framer-motion";
 
 import { DrawerSheetContext } from "./DrawerSheetContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-import { useCloseOnPathnameChange } from "../shared/useCloseOnPathnameChange";
-import { useSearchParamsBooleanState } from "../shared/useSearchParamsBooleanState";
+import { useCloseOnPathnameChange } from "../../hooks/useCloseOnPathnameChange";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 import type { DrawerSheetSearchParamsRootPropsT } from "./drawerSheetTypes";
 
 export function DrawerSheetSearchParamsRoot({

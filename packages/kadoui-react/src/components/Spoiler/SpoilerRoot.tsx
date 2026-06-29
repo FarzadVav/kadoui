@@ -4,7 +4,7 @@ import { CSSProperties } from "react";
 
 import { SpoilerContext } from "./SpoilerContext";
 import type { SpoilerRootProps } from "./spoilerTypes";
-import { useControllableState } from "../shared/useControllableState";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function SpoilerRoot({
   isOpen: isOpenProp,

@@ -7,8 +7,8 @@ import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import {
   parseSelectBoxValue,
   serializeSelectBoxValue,
-} from "../shared/searchParamsSerializers";
-import { useSearchParamsNavigation } from "../shared/useSearchParamsNavigation";
+} from "./selectBoxSearchParams";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type {
   SelectBoxContextT,
   SelectBoxOptionT,

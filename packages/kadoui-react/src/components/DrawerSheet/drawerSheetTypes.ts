@@ -1,7 +1,7 @@
 import type { ComponentProps, PropsWithChildren } from "react";
 import type { DragControls, MotionValue, HTMLMotionProps } from "framer-motion";
 
-import type { SearchParamsNavigationOptionsT } from "../shared/searchParamsNavigationTypes";
+import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
 export const DRAWER_SHEET_DISMISS_VELOCITY = 500;
 export const DRAWER_SHEET_DISMISS_OFFSET_RATIO = 0.25;
