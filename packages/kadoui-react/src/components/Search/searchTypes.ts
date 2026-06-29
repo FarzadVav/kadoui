@@ -12,6 +12,7 @@ export type SearchContextT = {
 
 export type SearchRootPropsT = ComponentProps<"label"> & {
   scroll?: boolean;
+  baseUrl?: string;
   searchKey?: string;
 };
 

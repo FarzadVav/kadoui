@@ -8,6 +8,7 @@ import { SearchRootPropsT } from "./searchTypes";
 
 export function SearchRoot({
   scroll,
+  baseUrl = "",
   searchKey = "search",
   ...p
 }: SearchRootPropsT) {
@@ -40,7 +41,7 @@ export function SearchRoot({
       sp.delete(searchKey);
     }
 
-    router.push("?" + sp.toString(), { scroll });
+    router.push(baseUrl + "?" + sp.toString(), { scroll });
   };
 
   const handleEnter = (ev: KeyboardEvent<HTMLInputElement>) => {
@@ -58,7 +59,7 @@ export function SearchRoot({
 
     if (hasSp) {
       sp.delete(searchKey);
-      router.push("?" + sp.toString(), { scroll });
+      router.push(baseUrl + "?" + sp.toString(), { scroll });
     }
   };
 

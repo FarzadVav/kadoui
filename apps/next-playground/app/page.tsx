@@ -2403,7 +2403,7 @@ function Page() {
             Search
           </Search.SubmitBtn>
         </Search>
-        <Search className="input input-soft-outline mt-6" searchKey="s">
+        <Search className="input input-soft-outline mt-6" searchKey="s" baseUrl="/test">
           <Search.ClearBtn
             hiddenOnEmpty
             className="btn btn-in-input btn-ghost btn-square btn-error"
