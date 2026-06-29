@@ -16,6 +16,7 @@ export function SelectBoxStateRoot({
 }: SelectBoxStateRootPropsT) {
   const [inputFocused, setInputFocused] = useState(false);
   const [inputSearch, setInputSearch] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
   const selectBoxRootRef = ref || useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -50,6 +51,7 @@ export function SelectBoxStateRoot({
     options,
     inputFocused,
     setInputFocused,
+    inputRef,
     inputSearch,
     setInputSearch,
   } as SelectBoxContextT;

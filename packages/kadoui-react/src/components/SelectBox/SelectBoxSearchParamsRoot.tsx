@@ -31,6 +31,7 @@ export function SelectBoxSearchParamsRoot({
   const { searchParams, pushParams } = useSearchParamsNavigation({ scroll });
   const [inputFocused, setInputFocused] = useState(false);
   const [inputSearch, setInputSearch] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
   const [optionValue, setOptionValueState] = useState<
     SelectBoxOptionT | SelectBoxOptionT[] | null
   >(multiSelect ? [] : null);
@@ -107,6 +108,7 @@ export function SelectBoxSearchParamsRoot({
     options,
     inputFocused,
     setInputFocused,
+    inputRef,
     inputSearch,
     setInputSearch,
   } as SelectBoxContextT;

@@ -23,6 +23,7 @@ export type MergedSelectMode = WithMultiSelect | WithSingleSelect;
 export type SelectBoxContextT = MergedSelectMode & {
   inputFocused: boolean;
   setInputFocused: (newState: boolean) => void;
+  inputRef: RefObject<HTMLInputElement | null>;
   inputSearch: string;
   setInputSearch: (newInputSearch: string) => void;
   options: SelectBoxOptionT[];
@@ -68,3 +69,5 @@ export type SelectBoxListPropsT = ComponentProps<"div"> & {
 };
 
 export type SelectBoxOptionsPropsT = ComponentProps<"button">;
+
+export type SelectBoxTogglePropsT = Omit<ComponentProps<"button">, "type">;

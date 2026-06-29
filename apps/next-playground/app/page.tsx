@@ -2443,8 +2443,10 @@ function Page() {
             optionValue={singleSelectBoxValue}
             setOptionValue={singleSetSelectBoxValue}
           >
-            <SelectBoxWithState.Input className="input input-soft group">
-              <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
+            <SelectBoxWithState.Input className="input input-soft">
+              <SelectBoxWithState.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+                <ChevronDownIcon />
+              </SelectBoxWithState.Toggle>
               <SelectBoxWithState.Field
                 className="input-field"
                 placeholder="Select an option..."
@@ -2468,8 +2470,10 @@ function Page() {
             optionValue={multiSelectBoxValue}
             setOptionValue={setMultiSelectBoxValue}
           >
-            <SelectBoxWithState.Input className="input input-soft group">
-              <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
+            <SelectBoxWithState.Input className="input input-soft">
+              <SelectBoxWithState.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+                <ChevronDownIcon />
+              </SelectBoxWithState.Toggle>
               <SelectBoxWithState.Field
                 className="input-field"
                 placeholder="Select an option..."
@@ -2495,8 +2499,10 @@ function Page() {
               options={SELECT_BOX_OPTIONS}
               valueKey="select-single"
             >
-              <SelectBoxWithSearchParams.Input className="input input-soft group">
-                <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
+              <SelectBoxWithSearchParams.Input className="input input-soft">
+                <SelectBoxWithSearchParams.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+                  <ChevronDownIcon />
+                </SelectBoxWithSearchParams.Toggle>
                 <SelectBoxWithSearchParams.Field
                   className="input-field"
                   placeholder="Select via search params..."
@@ -2519,8 +2525,10 @@ function Page() {
               options={SELECT_BOX_OPTIONS}
               valueKey="select-multi"
             >
-              <SelectBoxWithSearchParams.Input className="input input-soft group">
-                <ChevronDownIcon className="transition-transform group-focus-within:-scale-y-100" />
+              <SelectBoxWithSearchParams.Input className="input input-soft">
+                <SelectBoxWithSearchParams.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+                  <ChevronDownIcon />
+                </SelectBoxWithSearchParams.Toggle>
                 <SelectBoxWithSearchParams.Field
                   className="input-field"
                   placeholder="Select via search params..."
