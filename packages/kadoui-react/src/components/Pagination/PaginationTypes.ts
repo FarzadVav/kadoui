@@ -51,10 +51,11 @@ export type PaginationCountsPropsT = Omit<
   ComponentProps<"button">,
   "children"
 > & {
-  children?: (count: number) => ReactNode;
+  siblings?: number;
   ProgressElem?: JSX.Element;
   disableNextClick?: boolean;
   disablePrevClick?: boolean;
+  children?: (count: number) => ReactNode;
 };
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {

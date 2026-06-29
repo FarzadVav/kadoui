@@ -184,6 +184,7 @@ function Page() {
   const [accordionItem, setAccordionItem] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [pageWithPage, setPageWithPage] = useState(1);
+  const [pageHighCount, setPageHighCount] = useState(1);
   const [rating, setRating] = useState(3);
   const [singleSelectBoxValue, singleSetSelectBoxValue] =
     useState<SelectBoxOptionT | null>(null);
@@ -2153,6 +2154,26 @@ function Page() {
             <PaginationWithSearchParams.Pages />
           </PaginationWithSearchParams>
         </Suspense>
+
+        <p className="mt-6">With high page count:</p>
+        <p className="mt-3">Page is {pageHighCount}</p>
+        <PaginationWithState
+          pagesLength={50}
+          page={pageHighCount}
+          setPage={setPageHighCount}
+        >
+          <div className="flex items-center gap-3 mt-3">
+            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+              <ChevronLeftIcon />
+            </PaginationWithState.PrevBtn>
+
+            <PaginationWithState.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+
+            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+              <ChevronRightIcon />
+            </PaginationWithState.NextBtn>
+          </div>
+        </PaginationWithState>
 
         <p className="heading mt-20">PasswordInput</p>
         <PasswordInput className="input input-ghost-outline input-xl mt-3">
