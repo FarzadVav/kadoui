@@ -16,6 +16,8 @@ type ShowMoreBasePropsT = ComponentProps<"div"> & {
 };
 
 export type ShowMoreStateRootPropsT = ShowMoreBasePropsT & {
+  isShowMore?: boolean;
+  setIsShowMore?: (newState: boolean) => void;
   defaultExpanded?: boolean;
 };
 

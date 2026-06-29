@@ -1,12 +1,23 @@
 "use client";
 
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 
 import { SpoilerContext } from "./SpoilerContext";
 import type { SpoilerRootProps } from "./spoilerTypes";
+import { useControllableState } from "../shared/useControllableState";
 
-export function SpoilerRoot({ style, ...p }: SpoilerRootProps) {
-  const [isOpen, setOpen] = useState(false);
+export function SpoilerRoot({
+  isOpen: isOpenProp,
+  setOpen: setOpenProp,
+  defaultOpen = false,
+  style,
+  ...p
+}: SpoilerRootProps) {
+  const [isOpen, setOpen] = useControllableState({
+    value: isOpenProp,
+    defaultValue: defaultOpen,
+    onChange: setOpenProp,
+  });
 
   const styles: CSSProperties = {
     transition: "all 150ms ease",

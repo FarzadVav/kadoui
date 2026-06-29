@@ -9,6 +9,8 @@ export type ModalContextT = {
 };
 
 export type ModalStateRootPropsT = PropsWithChildren & {
+  isOpen?: boolean;
+  setOpen?: (newState: boolean) => void;
   defaultOpen?: boolean;
 };
 

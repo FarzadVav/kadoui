@@ -33,6 +33,12 @@ export type SelectBoxStateRootPropsT = AccessNavigationPropsT &
   MergedSelectMode & {
     ref?: RefObject<HTMLDivElement | null>;
     options: SelectBoxOptionT[];
+    inputFocused?: boolean;
+    setInputFocused?: (newState: boolean) => void;
+    defaultInputFocused?: boolean;
+    inputSearch?: string;
+    setInputSearch?: (newInputSearch: string) => void;
+    defaultInputSearch?: string;
   };
 
 export type SelectBoxSearchParamsRootBasePropsT = AccessNavigationPropsT &

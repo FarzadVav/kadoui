@@ -14,6 +14,9 @@ export type PopoverContextT = {
 
 export type PopoverStateRootPropsT = AccessNavigationPropsT & {
   mode?: PopoverContextT["mode"];
+  isOpen?: boolean;
+  setOpen?: (newState: boolean) => void;
+  defaultOpen?: boolean;
 };
 
 export type PopoverSearchParamsRootPropsT = PopoverStateRootPropsT &

@@ -1,16 +1,24 @@
 "use client";
 
-import { useState } from "react";
-
 import { PasswordInputContext } from "./PasswordInputContext";
 import type { PasswordInputRootPropsT } from "./passwordInputTypes";
+import { useControllableState } from "../shared/useControllableState";
 
-export function PasswordInputRoot(p: PasswordInputRootPropsT) {
-  const [isVisible, setIsVisible] = useState(false);
+export function PasswordInputRoot({
+  isVisible: isVisibleProp,
+  setIsVisible: setIsVisibleProp,
+  defaultVisible = false,
+  ...p
+}: PasswordInputRootPropsT) {
+  const [isVisible, setIsVisible] = useControllableState({
+    value: isVisibleProp,
+    defaultValue: defaultVisible,
+    onChange: setIsVisibleProp,
+  });
 
   return (
     <PasswordInputContext value={{ isVisible, setIsVisible }}>
       <label {...p} />
     </PasswordInputContext>
-  )
+  );
 }

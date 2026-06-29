@@ -5,7 +5,11 @@ export type PasswordInputContextT = {
   setIsVisible: (newState: boolean) => void;
 };
 
-export type PasswordInputRootPropsT = ComponentProps<"label">;
+export type PasswordInputRootPropsT = ComponentProps<"label"> & {
+  isVisible?: boolean;
+  setIsVisible?: (newState: boolean) => void;
+  defaultVisible?: boolean;
+};
 
 export type PasswordInputFieldPropsT = ComponentProps<"input">;
 

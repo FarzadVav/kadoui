@@ -5,11 +5,8 @@
 ### Now
 
 - Fix Z-indexes.
-- Add SearchInput.
 - Complete utilities.
-- Fix long Pagination.
 - Fix obviously styles.
-- Add toggle for SelectBox.
 - Fix tailwindcss styles for react.
 - Add controlled state to all components.
 - Fix commented bugs in BeautyPlus and Shops.

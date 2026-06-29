@@ -1,21 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useDragControls, useMotionValue } from "framer-motion";
 
 import { DrawerSheetContext } from "./DrawerSheetContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
+import { useControllableState } from "../shared/useControllableState";
 import type { DrawerSheetStateRootPropsT } from "./drawerSheetTypes";
 
-export function DrawerSheetStateRoot({ children }: DrawerSheetStateRootPropsT) {
+export function DrawerSheetStateRoot({
+  children,
+  isOpen: isOpenProp,
+  setOpen: setOpenProp,
+  defaultOpen = false,
+}: DrawerSheetStateRootPropsT) {
   const pathname = usePathname();
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const dragControls = useDragControls();
 
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useControllableState({
+    value: isOpenProp,
+    defaultValue: defaultOpen,
+    onChange: setOpenProp,
+  });
 
   useEffect(() => {
     if (isOpen) {

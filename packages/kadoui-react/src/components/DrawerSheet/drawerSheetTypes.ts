@@ -22,7 +22,11 @@ export type DrawerSheetBodyContextT = {
   gesture: boolean;
 };
 
-export type DrawerSheetStateRootPropsT = PropsWithChildren;
+export type DrawerSheetStateRootPropsT = PropsWithChildren & {
+  isOpen?: boolean;
+  setOpen?: (newState: boolean) => void;
+  defaultOpen?: boolean;
+};
 
 export type DrawerSheetSearchParamsRootPropsT = PropsWithChildren &
   SearchParamsNavigationOptionsT & {

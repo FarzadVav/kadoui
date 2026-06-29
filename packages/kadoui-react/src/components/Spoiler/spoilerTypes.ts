@@ -5,6 +5,10 @@ export type SpoilerContextT = {
   setOpen: (newState: boolean) => void;
 };
 
-export type SpoilerRootProps = ComponentProps<"span">;
+export type SpoilerRootProps = ComponentProps<"span"> & {
+  isOpen?: boolean;
+  setOpen?: (newState: boolean) => void;
+  defaultOpen?: boolean;
+};
 
 export type SpoilerBlurPropsT = ComponentProps<"span">;

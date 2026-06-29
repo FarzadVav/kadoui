@@ -1,21 +1,36 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import type { SelectBoxContextT, SelectBoxStateRootPropsT } from "./selectBoxTypes";
+import { useControllableState } from "../shared/useControllableState";
 
 export function SelectBoxStateRoot({
   multiSelect,
   optionValue,
   setOptionValue,
   options,
+  inputFocused: inputFocusedProp,
+  setInputFocused: setInputFocusedProp,
+  defaultInputFocused = false,
+  inputSearch: inputSearchProp,
+  setInputSearch: setInputSearchProp,
+  defaultInputSearch = "",
   ref,
   ...p
 }: SelectBoxStateRootPropsT) {
-  const [inputFocused, setInputFocused] = useState(false);
-  const [inputSearch, setInputSearch] = useState("");
+  const [inputFocused, setInputFocused] = useControllableState({
+    value: inputFocusedProp,
+    defaultValue: defaultInputFocused,
+    onChange: setInputFocusedProp,
+  });
+  const [inputSearch, setInputSearch] = useControllableState({
+    value: inputSearchProp,
+    defaultValue: defaultInputSearch,
+    onChange: setInputSearchProp,
+  });
   const inputRef = useRef<HTMLInputElement>(null);
   const selectBoxRootRef = ref || useRef<HTMLDivElement>(null);
 

@@ -1,15 +1,19 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
 import { PopoverContext } from "./PopoverContext";
 import type { PopoverStateRootPropsT } from "./popoverTypes";
 import { selectAccessibleChildren } from "../../utils-exports";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
+import { useControllableState } from "../shared/useControllableState";
 
 export function PopoverStateRoot({
   mode = "click",
+  isOpen: isOpenProp,
+  setOpen: setOpenProp,
+  defaultOpen = false,
   onMouseEnter,
   onMouseLeave,
   style,
@@ -17,7 +21,11 @@ export function PopoverStateRoot({
 }: PopoverStateRootPropsT) {
   const pathname = usePathname();
 
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useControllableState({
+    value: isOpenProp,
+    defaultValue: defaultOpen,
+    onChange: setOpenProp,
+  });
 
   const toggleRef = useRef<HTMLButtonElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);

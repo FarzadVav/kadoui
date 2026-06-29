@@ -1,18 +1,25 @@
 "use client";
 
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
 import { useShowMoreMeasure } from "./useShowMoreMeasure";
 import type { ShowMoreStateRootPropsT } from "./showMoreTypes";
+import { useControllableState } from "../shared/useControllableState";
 
 export function ShowMoreStateRoot({
   maxLines,
+  isShowMore: isShowMoreProp,
+  setIsShowMore: setIsShowMoreProp,
   defaultExpanded = false,
   style,
   ...p
 }: ShowMoreStateRootPropsT) {
-  const [isShowMore, setIsShowMore] = useState(defaultExpanded);
+  const [isShowMore, setIsShowMore] = useControllableState({
+    value: isShowMoreProp,
+    defaultValue: defaultExpanded,
+    onChange: setIsShowMoreProp,
+  });
   const { contentRef, shouldShowMore, clampedHeight, fullHeight } =
     useShowMoreMeasure(maxLines);
 
