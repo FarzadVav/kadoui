@@ -2394,23 +2394,36 @@ function Page() {
         </Rating>
 
         <p className="heading mt-20">Search</p>
-        <Search className="input input-soft-outline mt-6">
+        <Search className="input input-soft-outline mt-6" htmlFor="search-1">
           <Search.ClearBtn className="btn btn-in-input btn-ghost btn-square btn-error">
             <TrashIcon />
           </Search.ClearBtn>
-          <Search.Field className="input-field" placeholder="Search..." />
+          <Search.Field
+            id="search-1"
+            className="input-field"
+            placeholder="Search..."
+          />
           <Search.SubmitBtn className="btn btn-in-input btn-ghost">
             Search
           </Search.SubmitBtn>
         </Search>
-        <Search className="input input-soft-outline mt-6" searchKey="s" baseUrl="/test">
+        <Search
+          searchKey="s"
+          baseUrl="/test"
+          htmlFor="search-2"
+          className="input input-soft-outline mt-6"
+        >
           <Search.ClearBtn
             hiddenOnEmpty
             className="btn btn-in-input btn-ghost btn-square btn-error"
           >
             <TrashIcon />
           </Search.ClearBtn>
-          <Search.Field className="input-field" placeholder="Search..." />
+          <Search.Field
+            id="search-2"
+            className="input-field"
+            placeholder="Search..."
+          />
           <Search.SubmitBtn
             hiddenOnEqual
             className="btn btn-in-input btn-ghost"
