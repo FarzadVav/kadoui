@@ -3,6 +3,7 @@
 import { use, useRef } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
+import { ignoreStyles, zIndexes } from "../../styles";
 import type { SelectBoxListPropsT } from "./selectBoxTypes";
 import {
   getPositionStyles,
@@ -21,19 +22,14 @@ export default function SelectBoxList({
   const styles = useViewportSafeArea(
     listRef,
     {
-      zIndex: 10,
       width: "100%",
       overflowY: "auto",
       cursor: "default",
       maxHeight: "33dvh",
       position: "absolute",
+      zIndex: zIndexes.smallOverlay,
       ...getPositionStyles(position, offset),
-      ...(inputFocused
-        ? {}
-        : {
-            opacity: 0,
-            visibility: "hidden",
-          }),
+      ...(inputFocused ? {} : ignoreStyles),
       ...style,
     },
     inputFocused,

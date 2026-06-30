@@ -5,7 +5,10 @@ import { use } from "react";
 import { SelectBoxContext } from "./SelectBoxContext";
 import type { SelectBoxTogglePropsT } from "./selectBoxTypes";
 
-export default function SelectBoxToggle({ onClick, ...p }: SelectBoxTogglePropsT) {
+export default function SelectBoxToggle({
+  onClick,
+  ...p
+}: SelectBoxTogglePropsT) {
   const { inputFocused, setInputFocused, inputRef } = use(SelectBoxContext);
 
   return (

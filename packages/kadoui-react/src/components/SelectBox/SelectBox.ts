@@ -18,14 +18,11 @@ const baseComponents = {
   Options: SelectBoxOptions,
 };
 
-export const SelectBoxWithState = Object.assign(SelectBoxStateRoot, baseComponents);
+export const SelectBox = Object.assign(SelectBoxStateRoot, baseComponents);
 
 export const SelectBoxWithSearchParams = Object.assign(
   SelectBoxSearchParamsRoot,
   baseComponents,
 );
-
-/** @deprecated Use SelectBoxWithState */
-export const SelectBox = SelectBoxWithState;
 
 export * from "./selectBoxTypes";

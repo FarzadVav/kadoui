@@ -8,11 +8,11 @@ import type { ShowMoreStateRootPropsT } from "./showMoreTypes";
 import { useControllableState } from "../../hooks/useControllableState";
 
 export function ShowMoreStateRoot({
+  style,
   maxLines,
+  defaultExpanded = false,
   isShowMore: isShowMoreProp,
   setIsShowMore: setIsShowMoreProp,
-  defaultExpanded = false,
-  style,
   ...p
 }: ShowMoreStateRootPropsT) {
   const [isShowMore, setIsShowMore] = useControllableState({

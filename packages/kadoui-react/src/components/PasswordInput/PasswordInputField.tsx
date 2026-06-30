@@ -8,7 +8,5 @@ import type { PasswordInputFieldPropsT } from "./passwordInputTypes";
 export function PasswordInputField(p: PasswordInputFieldPropsT) {
   const { isVisible } = use(PasswordInputContext);
 
-  return (
-    <input type={isVisible ? "text" : "password"} {...p} />
-  );
+  return <input type={isVisible ? "text" : "password"} {...p} />;
 }

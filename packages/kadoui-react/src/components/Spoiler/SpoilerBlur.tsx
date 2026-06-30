@@ -9,10 +9,7 @@ export function SpoilerBlur({ style, ...p }: SpoilerBlurPropsT) {
   const { isOpen } = use(SpoilerContext);
 
   const styles: CSSProperties = {
-    transition: "all 150ms ease",
-    ...(isOpen
-      ? {}
-      : { pointerEvents: "none", filter: "blur(3px)", scale: 0.9 }),
+    ...(isOpen ? {} : { pointerEvents: "none" }),
     ...style,
   };
 

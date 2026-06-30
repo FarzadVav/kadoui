@@ -11,8 +11,6 @@ export function ShowMoreFade({ style, ...p }: ShowMoreFadePropsT) {
   const styles: CSSProperties = {
     inset: 0,
     position: "absolute",
-    background:
-      "linear-gradient(to top, var(--color-background) 30%, transparent)",
     ...style,
   };
 

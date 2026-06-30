@@ -3,7 +3,7 @@
 import { useState, useEffect, CSSProperties } from "react";
 
 import type { AffixPropsT } from "./affixTypes";
-import { ignoreElement, zIndexes } from "../../styles";
+import { ignoreStyles, zIndexes } from "../../styles";
 
 export const Affix = ({
   viewportOffset = 0.5,
@@ -16,7 +16,7 @@ export const Affix = ({
   const styles: CSSProperties = {
     position: "fixed",
     zIndex: zIndexes.smallOverlay,
-    ...(isVisible ? {} : ignoreElement),
+    ...(isVisible ? {} : ignoreStyles),
     ...style,
   };
 

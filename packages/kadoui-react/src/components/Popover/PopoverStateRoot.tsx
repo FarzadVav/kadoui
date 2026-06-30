@@ -10,13 +10,13 @@ import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 import { useControllableState } from "../../hooks/useControllableState";
 
 export function PopoverStateRoot({
-  mode = "click",
-  isOpen: isOpenProp,
-  setOpen: setOpenProp,
-  defaultOpen = false,
+  style,
   onMouseEnter,
   onMouseLeave,
-  style,
+  mode = "click",
+  isOpen: isOpenProp,
+  defaultOpen = false,
+  setOpen: setOpenProp,
   ...p
 }: PopoverStateRootPropsT) {
   const pathname = usePathname();

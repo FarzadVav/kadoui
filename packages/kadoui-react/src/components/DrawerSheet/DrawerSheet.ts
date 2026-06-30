@@ -14,16 +14,11 @@ const baseComponents = {
   Toggle: DrawerSheetToggle,
 };
 
-export const DrawerSheetWithState = Object.assign(
-  DrawerSheetStateRoot,
-  baseComponents,
-);
+export const DrawerSheet = Object.assign(DrawerSheetStateRoot, baseComponents);
 
 export const DrawerSheetWithSearchParams = Object.assign(
   DrawerSheetSearchParamsRoot,
   baseComponents,
 );
-
-export const DrawerSheet = DrawerSheetWithState;
 
 export * from "./drawerSheetTypes";

@@ -8,10 +8,10 @@ import type { SwapSearchParamsRootPropsT } from "./swapTypes";
 
 export function SwapSearchParamsRoot({
   keys,
-  activeKeyKey = "swap",
-  defaultActiveKey,
   scroll,
   children,
+  defaultActiveKey,
+  activeKeyKey = "swap",
 }: SwapSearchParamsRootPropsT) {
   const { searchParams, pushParams } = useSearchParamsNavigation({ scroll });
   const fallbackKey = defaultActiveKey ?? keys[0] ?? "";

@@ -12,14 +12,11 @@ const baseComponents = {
   Content: AccordionContent,
 };
 
-export const AccordionWithState = Object.assign(AccordionStateRoot, baseComponents);
+export const Accordion = Object.assign(AccordionStateRoot, baseComponents);
 
 export const AccordionWithSearchParams = Object.assign(
   AccordionSearchParamsRoot,
   baseComponents,
 );
-
-/** @deprecated Use AccordionWithState */
-export const Accordion = AccordionWithState;
 
 export * from "./accordionTypes";

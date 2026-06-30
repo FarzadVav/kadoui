@@ -5,9 +5,9 @@ import type { SwapStateRootPropsT } from "./swapTypes";
 
 export function SwapStateRoot({
   keys,
+  children,
   activeKey,
   setActiveKey,
-  children,
 }: SwapStateRootPropsT) {
   return (
     <SwapContext value={{ keys, activeKey, setActiveKey }}>

@@ -12,10 +12,7 @@ const baseComponents = {
   PrevBtn: PaginationPrevBtn,
 };
 
-export const PaginationWithState = Object.assign(
-  PaginationStateRoot,
-  baseComponents,
-);
+export const Pagination = Object.assign(PaginationStateRoot, baseComponents);
 
 export const PaginationWithSearchParams = Object.assign(
   PaginationSearchParamsRoot,

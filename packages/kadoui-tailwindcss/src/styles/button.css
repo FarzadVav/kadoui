@@ -261,10 +261,7 @@
   );
   --btn-spacing: 0;
 
-  &,
-  &:is(& *) {
-    @apply text-center justify-center items-center;
-  }
+  @apply text-center justify-center items-center;
 }
 
 @utility btn-full {

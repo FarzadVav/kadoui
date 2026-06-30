@@ -4,37 +4,29 @@ import { usePagination } from "@mantine/hooks";
 import { cloneElement, Fragment, use } from "react";
 
 import { PaginationContext } from "./PaginationContext";
-import type { PaginationCountsPropsT } from "./PaginationTypes";
-
-type PaginationCountsItemsPropsT = Omit<
+import type {
   PaginationCountsPropsT,
-  "responsive" | "siblings"
-> & {
-  range: (number | "dots")[];
-  page: number;
-  setPage: (page: number) => void;
-};
+  PaginationCountsItemsPropsT,
+  PaginationCountsStaticPropsT,
+  PaginationCountsResponsiveItemsPropsT,
+} from "./PaginationTypes";
 
 function PaginationCountsItems({
+  page,
   range,
   onClick,
+  setPage,
   children,
   ProgressElem,
   disableNextClick,
   disablePrevClick,
-  page,
-  setPage,
   ...p
 }: PaginationCountsItemsPropsT) {
   return (
     <>
       {range.map((item, index) => {
         if (item === "dots") {
-          return (
-            <span key={`dots-${index}`}>
-              ...
-            </span>
-          );
+          return <span key={`dots-${index}`}>...</span>;
         }
 
         const pageNumber = item;
@@ -65,9 +57,9 @@ function PaginationCountsItems({
 
             {showProgress
               ? cloneElement(ProgressElem, {
-                "data-state": pageNumber === page,
-                "data-skipped": pageNumber < page,
-              })
+                  "data-state": pageNumber === page,
+                  "data-skipped": pageNumber < page,
+                })
               : null}
           </Fragment>
         );
@@ -76,26 +68,19 @@ function PaginationCountsItems({
   );
 }
 
-function PaginationCountsStatic(
-  props: Omit<PaginationCountsPropsT, "responsive" | "siblings">,
-) {
+function PaginationCountsStatic(p: PaginationCountsStaticPropsT) {
   const { pagesLength, page, setPage } = use(PaginationContext);
   const range = Array.from({ length: pagesLength }, (_, index) => index + 1);
 
   return (
-    <PaginationCountsItems
-      range={range}
-      page={page}
-      setPage={setPage}
-      {...props}
-    />
+    <PaginationCountsItems range={range} page={page} setPage={setPage} {...p} />
   );
 }
 
-function PaginationCountsResponsive({
-  siblings = 1,
-  ...props
-}: Omit<PaginationCountsPropsT, "responsive"> & { siblings?: number }) {
+function PaginationCountsResponsiveItems({
+  siblings,
+  ...p
+}: PaginationCountsResponsiveItemsPropsT) {
   const { pagesLength, page, setPage } = use(PaginationContext);
 
   const { range } = usePagination({
@@ -107,25 +92,18 @@ function PaginationCountsResponsive({
   });
 
   return (
-    <PaginationCountsItems
-      range={range}
-      page={page}
-      setPage={setPage}
-      {...props}
-    />
+    <PaginationCountsItems range={range} page={page} setPage={setPage} {...p} />
   );
 }
 
-export function PaginationCounts(props: PaginationCountsPropsT) {
-  if (props.responsive) {
-    const { responsive, siblings, ...rest } = props;
+export function PaginationCounts(p: PaginationCountsPropsT) {
+  if (p.responsive) {
+    const { responsive, siblings, ...rest } = p;
 
-    return (
-      <PaginationCountsResponsive siblings={siblings} {...rest} />
-    );
+    return <PaginationCountsResponsiveItems siblings={siblings} {...rest} />;
   }
 
-  const { responsive, ...rest } = props;
+  const { responsive, ...rest } = p;
 
   return <PaginationCountsStatic {...rest} />;
 }

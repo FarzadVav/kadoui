@@ -1,8 +1,5 @@
-import {
-  parseStringList,
-  serializeStringList,
-} from "../../utils/searchParams";
 import type { SelectBoxOptionT } from "./selectBoxTypes";
+import { parseStringList, serializeStringList } from "../../utils/searchParams";
 
 export function parseSelectBoxValue(
   raw: string | null,

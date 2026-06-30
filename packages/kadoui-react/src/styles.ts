@@ -9,7 +9,7 @@ export const zIndexes = {
   bigOverlay: 40,
 } as const;
 
-export const ignoreElement: CSSProperties = {
+export const ignoreStyles: CSSProperties = {
   opacity: 0,
   visibility: "hidden",
   pointerEvents: "none",

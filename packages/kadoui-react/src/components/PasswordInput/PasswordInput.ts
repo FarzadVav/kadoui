@@ -4,7 +4,7 @@ import { PasswordInputToggle } from "./PasswordInputToggle";
 
 export const PasswordInput = Object.assign(PasswordInputRoot, {
   Field: PasswordInputField,
-  Toggle: PasswordInputToggle
+  Toggle: PasswordInputToggle,
 });
 
 export * from "./passwordInputTypes";

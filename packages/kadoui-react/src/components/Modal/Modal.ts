@@ -14,13 +14,11 @@ const baseComponents = {
   Content: ModalContent,
 };
 
-export const ModalWithState = Object.assign(ModalStateRoot, baseComponents);
+export const Modal = Object.assign(ModalStateRoot, baseComponents);
 
 export const ModalWithSearchParams = Object.assign(
   ModalSearchParamsRoot,
   baseComponents,
 );
-
-export const Modal = ModalWithState;
 
 export * from "./modalTypes";

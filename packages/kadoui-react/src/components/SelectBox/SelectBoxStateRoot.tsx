@@ -4,20 +4,23 @@ import { useRef, useEffect } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
-import type { SelectBoxContextT, SelectBoxStateRootPropsT } from "./selectBoxTypes";
 import { useControllableState } from "../../hooks/useControllableState";
+import type {
+  SelectBoxContextT,
+  SelectBoxStateRootPropsT,
+} from "./selectBoxTypes";
 
 export function SelectBoxStateRoot({
+  options,
   multiSelect,
   optionValue,
   setOptionValue,
-  options,
-  inputFocused: inputFocusedProp,
-  setInputFocused: setInputFocusedProp,
+  defaultInputSearch = "",
   defaultInputFocused = false,
   inputSearch: inputSearchProp,
+  inputFocused: inputFocusedProp,
+  setInputFocused: setInputFocusedProp,
   setInputSearch: setInputSearchProp,
-  defaultInputSearch = "",
   ref,
   ...p
 }: SelectBoxStateRootPropsT) {

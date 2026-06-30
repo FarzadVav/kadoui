@@ -4,11 +4,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SelectBoxContext } from "./SelectBoxContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import {
   parseSelectBoxValue,
   serializeSelectBoxValue,
 } from "./selectBoxSearchParams";
-import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type {
   SelectBoxContextT,
   SelectBoxOptionT,
@@ -21,11 +21,11 @@ type SelectBoxSearchParamsRootPropsT =
   | SelectBoxSearchParamsRootSinglePropsT;
 
 export function SelectBoxSearchParamsRoot({
-  multiSelect,
-  options,
-  valueKey = "select",
-  scroll,
   ref,
+  scroll,
+  options,
+  multiSelect,
+  valueKey = "select",
   ...p
 }: SelectBoxSearchParamsRootPropsT) {
   const { searchParams, pushParams } = useSearchParamsNavigation({ scroll });

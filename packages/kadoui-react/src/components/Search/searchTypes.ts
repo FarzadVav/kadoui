@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentProps, KeyboardEvent } from "react";
+import { ComponentProps, KeyboardEvent } from "react";
 
 export type SearchContextT = {
   value: string;

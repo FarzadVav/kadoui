@@ -51,6 +51,10 @@
   @apply h-max max-h-full;
 }
 
+@utility size-fix {
+  @apply w-fix h-fix;
+}
+
 @utility highlight {
   @apply px-1.5 bg-primary/10 text-primary-foreground rounded;
 }

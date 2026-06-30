@@ -269,7 +269,7 @@
   --input-spacing: 0;
 
   &,
-  &:is(& *) {
+  & > .input-field {
     @apply text-center justify-center items-center;
   }
 }

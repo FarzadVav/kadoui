@@ -10,12 +10,12 @@ import { selectAccessibleChildren } from "../../utils-exports";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
 export function PopoverSearchParamsRoot({
-  mode = "click",
-  openKey = "popover",
+  style,
   scroll,
   onMouseEnter,
   onMouseLeave,
-  style,
+  mode = "click",
+  openKey = "popover",
   ...p
 }: PopoverSearchParamsRootPropsT) {
   const [isOpen, setOpen] = useSearchParamsBooleanState(openKey, { scroll });

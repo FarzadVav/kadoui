@@ -25,24 +25,24 @@ import {
 import {
   AccessNavigation,
   AccordionWithSearchParams,
-  AccordionWithState,
+  Accordion,
   Breadcrumbs,
   ChoiceWithSearchParams,
-  ChoiceWithState,
+  Choice,
   ClientOnly,
   Clipboard,
   ContextMenu,
   DrawerSheetWithSearchParams,
-  DrawerSheetWithState,
+  DrawerSheet,
   LinkLoader,
   ModalWithSearchParams,
-  ModalWithState,
+  Modal,
   Otp,
   PaginationWithSearchParams,
-  PaginationWithState,
+  Pagination,
   PasswordInput,
   PopoverWithSearchParams,
-  PopoverWithState,
+  Popover,
   Portal,
   Progress,
   QrCode,
@@ -50,13 +50,13 @@ import {
   Search,
   SelectBoxOptionT,
   SelectBoxWithSearchParams,
-  SelectBoxWithState,
+  SelectBox,
   ShowMoreWithSearchParams,
-  ShowMoreWithState,
+  ShowMore,
   Spoiler,
   Submit,
   SwapWithSearchParams,
-  SwapWithState,
+  Swap,
   useTheme,
 } from "../../../packages/kadoui-react/dist/components-exports";
 
@@ -200,12 +200,12 @@ function Page() {
 
   return (
     <>
-      <header className="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b border-background-thin z-40">
+      <header className="h-20 sticky top-0 bg-background/10 backdrop-blur-md border-b border-background-thin z-important">
         <nav className="wrapper flex items-center justify-between h-full">
           <h1 className="title">KadoUI React + TailwindCSS</h1>
 
-          <PopoverWithState mode="click" direction="y">
-            <PopoverWithState.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+          <Popover mode="click" direction="y">
+            <Popover.Toggle className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill">
               Theme:{" "}
               {mounted ? (
                 theme === "system" ? (
@@ -216,9 +216,9 @@ function Page() {
               ) : (
                 <LoaderIcon className="size-5 animate-spin" />
               )}
-            </PopoverWithState.Toggle>
+            </Popover.Toggle>
 
-            <PopoverWithState.Body
+            <Popover.Body
               className="card card-menu card-y glass"
               position="bottom-center"
             >
@@ -244,8 +244,8 @@ function Page() {
                 System
                 {mounted && systemTheme ? ` (${systemTheme})` : null}
               </button>
-            </PopoverWithState.Body>
-          </PopoverWithState>
+            </Popover.Body>
+          </Popover>
         </nav>
       </header>
 
@@ -851,116 +851,116 @@ function Page() {
 
         <p className="heading mt-20">Accordion</p>
         <p className="title mt-6">Multiple mode</p>
-        <AccordionWithState
+        <Accordion
           multiple
           direction="y"
           accordionState={accordionItems}
           onAccordionChange={(newItems) => setAccordionItems(newItems)}
         >
-          <AccordionWithState.Item itemName="1">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+          <Accordion.Item itemName="1">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 1</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-          <AccordionWithState.Item itemName="2">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="2">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 2</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-          <AccordionWithState.Item itemName="3">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="3">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 3</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-        </AccordionWithState>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
         <p className="title mt-6">Single mode</p>
-        <AccordionWithState
+        <Accordion
           direction="y"
           accordionState={accordionItem}
           onAccordionChange={(newItems) => setAccordionItem(newItems)}
         >
-          <AccordionWithState.Item itemName="1">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+          <Accordion.Item itemName="1">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 1</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-          <AccordionWithState.Item itemName="2">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="2">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 2</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-          <AccordionWithState.Item itemName="3">
-            <AccordionWithState.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item itemName="3">
+            <Accordion.Toggle className="btn element-w-full data-[state=true]:btn-fill data-[state=false]:btn-soft justify-between mt-6 group">
               <span>Open accordion 3</span>
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
-            </AccordionWithState.Toggle>
-            <AccordionWithState.Body>
-              <AccordionWithState.Content className="pt-1">
+            </Accordion.Toggle>
+            <Accordion.Body>
+              <Accordion.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
                   sapiente omnis voluptatum error earum culpa asperiores eaque
                   ea enim possimus vero esse!
                 </div>
-              </AccordionWithState.Content>
-            </AccordionWithState.Body>
-          </AccordionWithState.Item>
-        </AccordionWithState>
+              </Accordion.Content>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
 
         <p id="accordion-with-search-params" className="title mt-6">
           With search params:
@@ -1061,16 +1061,16 @@ function Page() {
         <p className="heading mt-20">DrawerSheet</p>
 
         <p className="mt-6 font-medium">Bottom</p>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Bottom
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body className="flex flex-col">
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at bottom
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1083,28 +1083,28 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Bottom with gesture
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body className="flex flex-col" gesture>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" gesture>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at bottom with gesture
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1184,32 +1184,28 @@ function Page() {
                   illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
                   veritatis possimus obcaecati?
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Bottom with offset
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
-              className="flex flex-col"
-              offset={20}
-              gesture
-            >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" offset={20} gesture>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at bottom with offset
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1222,30 +1218,30 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
         <p className="mt-6 font-medium">Top</p>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Top
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body className="flex flex-col" position="top">
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" position="top">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at top
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1258,32 +1254,28 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Top with gesture
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
-              className="flex flex-col"
-              position="top"
-              gesture
-            >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" position="top" gesture>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at top with gesture
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1363,33 +1355,33 @@ function Page() {
                   illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
                   veritatis possimus obcaecati?
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Top with offset
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body
               className="flex flex-col"
               position="top"
               offset={20}
               gesture
             >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at top with offset
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1402,33 +1394,30 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
         <p className="mt-6 font-medium">Left</p>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Left
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
-              className="flex flex-col"
-              position="left"
-            >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" position="left">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at left
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1441,32 +1430,28 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Left with gesture
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
-              className="flex flex-col"
-              position="left"
-              gesture
-            >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" position="left" gesture>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at left with gesture
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1546,33 +1531,33 @@ function Page() {
                   illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
                   veritatis possimus obcaecati?
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Left with offset
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body
               className="flex flex-col"
               position="left"
               offset={20}
               gesture
             >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at left with offset
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1585,33 +1570,30 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
         <p className="mt-6 font-medium">Right</p>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Right
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
-              className="flex flex-col"
-              position="right"
-            >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body className="flex flex-col" position="right">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at right
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1624,32 +1606,32 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Right with gesture
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body
               className="flex flex-col"
               position="right"
               gesture
             >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at right with gesture
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1729,33 +1711,33 @@ function Page() {
                   illum, iste doloremque, cum tenetur. Dolorum eveniet molestias
                   veritatis possimus obcaecati?
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
-        <DrawerSheetWithState>
-          <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
+        <DrawerSheet>
+          <DrawerSheet.Toggle className="btn btn-soft mt-3">
             Right with offset
-          </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal className="glass">
-            <DrawerSheetWithState.Body
+          </DrawerSheet.Toggle>
+          <DrawerSheet.Portal className="glass">
+            <DrawerSheet.Body
               className="flex flex-col"
               position="right"
               offset={20}
               gesture
             >
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at right with offset
-              </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
+              </DrawerSheet.Indicator>
+              <DrawerSheet.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1768,18 +1750,18 @@ function Page() {
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-              </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
-                <DrawerSheetWithState.Toggle className="btn btn-soft">
+              </DrawerSheet.Content>
+              <DrawerSheet.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+                <DrawerSheet.Toggle className="btn btn-soft">
                   OK By
-                </DrawerSheetWithState.Toggle>
-                <DrawerSheetWithState.Toggle className="btn btn-ghost btn-error">
+                </DrawerSheet.Toggle>
+                <DrawerSheet.Toggle className="btn btn-ghost btn-error">
                   Close
-                </DrawerSheetWithState.Toggle>
-              </DrawerSheetWithState.Indicator>
-            </DrawerSheetWithState.Body>
-          </DrawerSheetWithState.Portal>
-        </DrawerSheetWithState>
+                </DrawerSheet.Toggle>
+              </DrawerSheet.Indicator>
+            </DrawerSheet.Body>
+          </DrawerSheet.Portal>
+        </DrawerSheet>
 
         <p id="drawer-with-search-params" className="title mt-6">
           With search params:
@@ -1811,14 +1793,14 @@ function Page() {
         </Suspense>
 
         <p className="heading mt-20">Modal</p>
-        <ModalWithState>
-          <ModalWithState.Toggle className="btn btn-soft mt-6">
+        <Modal>
+          <Modal.Toggle className="btn btn-soft mt-6">
             Open Short Content Modal
-          </ModalWithState.Toggle>
+          </Modal.Toggle>
 
-          <ModalWithState.Portal className="glass p-3 flex justify-center items-center">
-            <ModalWithState.Body className="w-lg flex items-stretch justify-center flex-col">
-              <ModalWithState.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
+          <Modal.Portal className="glass p-3 flex justify-center items-center">
+            <Modal.Body className="w-lg flex items-stretch justify-center flex-col">
+              <Modal.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1828,35 +1810,35 @@ function Page() {
                     placeholder="Search..."
                   />
                 </label>
-              </ModalWithState.Indicator>
-              <ModalWithState.Content className="flex-1 p-3 bg-card">
+              </Modal.Indicator>
+              <Modal.Content className="flex-1 p-3 bg-card">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Provident, quos veniam! Placeat similique molestiae ex?
                 </p>
-              </ModalWithState.Content>
-              <ModalWithState.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
+              </Modal.Content>
+              <Modal.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
-                <ModalWithState.Toggle className="btn btn-soft palette-error">
+                <Modal.Toggle className="btn btn-soft palette-error">
                   No
-                </ModalWithState.Toggle>
-                <ModalWithState.Toggle className="btn btn-fill palette-success">
+                </Modal.Toggle>
+                <Modal.Toggle className="btn btn-fill palette-success">
                   Yes
-                </ModalWithState.Toggle>
-              </ModalWithState.Indicator>
-            </ModalWithState.Body>
-          </ModalWithState.Portal>
-        </ModalWithState>
-        <ModalWithState>
-          <ModalWithState.Toggle className="btn btn-soft mt-6">
+                </Modal.Toggle>
+              </Modal.Indicator>
+            </Modal.Body>
+          </Modal.Portal>
+        </Modal>
+        <Modal>
+          <Modal.Toggle className="btn btn-soft mt-6">
             Open Long Content Modal
-          </ModalWithState.Toggle>
+          </Modal.Toggle>
 
-          <ModalWithState.Portal className="glass p-3 flex justify-center items-center">
-            <ModalWithState.Body className="w-lg flex items-stretch justify-center flex-col">
-              <ModalWithState.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
+          <Modal.Portal className="glass p-3 flex justify-center items-center">
+            <Modal.Body className="w-lg flex items-stretch justify-center flex-col">
+              <Modal.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1866,8 +1848,8 @@ function Page() {
                     placeholder="Search..."
                   />
                 </label>
-              </ModalWithState.Indicator>
-              <ModalWithState.Content className="flex-1 p-3 bg-card">
+              </Modal.Indicator>
+              <Modal.Content className="flex-1 p-3 bg-card">
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
                   maxime non eius eos veritatis libero, animi pariatur illo
@@ -1997,21 +1979,21 @@ function Page() {
                   delectus! Minus, fugit recusandae omnis rem provident dolorum
                   rerum aliquid id sequi ea!
                 </p>
-              </ModalWithState.Content>
-              <ModalWithState.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
+              </Modal.Content>
+              <Modal.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
-                <ModalWithState.Toggle className="btn btn-soft palette-error">
+                <Modal.Toggle className="btn btn-soft palette-error">
                   No
-                </ModalWithState.Toggle>
-                <ModalWithState.Toggle className="btn btn-fill palette-success">
+                </Modal.Toggle>
+                <Modal.Toggle className="btn btn-fill palette-success">
                   Yes
-                </ModalWithState.Toggle>
-              </ModalWithState.Indicator>
-            </ModalWithState.Body>
-          </ModalWithState.Portal>
-        </ModalWithState>
+                </Modal.Toggle>
+              </Modal.Indicator>
+            </Modal.Body>
+          </Modal.Portal>
+        </Modal>
 
         <p id="modal-with-search-params" className="title mt-6">
           With search params:
@@ -2066,19 +2048,19 @@ function Page() {
         </p>
         <p className="mt-6">With state:</p>
         <p className="mt-3">Page is {page}</p>
-        <PaginationWithState pagesLength={6} page={page} setPage={setPage}>
+        <Pagination pagesLength={6} page={page} setPage={setPage}>
           <div className="flex items-center gap-3 mt-3">
-            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+            <Pagination.PrevBtn className="btn btn-soft btn-square">
               <ChevronLeftIcon />
-            </PaginationWithState.PrevBtn>
+            </Pagination.PrevBtn>
 
-            <PaginationWithState.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+            <Pagination.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
 
-            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+            <Pagination.NextBtn className="btn btn-soft btn-square">
               <ChevronRightIcon />
-            </PaginationWithState.NextBtn>
+            </Pagination.NextBtn>
           </div>
-        </PaginationWithState>
+        </Pagination>
         <p className="mt-6">With search params:</p>
         <p className="mt-3">Page is {searchParams.get("page") || 1}</p>
         <Suspense>
@@ -2101,46 +2083,46 @@ function Page() {
           Pagination with pages
         </p>
         <p className="mt-6">With state:</p>
-        <PaginationWithState
+        <Pagination
           page={pageWithPage}
           pages={PAGES_WITH_STATE}
           setPage={setPageWithPage}
         >
           <div className="w-lg">
-            <PaginationWithState.Pages />
+            <Pagination.Pages />
 
             <div className="flex items-center gap-3 mt-3">
-              <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+              <Pagination.PrevBtn className="btn btn-soft btn-square">
                 <ChevronLeftIcon />
-              </PaginationWithState.PrevBtn>
+              </Pagination.PrevBtn>
 
-              <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
+              <Pagination.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
                 {(pagePaginationWithSateNumber) =>
                   `Page Number ${pagePaginationWithSateNumber}`
                 }
-              </PaginationWithState.Counts>
+              </Pagination.Counts>
 
-              <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+              <Pagination.NextBtn className="btn btn-soft btn-square">
                 <ChevronRightIcon />
-              </PaginationWithState.NextBtn>
+              </Pagination.NextBtn>
             </div>
           </div>
-        </PaginationWithState>
+        </Pagination>
         <p className="mt-6">Like tabs:</p>
-        <PaginationWithState
+        <Pagination
           page={pageWithPage}
           pages={PAGES_WITH_STATE}
           setPage={setPageWithPage}
         >
           <div className="join-x join-x-no-border mt-3">
-            <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost-outline data-[state=true]:btn-soft-outline rounded-b-none border-b-0!">
+            <Pagination.Counts className="btn data-[state=false]:btn-ghost-outline data-[state=true]:btn-soft-outline rounded-b-none border-b-0!">
               {(tabNumber) => `Tab ${tabNumber}`}
-            </PaginationWithState.Counts>
+            </Pagination.Counts>
           </div>
           <div className="card bg-card rounded-tl-none">
-            <PaginationWithState.Pages />
+            <Pagination.Pages />
           </div>
-        </PaginationWithState>
+        </Pagination>
         <p className="mt-6">With search params:</p>
         <Suspense>
           <PaginationWithSearchParams
@@ -2155,11 +2137,11 @@ function Page() {
                   <ChevronLeftIcon />
                 </PaginationWithSearchParams.PrevBtn>
 
-                <PaginationWithState.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
+                <Pagination.Counts className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill">
                   {(pagePaginationWithSateNumber) =>
                     `Page Number ${pagePaginationWithSateNumber}`
                   }
-                </PaginationWithState.Counts>
+                </Pagination.Counts>
 
                 <PaginationWithSearchParams.NextBtn className="btn btn-soft btn-square">
                   <ChevronRightIcon />
@@ -2202,26 +2184,27 @@ function Page() {
 
         <p className="mt-6">With high pages and responsive counts:</p>
         <p className="mt-3">Page is {pageHighCount}</p>
-        <PaginationWithState
+        <Pagination
           pagesLength={50}
           page={pageHighCount}
           setPage={setPageHighCount}
         >
           <div className="flex items-center gap-3 mt-3">
-            <PaginationWithState.PrevBtn className="btn btn-soft btn-square">
+            <Pagination.PrevBtn className="btn btn-soft btn-square">
               <ChevronLeftIcon />
-            </PaginationWithState.PrevBtn>
+            </Pagination.PrevBtn>
 
-            <PaginationWithState.Counts
+            <Pagination.Counts
               responsive
+              siblings={1}
               className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill"
             />
 
-            <PaginationWithState.NextBtn className="btn btn-soft btn-square">
+            <Pagination.NextBtn className="btn btn-soft btn-square">
               <ChevronRightIcon />
-            </PaginationWithState.NextBtn>
+            </Pagination.NextBtn>
           </div>
-        </PaginationWithState>
+        </Pagination>
 
         <p className="heading mt-20">PasswordInput</p>
         <PasswordInput className="input input-ghost-outline input-xl mt-3">
@@ -2236,48 +2219,46 @@ function Page() {
         </PasswordInput>
 
         <p className="heading mt-20">Popover</p>
-        <PopoverWithState mode="hover" direction="y" className="mt-6">
-          <PopoverWithState.Toggle className="btn btn-soft">
-            Hover me
-          </PopoverWithState.Toggle>
+        <Popover mode="hover" direction="y" className="mt-6">
+          <Popover.Toggle className="btn btn-soft">Hover me</Popover.Toggle>
 
-          <PopoverWithState.Body
+          <Popover.Body
             className="card card-menu bg-card"
             position="bottom-left-in"
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing.
-          </PopoverWithState.Body>
-        </PopoverWithState>
-        <PopoverWithState mode="both" direction="y" className="mt-3">
-          <PopoverWithState.Toggle className="btn btn-soft">
+          </Popover.Body>
+        </Popover>
+        <Popover mode="both" direction="y" className="mt-3">
+          <Popover.Toggle className="btn btn-soft">
             Hover and click me
-          </PopoverWithState.Toggle>
+          </Popover.Toggle>
 
-          <PopoverWithState.Body
+          <Popover.Body
             position="bottom-left-in"
             className="card card-menu bg-card"
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing.
-          </PopoverWithState.Body>
-        </PopoverWithState>
-        <PopoverWithState mode="click" direction="y" className="mt-3">
-          <PopoverWithState.Toggle className="btn acn data-[state=false]:btn-soft data-[state=true]:btn-fill">
+          </Popover.Body>
+        </Popover>
+        <Popover mode="click" direction="y" className="mt-3">
+          <Popover.Toggle className="btn acn data-[state=false]:btn-soft data-[state=true]:btn-fill">
             Click me
-          </PopoverWithState.Toggle>
+          </Popover.Toggle>
 
-          <PopoverWithState.Body
+          <Popover.Body
             position="bottom-left-in"
             className="card card-menu card-y bg-card"
           >
             <button className="btn btn-ghost btn-row acn">Like</button>
             <button className="btn btn-ghost btn-row acn">Ignore</button>
             <button className="btn btn-ghost btn-row acn">Download</button>
-            <PopoverWithState direction="y">
-              <PopoverWithState.Toggle className="btn acn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
+            <Popover direction="y">
+              <Popover.Toggle className="btn acn data-[state=false]:btn-ghost data-[state=true]:btn-soft">
                 <span>Share via</span>
                 <ChevronRightIcon />
-              </PopoverWithState.Toggle>
-              <PopoverWithState.Body
+              </Popover.Toggle>
+              <Popover.Body
                 className="card card-menu card-y bg-card"
                 position="right-center"
                 offset={16}
@@ -2286,10 +2267,10 @@ function Page() {
                 <button className="btn btn-ghost btn-row acn">Instagram</button>
                 <button className="btn btn-ghost btn-row acn">Telegram</button>
                 <button className="btn btn-ghost btn-row acn">X</button>
-              </PopoverWithState.Body>
-            </PopoverWithState>
-          </PopoverWithState.Body>
-        </PopoverWithState>
+              </Popover.Body>
+            </Popover>
+          </Popover.Body>
+        </Popover>
 
         <p id="popover-with-search-params" className="title mt-6">
           With search params:
@@ -2439,19 +2420,22 @@ function Page() {
         </Portal>
 
         <p className="heading mt-20">Progress</p>
-        <Progress className="rounded-full mt-6 text-xs" value={75}>
-          <Progress.Bar className="flex items-center justify-center" />
+        <Progress
+          className="h-2 flex items-center bg-card rounded-full mt-6 text-xs"
+          value={75}
+        >
+          <Progress.Bar className="h-6 size-full rounded-[inherit] bg-primary text-primary-foreground flex items-center justify-center" />
         </Progress>
 
         <p className="heading mt-20">QrCode</p>
         <QrCode
           options={{ width: 384 }}
-          className="mt-6 w-96 rounded-lg"
+          className="mt-6 w-fix rounded-xl"
           value="https://github.com/FarzadVav"
         />
 
         <p className="heading mt-20">Rating</p>
-        <Rating className="flex items-center mt-6" direction="x">
+        <Rating className="w-fix flex items-center mt-6" direction="x">
           <Rating.Items
             count={5}
             value={rating}
@@ -2505,33 +2489,33 @@ function Page() {
         <div className="mt-6">
           <p className="title">With state:</p>
           <p className="mt-3">Single select mode:</p>
-          <SelectBoxWithState
+          <SelectBox
             direction="y"
             className="mt-3"
             options={SELECT_BOX_OPTIONS}
             optionValue={singleSelectBoxValue}
             setOptionValue={singleSetSelectBoxValue}
           >
-            <SelectBoxWithState.Input className="input input-soft">
-              <SelectBoxWithState.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+            <SelectBox.Input className="input input-soft">
+              <SelectBox.Toggle className="transition-transform data-[state=true]:-scale-y-100">
                 <ChevronDownIcon />
-              </SelectBoxWithState.Toggle>
-              <SelectBoxWithState.Field
+              </SelectBox.Toggle>
+              <SelectBox.Field
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBoxWithState.List className="card card-y bg-card *:shrink-0">
-                <SelectBoxWithState.SearchInput className="input input-ghost-outline">
+              <SelectBox.List className="card card-y bg-card *:shrink-0">
+                <SelectBox.SearchInput className="input input-ghost-outline">
                   <SearchIcon />
-                  <SelectBoxWithState.SearchField className="input-field" />
-                </SelectBoxWithState.SearchInput>
-                <SelectBoxWithState.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
-              </SelectBoxWithState.List>
-            </SelectBoxWithState.Input>
-          </SelectBoxWithState>
+                  <SelectBox.SearchField className="input-field" />
+                </SelectBox.SearchInput>
+                <SelectBox.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
+              </SelectBox.List>
+            </SelectBox.Input>
+          </SelectBox>
 
           <p className="title mt-6">Multi select mode:</p>
-          <SelectBoxWithState
+          <SelectBox
             multiSelect
             direction="y"
             className="mt-3"
@@ -2539,23 +2523,23 @@ function Page() {
             optionValue={multiSelectBoxValue}
             setOptionValue={setMultiSelectBoxValue}
           >
-            <SelectBoxWithState.Input className="input input-soft">
-              <SelectBoxWithState.Toggle className="transition-transform data-[state=true]:-scale-y-100">
+            <SelectBox.Input className="input input-soft">
+              <SelectBox.Toggle className="transition-transform data-[state=true]:-scale-y-100">
                 <ChevronDownIcon />
-              </SelectBoxWithState.Toggle>
-              <SelectBoxWithState.Field
+              </SelectBox.Toggle>
+              <SelectBox.Field
                 className="input-field"
                 placeholder="Select an option..."
               />
-              <SelectBoxWithState.List className="card card-y bg-card *:shrink-0">
-                <SelectBoxWithState.SearchInput className="input input-ghost-outline">
+              <SelectBox.List className="card card-y bg-card *:shrink-0">
+                <SelectBox.SearchInput className="input input-ghost-outline">
                   <SearchIcon />
-                  <SelectBoxWithState.SearchField className="input-field" />
-                </SelectBoxWithState.SearchInput>
-                <SelectBoxWithState.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
-              </SelectBoxWithState.List>
-            </SelectBoxWithState.Input>
-          </SelectBoxWithState>
+                  <SelectBox.SearchField className="input-field" />
+                </SelectBox.SearchInput>
+                <SelectBox.Options className="btn btn-row data-[state=false]:not-hover:btn-ghost data-[state=false]:hover:btn-soft data-[state=true]:btn-fill" />
+              </SelectBox.List>
+            </SelectBox.Input>
+          </SelectBox>
 
           <p id="selectbox-with-search-params" className="title mt-6">
             With search params:
@@ -2616,8 +2600,8 @@ function Page() {
 
         <p className="heading mt-20">ShowMore</p>
         <p className="title mt-6">With state:</p>
-        <ShowMoreWithState className="max-w-96 mt-3" maxLines={4}>
-          <ShowMoreWithState.Content>
+        <ShowMore className="max-w-96 mt-3" maxLines={4}>
+          <ShowMore.Content className="transition-all">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Accusantium exercitationem repellendus debitis, dignissimos non
             quis! Fugit ducimus adipisci minus quas est expedita, voluptatibus
@@ -2630,14 +2614,14 @@ function Page() {
             minima iure consequuntur totam dolor exercitationem libero numquam.
             Exercitationem necessitatibus voluptatem, repudiandae nihil neque
             iusto?
-          </ShowMoreWithState.Content>
+          </ShowMore.Content>
 
-          <ShowMoreWithState.Fade className="show-more-fade" />
+          <ShowMore.Fade className="bg-linear-to-t from-background from-30% to-transparent" />
 
-          <ShowMoreWithState.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill mt-1.5">
+          <ShowMore.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill mt-1.5">
             {(isShowMore) => (isShowMore ? "Show less" : "Show more")}
-          </ShowMoreWithState.Toggle>
-        </ShowMoreWithState>
+          </ShowMore.Toggle>
+        </ShowMore>
 
         <p className="title mt-6">With search params:</p>
         <Suspense>
@@ -2646,7 +2630,7 @@ function Page() {
             maxLines={4}
             openKey="showMore"
           >
-            <ShowMoreWithSearchParams.Content>
+            <ShowMoreWithSearchParams.Content className="transition-all">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Accusantium exercitationem repellendus debitis, dignissimos non
               quis! Fugit ducimus adipisci minus quas est expedita, voluptatibus
@@ -2661,7 +2645,7 @@ function Page() {
               param.
             </ShowMoreWithSearchParams.Content>
 
-            <ShowMoreWithSearchParams.Fade className="show-more-fade" />
+            <ShowMoreWithSearchParams.Fade className="bg-linear-to-t from-background from-30% to-transparent" />
 
             <ShowMoreWithSearchParams.Toggle className="btn data-[state=false]:btn-ghost data-[state=true]:btn-fill mt-1.5">
               {(isShowMore) => (isShowMore ? "Show less" : "Show more")}
@@ -2673,10 +2657,12 @@ function Page() {
         <p className="mt-6">
           <Spoiler>
             Lorem ipsum dolor sit{" "}
-            <Spoiler.Blur>amet consectetur adipisicing</Spoiler.Blur> elit.
-            Officiis nemo incidunt tenetur assumenda consequuntur beatae harum
-            iusto, libero labore! Ea quo dolore accusantium veniam illo vel quae
-            nihil iure aliquid.
+            <Spoiler.Blur className="transition-all data-[state=false]:blur-xs data-[state=false]:scale-95 data-[state=false]">
+              amet consectetur adipisicing
+            </Spoiler.Blur>{" "}
+            elit. Officiis nemo incidunt tenetur assumenda consequuntur beatae
+            harum iusto, libero labore! Ea quo dolore accusantium veniam illo
+            vel quae nihil iure aliquid.
           </Spoiler>
         </p>
 
@@ -2703,21 +2689,13 @@ function Page() {
 
         <p className="heading mt-20">Swap</p>
         <div className="mt-6">
-          <SwapWithState
-            keys={SWAP_KEYS}
-            activeKey={swapKey}
-            setActiveKey={setSwapKey}
-          >
+          <Swap keys={SWAP_KEYS} activeKey={swapKey} setActiveKey={setSwapKey}>
             {SWAP_KEYS.map((key) => (
-              <SwapWithState.Btn
-                key={key}
-                className="btn btn-soft"
-                btnKey={key}
-              >
+              <Swap.Btn key={key} className="btn btn-soft" btnKey={key}>
                 {(btnKey) => `Key ${btnKey}`}
-              </SwapWithState.Btn>
+              </Swap.Btn>
             ))}
-          </SwapWithState>
+          </Swap>
         </div>
 
         <p id="swap-with-search-params" className="title mt-6">
@@ -2754,75 +2732,72 @@ function Page() {
         <p className="heading mt-20">Choice</p>
         <p className="title mt-6">With state:</p>
         <p className="mt-6">Filter mode:</p>
-        <ChoiceWithState
+        <Choice
           multiple
           direction="x"
           choiceState={filterChoice}
           onChoiceChange={setFilterChoice}
           className="flex items-center gap-3 mt-3"
         >
-          <ChoiceWithState.Toggle
+          <Choice.Toggle
             choiceName="1"
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 1
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="2"
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 2
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="3"
             className="btn data-[state=false]:btn-soft data-[state=true]:btn-fill"
           >
             Filter 3
-          </ChoiceWithState.Toggle>
-        </ChoiceWithState>
+          </Choice.Toggle>
+        </Choice>
 
         <p className="mt-6">Radio Mode:</p>
-        <ChoiceWithState
+        <Choice
           requiredOne
           direction="x"
           choiceState={radioChoice}
           onChoiceChange={setRadioChoice}
           className="flex items-center gap-3 mt-3"
         >
-          <ChoiceWithState.Toggle
+          <Choice.Toggle
             choiceName="1"
             className="choice choice-xs choice-radio"
           >
-            <ChoiceWithState.Thumb className="choice-radio-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            <Choice.Thumb className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="2"
             className="choice choice-sm choice-radio"
           >
-            <ChoiceWithState.Thumb className="choice-radio-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
-            className="choice choice-radio"
-            choiceName="3"
-          >
-            <ChoiceWithState.Thumb className="choice-radio-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            <Choice.Thumb className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle className="choice choice-radio" choiceName="3">
+            <Choice.Thumb className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="4"
             className="choice choice-lg choice-radio"
           >
-            <ChoiceWithState.Thumb className="choice-radio-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            <Choice.Thumb className="choice-radio-thumb" />
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="5"
             className="choice choice-xl choice-radio"
           >
-            <ChoiceWithState.Thumb className="choice-radio-thumb" />
-          </ChoiceWithState.Toggle>
-        </ChoiceWithState>
+            <Choice.Thumb className="choice-radio-thumb" />
+          </Choice.Toggle>
+        </Choice>
 
         <p className="mt-6">CheckBox Mode:</p>
-        <ChoiceWithState
+        <Choice
           multiple
           requiredOne
           direction="x"
@@ -2830,87 +2805,81 @@ function Page() {
           onChoiceChange={setCheckboxChoice}
           className="flex items-center gap-3 mt-3"
         >
-          <ChoiceWithState.Toggle
+          <Choice.Toggle
             choiceName="1"
             className="choice choice-xs choice-checkbox"
           >
-            <ChoiceWithState.Thumb className="choice-checkbox-thumb">
+            <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
-            </ChoiceWithState.Thumb>
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
             choiceName="2"
             className="choice choice-sm choice-checkbox"
           >
-            <ChoiceWithState.Thumb className="choice-checkbox-thumb">
+            <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
-            </ChoiceWithState.Thumb>
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
-            className="choice choice-checkbox"
-            choiceName="3"
-          >
-            <ChoiceWithState.Thumb className="choice-checkbox-thumb">
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle className="choice choice-checkbox" choiceName="3">
+            <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
-            </ChoiceWithState.Thumb>
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
             className="choice choice-lg choice-checkbox"
             choiceName="4"
           >
-            <ChoiceWithState.Thumb className="choice-checkbox-thumb">
+            <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
-            </ChoiceWithState.Thumb>
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+            </Choice.Thumb>
+          </Choice.Toggle>
+          <Choice.Toggle
             className="choice choice-xl choice-checkbox"
             choiceName="5"
           >
-            <ChoiceWithState.Thumb className="choice-checkbox-thumb">
+            <Choice.Thumb className="choice-checkbox-thumb">
               <CheckIcon />
-            </ChoiceWithState.Thumb>
-          </ChoiceWithState.Toggle>
-        </ChoiceWithState>
+            </Choice.Thumb>
+          </Choice.Toggle>
+        </Choice>
 
         <p className="mt-6">Switch mode:</p>
-        <ChoiceWithState
+        <Choice
           multiple
           direction="x"
           choiceState={switchChoice}
           onChoiceChange={setSwitchChoice}
           className="flex items-center gap-3 mt-3"
         >
-          <ChoiceWithState.Toggle
+          <Choice.Toggle
             className="choice choice-xs choice-switch"
             choiceName="1"
           >
             <span className="choice-switch-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+          </Choice.Toggle>
+          <Choice.Toggle
             className="choice choice-sm choice-switch"
             choiceName="2"
           >
             <span className="choice-switch-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
-            className="choice choice-switch"
-            choiceName="3"
-          >
+          </Choice.Toggle>
+          <Choice.Toggle className="choice choice-switch" choiceName="3">
             <span className="choice-switch-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+          </Choice.Toggle>
+          <Choice.Toggle
             className="choice choice-lg choice-switch"
             choiceName="4"
           >
             <span className="choice-switch-thumb" />
-          </ChoiceWithState.Toggle>
-          <ChoiceWithState.Toggle
+          </Choice.Toggle>
+          <Choice.Toggle
             className="choice choice-xl choice-switch placeholder:text-palette/50"
             choiceName="5"
           >
             <span className="choice-switch-thumb" />
-          </ChoiceWithState.Toggle>
-        </ChoiceWithState>
+          </Choice.Toggle>
+        </Choice>
 
         <p className="title mt-6">With search params:</p>
         <Suspense>

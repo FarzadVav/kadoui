@@ -3,15 +3,15 @@
 import { CSSProperties } from "react";
 
 import { ShowMoreContext } from "./ShowMoreContext";
-import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 import { useShowMoreMeasure } from "./useShowMoreMeasure";
 import type { ShowMoreSearchParamsRootPropsT } from "./showMoreTypes";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 
 export function ShowMoreSearchParamsRoot({
+  style,
+  scroll,
   maxLines,
   openKey = "showMore",
-  scroll,
-  style,
   ...p
 }: ShowMoreSearchParamsRootPropsT) {
   const [isShowMore, setIsShowMore] = useSearchParamsBooleanState(openKey, {

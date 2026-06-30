@@ -7,11 +7,11 @@ import { RatingContext } from "./RatingContext";
 import type { RatingItemsPropsT } from "./ratingTypes";
 
 export function RatingItems({
-  className,
   count,
   value,
-  onValueChange,
   element,
+  className,
+  onValueChange,
   activeElement,
   ...p
 }: RatingItemsPropsT) {

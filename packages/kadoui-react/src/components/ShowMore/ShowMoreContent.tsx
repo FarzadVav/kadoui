@@ -11,7 +11,6 @@ export function ShowMoreContent({ style, ...p }: ShowMoreContentPropsT) {
 
   const styles: CSSProperties = {
     overflow: "hidden",
-    transition: shouldShowMore ? "height 150ms ease" : undefined,
     height: shouldShowMore
       ? isShowMore
         ? fullHeight > 0

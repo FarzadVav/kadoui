@@ -40,10 +40,7 @@ export type PaginationSearchParamsRootPropsT = PaginationPropsT &
     pageKey?: string;
   };
 
-type PaginationCountsBasePropsT = Omit<
-  ComponentProps<"button">,
-  "children"
-> & {
+type PaginationCountsBasePropsT = Omit<ComponentProps<"button">, "children"> & {
   ProgressElem?: JSX.Element;
   disableNextClick?: boolean;
   disablePrevClick?: boolean;
@@ -57,12 +54,25 @@ type PaginationCountsNonResponsivePropsT = PaginationCountsBasePropsT & {
 
 type PaginationCountsResponsivePropsT = PaginationCountsBasePropsT & {
   responsive: true;
-  siblings?: number;
+  siblings: number;
 };
 
 export type PaginationCountsPropsT =
   | PaginationCountsNonResponsivePropsT
   | PaginationCountsResponsivePropsT;
+
+export type PaginationCountsItemsPropsT = Omit<
+  PaginationCountsPropsT,
+  "responsive" | "siblings"
+> & {
+  range: (number | "dots")[];
+  page: number;
+  setPage: (page: number) => void;
+};
+
+export type PaginationCountsStaticPropsT = Omit<PaginationCountsPropsT, "responsive" | "siblings">;
+
+export type PaginationCountsResponsiveItemsPropsT = Omit<PaginationCountsPropsT, "responsive"> & { siblings: number }
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {
   disabled?: boolean;

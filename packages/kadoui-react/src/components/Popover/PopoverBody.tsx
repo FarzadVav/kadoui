@@ -3,6 +3,7 @@
 import { use } from "react";
 
 import { PopoverContext } from "./PopoverContext";
+import { ignoreStyles, zIndexes } from "../../styles";
 import type { PopoverBodyPropsT } from "./popoverTypes";
 import {
   getPositionStyles,
@@ -10,11 +11,11 @@ import {
 } from "../../utils/positionStyles";
 
 export function PopoverBody({
+  style,
   offset,
   onClick,
   position,
   preventClose,
-  style,
   ...p
 }: PopoverBodyPropsT) {
   const { bodyRef, isOpen } = use(PopoverContext);
@@ -22,10 +23,10 @@ export function PopoverBody({
   const styles = useViewportSafeArea(
     bodyRef,
     {
-      zIndex: 10,
       position: "absolute",
+      zIndex: zIndexes.smallOverlay,
       ...getPositionStyles(position, offset),
-      ...(isOpen ? {} : { opacity: 0, visibility: "hidden" }),
+      ...(isOpen ? {} : ignoreStyles),
       ...style,
     },
     isOpen,

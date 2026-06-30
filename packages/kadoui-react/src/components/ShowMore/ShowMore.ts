@@ -10,14 +10,11 @@ const baseComponents = {
   Fade: ShowMoreFade,
 };
 
-export const ShowMoreWithState = Object.assign(ShowMoreStateRoot, baseComponents);
+export const ShowMore = Object.assign(ShowMoreStateRoot, baseComponents);
 
 export const ShowMoreWithSearchParams = Object.assign(
   ShowMoreSearchParamsRoot,
   baseComponents,
 );
-
-/** @deprecated Use ShowMoreWithState */
-export const ShowMore = ShowMoreWithState;
 
 export * from "./showMoreTypes";

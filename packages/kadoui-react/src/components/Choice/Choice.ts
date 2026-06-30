@@ -8,13 +8,11 @@ const baseComponents = {
   Thumb: ChoiceThumb,
 };
 
-export const ChoiceWithState = Object.assign(ChoiceStateRoot, baseComponents);
+export const Choice = Object.assign(ChoiceStateRoot, baseComponents);
 
 export const ChoiceWithSearchParams = Object.assign(
   ChoiceSearchParamsRoot,
   baseComponents,
 );
-
-export const Choice = ChoiceWithState;
 
 export * from "./choiceTypes";
