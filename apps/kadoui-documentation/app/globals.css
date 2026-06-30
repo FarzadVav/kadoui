@@ -1,0 +1,148 @@
+@import "@kadoui/tailwindcss";
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #151515;
+  --card: #f5f5f5;
+  --card-foreground: #202020;
+  --primary: #9100b6;
+  --primary-foreground: #ffffff;
+  --secondary: #e800b2;
+  --secondary-foreground: #ffffff;
+  --error: #ff0000;
+  --error-foreground: #ffffff;
+  --success: #00e030;
+  --success-foreground: #ffffff;
+  --warning: #ffae00;
+  --warning-foreground: #ffffff;
+  --info: #3a3aff;
+  --info-foreground: #ffffff;
+  --docs-sidebar-width: 17.5rem;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --shadow-*: initial;
+  --shadow-xs: 0 0 5px 0 #efefef25;
+  --shadow-sm: 0 0 10px 0 #efefef25;
+  --shadow-md: 0 0 20px 0 #efefef25;
+  --shadow-lg: 0 0 35px 0 #efefef25;
+  --shadow-xl: 0 0 60px 0 #efefef25;
+  --shadow-xs-b: 0 2.5px 5px 0 #efefef25;
+  --shadow-sm-b: 0 5px 10px 0 #efefef25;
+  --shadow-md-b: 0 10px 20px 0 #efefef25;
+  --shadow-lg-b: 0 17.5px 35px 0 #efefef25;
+  --shadow-xl-b: 0 30px 60px 0 #efefef25;
+  --shadow-xs-t: 0 -2.5px 5px 0 #efefef25;
+  --shadow-sm-t: 0 -5px 10px 0 #efefef25;
+  --shadow-md-t: 0 -10px 20px 0 #efefef25;
+  --shadow-lg-t: 0 -17.5px 35px 0 #efefef25;
+  --shadow-xl-t: 0 -30px 60px 0 #efefef25;
+
+  --z-index-*: initial;
+  --z-index-back: -10;
+  --z-index-default: 0;
+  --z-index-front: 10;
+  --z-index-important: 20;
+  --z-index-small-overlay: 30;
+  --z-index-big-overlay: 40;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+[data-theme="dark"] {
+  --background: #151515;
+  --foreground: #efefef;
+  --card: #202020;
+  --card-foreground: #dfdfdf;
+}
+
+@layer base {
+  body {
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  code,
+  pre {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      monospace;
+  }
+}
+
+@utility docs-wrapper {
+  @apply px-4 max-w-4xl mx-auto w-full;
+}
+
+@utility docs-prose {
+  @apply text-foreground/90 leading-relaxed;
+
+  & h1 {
+    @apply text-4xl font-black tracking-tight mb-4;
+  }
+
+  & h2 {
+    @apply text-2xl font-bold mt-10 mb-4 scroll-mt-24;
+  }
+
+  & h3 {
+    @apply text-lg font-semibold mt-6 mb-2 scroll-mt-24;
+  }
+
+  & p {
+    @apply mb-4;
+  }
+
+  & ul {
+    @apply list-disc ps-6 mb-4 space-y-1;
+  }
+
+  & ol {
+    @apply list-decimal ps-6 mb-4 space-y-1;
+  }
+
+  & a {
+    @apply text-primary underline decoration-primary/30 hover:decoration-primary;
+  }
+
+  & code:not(pre code) {
+    @apply bg-card text-sm px-1.5 py-0.5 rounded-md;
+  }
+
+  & table {
+    @apply w-full text-sm mb-6;
+  }
+
+  & th {
+    @apply text-start font-semibold border-b border-foreground/10 pb-2;
+  }
+
+  & td {
+    @apply border-b border-foreground/5 py-2 align-top;
+  }
+}
