@@ -1,0 +1,56 @@
+/*
+  Start Main
+*/
+@utility glass {
+  backdrop-filter: blur(var(--glass-blur, var(--blur-md)));
+  background-color: color-mix(
+    in oklab,
+    var(--glass-palette, var(--color-background)) 50%,
+    transparent
+  );
+}
+/*
+  End Main
+*/
+
+/*
+  Start Colors
+*/
+@utility glass-background {
+  --glass-palette: var(--color-background);
+}
+
+@utility glass-foreground {
+  --glass-palette: var(--color-foreground);
+}
+
+@utility glass-card {
+  --glass-palette: var(--color-card);
+}
+
+@utility glass-primary {
+  --glass-palette: var(--color-primary);
+}
+
+@utility glass-secondary {
+  --glass-palette: var(--color-secondary);
+}
+
+@utility glass-error {
+  --glass-palette: var(--color-error);
+}
+
+@utility glass-success {
+  --glass-palette: var(--color-success);
+}
+
+@utility glass-warning {
+  --glass-palette: var(--color-warning);
+}
+
+@utility glass-info {
+  --glass-palette: var(--color-info);
+}
+/*
+  End Colors
+*/

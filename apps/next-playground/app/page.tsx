@@ -534,7 +534,7 @@ function Page() {
                 G
               </button>
             </label>
-            <label className="input input-ghost-outline input-square">
+            <label className="input input-ghost-outline input-square backdrop-blur-md">
               <input type="text" placeholder="SQ" className="input-field" />
             </label>
             <label className="input input-ghost-outline input-lg">
