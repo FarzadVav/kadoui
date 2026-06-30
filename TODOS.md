@@ -11,6 +11,7 @@
 - Use all mantine-hooks and export them.
 - Fix commented bugs in BeautyPlus and Shops.
 - Check transition bugs (like AccessNavigation focusTrap).
+- Remove ComponentWithState name and opt it to deafult name.
 
 ### Later
 

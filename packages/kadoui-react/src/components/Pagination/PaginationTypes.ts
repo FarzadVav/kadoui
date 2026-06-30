@@ -1,11 +1,4 @@
-import type {
-  ComponentProps,
-  Dispatch,
-  JSX,
-  PropsWithChildren,
-  ReactNode,
-  SetStateAction,
-} from "react";
+import type { ComponentProps, JSX, PropsWithChildren, ReactNode } from "react";
 
 import type { SearchParamsNavigationOptionsT } from "../../utils/types";
 
@@ -29,12 +22,12 @@ type MergedPaginationT = PaginationWithLengthT | PaginationWithPagesT;
 export type PaginationPropsT = PropsWithChildren & MergedPaginationT;
 
 export type PaginationContextT = {
-  pages?: PaginationPagesT[];
-  pagesLength: number;
   page: number;
-  setPage: (page: number) => void;
+  pagesLength: number;
   nextPage: () => void;
   prevPage: () => void;
+  pages?: PaginationPagesT[];
+  setPage: (page: number) => void;
 };
 
 export type PaginationStateRootPropsT = PaginationPropsT & {
@@ -47,16 +40,29 @@ export type PaginationSearchParamsRootPropsT = PaginationPropsT &
     pageKey?: string;
   };
 
-export type PaginationCountsPropsT = Omit<
+type PaginationCountsBasePropsT = Omit<
   ComponentProps<"button">,
   "children"
 > & {
-  siblings?: number;
   ProgressElem?: JSX.Element;
   disableNextClick?: boolean;
   disablePrevClick?: boolean;
   children?: (count: number) => ReactNode;
 };
+
+type PaginationCountsNonResponsivePropsT = PaginationCountsBasePropsT & {
+  responsive?: false;
+  siblings?: never;
+};
+
+type PaginationCountsResponsivePropsT = PaginationCountsBasePropsT & {
+  responsive: true;
+  siblings?: number;
+};
+
+export type PaginationCountsPropsT =
+  | PaginationCountsNonResponsivePropsT
+  | PaginationCountsResponsivePropsT;
 
 export type PaginationNextBtnPropsT = ComponentProps<"button"> & {
   disabled?: boolean;

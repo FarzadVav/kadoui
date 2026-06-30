@@ -5,15 +5,14 @@ import type { PaginationStateRootPropsT } from "./PaginationTypes";
 
 export function PaginationStateRoot({
   page,
-  setPage,
   pages,
+  setPage,
+  children,
   pagesLength,
-  children
 }: PaginationStateRootPropsT) {
   const correctPagesLength = (pages?.length || pagesLength) as number;
 
-  const nextPage = () =>
-    setPage(page < correctPagesLength ? page + 1 : page);
+  const nextPage = () => setPage(page < correctPagesLength ? page + 1 : page);
 
   const prevPage = () => setPage(page > 1 ? page - 1 : page);
 

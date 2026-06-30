@@ -1,18 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { PaginationContext } from "./PaginationContext";
-import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type { PaginationSearchParamsRootPropsT } from "./PaginationTypes";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 
 export function PaginationSearchParamsRoot({
   pages,
-  pagesLength,
-  pageKey,
   scroll,
+  pageKey,
   children,
+  pagesLength,
 }: PaginationSearchParamsRootPropsT) {
   const searchParams = useSearchParams();
   const { pushParams } = useSearchParamsNavigation({ scroll });

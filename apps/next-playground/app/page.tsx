@@ -2200,7 +2200,7 @@ function Page() {
           </PaginationWithSearchParams>
         </Suspense>
 
-        <p className="mt-6">With high page count:</p>
+        <p className="mt-6">With high pages and responsive counts:</p>
         <p className="mt-3">Page is {pageHighCount}</p>
         <PaginationWithState
           pagesLength={50}
@@ -2212,7 +2212,10 @@ function Page() {
               <ChevronLeftIcon />
             </PaginationWithState.PrevBtn>
 
-            <PaginationWithState.Counts className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill" />
+            <PaginationWithState.Counts
+              responsive
+              className="btn btn-square data-[state=false]:btn-ghost data-[state=true]:btn-fill"
+            />
 
             <PaginationWithState.NextBtn className="btn btn-soft btn-square">
               <ChevronRightIcon />
