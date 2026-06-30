@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
-import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 import type { SearchParamsNavigationOptionsT } from "../../utils/types";
+import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
 
 type MultipleModeT = {
   multiple: true;

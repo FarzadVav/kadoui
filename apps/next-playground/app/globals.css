@@ -54,6 +54,14 @@
   --shadow-md-t: 0 -10px 20px 0 #efefef25;
   --shadow-lg-t: 0 -17.5px 35px 0 #efefef25;
   --shadow-xl-t: 0 -30px 60px 0 #efefef25;
+
+  --z-index-*: initial;
+  --z-index-back: -10; /* back elements */
+  --z-index-default: 0; /* default elements */
+  --z-index-front: 10; /* front elements */
+  --z-index-important: 20; /* important elements (.e.g header, footer) */
+  --z-index-small-overlay: 30; /* small overlays (.e.g popover, select-box) */
+  --z-index-big-overlay: 40; /* big overlays (.e.g modal, drawer-sheet) */
 }
 
 /* Dark mode */

@@ -3,7 +3,5 @@
 import { ChoiceThumbPropsT } from "./choiceTypes";
 
 export function ChoiceThumb(p: ChoiceThumbPropsT) {
-  return (
-    <span {...p} />
-  )
+  return <span {...p} />;
 }

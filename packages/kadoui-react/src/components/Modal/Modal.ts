@@ -21,7 +21,6 @@ export const ModalWithSearchParams = Object.assign(
   baseComponents,
 );
 
-/** @deprecated Use ModalWithState */
 export const Modal = ModalWithState;
 
 export * from "./modalTypes";

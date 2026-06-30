@@ -13,13 +13,8 @@ export function ModalBody({ style, ...p }: ModalBodyPropsT) {
   const bodyRef = useRef<HTMLDivElement>(null);
 
   const styles: MotionStyle = {
-    width: 640,
-    display: "flex",
     maxWidth: "100%",
     maxHeight: "100%",
-    alignItems: "stretch",
-    flexDirection: "column",
-    justifyContent: "center",
     ...style,
   };
 

@@ -3,6 +3,7 @@
 import { use } from "react";
 import { motion, AnimatePresence, MotionStyle } from "framer-motion";
 
+import { zIndexes } from "../../styles";
 import { Portal } from "../Portal/Portal";
 import { ModalContext } from "./ModalContext";
 import type { ModalPortalPropsT } from "./modalTypes";
@@ -13,14 +14,8 @@ export function ModalPortal({ onClick, style, ...p }: ModalPortalPropsT) {
 
   const styles: MotionStyle = {
     inset: 0,
-    zIndex: 50,
-    padding: 10,
-    display: "flex",
     position: "fixed",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor:
-      "color-mix(in oklab, var(--color-background) 50%, transparent)",
+    zIndex: zIndexes.bigOverlay,
     ...style,
   };
 

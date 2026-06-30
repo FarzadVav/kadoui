@@ -6,11 +6,12 @@ import { ChoiceContext } from "./ChoiceContext";
 import type { ChoiceTogglePropsT } from "./choiceTypes";
 
 export function ChoiceToggle({
-  choiceName,
   onClick,
+  choiceName,
   ...p
 }: ChoiceTogglePropsT) {
-  const { multiple, choiceState, onChoiceChange, requiredOne } = use(ChoiceContext);
+  const { multiple, choiceState, onChoiceChange, requiredOne } =
+    use(ChoiceContext);
 
   const isActive = multiple
     ? choiceState.includes(choiceName)

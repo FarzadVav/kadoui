@@ -863,7 +863,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -879,7 +879,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -895,7 +895,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -918,7 +918,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -934,7 +934,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -950,7 +950,7 @@ function Page() {
               <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
             </AccordionWithState.Toggle>
             <AccordionWithState.Body>
-              <AccordionWithState.Content>
+              <AccordionWithState.Content className="pt-1">
                 <div className="card bg-card">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
                   fugit accusamus unde, repellendus dolores, fuga nam commodi
@@ -973,7 +973,7 @@ function Page() {
                 <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
               </AccordionWithSearchParams.Toggle>
               <AccordionWithSearchParams.Body>
-                <AccordionWithSearchParams.Content>
+                <AccordionWithSearchParams.Content className="pt-1">
                   <div className="card bg-card">
                     Accordion state is synced with the `accordion` search param.
                   </div>
@@ -986,7 +986,7 @@ function Page() {
                 <ChevronDownIcon className="transition-transform element-icon-size group-data-[state=true]:-scale-y-100" />
               </AccordionWithSearchParams.Toggle>
               <AccordionWithSearchParams.Body>
-                <AccordionWithSearchParams.Content>
+                <AccordionWithSearchParams.Content className="pt-1">
                   <div className="card bg-card">
                     Current value: {searchParams.get("accordion") || "none"}
                   </div>
@@ -998,8 +998,8 @@ function Page() {
 
         <p className="heading mt-20">Breadcrumbs</p>
         <Breadcrumbs
-          className="mt-3 btn-xs"
-          separator={<ChevronRightIcon className="size-3" />}
+          className="flex items-center gap-3 mt-3"
+          separator={<ChevronRightIcon className="size-4" />}
         >
           <Breadcrumbs.Item>
             <button className="btn btn-ghost btn-link">Home</button>
@@ -1065,12 +1065,12 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Bottom
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body className="flex flex-col">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at bottom
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1084,7 +1084,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1099,12 +1099,12 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Bottom with gesture
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body className="flex flex-col" gesture>
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at bottom with gesture
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1185,7 +1185,7 @@ function Page() {
                   veritatis possimus obcaecati?
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1200,12 +1200,16 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Bottom with offset
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body offset={20} gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              offset={20}
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at bottom with offset
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1219,7 +1223,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1236,12 +1240,12 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Top
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="top">
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body className="flex flex-col" position="top">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at top
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1255,7 +1259,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1270,12 +1274,16 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Top with gesture
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="top" gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="top"
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at top with gesture
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1356,7 +1364,7 @@ function Page() {
                   veritatis possimus obcaecati?
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1371,12 +1379,17 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Top with offset
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="top" offset={20} gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="top"
+              offset={20}
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at top with offset
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1390,7 +1403,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1407,12 +1420,15 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Left
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="left">
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="left"
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at left
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1426,7 +1442,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1441,12 +1457,16 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Left with gesture
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="left" gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="left"
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at left with gesture
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1527,7 +1547,7 @@ function Page() {
                   veritatis possimus obcaecati?
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1542,12 +1562,17 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Left with offset
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="left" offset={20} gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="left"
+              offset={20}
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at left with offset
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1561,7 +1586,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1578,12 +1603,15 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Right
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="right">
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="right"
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at right
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1597,7 +1625,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1612,12 +1640,16 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Right with gesture
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="right" gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="right"
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                 DrawerSheet at right with gesture
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1698,7 +1730,7 @@ function Page() {
                   veritatis possimus obcaecati?
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1713,12 +1745,17 @@ function Page() {
           <DrawerSheetWithState.Toggle className="btn btn-soft mt-3">
             Right with offset
           </DrawerSheetWithState.Toggle>
-          <DrawerSheetWithState.Portal>
-            <DrawerSheetWithState.Body position="right" offset={20} gesture>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
+          <DrawerSheetWithState.Portal className="glass">
+            <DrawerSheetWithState.Body
+              className="flex flex-col"
+              position="right"
+              offset={20}
+              gesture
+            >
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10 rounded-t-2xl">
                 DrawerSheet at right with offset
               </DrawerSheetWithState.Indicator>
-              <DrawerSheetWithState.Content>
+              <DrawerSheetWithState.Content className="flex-1 p-3 bg-card">
                 <label className="input input-ghost-outline">
                   <SearchIcon />
                   <input
@@ -1732,7 +1769,7 @@ function Page() {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </DrawerSheetWithState.Content>
-              <DrawerSheetWithState.Indicator className="flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
+              <DrawerSheetWithState.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10 rounded-b-2xl">
                 <DrawerSheetWithState.Toggle className="btn btn-soft">
                   OK By
                 </DrawerSheetWithState.Toggle>
@@ -1752,18 +1789,18 @@ function Page() {
             <DrawerSheetWithSearchParams.Toggle className="btn btn-soft mt-3">
               Open drawer via search params
             </DrawerSheetWithSearchParams.Toggle>
-            <DrawerSheetWithSearchParams.Portal>
-              <DrawerSheetWithSearchParams.Body>
-                <DrawerSheetWithSearchParams.Indicator className="flex items-center gap-3 justify-center border-b border-foreground/10">
+            <DrawerSheetWithSearchParams.Portal className="glass">
+              <DrawerSheetWithSearchParams.Body className="flex flex-col">
+                <DrawerSheetWithSearchParams.Indicator className="p-3 bg-card flex items-center gap-3 justify-center border-b border-foreground/10">
                   Drawer synced with `drawer=true`
                 </DrawerSheetWithSearchParams.Indicator>
-                <DrawerSheetWithSearchParams.Content>
+                <DrawerSheetWithSearchParams.Content className="flex-1 p-3 bg-card">
                   <p>
                     Open state is stored in the URL. Close this drawer to remove
                     the search param.
                   </p>
                 </DrawerSheetWithSearchParams.Content>
-                <DrawerSheetWithSearchParams.Indicator className="flex items-center gap-3 border-t border-foreground/10">
+                <DrawerSheetWithSearchParams.Indicator className="p-3 bg-card flex items-center gap-3 border-t border-foreground/10">
                   <DrawerSheetWithSearchParams.Toggle className="btn btn-soft">
                     Close
                   </DrawerSheetWithSearchParams.Toggle>
@@ -1779,9 +1816,9 @@ function Page() {
             Open Short Content Modal
           </ModalWithState.Toggle>
 
-          <ModalWithState.Portal>
-            <ModalWithState.Body>
-              <ModalWithState.Indicator className="rounded-t-2xl border-b border-foreground/10">
+          <ModalWithState.Portal className="glass p-3 flex justify-center items-center">
+            <ModalWithState.Body className="w-lg flex items-stretch justify-center flex-col">
+              <ModalWithState.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1792,13 +1829,13 @@ function Page() {
                   />
                 </label>
               </ModalWithState.Indicator>
-              <ModalWithState.Content>
+              <ModalWithState.Content className="flex-1 p-3 bg-card">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Provident, quos veniam! Placeat similique molestiae ex?
                 </p>
               </ModalWithState.Content>
-              <ModalWithState.Indicator className="flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
+              <ModalWithState.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
@@ -1817,9 +1854,9 @@ function Page() {
             Open Long Content Modal
           </ModalWithState.Toggle>
 
-          <ModalWithState.Portal>
-            <ModalWithState.Body>
-              <ModalWithState.Indicator className="rounded-t-2xl border-b border-foreground/10">
+          <ModalWithState.Portal className="glass p-3 flex justify-center items-center">
+            <ModalWithState.Body className="w-lg flex items-stretch justify-center flex-col">
+              <ModalWithState.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
                 <label className="input input-ghost-outline input-full">
                   <SearchIcon />
                   <input
@@ -1830,7 +1867,7 @@ function Page() {
                   />
                 </label>
               </ModalWithState.Indicator>
-              <ModalWithState.Content>
+              <ModalWithState.Content className="flex-1 p-3 bg-card">
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
                   maxime non eius eos veritatis libero, animi pariatur illo
@@ -1961,7 +1998,7 @@ function Page() {
                   rerum aliquid id sequi ea!
                 </p>
               </ModalWithState.Content>
-              <ModalWithState.Indicator className="flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
+              <ModalWithState.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                 <p className="font-bold justify-center mr-auto">
                   Do you trust she?
                 </p>
@@ -1984,18 +2021,18 @@ function Page() {
             <ModalWithSearchParams.Toggle className="btn btn-soft mt-3">
               Open modal via search params
             </ModalWithSearchParams.Toggle>
-            <ModalWithSearchParams.Portal>
-              <ModalWithSearchParams.Body>
-                <ModalWithSearchParams.Indicator className="rounded-t-2xl border-b border-foreground/10">
+            <ModalWithSearchParams.Portal className="glass p-3 flex justify-center items-center">
+              <ModalWithSearchParams.Body className="w-lg flex items-stretch justify-center flex-col">
+                <ModalWithSearchParams.Indicator className="shrink-0 p-3 bg-card rounded-t-2xl border-b border-foreground/10">
                   Modal synced with URL
                 </ModalWithSearchParams.Indicator>
-                <ModalWithSearchParams.Content>
+                <ModalWithSearchParams.Content className="flex-1 p-3 bg-card">
                   <p>
                     Modal open state is synced with the `modal=true` search
                     param.
                   </p>
                 </ModalWithSearchParams.Content>
-                <ModalWithSearchParams.Indicator className="flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
+                <ModalWithSearchParams.Indicator className="shrink-0 p-3 bg-card flex items-center gap-3 rounded-b-2xl border-t border-foreground/10">
                   <ModalWithSearchParams.Toggle className="btn btn-soft">
                     Close
                   </ModalWithSearchParams.Toggle>
@@ -2006,15 +2043,23 @@ function Page() {
         </Suspense>
 
         <p className="heading mt-20">OTP</p>
-        <Otp className="mt-6">
-          <Otp.Inputs
-            length={6}
-            onLastChange={(otp) => alert(otp)}
-            className="input input-ghost-outline element-square-size"
-          />
+        <form
+          onSubmit={(ev) => {
+            ev.preventDefault();
+            const fd = new FormData(ev.currentTarget);
+            alert("OTP: " + fd.get("otp"));
+          }}
+        >
+          <Otp className="flex items-center gap-3 mt-6">
+            <Otp.Inputs
+              length={6}
+              onLastChange={(otp) => alert(otp)}
+              className="input input-ghost-outline input-square"
+            />
 
-          <Otp.HiddenInput />
-        </Otp>
+            <Otp.HiddenInput />
+          </Otp>
+        </form>
 
         <p id="pagination-with-search-params" className="heading pt-20">
           Pagination

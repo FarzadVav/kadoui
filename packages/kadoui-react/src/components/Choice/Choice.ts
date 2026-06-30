@@ -15,7 +15,6 @@ export const ChoiceWithSearchParams = Object.assign(
   baseComponents,
 );
 
-/** @deprecated Use ChoiceWithState */
 export const Choice = ChoiceWithState;
 
 export * from "./choiceTypes";

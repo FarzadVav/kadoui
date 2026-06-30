@@ -1,8 +1,8 @@
 "use client";
 
 import { ChoiceContext } from "./ChoiceContext";
-import type { ChoiceContextT, ChoiceStateRootPropsT } from "./choiceTypes";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
+import type { ChoiceContextT, ChoiceStateRootPropsT } from "./choiceTypes";
 
 export function ChoiceStateRoot({
   multiple,
@@ -13,7 +13,9 @@ export function ChoiceStateRoot({
 }: ChoiceStateRootPropsT) {
   return (
     <ChoiceContext
-      value={{ multiple, choiceState, onChoiceChange, requiredOne } as ChoiceContextT}
+      value={
+        { multiple, choiceState, onChoiceChange, requiredOne } as ChoiceContextT
+      }
     >
       <AccessNavigation {...p} />
     </ChoiceContext>

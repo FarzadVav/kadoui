@@ -4,13 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 
 import { ChoiceContext } from "./ChoiceContext";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
+import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import {
   parseNullableString,
   parseStringList,
   setNullableStringParam,
   setStringListParam,
 } from "../../utils/searchParams";
-import { useSearchParamsNavigation } from "../../hooks/useSearchParamsNavigation";
 import type {
   ChoiceContextT,
   ChoiceSearchParamsRootMultiplePropsT,
@@ -22,10 +22,10 @@ type ChoiceSearchParamsRootPropsT =
   | ChoiceSearchParamsRootSinglePropsT;
 
 export function ChoiceSearchParamsRoot({
-  multiple,
-  choiceKey = "choice",
-  requiredOne,
   scroll,
+  multiple,
+  requiredOne,
+  choiceKey = "choice",
   ...p
 }: ChoiceSearchParamsRootPropsT) {
   const { searchParams, pushParams } = useSearchParamsNavigation({ scroll });

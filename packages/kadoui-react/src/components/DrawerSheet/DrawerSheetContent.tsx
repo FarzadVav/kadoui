@@ -25,20 +25,17 @@ export function DrawerSheetContent({
   } = useDrawerSheetScrollTouchAction(position, gesture);
 
   const styles: CSSProperties = {
-    flex: 1,
-    padding: 10,
     overflowY: "auto",
     overscrollBehavior: "contain",
     WebkitOverflowScrolling: "touch",
-    backgroundColor: "var(--color-card)",
     ...style,
   };
 
   return (
     <div
       ref={ref}
-      data-drawer-sheet-content
       style={styles}
+      data-drawer-sheet-content
       onScroll={(ev) => {
         updateTouchAction(ev.currentTarget);
         onScroll?.(ev);

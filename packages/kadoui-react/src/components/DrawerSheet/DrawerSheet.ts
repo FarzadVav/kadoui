@@ -24,7 +24,6 @@ export const DrawerSheetWithSearchParams = Object.assign(
   baseComponents,
 );
 
-/** @deprecated Use DrawerSheetWithState */
 export const DrawerSheet = DrawerSheetWithState;
 
 export * from "./drawerSheetTypes";

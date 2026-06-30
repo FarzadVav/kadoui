@@ -5,10 +5,18 @@ import { ClipboardEvent, KeyboardEvent, use } from "react";
 import { OtpContext } from "./OtpContext";
 import type { OtpInputsPropsT } from "./otpTypes";
 
-export function OtpInputs({ name, length, onLastChange, ...p }: OtpInputsPropsT) {
-  const { inputs, getInputsValue } = use(OtpContext);
+export function OtpInputs({
+  name,
+  length,
+  onLastChange,
+  ...p
+}: OtpInputsPropsT) {
+  const { inputs, getInputsValue, syncValue } = use(OtpContext);
 
-  const handlePaste = (ev: ClipboardEvent<HTMLInputElement>, startIndex: number) => {
+  const handlePaste = (
+    ev: ClipboardEvent<HTMLInputElement>,
+    startIndex: number,
+  ) => {
     ev.preventDefault();
 
     const pastedData = ev.clipboardData.getData("text").replace(/\s/g, ""); // Remove whitespace
@@ -26,7 +34,11 @@ export function OtpInputs({ name, length, onLastChange, ...p }: OtpInputsPropsT)
     }
 
     const nextIndex = Math.min(startIndex + pastedData.length, length - 1);
-    inputs?.current[nextIndex]?.focus();
+    const nextInput = inputs?.current[nextIndex];
+    nextInput?.focus();
+    nextInput?.select();
+
+    syncValue();
 
     const otpValue = getInputsValue();
     if (otpValue.length === length) {
@@ -42,21 +54,30 @@ export function OtpInputs({ name, length, onLastChange, ...p }: OtpInputsPropsT)
         currentInput.value = currentValue;
       }
 
-      const nextInput = inputs?.current[index + 1]
+      const nextInput = inputs?.current[index + 1];
       if (nextInput) {
-        nextInput.value = "";
         nextInput.focus();
+        nextInput.select();
+        syncValue();
 
-        return
+        return;
       }
 
+      syncValue();
       onLastChange?.(getInputsValue());
     }
   };
 
-  const handleBackspace = (e: KeyboardEvent<HTMLInputElement>, index: number) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === "Backspace" && !e.currentTarget.value && index > 0) {
       inputs?.current[index - 1]?.focus();
+      return;
+    }
+
+    if (e.key === "Enter" && getInputsValue().length === length) {
+      e.preventDefault();
+      syncValue();
+      e.currentTarget.form?.requestSubmit();
     }
   };
 
@@ -65,16 +86,15 @@ export function OtpInputs({ name, length, onLastChange, ...p }: OtpInputsPropsT)
       key={index}
       autoComplete="off"
       name={`${name || "otp"}-${index}`}
-      onPaste={ev => handlePaste(ev, index)}
-      onKeyDown={ev => handleBackspace(ev, index)}
-      onChange={ev => handleInputChange(ev.target.value, index)}
-      ref={el => {
+      onPaste={(ev) => handlePaste(ev, index)}
+      onKeyDown={(ev) => handleKeyDown(ev, index)}
+      onChange={(ev) => handleInputChange(ev.target.value, index)}
+      ref={(el) => {
         if (inputs) {
           inputs.current[index] = el;
         }
       }}
       {...p}
     />
-  )
-  );
+  ));
 }

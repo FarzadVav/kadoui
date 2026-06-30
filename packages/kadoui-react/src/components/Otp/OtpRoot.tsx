@@ -1,21 +1,15 @@
 "use client";
 
-import { CSSProperties, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { OtpContext } from "./OtpContext";
 import type { OtpRootPropsT } from "./otpTypes";
-import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
 
-export function OtpRoot({ autoFocus, style, ...p }: OtpRootPropsT) {
+export function OtpRoot({ autoFocus, ...p }: OtpRootPropsT) {
+  const [value, setValue] = useState("");
+  
   const inputs = useRef<(HTMLInputElement | null)[]>([]);
-
-  const styles: CSSProperties = {
-    gap: 8,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    ...style,
-  };
+  const hiddenInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (autoFocus) {
@@ -27,9 +21,20 @@ export function OtpRoot({ autoFocus, style, ...p }: OtpRootPropsT) {
     return inputs?.current.map((input) => input?.value || "").join("") || "";
   };
 
+  const syncValue = useCallback(() => {
+    const nextValue = getInputsValue();
+    setValue(nextValue);
+
+    if (hiddenInput.current) {
+      hiddenInput.current.value = nextValue;
+    }
+  }, []);
+
   return (
-    <OtpContext value={{ inputs, getInputsValue }}>
-      <AccessNavigation style={styles} dir="ltr" direction="x" {...p} />
+    <OtpContext
+      value={{ inputs, hiddenInput, getInputsValue, syncValue, value }}
+    >
+      <div dir="ltr" {...p} />
     </OtpContext>
   );
 }

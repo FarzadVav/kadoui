@@ -3,6 +3,7 @@
 import { CSSProperties, use } from "react";
 import { AnimatePresence } from "framer-motion";
 
+import { zIndexes } from "../../styles";
 import { ContextMenuContext } from "./ContextMenuContext";
 import type { ContextMenuBodyPropsT } from "./contextMenuTypes";
 import { AccessNavigation } from "../AccessNavigation/AccessNavigation";
@@ -15,10 +16,10 @@ export function ContextMenuBody({
   const { contentRef, position, isOpen } = use(ContextMenuContext);
 
   const styles: CSSProperties = {
-    zIndex: 10,
+    position: "fixed",
     top: position?.y,
     left: position?.x,
-    position: "fixed",
+    zIndex: zIndexes.smallOverlay,
     ...style,
   };
 

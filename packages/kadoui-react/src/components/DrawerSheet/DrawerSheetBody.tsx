@@ -4,124 +4,26 @@ import { use, useEffect, useRef, useState } from "react";
 import { motion, MotionStyle, PanInfo } from "framer-motion";
 
 import { FRAMER_MOTION_DURATION } from "../../configs";
+import type { DrawerSheetBodyPropsT } from "./drawerSheetTypes";
+import {
+  getDragAxis,
+  getExit,
+  getInitial,
+  getPositionStyles,
+  getSizeStyles,
+  shouldCloseOnDrag,
+} from "./drawerSheetUtils";
 import {
   DrawerSheetBodyContext,
   DrawerSheetContext,
 } from "./DrawerSheetContext";
-import type {
-  DrawerSheetBodyPropsT,
-  DrawerSheetPositionT,
-} from "./drawerSheetTypes";
-import {
-  DRAWER_SHEET_DISMISS_OFFSET_RATIO,
-  DRAWER_SHEET_DISMISS_VELOCITY,
-} from "./drawerSheetTypes";
-
-function getSizeStyles(
-  position: DrawerSheetPositionT,
-  viewportWidth: number,
-): MotionStyle {
-  if (position === "top" || position === "bottom") {
-    if (viewportWidth < 640) {
-      return { height: "75vh" };
-    }
-
-    return { height: "50vh" };
-  }
-
-  if (viewportWidth < 640) {
-    return { width: "80vw" };
-  }
-
-  if (viewportWidth < 1024) {
-    return { width: "50vw" };
-  }
-
-  return { width: "30vw" };
-}
-
-function getPositionStyles(
-  position: DrawerSheetPositionT,
-  offset: number,
-): MotionStyle {
-  switch (position) {
-    case "top":
-      return { top: offset, left: offset, right: offset };
-    case "right":
-      return { top: offset, bottom: offset, right: offset };
-    case "left":
-      return { top: offset, bottom: offset, left: offset };
-    case "bottom":
-    default:
-      return { bottom: offset, left: offset, right: offset };
-  }
-}
-
-function getInitial(position: DrawerSheetPositionT) {
-  switch (position) {
-    case "top":
-      return { y: "-100%" };
-    case "right":
-      return { x: "100%" };
-    case "left":
-      return { x: "-100%" };
-    case "bottom":
-    default:
-      return { y: "100%" };
-  }
-}
-
-function getExit(position: DrawerSheetPositionT) {
-  return getInitial(position);
-}
-
-function getDragAxis(position: DrawerSheetPositionT): "x" | "y" {
-  return position === "left" || position === "right" ? "x" : "y";
-}
-
-function shouldCloseOnDrag(
-  position: DrawerSheetPositionT,
-  size: number,
-  offset: number,
-  velocity: number,
-  dragValue: number,
-) {
-  const threshold = size * DRAWER_SHEET_DISMISS_OFFSET_RATIO;
-
-  switch (position) {
-    case "bottom":
-      return (
-        dragValue >= threshold ||
-        offset >= threshold ||
-        velocity >= DRAWER_SHEET_DISMISS_VELOCITY
-      );
-    case "top":
-      return (
-        dragValue <= -threshold ||
-        offset <= -threshold ||
-        velocity <= -DRAWER_SHEET_DISMISS_VELOCITY
-      );
-    case "right":
-      return (
-        dragValue >= threshold ||
-        offset >= threshold ||
-        velocity >= DRAWER_SHEET_DISMISS_VELOCITY
-      );
-    case "left":
-      return (
-        dragValue <= -threshold ||
-        offset <= -threshold ||
-        velocity <= -DRAWER_SHEET_DISMISS_VELOCITY
-      );
-  }
-}
 
 export function DrawerSheetBody({
   style,
-  onPointerDown,
-  position = "bottom",
   offset = 0,
+  onPointerDown,
   gesture = false,
+  position = "bottom",
   ...p
 }: DrawerSheetBodyPropsT) {
   const {
@@ -147,12 +49,10 @@ export function DrawerSheetBody({
   const styles: MotionStyle = {
     x,
     y,
-    display: "flex",
     overflow: "hidden",
     position: "absolute",
-    flexDirection: "column",
-    ...getSizeStyles(position, viewportWidth),
     ...getPositionStyles(position, offset),
+    ...getSizeStyles(viewportWidth, position),
     ...style,
   };
 
@@ -211,8 +111,8 @@ export function DrawerSheetBody({
     <DrawerSheetBodyContext value={{ position, gesture }}>
       <motion.div
         ref={bodyRef}
-        data-drawer-sheet-body
         style={styles}
+        data-drawer-sheet-body
         onClick={(ev) => ev.stopPropagation()}
         initial={getInitial(position)}
         animate={dragAxis === "x" ? { x: "0%" } : { y: "0%" }}

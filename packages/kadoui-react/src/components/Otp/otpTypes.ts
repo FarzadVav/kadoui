@@ -1,13 +1,14 @@
 import type { ComponentProps, RefObject } from "react";
 
-import type { AccessNavigationPropsT } from "../AccessNavigation/AccessNavigation";
-
 export type OtpContextT = {
   inputs?: RefObject<(HTMLInputElement | null)[]>;
+  hiddenInput?: RefObject<HTMLInputElement | null>;
   getInputsValue: () => string;
+  syncValue: () => void;
+  value: string;
 };
 
-export type OtpRootPropsT = Omit<AccessNavigationPropsT, "direction" | "dir"> & {
+export type OtpRootPropsT = ComponentProps<"div"> & {
   autoFocus?: boolean;
 };
 

@@ -8,16 +8,15 @@ import { DrawerSheetContext } from "./DrawerSheetContext";
 import { ClientOnly } from "../ClientOnly/ClientOnly";
 import type { DrawerSheetPortalPropsT } from "./drawerSheetTypes";
 import { FRAMER_MOTION_DURATION } from "../../configs";
+import { zIndexes } from "../../styles";
 
 export function DrawerSheetPortal({ style, ...p }: DrawerSheetPortalPropsT) {
   const { isOpen, setOpen } = use(DrawerSheetContext);
 
   const styles: MotionStyle = {
     inset: 0,
-    zIndex: 50,
     position: "fixed",
-    backgroundColor:
-      "color-mix(in oklab, var(--color-background) 75%, transparent)",
+    zIndex: zIndexes.bigOverlay,
     ...style,
   };
 

@@ -1,14 +1,14 @@
 "use client";
 
-import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
-import { useOverlayOpenEffects } from "./useOverlayOpenEffects";
 import { ModalContext } from "./ModalContext";
+import { useOverlayOpenEffects } from "./useOverlayOpenEffects";
 import type { ModalSearchParamsRootPropsT } from "./modalTypes";
+import { useSearchParamsBooleanState } from "../../hooks/useSearchParamsBooleanState";
 
 export function ModalSearchParamsRoot({
+  scroll,
   children,
   openKey = "modal",
-  scroll,
 }: ModalSearchParamsRootPropsT) {
   const [isOpen, setOpen] = useSearchParamsBooleanState(openKey, { scroll });
 

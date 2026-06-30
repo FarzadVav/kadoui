@@ -6,14 +6,14 @@ import { useDragControls, useMotionValue } from "framer-motion";
 
 import { DrawerSheetContext } from "./DrawerSheetContext";
 import { getBrowserScrollbarWith } from "../../utils-exports";
-import { useControllableState } from "../../hooks/useControllableState";
 import type { DrawerSheetStateRootPropsT } from "./drawerSheetTypes";
+import { useControllableState } from "../../hooks/useControllableState";
 
 export function DrawerSheetStateRoot({
   children,
   isOpen: isOpenProp,
-  setOpen: setOpenProp,
   defaultOpen = false,
+  setOpen: setOpenProp,
 }: DrawerSheetStateRootPropsT) {
   const pathname = usePathname();
 

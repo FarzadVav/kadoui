@@ -3,6 +3,7 @@
 import { useState, useEffect, CSSProperties } from "react";
 
 import type { AffixPropsT } from "./affixTypes";
+import { ignoreElement, zIndexes } from "../../styles";
 
 export const Affix = ({
   viewportOffset = 0.5,
@@ -13,15 +14,9 @@ export const Affix = ({
   const [isVisible, setIsVisible] = useState(false);
 
   const styles: CSSProperties = {
-    zIndex: 40,
     position: "fixed",
-    ...(isVisible
-      ? {}
-      : {
-          opacity: 0,
-          visibility: "hidden",
-          pointerEvents: "none",
-        }),
+    zIndex: zIndexes.smallOverlay,
+    ...(isVisible ? {} : ignoreElement),
     ...style,
   };
 

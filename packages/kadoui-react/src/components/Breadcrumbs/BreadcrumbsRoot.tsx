@@ -1,25 +1,12 @@
 "use client";
 
-import { CSSProperties } from "react";
-
 import { BreadcrumbsContext } from "./BreadcrumbsContext";
 import type { BreadcrumbsRootPropsT } from "./breadcrumbsTypes";
 
-export function BreadcrumbsRoot({
-  separator,
-  style,
-  ...p
-}: BreadcrumbsRootPropsT) {
-  const styles: CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    gap: 3,
-    ...style,
-  };
-
+export function BreadcrumbsRoot({ separator, ...p }: BreadcrumbsRootPropsT) {
   return (
     <BreadcrumbsContext value={{ separator }}>
-      <nav style={styles} {...p} />
+      <nav {...p} />
     </BreadcrumbsContext>
   );
 }

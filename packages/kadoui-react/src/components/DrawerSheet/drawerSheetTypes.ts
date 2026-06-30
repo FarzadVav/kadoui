@@ -18,8 +18,8 @@ export type DrawerSheetContextT = {
 };
 
 export type DrawerSheetBodyContextT = {
-  position: DrawerSheetPositionT;
   gesture: boolean;
+  position: DrawerSheetPositionT;
 };
 
 export type DrawerSheetStateRootPropsT = PropsWithChildren & {
@@ -37,9 +37,9 @@ export type DrawerSheetSearchParamsRootPropsT = PropsWithChildren &
 export type DrawerSheetRootPropsT = DrawerSheetStateRootPropsT;
 
 export type DrawerSheetBodyPropsT = HTMLMotionProps<"div"> & {
-  position?: DrawerSheetPositionT;
   offset?: number;
   gesture?: boolean;
+  position?: DrawerSheetPositionT;
 };
 
 export type DrawerSheetContentPropsT = ComponentProps<"div">;
